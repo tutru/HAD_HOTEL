@@ -19,7 +19,7 @@ public class RoomDAO {
 	private JdbcTemplate jdbcTemplate;
 
 	public void save(Room room) {
-		String sql = "INSERT INTO employee (roomtypeid,roomstatusid,roomimage,roomdesc) VALUES (?,?,?,?)";
+		String sql = "INSERT INTO room (roomtypeid,roomstatusid,roomimage,roomdesc) VALUES (?,?,?,?)";
 		jdbcTemplate.update(sql, room.getRoomtypeid(),room.getRoomstatusid(),room.getRoomimage(),room.getRoomdesc());
 	}
 

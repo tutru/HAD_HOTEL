@@ -57,8 +57,8 @@ public class RoomService {
 		// validate business
 		roomDAO.delete(roomid);
 	}
-//	public List<Room> searchRoom(String roomname) {
-//		return roomDAO.findRoom(roomname);
+//	public List<Room> searchRoom(String roomid) {
+//		return roomDAO.findRoom(roomid);
 //	}
 
 

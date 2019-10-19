@@ -33,7 +33,7 @@
 		<select name="roomstatusid">
 			<c:if test="${not empty listRoomStatus}">
 				<c:forEach var="roomstatus" items="${listRoomStatus}">
-					<option value=${roomstatus.roomstatusid}>${roomstatus.roomstatusid}</option>
+					<option value=${roomstatus.roomstatusid}>${roomstatus.roomstatusname}</option>
 				</c:forEach>
 			</c:if>
 		</select>
@@ -41,7 +41,7 @@
 		<br />
 		<label>Image:</label>
 		<output id="list">
-			<img src="/resources/image/ball.png" width="120">
+			<img src="/HotelManagement/resources/image/441.jpg" width="120">
 		</output>
 
 		<span class="input-group-btn"> <span

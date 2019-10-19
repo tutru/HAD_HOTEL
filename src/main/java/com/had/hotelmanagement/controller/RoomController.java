@@ -1,5 +1,6 @@
 package com.had.hotelmanagement.controller;
 
+import java.io.File;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,24 +13,25 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.had.hotelmanagement.entity.Room;
 import com.had.hotelmanagement.service.RoomService;
 
-
-
 @Controller
 @RequestMapping(value = "")
 public class RoomController {
-	
+
 	@Autowired
 	private RoomService roomService;
 
-	@RequestMapping( value = { "/room-list" },method = RequestMethod.GET)
+	@RequestMapping(value = { "/room-list" }, method = RequestMethod.GET)
 	public String listrole(Model model) {
 		model.addAttribute("listRoom", roomService.findAll());
 		return "room-list";
 	}
+
 	@RequestMapping("/room-save")
 	public String insertRole(Model model) {
 		model.addAttribute("room", new Room());
@@ -37,7 +39,7 @@ public class RoomController {
 		model.addAttribute("listRoomStatus", roomService.listRoomStatus());
 		return "room-save";
 	}
-	
+
 	@RequestMapping("/room-view/{roomid}")
 	public String viewEmployee(@PathVariable int roomid, Model model) {
 		Room room = roomService.findByIdRoom(roomid);
@@ -55,14 +57,28 @@ public class RoomController {
 	}
 
 	@RequestMapping(value = "/saveRoom", method = RequestMethod.POST)
-	public String doSaveRoomType(ModelMap model, HttpServletRequest request, @ModelAttribute("room") Room room) {
-		roomService.save(room);
-		model.addAttribute("listRoom", roomService.findAll());
+	public String doSaveRoomType(ModelMap model, HttpServletRequest request, @ModelAttribute("room") Room room,
+			@RequestParam("uploadImg") MultipartFile image) {
+
+		if (image.isEmpty()) {
+		} else {
+			try {
+				String path = request.getSession().getServletContext().getRealPath("/resources/image/")
+						+ image.getOriginalFilename();
+
+				image.transferTo(new File(path));
+				room.setRoomimage(image.getOriginalFilename());
+				roomService.save(room);
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+		}
+		model.addAttribute("listEmployee", roomService.findAll());
 		return "room-list";
 	}
 
 	@RequestMapping("/updateRoom")
-	public String doUpdateRoomType(Model model,@ModelAttribute("room") Room room) {
+	public String doUpdateRoomType(Model model, @ModelAttribute("room") Room room) {
 		roomService.update(room);
 		model.addAttribute("listRoom", roomService.findAll());
 		return "room-list";
@@ -76,13 +92,11 @@ public class RoomController {
 		return "room-list";
 	}
 
-//	@RequestMapping(value = "/employee-search")
+//	@RequestMapping(value = "/room-search")
 //	public String search(String roomtypename, Model model) {
-//		List<Room> roomtype =roomService.searchRoomType(roomtypename);
+//		List<Room> roomtype =roomService.searchRoom(roomtypename);
 //		model.addAttribute("search", roomtype);
 //		return "roomtype-search";
 //	}
-
-
 
 }

@@ -25,7 +25,7 @@
 	<br />
 		<table border="1" style="border-collapse: collapse;">
 	<tr> 
-	<td>Mã Phòng</td>
+	<td>Mã Loại Phòng</td>
 	<td>Tên Loại Phòng</td>
 	<td>Mô Tả Loại Phòng</td>
 	<td>Giá Phòng</td>
