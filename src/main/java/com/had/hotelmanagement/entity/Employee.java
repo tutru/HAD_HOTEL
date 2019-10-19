@@ -2,27 +2,27 @@ package com.had.hotelmanagement.entity;
 
 import java.util.Date;
 
-public class EmployeeEntity {
+public class Employee {
 	private int employeeid;
 	private String name;
 	private Date birthday;
-	private int  governmanetid;
+	private String  government;
 	private String phone;
 	private String email;
 	private String address;
 	private String image;
 	private Double salary;
-	public EmployeeEntity() {
+	public Employee() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public EmployeeEntity(int employeeid, String name, Date birthday, int governmanetid, String phone, String email,
+	public Employee(int employeeid, String name, Date birthday, String government, String phone, String email,
 			String address, String image, Double salary) {
 		super();
 		this.employeeid = employeeid;
 		this.name = name;
 		this.birthday = birthday;
-		this.governmanetid = governmanetid;
+		this.government = government;
 		this.phone = phone;
 		this.email = email;
 		this.address = address;
@@ -31,9 +31,9 @@ public class EmployeeEntity {
 	}
 	@Override
 	public String toString() {
-		return "EmployeeEntity [employeeid=" + employeeid + ", name=" + name + ", birthday=" + birthday
-				+ ", governmanetid=" + governmanetid + ", phone=" + phone + ", email=" + email + ", address=" + address
-				+ ", image=" + image + ", salary=" + salary + "]";
+		return "Employee [employeeid=" + employeeid + ", name=" + name + ", birthday=" + birthday + ", government="
+				+ government + ", phone=" + phone + ", email=" + email + ", address=" + address + ", image=" + image
+				+ ", salary=" + salary + "]";
 	}
 	public int getEmployeeid() {
 		return employeeid;
@@ -53,11 +53,11 @@ public class EmployeeEntity {
 	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
 	}
-	public int getGovernmanetid() {
-		return governmanetid;
+	public String getGovernment() {
+		return government;
 	}
-	public void setGovernmanetid(int governmanetid) {
-		this.governmanetid = governmanetid;
+	public void setGovernment(String government) {
+		this.government = government;
 	}
 	public String getPhone() {
 		return phone;
@@ -89,11 +89,7 @@ public class EmployeeEntity {
 	public void setSalary(Double salary) {
 		this.salary = salary;
 	}
-
-
-
 	
 
-	
 
 }

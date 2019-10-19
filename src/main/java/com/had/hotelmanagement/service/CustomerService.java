@@ -18,41 +18,26 @@ public class CustomerService {
 	public List<Customer> findAll() {
 		return customerDAO.findAll();
 	}
-	
-//	public List<KhachHang> findHoaDon(String tenkh) {
-//		return hoaDonDAO.findHoaDon(tenkh);
-//	}
-	
-//	public List<KhachHang> listKhachHang() {
-//		return khachHangDAO.findAll();
-//	}
-//	
-//	public List<SanPham> listSanPham() {
-//		return sanPhamDAO.findAll();
-//	}
-//	
-//	public List<NhanVien> listNhanVien() {
-//		return nhanVienDAO.findAll();
-//	}
 
-//	public HoaDon findByIdhd(int idhd) {
-//		return hoaDonDAO.findById(idhd);
-//	}
-//	
-	
-//	public void save(HoaDon hoadon){
-//		// validate business
-//		hoaDonDAO.save(hoadon);
-//	}
 
-//	public void update(HoaDon hoadon){
-//		// validate business
-//		hoaDonDAO.update(hoadon);
-//	}
+	public Customer findById(int customerid) {
+		return customerDAO.findById(customerid);
+	}
 	
-//	public void delete(int idhd){
-//		// validate business
-//		hoaDonDAO.delete(idhd);
-//	}
+	
+	public void save(Customer customer){
+		// validate business
+		customerDAO.save(customer);
+	}
+
+	public void update(Customer customer){
+		// validate business
+		customerDAO.update(customer);
+	}
+	
+	public void delete(int customerid){
+		// validate business
+		customerDAO.delete(customerid);
+	}
 
 }

@@ -1,38 +1,44 @@
 package com.had.hotelmanagement.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "CUSTOMER")
 public class Customer {
-	
+	@Id
+    @GeneratedValue
     private int customerid;
-    private String customername;
-    private int governmentid;
-    private String customeraddress;
-    private String customerphone;
-    private String customeremail;
-    private String customerimage;
+    private String name;
+    private String governmentid;
+    private String address;
+    private String phone;
+    private String email;
+    private String image;
     private int ccnumber;
     
 	public Customer() {
 	}
 
-	public Customer(int customerid, String customername, int governmentid, String customeraddress, String customerphone,
-			String customeremail, String customerimage, int ccnumber) {
+	public Customer(int customerid, String name, String governmentid, String address, String phone, String email,
+			String image, int ccnumber) {
 		super();
 		this.customerid = customerid;
-		this.customername = customername;
+		this.name = name;
 		this.governmentid = governmentid;
-		this.customeraddress = customeraddress;
-		this.customerphone = customerphone;
-		this.customeremail = customeremail;
-		this.customerimage = customerimage;
+		this.address = address;
+		this.phone = phone;
+		this.email = email;
+		this.image = image;
 		this.ccnumber = ccnumber;
 	}
 
 	@Override
 	public String toString() {
-		return "Customer [customerid=" + customerid + ", customername=" + customername + ", governmentid="
-				+ governmentid + ", customeraddress=" + customeraddress + ", customerphone=" + customerphone
-				+ ", customeremail=" + customeremail + ", customerimage=" + customerimage + ", ccnumber=" + ccnumber
+		return "Customer [customerid=" + customerid + ", name=" + name + ", governmentid=" + governmentid + ", address="
+				+ address + ", phone=" + phone + ", email=" + email + ", image=" + image + ", ccnumber=" + ccnumber
 				+ "]";
 	}
 
@@ -44,52 +50,52 @@ public class Customer {
 		this.customerid = customerid;
 	}
 
-	public String getCustomername() {
-		return customername;
+	public String getName() {
+		return name;
 	}
 
-	public void setCustomername(String customername) {
-		this.customername = customername;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public int getGovernmentid() {
+	public String getGovernmentid() {
 		return governmentid;
 	}
 
-	public void setGovernmentid(int governmentid) {
+	public void setGovernmentid(String governmentid) {
 		this.governmentid = governmentid;
 	}
 
-	public String getCustomeraddress() {
-		return customeraddress;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setCustomeraddress(String customeraddress) {
-		this.customeraddress = customeraddress;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
-	public String getCustomerphone() {
-		return customerphone;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setCustomerphone(String customerphone) {
-		this.customerphone = customerphone;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
-	public String getCustomeremail() {
-		return customeremail;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setCustomeremail(String customeremail) {
-		this.customeremail = customeremail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public String getCustomerimage() {
-		return customerimage;
+	public String getImage() {
+		return image;
 	}
 
-	public void setCustomerimage(String customerimage) {
-		this.customerimage = customerimage;
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public int getCcnumber() {
@@ -99,6 +105,6 @@ public class Customer {
 	public void setCcnumber(int ccnumber) {
 		this.ccnumber = ccnumber;
 	}
-    
+
     
 }

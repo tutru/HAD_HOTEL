@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.had.hotelmanagement.entity.EmployeeEntity;
+import com.had.hotelmanagement.entity.Employee;
 import com.had.hotelmanagement.entity.EmployeeMapper;
 
 
@@ -15,40 +15,39 @@ import com.had.hotelmanagement.entity.EmployeeMapper;
 @Repository
 @Transactional
 public class EmployeeDAO {
-	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	public void save(EmployeeEntity employee) {
-		String sql = "INSERT INTO EMPLOYEE (EMPLOYEE_NAME,EMPLOYEE_BIRTHDAY,GOVERNMENT_ID,EMPLOYEE_PHONE,EMPLOYEE_EMAIL,EMPLOYEE_ADDRESS,EMPLOYEE_IMAGE,EMPLOYEE_SALARY) VALUES (?,?,?,?,?,?,?,?)";
+	public void save(Employee employee) {
+		String sql = "INSERT INTO employee (name,birthday,government,phone,email,address,image,salary) VALUES (?,?,?,?,?,?,?,?)";
 		jdbcTemplate.update(sql, employee.getName(),employee.getBirthday(),
-				employee.getGovernmentid(),employee.getPhone(),employee.getEmail(),employee.getAddress(),employee.getImage(),employee.getSalary());
+				employee.getGovernment(),employee.getPhone(),employee.getEmail(),employee.getAddress(),employee.getImage(),employee.getSalary());
 	}
 
-	public void delete(int id) {
-		String sql = "DELETE FROM EMPLOYEE WHERE EMPLOYEE_ID = " + id;
+	public void delete(int employeeid) {
+		String sql = "DELETE FROM employee WHERE employeeid = " + employeeid;
 		jdbcTemplate.update(sql);
 	}
 	
-	public void update(EmployeeEntity employee) {
-		String sql = "UPDATE EMPLOYEE SET  EMPLOYEE_NAME = ?, EMPLOYEE_BIRTHDAY=? , GOVERNMENT_ID=?, EMPLOYEE_PHONE=?, EMPLOYEE_EMAIL=?"
-				+ "EMPLOYEE_ADDRESS=?,EMPLOYEE_IMAGE=?,EMPLOYEE_SALARY=? WHERE EMPLOYEE_ID = ? ";
-		jdbcTemplate.update(sql,   employee.getName(),employee.getBirthday(),
-				employee.getGovernmentid(),employee.getPhone(),employee.getEmail(),employee.getAddress(),employee.getImage(),employee.getSalary());
+	public void update(Employee employee) {
+		String sql = "UPDATE employee SET  name = ?, birthday=? , government=?, phone=?, email=?"
+				+ "address=?,image=?,salary=? WHERE employeeid = ? ";
+		jdbcTemplate.update(sql, employee.getName(),employee.getBirthday(),
+				employee.getGovernment(),employee.getPhone(),employee.getEmail(),employee.getAddress(),employee.getImage(),employee.getSalary());
 	}
 
-	public EmployeeEntity findById(int id) {
-		String sql = "SELECT * FROM EMPLOYEE WHERE EMPLOYEE_ID = ?";
-		return jdbcTemplate.queryForObject(sql, new EmployeeMapper(), id);
+	public Employee findById(int employeeid) {
+		String sql = "SELECT * FROM employee WHERE employeeid = ?";
+		return jdbcTemplate.queryForObject(sql, new EmployeeMapper(), employeeid);
 	}
 
-	public List<EmployeeEntity> findAll() {
-		String sql = "SELECT * FROM EMPLOYEE";
+	public List<Employee> findAll() {
+		String sql = "SELECT * FROM employee";
 		return jdbcTemplate.query(sql, new EmployeeMapper());
 	}
 	
-	public List<EmployeeEntity>findEmployee(String name){
-		String sql = "SELECT * FROM EMPLOYEE WHERE EMPLOYEE_NAME LIKE '%"+name+"%'";
+	public List<Employee>findEmployee(String name){
+		String sql = "SELECT * FROM employee WHERE name LIKE '%"+name+"%'";
 		return jdbcTemplate.query(sql, new EmployeeMapper());
 	}
 

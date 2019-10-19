@@ -19,23 +19,23 @@ public class RoleDao {
 	private JdbcTemplate jdbcTemplate;
 
 	public void save(Role role) {
-		String sql = "INSERT INTO role (rolename,roledesc) VALUES (?,?)";
-		jdbcTemplate.update(sql, role.getRolename(), role.getRoledesc());
+		String sql = "INSERT INTO role (role_name,role_desc) VALUES (?,?)";
+		jdbcTemplate.update(sql, role.getRole_name(), role.getRole_desc());
 
 	}
 
 	public void delete(int id) {
-		String sql = "DELETE FROM role WHERE roleid = " + id;
+		String sql = "DELETE FROM role WHERE role_id = " + id;
 		jdbcTemplate.update(sql);
 	}
 
 	public void update(Role role) {
-		String sql = "UPDATE role SET rolename = ?, roledesc = ? WHERE  roleid = ? ";
-		jdbcTemplate.update(sql,role.getRolename(), role.getRoledesc(),role.getRoleid());
+		String sql = "UPDATE role SET role_name	 = ?, role_desc = ? WHERE  role_id = ? ";
+		jdbcTemplate.update(sql,role.getRole_name(), role.getRole_desc(),role.getRole_id());
 	}	
 	
 	public Role findById(int role_id) {
-		String sql = "SELECT * FROM role WHERE roleid = ?";
+		String sql = "SELECT * FROM role WHERE role_id = ?";
 		return jdbcTemplate.queryForObject(sql, new RoleMapper(), role_id);
 	}
 
@@ -43,5 +43,9 @@ public class RoleDao {
 		String sql = "SELECT * FROM role";
 		return jdbcTemplate.query(sql, new RoleMapper());
 	}
-	
+
+//	public List<Role>findnhanvienten(String tennv){
+//		String sql = "SELECT * FROM role WHERE tennv LIKE '%"+tennv+"%'";
+//		return jdbcTemplate.query(sql, new RoleMapper());
+//	}
 }
