@@ -29,7 +29,7 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;
 
-	@RequestMapping(value = {"", "/employee-list" },method = RequestMethod.GET)
+	@RequestMapping(value = {"/employee-list" },method = RequestMethod.GET)
 	public String listEmployee(Model model) {
 		model.addAttribute("listEmployee", employeeService.findAll());
 		return "employee-list";
