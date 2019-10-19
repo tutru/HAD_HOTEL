@@ -16,13 +16,13 @@
 	<a href="${urlSave}">Thêm mới phòng mới</a>
 	<br />
 	<br />
-	<form class="form-inline" action="employee-search" method="get">
+	<%-- <form class="form-inline" action="employee-search" method="get">
 		<input class="form-control mr-sm-2" type="search" name="name"
 			placeholder="Search by name ..." />
 		<button class="btn btn-primary" type="submit">
 			<i class="fa fa-search"></i> Search
 		</button>
-	</form>
+	</form> --%>
 	<br />
 	<br />
 	<table border="1" style="border-collapse: collapse;">

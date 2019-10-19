@@ -19,18 +19,31 @@
 		});
 	</script>
 	<div>DANH SÁCH THÔNG TIN KHÁCH HÀNG</div>
-	<form:form action="/HotelManagement/employee-search" modelAttribute="employee" method="get">
+	<form:form action="/HotelManagement/employee-search"
+		modelAttribute="employee" method="get">
 
 		<td><input type="search" name="name" placeholder="Tìm kiếm ..."></td>
 		<td><button type="submit">Tìm kiếm</button></td>
 		<td><button>
 				<a href="${urlSave}"> Trở về trang thêm mới</a>
 			</button></td>
-
 	</form:form>
-
 	<br />
-	<table>
+	<br />
+	<table border="1" style="border-collapse: collapse;">
+	<tr> 
+	<td>Mã nhân viên</td>
+	<td>Tên nhân viên</td>
+	<td>Ngày sinh</td>
+	<td>Số CMND</td>
+	<td>Số ĐT</td>
+	<td>Email</td>
+	<td>Địa chỉ</td>
+	<td>Hình</td>
+	<td>Lương</td>
+	<td></td>
+	<td></td>
+	</tr>
 
 		<c:if test="${not empty listEmployee}">
 			<c:forEach var="employee" items="${listEmployee}">
@@ -38,7 +51,7 @@
 					<td>${employee.employeeid}</td>
 					<td>${employee.name}</td>
 					<td>${employee.birthday}</td>
-				    <td>${employee.government }</td>  
+					<td>${employee.government }</td>
 					<td>${employee.phone}</td>
 					<td>${employee.email}</td>
 					<td>${employee.address}</td>
@@ -46,7 +59,7 @@
 					<td>${employee.salary}</td>
 					<td><button>
 							<i class="fa fa-pencil-square-o" aria-hidden="true"></i><a
-								href="${urlView}/${employee.employeeid}"> Xem</a>
+								href="${urlUpdate}/${employee.employeeid}"> Cập nhật</a>
 						</button></td>
 					<td><button>
 							<i class="fa fa-trash" aria-hidden="true"></i><a

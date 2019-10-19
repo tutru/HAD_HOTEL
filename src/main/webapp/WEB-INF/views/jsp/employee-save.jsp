@@ -63,7 +63,7 @@
 
 		<label>Image:</label>
 		<output id="list">
-			<img src="/resources/image/ball.png" width="120">
+			<img src="/HotelManagement/resources/image/441.jpg" width="120">
 		</output>
 
 		<span class="input-group-btn"> <span

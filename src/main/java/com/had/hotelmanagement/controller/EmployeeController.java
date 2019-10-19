@@ -19,17 +19,13 @@ import org.springframework.web.multipart.MultipartFile;
 import com.had.hotelmanagement.entity.Employee;
 import com.had.hotelmanagement.service.EmployeeService;
 
-
-
-
-
 @Controller
 @RequestMapping(value = "")
 public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;
 
-	@RequestMapping(value = {"/employee-list" },method = RequestMethod.GET)
+	@RequestMapping(value = { "/employee-list" }, method = RequestMethod.GET)
 	public String listEmployee(Model model) {
 		model.addAttribute("listEmployee", employeeService.findAll());
 		return "employee-list";
@@ -58,31 +54,25 @@ public class EmployeeController {
 	@RequestMapping(value = "/saveEmployee", method = RequestMethod.POST)
 	public String doSaveEmployee(ModelMap model, HttpServletRequest request,
 			@ModelAttribute("Employee") Employee employee, @RequestParam("uploadImg") MultipartFile image) {
-		{
+		
 			if (image.isEmpty()) {
 			} else {
 				try {
-//					String path = "E:\\QUAN_LY_DU_AN_PHAN_MEM_AGILE\\Agile_Customers\\Agile_Customers\\Agile_Customers\\src\\main\\webapp\\resources\\image\\"
-//							+ image.getOriginalFilename();
+					String path = request.getSession().getServletContext().getRealPath("/resources/image/")
+							+ image.getOriginalFilename();
 
-				String path = request.getSession().getServletContext().getRealPath("/resources/image/")
-						+ image.getOriginalFilename();
-//				System.out.print(path);
 					image.transferTo(new File(path));
 					employee.setImage(image.getOriginalFilename());
 					employeeService.save(employee);
-					model.addAttribute("messageSuccess", "Thêm thành công");
 				} catch (Exception ex) {
-					model.addAttribute("messageError", "Thêm thất bại");
 					ex.printStackTrace();
 				}
 			}
 			model.addAttribute("listEmployee", employeeService.findAll());
 			return "employee-list";
-		}
+		
 	}
 
-	
 	@RequestMapping("/updateEmployee")
 	public String doUpdateEmployee(@ModelAttribute("Employee") Employee employee, Model model) {
 		employeeService.update(employee);
@@ -99,7 +89,7 @@ public class EmployeeController {
 
 	@RequestMapping(value = "/employee-search")
 	public String search(String name, Model model) {
-		List<Employee> employee =employeeService.searchEmployee(name);
+		List<Employee> employee = employeeService.searchEmployee(name);
 		model.addAttribute("search", employee);
 		return "employee-search";
 	}
