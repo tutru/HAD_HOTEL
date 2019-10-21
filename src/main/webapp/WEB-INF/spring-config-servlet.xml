@@ -20,7 +20,7 @@
 	<mvc:annotation-driven />
 	<context:annotation-config />
 	<mvc:resources mapping="/css/**" location="/css/" />
-	<mvc:resources mapping="/images/**" location="src/main/webapp/resources/images/" />
+	<mvc:resources mapping="/image/**" location="src/main/webapp/resources/image/" />
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
