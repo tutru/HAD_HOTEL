@@ -58,7 +58,7 @@ public class EmployeeController {
 			if (image.isEmpty()) {
 			} else {
 				try {
-					String path = request.getSession().getServletContext().getRealPath("/resources/image/")
+					String path = "E:\\QUANLYDOAN\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
 							+ image.getOriginalFilename();
 
 					image.transferTo(new File(path));

@@ -41,7 +41,7 @@
 					<td>${room.roomid}</td>
 					<td>${room.roomtypeid}</td>
 					<td>${room.roomstatusid}</td>
-					<td><img src="/resources/image/${room.roomimage}" width="120"></td>
+					<td><img src="/HotelManagement/resources/image/${room.roomimage}" width="120"></td>
 					<td>${room.roomdesc }</td>
 					<td><button>
 							<i class="fa fa-pencil-square-o" aria-hidden="true"></i><a

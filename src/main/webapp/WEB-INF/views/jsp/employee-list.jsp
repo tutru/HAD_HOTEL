@@ -55,7 +55,7 @@
 					<td>${employee.phone}</td>
 					<td>${employee.email}</td>
 					<td>${employee.address}</td>
-					<td><img src="/resources/image/${employee.image}" width="120"></td>
+					<td><img src="/HotelManagement/resources/image/${employee.image}" width="120"></td>
 					<td>${employee.salary}</td>
 					<td><button>
 							<i class="fa fa-pencil-square-o" aria-hidden="true"></i><a
