@@ -1,11 +1,13 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
-
 <!DOCTYPE html>
 <html>
+<head>
 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+</head>
 <body>
 
 	<script>
@@ -16,9 +18,10 @@
 	</script>
 	<div>THÊM MỚI THÔNG TIN TRẠNG THÁI PHÒNG</div>
 	<c:url value="/updateRoom" var="updateRoom" />
-	<form:form id="roomsAdd" action="${updateRoom}"
-		modelAttribute="room" enctype="multipart/form-data">
-		
+	<form:form id="roomsAdd" action="${updateRoom}" modelAttribute="room"
+		enctype="multipart/form-data">
+		<label>ID</label>
+		<form:input path="roomid" />
 		<label> Tên loại phòng:</label>
 		<select name="roomtypeid">
 			<c:if test="${not empty listRoomType}">
@@ -41,7 +44,9 @@
 		<br />
 		<label>Image:</label>
 		<output id="list">
-			<img src="resources/image/" width="120">
+			<img
+				src="<%=request.getContextPath()%>/resources/image/${room.roomimage}"
+				width="120" />
 		</output>
 
 		<span class="input-group-btn"> <span

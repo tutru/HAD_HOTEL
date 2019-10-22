@@ -1,7 +1,7 @@
 package com.had.hotelmanagement.controller;
 
 import java.io.File;
-import java.util.List;
+
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -26,13 +26,13 @@ public class RoomController {
 	@Autowired
 	private RoomService roomService;
 
-	@RequestMapping(value = { "/room-list" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/room-list" }, method = RequestMethod.GET,produces = "application/x-www-form-urlencoded;charset=UTF-8")
 	public String listrole(Model model) {
 		model.addAttribute("listRoom", roomService.findAll());
 		return "room-list";
 	}
 
-	@RequestMapping("/room-save")
+	@RequestMapping(value = "/room-save",produces = "application/x-www-form-urlencoded;charset=UTF-8")
 	public String insertRoom(Model model) {
 		model.addAttribute("room", new Room());
 		model.addAttribute("listRoomType", roomService.listRoomType());
@@ -40,13 +40,13 @@ public class RoomController {
 		return "room-save";
 	}
 
-	@RequestMapping("/room-view/{roomid}")
+	@RequestMapping(value = "/room-view/{roomid}")
 	public String viewEmployee(@PathVariable int roomid, Model model) {
 		Room room = roomService.findByIdRoom(roomid);
 		model.addAttribute("roomtype", room);
 		return "room-view";
 	}
-
+///asfsf
 	@RequestMapping("/room-update/{roomid}")
 	public String updateRoom(@PathVariable int roomid, Model model) {
 		Room room = roomService.findByIdRoom(roomid);
@@ -56,15 +56,15 @@ public class RoomController {
 		return "room-update";
 	}
 
-	@RequestMapping(value = "/saveRoom", method = RequestMethod.POST)
+	@RequestMapping(value = "/saveRoom", method = RequestMethod.POST,produces = "application/x-www-form-urlencoded;charset=UTF-8")
 	public String doSaveRoom(ModelMap model, HttpServletRequest request, @ModelAttribute("room") Room room,
 			@RequestParam("uploadImg") MultipartFile image) {
 
 		if (image.isEmpty()) {
 		} else {
 			try {
-				String path = "E:\\QUANLYDOAN\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
-						+ image.getOriginalFilename();
+				String path = "D:\\duantotnghiep\\HotelManagement\\src\\main\\webapp\\resources\\image\\"
+						+ image.getInputStream();
 
 				image.transferTo(new File(path));
 				room.setRoomimage(image.getOriginalFilename());
@@ -74,28 +74,29 @@ public class RoomController {
 			}
 		}
 		model.addAttribute("listRoom", roomService.findAll());
-		return "room-list";
+		return "redirect:room-list";
 	}
 
-	@RequestMapping(value="/updateRoom" , method = RequestMethod.POST)
+	@RequestMapping(value = "/updateRoom", method = RequestMethod.POST,produces = "application/x-www-form-urlencoded;charset=UTF-8")
 	public String doUpdateRoom(Model model, @ModelAttribute("room") Room room,
-		@RequestParam("uploadImg") MultipartFile image) {
+			@RequestParam("uploadImg") MultipartFile image) {
 
-			if (image.isEmpty()) {
-			} else {
-				try {
-					String path = "E:\\QUANLYDOAN\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
-							+ image.getOriginalFilename();
-
-					image.transferTo(new File(path));
-					room.setRoomimage(image.getOriginalFilename());
-					roomService.update(room);
-				} catch (Exception ex) {
-					ex.printStackTrace();
-				}
+		if (image.isEmpty()) {
+		} else {
+			try {
+				String path = "D:\\duantotnghiep\\HotelManagement\\src\\main\\webapp\\resources\\image\\"
+						+ image.getOriginalFilename();
+		//		FileOutputStream ff = new FileOutputStream(path);
+						
+				image.transferTo(new File(path));
+				room.setRoomimage(image.getOriginalFilename());
+				roomService.update(room);
+			} catch (Exception ex) {
+				ex.printStackTrace();
 			}
-			model.addAttribute("listRoom", roomService.findAll());
-			return "room-list";
+		}
+		model.addAttribute("listRoom", roomService.findAll());
+		return "room-list";
 
 	}
 

@@ -30,7 +30,7 @@ public class RoomDAO {
 	
 	public void update(Room room) {
 		String sql = "UPDATE room SET  roomtypeid = ?, roomstatusid=? , roomimage=?, roomdesc=? WHERE roomid = ? ";
-		jdbcTemplate.update(sql, room.getRoomtypeid(),room.getRoomstatusid(),room.getRoomimage(),room.getRoomdesc());
+		jdbcTemplate.update(sql, room.getRoomtypeid(),room.getRoomstatusid(),room.getRoomimage(),room.getRoomdesc(),room.getRoomid());
 	}
 
 	public Room findByIdRoom(int roomid) {

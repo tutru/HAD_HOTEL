@@ -1,5 +1,5 @@
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
@@ -7,6 +7,7 @@
 <html>
 
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -152,7 +153,7 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Room Type:</h6>
-					<a class="dropdown-item" href="customer-list">List Room Type</a> <a
+					<a class="dropdown-item" href="room-list">List Room Type</a> <a
 						class="dropdown-item" href="register.html">Create Room Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room Status:</h6>
@@ -241,9 +242,9 @@
 												<td>${room.roomid}</td>
 												<td>${room.roomtypeid}</td>
 												<td>${room.roomstatusid}</td>
-												<td><img
-													src="/HotelManagement/resources/image/${room.roomimage}"
-													width="120"></td>
+												<td>
+												<img src="<%=request.getContextPath()%>/resources/image/${room.roomimage}" width="120"/>	
+												</td>
 												<td>${room.roomdesc }</td>
 
 												<td><button type="button" class="btn btn-primary">
