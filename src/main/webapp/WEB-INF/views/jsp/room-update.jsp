@@ -41,7 +41,7 @@
 		<br />
 		<label>Image:</label>
 		<output id="list">
-			<img src="/HotelManagement/resources/image/" width="120">
+			<img src="resources/image/" width="120">
 		</output>
 
 		<span class="input-group-btn"> <span

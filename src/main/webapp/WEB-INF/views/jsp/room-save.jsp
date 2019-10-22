@@ -2,10 +2,18 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-
 <!DOCTYPE html>
 <html>
+<head>
 
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+</head>
 <body>
 
 	<script>
@@ -41,7 +49,7 @@
 		<br />
 		<label>Image:</label>
 		<output id="list">
-			<img src="/HotelManagement/resources/image/441.jpg" width="120">
+			<img src="resources/image/441.jpg" width="120">
 		</output>
 
 		<span class="input-group-btn"> <span
@@ -80,7 +88,7 @@
 		<br />
 		<form:button type="submit"> Thêm</form:button>
 		<form:button type="submit">
-			<a href="<c:url value="/roomstatus-list" />"> Xem danh sách trạng
+			<a href="<c:url value="/room-list" />"> Xem danh sách trạng
 				thái phòng</a>
 		</form:button>
 	</form:form>

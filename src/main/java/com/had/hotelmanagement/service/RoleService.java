@@ -18,8 +18,8 @@ public class RoleService {
 		return dao.findAll();
 	}
 
-	public Role findByIdhd(int role_id) {
-		return dao.findById(role_id);
+	public Role findByIdhd(int roleid) {
+		return dao.findById(roleid);
 	}
 	
 	public void save(Role role){
@@ -32,11 +32,9 @@ public class RoleService {
 		dao.update(role);
 	}
 	
-	public void delete(int ROLE_ID){
+	public void delete(int roleid){
 		// validate business
-		dao.delete(ROLE_ID);
+		dao.delete(roleid);
 	}
-//	public List<Role> searchnhanvien(String tennv) {
-//		return dao.findnhanvienten(tennv);
-//	}
+
 }

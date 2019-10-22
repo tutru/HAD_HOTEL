@@ -10,8 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.had.hotelmanagement.entity.Role;
 import com.had.hotelmanagement.entity.RoleMapper;
 
-
-
 @Repository
 @Transactional
 public class RoleDao {
@@ -19,24 +17,24 @@ public class RoleDao {
 	private JdbcTemplate jdbcTemplate;
 
 	public void save(Role role) {
-		String sql = "INSERT INTO role (role_name,role_desc) VALUES (?,?)";
-		jdbcTemplate.update(sql, role.getRole_name(), role.getRole_desc());
+		String sql = "INSERT INTO role (rolename,roledesc) VALUES (?,?)";
+		jdbcTemplate.update(sql, role.getRolename(), role.getRoledesc());
 
 	}
 
 	public void delete(int id) {
-		String sql = "DELETE FROM role WHERE role_id = " + id;
+		String sql = "DELETE FROM role WHERE roleid = " + id;
 		jdbcTemplate.update(sql);
 	}
 
 	public void update(Role role) {
-		String sql = "UPDATE role SET role_name	 = ?, role_desc = ? WHERE  role_id = ? ";
-		jdbcTemplate.update(sql,role.getRole_name(), role.getRole_desc(),role.getRole_id());
-	}	
-	
-	public Role findById(int role_id) {
-		String sql = "SELECT * FROM role WHERE role_id = ?";
-		return jdbcTemplate.queryForObject(sql, new RoleMapper(), role_id);
+		String sql = "UPDATE role SET rolename	 = ?, roledesc = ? WHERE  roleid = ? ";
+		jdbcTemplate.update(sql, role.getRolename(), role.getRoledesc(), role.getRoleid());
+	}
+
+	public Role findById(int roleid) {
+		String sql = "SELECT * FROM role WHERE roleid = ?";
+		return jdbcTemplate.queryForObject(sql, new RoleMapper(), roleid);
 	}
 
 	public List<Role> findAll() {
@@ -44,8 +42,4 @@ public class RoleDao {
 		return jdbcTemplate.query(sql, new RoleMapper());
 	}
 
-//	public List<Role>findnhanvienten(String tennv){
-//		String sql = "SELECT * FROM role WHERE tennv LIKE '%"+tennv+"%'";
-//		return jdbcTemplate.query(sql, new RoleMapper());
-//	}
 }

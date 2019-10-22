@@ -1,3 +1,6 @@
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -85,8 +88,10 @@
 			</a>
 				<div class="dropdown-menu dropdown-menu-right"
 					aria-labelledby="userDropdown">
-					<a class="dropdown-item" href="#">Settings</a> <a
-						class="dropdown-item" href="#">Activity Log</a>
+
+					<a class="dropdown-item">Tài Khoản: ${msg}</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Settings</a>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#" data-toggle="modal"
 						data-target="#logoutModal">Logout</a>
@@ -99,8 +104,8 @@
 
 		<!-- Sidebar -->
 		<ul class="sidebar navbar-nav">
-			<li class="nav-item active"><a class="nav-link"
-				href="index"> <i class="fas fa-home"></i> <span>Home</span>
+			<li class="nav-item active"><a class="nav-link" href="index">
+					<i class="fas fa-home"></i> <span>Home</span>
 			</a></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -119,11 +124,11 @@
 					<h6 class="dropdown-header">Account:</h6>
 					<a class="dropdown-item" href="customer-list">List Account</a> <a
 						class="dropdown-item" href="register.html">Create Account</a>
-						<h6 class="dropdown-header">Role:</h6>
+					<h6 class="dropdown-header">Role:</h6>
 					<a class="dropdown-item" href="customer-list">List Role</a> <a
 						class="dropdown-item" href="register.html">Create Role</a>
 				</div></li>
-				<li class="nav-item dropdown"><a
+			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
 				aria-expanded="false"> <i class="fas fa-shield-alt"></i> <span>Security</span>
@@ -132,7 +137,7 @@
 					<h6 class="dropdown-header">Account:</h6>
 					<a class="dropdown-item" href="customer-list">List Account</a> <a
 						class="dropdown-item" href="register.html">Create Account</a>
-						<h6 class="dropdown-header">Role:</h6>
+					<h6 class="dropdown-header">Role:</h6>
 					<a class="dropdown-item" href="customer-list">List Role</a> <a
 						class="dropdown-item" href="register.html">Create Role</a>
 				</div></li>
@@ -147,22 +152,24 @@
 						class="dropdown-item" href="register.html">Create Room Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room Status:</h6>
-					<a class="dropdown-item" href="customer-list">List Room Status</a> <a
-						class="dropdown-item" href="register.html">Create Room Status</a>
+					<a class="dropdown-item" href="customer-list">List Room Status</a>
+					<a class="dropdown-item" href="register.html">Create Room
+						Status</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room:</h6>
-					<a class="dropdown-item" href="customer-list">List Room</a> <a
+					<a class="dropdown-item" href="room-list">List Room</a> <a
 						class="dropdown-item" href="register.html">Create Room</a>
 				</div></li>
-				<li class="nav-item dropdown"><a
+			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
 				aria-expanded="false"><i class="fas fa-money-check-alt"></i> <span>Payment</span>
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Payment Type:</h6>
-					<a class="dropdown-item" href="customer-list">List Payment Type</a> <a
-						class="dropdown-item" href="register.html">Create Payment Type</a>
+					<a class="dropdown-item" href="customer-list">List Payment Type</a>
+					<a class="dropdown-item" href="register.html">Create Payment
+						Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Payment:</h6>
 					<a class="dropdown-item" href="customer-list">List Payment</a> <a
@@ -182,7 +189,7 @@
 					<a class="dropdown-item" href="login.html">List Reception</a> <a
 						class="dropdown-item" href="register.html">Create Reception</a>
 				</div></li>
-				<li class="nav-item dropdown"><a
+			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
 				aria-expanded="false"> <i class="fas fa-list-ol"></i> <span>Service</span>
@@ -780,7 +787,7 @@
 			<footer class="sticky-footer">
 				<div class="container my-auto">
 					<div class="copyright text-center my-auto">
-						<span>Copyright � Your Website 2019</span>
+						<span>Copyright © Your Website 2019</span>
 					</div>
 				</div>
 			</footer>
@@ -805,7 +812,7 @@
 					<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
 					<button class="close" type="button" data-dismiss="modal"
 						aria-label="Close">
-						<span aria-hidden="true">�</span>
+						<span aria-hidden="true">×</span>
 					</button>
 				</div>
 				<div class="modal-body">Select "Logout" below if you are ready

@@ -41,9 +41,9 @@ public class RoleController {
 		return "list-role";
 	}
 
-	@RequestMapping("/update-role/{role_id}")
-	public String updatenrole(@PathVariable int role_id, Model model) {
-		Role role = sevice.findByIdhd(role_id);
+	@RequestMapping("/update-role/{roleid}")
+	public String updatenrole(@PathVariable int roleid, Model model) {
+		Role role = sevice.findByIdhd(roleid);
 		model.addAttribute("role", role);
 		return "update-role";
 	}
@@ -55,9 +55,9 @@ public class RoleController {
 
 	}
 
-	@RequestMapping("/roleDelete/{role_id}")
-	public String doDeleterole(@PathVariable int role_id, Model model) {
-		sevice.delete(role_id);
+	@RequestMapping("/roleDelete/{roleid}")
+	public String doDeleterole(@PathVariable int roleid, Model model) {
+		sevice.delete(roleid);
 		model.addAttribute("list", sevice.findAll());
 		return "list-role";
 	}
