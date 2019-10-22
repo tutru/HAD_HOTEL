@@ -118,8 +118,8 @@
 						class="dropdown-item" href="register.html">Create Customer</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Employee:</h6>
-					<a class="dropdown-item" href="customer-list">List Employee</a> <a
-						class="dropdown-item" href="register.html">Create Employee</a>
+					<a class="dropdown-item" href="employee-list">List Employee</a> <a
+						class="dropdown-item" href="employee-save">Create Employee</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Account:</h6>
 					<a class="dropdown-item" href="customer-list">List Account</a> <a
@@ -148,12 +148,12 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Room Type:</h6>
-					<a class="dropdown-item" href="customer-list">List Room Type</a> <a
-						class="dropdown-item" href="register.html">Create Room Type</a>
+					<a class="dropdown-item" href="roomtype-list">List Room Type</a> <a
+						class="dropdown-item" href="roomtype_save">Create Room Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room Status:</h6>
-					<a class="dropdown-item" href="customer-list">List Room Status</a>
-					<a class="dropdown-item" href="register.html">Create Room
+					<a class="dropdown-item" href="roomstatus-list">List Room Status</a>
+					<a class="dropdown-item" href="roomstatus-save">Create Room Status
 						Status</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room:</h6>

@@ -2,7 +2,6 @@ package com.had.hotelmanagement.controller;
 
 import java.io.File;
 
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,13 +25,14 @@ public class RoomController {
 	@Autowired
 	private RoomService roomService;
 
-	@RequestMapping(value = { "/room-list" }, method = RequestMethod.GET,produces = "application/x-www-form-urlencoded;charset=UTF-8")
+	@RequestMapping(value = {
+			"/room-list" }, method = RequestMethod.GET, produces = "application/x-www-form-urlencoded;charset=UTF-8")
 	public String listrole(Model model) {
 		model.addAttribute("listRoom", roomService.findAll());
 		return "room-list";
 	}
 
-	@RequestMapping(value = "/room-save",produces = "application/x-www-form-urlencoded;charset=UTF-8")
+	@RequestMapping(value = "/room-save", produces = "application/x-www-form-urlencoded;charset=UTF-8")
 	public String insertRoom(Model model) {
 		model.addAttribute("room", new Room());
 		model.addAttribute("listRoomType", roomService.listRoomType());
@@ -46,7 +46,7 @@ public class RoomController {
 		model.addAttribute("roomtype", room);
 		return "room-view";
 	}
-///asfsf
+
 	@RequestMapping("/room-update/{roomid}")
 	public String updateRoom(@PathVariable int roomid, Model model) {
 		Room room = roomService.findByIdRoom(roomid);
@@ -56,7 +56,7 @@ public class RoomController {
 		return "room-update";
 	}
 
-	@RequestMapping(value = "/saveRoom", method = RequestMethod.POST,produces = "application/x-www-form-urlencoded;charset=UTF-8")
+	@RequestMapping(value = "/saveRoom", method = RequestMethod.POST, produces = "application/x-www-form-urlencoded;charset=UTF-8")
 	public String doSaveRoom(ModelMap model, HttpServletRequest request, @ModelAttribute("room") Room room,
 			@RequestParam("uploadImg") MultipartFile image) {
 
@@ -77,7 +77,7 @@ public class RoomController {
 		return "redirect:room-list";
 	}
 
-	@RequestMapping(value = "/updateRoom", method = RequestMethod.POST,produces = "application/x-www-form-urlencoded;charset=UTF-8")
+	@RequestMapping(value = "/updateRoom", method = RequestMethod.POST, produces = "application/x-www-form-urlencoded;charset=UTF-8")
 	public String doUpdateRoom(Model model, @ModelAttribute("room") Room room,
 			@RequestParam("uploadImg") MultipartFile image) {
 
@@ -86,8 +86,6 @@ public class RoomController {
 			try {
 				String path = "D:\\duantotnghiep\\HotelManagement\\src\\main\\webapp\\resources\\image\\"
 						+ image.getOriginalFilename();
-		//		FileOutputStream ff = new FileOutputStream(path);
-						
 				image.transferTo(new File(path));
 				room.setRoomimage(image.getOriginalFilename());
 				roomService.update(room);
@@ -107,11 +105,5 @@ public class RoomController {
 		return "room-list";
 	}
 
-//	@RequestMapping(value = "/room-search")
-//	public String search(String roomtypename, Model model) {
-//		List<Room> roomtype =roomService.searchRoom(roomtypename);
-//		model.addAttribute("search", roomtype);
-//		return "roomtype-search";
-//	}
 
 }
