@@ -4,6 +4,7 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +13,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>List Employee</title>
+<title>List Reservation</title>
 
 <!-- Custom fonts for this template-->
 <link href="resources/vendor/fontawesome-free/css/all.min.css"
@@ -27,10 +28,10 @@
 </head>
 
 <body id="page-top">
-	<c:url value="/roomtype-save" var="urlSave" />
-	<c:url value="/roomtype-view/" var="urlView" />
-	<c:url value="/roomtype-update/" var="urlUpdate" />
-	<c:url value="/roomtypeDelete/" var="urlDelete" />
+	<c:url value="/customer-save" var="urlSave" />
+	<c:url value="/customer-view/" var="urlView" />
+	<c:url value="/customer-update/" var="urlUpdate" />
+	<c:url value="/customerDelete/" var="urlDelete" />
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
@@ -118,8 +119,8 @@
 						class="dropdown-item" href="register.html">Create Customer</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Employee:</h6>
-					<a class="dropdown-item" href="employee-list">List Employee</a> <a
-						class="dropdown-item" href="employee-save">Create Employee</a>
+					<a class="dropdown-item" href="customer-list">List Employee</a> <a
+						class="dropdown-item" href="register.html">Create Employee</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Account:</h6>
 					<a class="dropdown-item" href="customer-list">List Account</a> <a
@@ -148,13 +149,13 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Room Type:</h6>
-					<a class="dropdown-item" href="roomtype-list">List Room Type</a> <a
-						class="dropdown-item" href="roomtype-save">Create Room Type</a>
+					<a class="dropdown-item" href="customer-list">List Room Type</a> <a
+						class="dropdown-item" href="register.html">Create Room Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room Status:</h6>
-					<a class="dropdown-item" href="roomstatus-list">List Room
-						Status</a> <a class="dropdown-item" href="roomstatus-save">Create
-						Room Status</a>
+					<a class="dropdown-item" href="customer-list">List Room Status</a>
+					<a class="dropdown-item" href="register.html">Create Room
+						Status</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room:</h6>
 					<a class="dropdown-item" href="customer-list">List Room</a> <a
@@ -220,35 +221,37 @@
 								cellspacing="0">
 								<thead>
 									<tr>
-										<td>reservationid</td>
-										<td>customerid</td>
-										<td>roomtypeid</td>
-										<td>expectedcheckdate</td>
-										<td>expectedroom</td>
-										<td>isdeposit</td>
-										<td>reservationstatus</ttdh>
-										<td></td>
+										<th>reservationid</th>
+										<th>customerid</th>
+										<th>roomtypeid</th>
+										<th>expectedcheckdate</th>
+										<th>expectedroom</th>
+										<th>isdeposit</th>
+										<th>reservationstatus</th>
+										<th></th>
 									</tr>
 								</thead>
 								<c:if test="${not empty listReservation}">
 									<c:forEach var="reservation" items="${listReservation}">
-										<tr class="text-center">
-											<td>${reservation.reservationid}</td>
-											<td>${reservation.customerid}</td>
-											<td>${reservation.roomtypeid}</td>
-											<td>${reservation.expectedcheckdate}</td>
-											<td>${reservation.expectedroom}</td>
-											<td>${reservation.isdeposit}</td>
-											<td>${reservation.reservationstatus}</td>
-											<td><button type="button" class="btn btn-primary">
-													<a href="${urlUpdate}/${reservation.reservationid}"><i
-														class="fas fa-pen" style="color: black"></i></a>
-												</button></td>
-											<td><button type="button" class="btn btn-danger">
-													<a href="${urlDelete}/${reservation.reservationid}"><i
-														class="fas fa-trash-alt" style="color: black"></i></a>
-												</button></td>
-										</tr>
+										<tfoot>
+											<tr>
+												<td>${reservation.reservationid}</td>
+												<td>${reservation.customerid}</td>
+												<td>${reservation.roomtypeid}</td>
+												<td>${reservation.expectedcheckdate}</td>
+												<td>${reservation.expectedroom}</td>
+												<td>${reservation.isdeposit}</td>
+												<td>${reservation.reservationstatus}</td>
+												<td><button type="button" class="btn btn-primary">
+														<a href="${urlUpdate}/${reservation.reservationid}"><i
+															class="fas fa-pen" style="color: black"></i></a>
+													</button></td>
+												<td><button type="button" class="btn btn-danger">
+														<a href="${urlDelete}/${reservation.reservationid}"><i
+															class="fas fa-trash-alt" style="color: black"></i></a>
+													</button></td>
+											</tr>
+										</tfoot>
 									</c:forEach>
 								</c:if>
 							</table>
@@ -301,7 +304,7 @@
 	</div>
 
 
-		<!-- Bootstrap core JavaScript-->
+	<!-- Bootstrap core JavaScript-->
 	<script src="resources/vendor/jquery/jquery.min.js"></script>
 	<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
