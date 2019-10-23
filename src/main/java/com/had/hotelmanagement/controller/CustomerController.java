@@ -1,7 +1,6 @@
 package com.had.hotelmanagement.controller;
 
 import java.io.File;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -17,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.had.hotelmanagement.entity.Customer;
+import com.had.hotelmanagement.entity.Employee;
 import com.had.hotelmanagement.service.CustomerService;
 
 
@@ -32,7 +32,7 @@ public class CustomerController {
 		return "customer-list";
 	}
 	@RequestMapping(value = "/customer-save", method = RequestMethod.GET)
-	public String insertHoaDon(Model model) {
+	public String insertCustomer(Model model) {
 		model.addAttribute("customer", new Customer());
 		return "customer-save";
 	}
@@ -51,9 +51,23 @@ public class CustomerController {
 		return "customer-update";
 	}
 
-	@RequestMapping("/saveCustomer")
-	public String doSaveCustomer(Customer customer , Model model) {
-		customerService.save(customer);
+	@RequestMapping(value = "/saveCustomer", method = RequestMethod.POST)
+	public String doSaveCustomer(ModelMap model, HttpServletRequest request,
+			@ModelAttribute("customer") Customer customer, @RequestParam("uploadImg") MultipartFile image) {
+		
+			if (image.isEmpty()) {
+			} else {
+				try {
+					String path = "E:\\study-fpoly\\datn\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
+							+ image.getOriginalFilename();
+
+					image.transferTo(new File(path));
+					customer.setImage(image.getOriginalFilename());
+					customerService.save(customer);
+				} catch (Exception ex) {
+					ex.printStackTrace();
+				}
+			}
 		model.addAttribute("listCustomer", customerService.findAll());
 		return "customer-list";
 	}

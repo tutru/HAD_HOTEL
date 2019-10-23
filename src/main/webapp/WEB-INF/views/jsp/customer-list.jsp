@@ -244,7 +244,7 @@
 													<td>${customer.address}</td>
 													<td>${customer.phone}</td>
 													<td>${customer.email}</td>
-													<td>${customer.image}</td>
+													<td><img src="/HotelManagement/resources/image/${customer.image}" width="80"></td>
 													<td>${customer.ccnumber}</td>
 													<td><button type="button" class="btn btn-primary">
 															<a href="${urlUpdate}/${customer.customerid}"><i class="fas fa-pen" style="color: black"></i></a>

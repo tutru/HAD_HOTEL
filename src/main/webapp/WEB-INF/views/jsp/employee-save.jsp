@@ -95,7 +95,6 @@
 					handleFileSelect, false);
 		</script>
 		<br />
-		<br />
 
 		<label>Salary:</label>
 		<form:input path="salary" />

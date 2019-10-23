@@ -11,7 +11,7 @@
 <body>
 customer save
 <c:url value="/saveCustomer" var="saveCustomer" />
-<form:form action="${saveCustomer}" method="POST" modelAttribute="customer">
+<form:form action="${saveCustomer}" method="POST" modelAttribute="customer" enctype="multipart/form-data">
     	<label>ID:</label> 
     	<form:input path="customerid" />
     	<br/>
@@ -30,9 +30,41 @@ customer save
     	<label>email:</label> 
     	<form:input path="email" />
     	<br/>
-    	<label>image:</label> 
-    	<form:input path="image" />
-    	<br/>
+    	<label>Image:</label>
+		<output id="list">
+			<img src="/HotelManagement/resources/image/441.jpg" width="120">
+		</output>
+
+		<span class="input-group-btn"> <span
+			class="btn btn-default btn-file"> <input type="file"
+				id="files" name="uploadImg" required="required">
+		</span>
+		</span>
+		<script>
+			if (window.FileReader) {
+				function handleFileSelect(evt) {
+					var files = evt.target.files;
+					var f = files[0];
+					var reader = new FileReader();
+
+					reader.onload = (function(theFile) {
+						return function(e) {
+							document.getElementById('list').innerHTML = [ '<img src="', e.target.result, '" title="', theFile.name, '" width="120"/>' ]
+									.join('');
+						};
+					})(f);
+
+					reader.readAsDataURL(f);
+				}
+			} else {
+				alert('This browser does not support FileReader');
+			}
+
+			document.getElementById('files').addEventListener('change',
+					handleFileSelect, false);
+		</script>
+		<br />
+		<br />
     	<label>CC number:</label> 
     	<form:input path="ccnumber" />
     	<br/>
