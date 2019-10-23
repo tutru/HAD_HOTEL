@@ -229,6 +229,7 @@
 										<th>isdeposit</th>
 										<th>reservationstatus</th>
 										<th></th>
+										<th></th>
 									</tr>
 								</thead>
 								<c:if test="${not empty listReservation}">
