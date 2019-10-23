@@ -121,12 +121,6 @@
 					<a class="dropdown-item" href="employee-list">List Employee</a> <a
 						class="dropdown-item" href="employee-save">Create Employee</a>
 					<div class="dropdown-divider"></div>
-					<h6 class="dropdown-header">Account:</h6>
-					<a class="dropdown-item" href="customer-list">List Account</a> <a
-						class="dropdown-item" href="register.html">Create Account</a>
-					<h6 class="dropdown-header">Role:</h6>
-					<a class="dropdown-item" href="customer-list">List Role</a> <a
-						class="dropdown-item" href="register.html">Create Role</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -182,12 +176,12 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Reservation:</h6>
-					<a class="dropdown-item" href="login.html">List Reservation</a> <a
-						class="dropdown-item" href="register.html">Create Resertvation</a>
+					<a class="dropdown-item" href="reservation-list">List Reservation</a> <a
+						class="dropdown-item" href="reservation-save">Create Resertvation</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Reception:</h6>
-					<a class="dropdown-item" href="login.html">List Reception</a> <a
-						class="dropdown-item" href="register.html">Create Reception</a>
+					<a class="dropdown-item" href="reception-list">List Reception</a> <a
+						class="dropdown-item" href="reception-save">Create Reception</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
