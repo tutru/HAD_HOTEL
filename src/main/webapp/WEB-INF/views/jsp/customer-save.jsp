@@ -209,20 +209,23 @@
 				<c:url value="/saveCustomer" var="saveCustomer" />
 				<form:form action="${saveCustomer}" method="POST"
 					modelAttribute="customer" enctype="multipart/form-data">
-					<div class="row">
-						<div class="col">
+					<div class="form-row">
+						<div class="form-group col-md-6">
 							<label>ID:</label>
-							<form:input path="customerid" />
+							<form:input class="form-control" path="customerid" />
 							<br /> <label>Name:</label>
-							<form:input path="name" />
+							<form:input class="form-control" path="name" />
 							<br /> <label>government ID:</label>
-							<form:input path="governmentid" />
+							<form:input class="form-control" path="governmentid" />
 							<br /> <label>address:</label>
-							<form:input path="address" />
-							<br /> <label>phone:</label>
-							<form:input path="phone" />
+							<form:input class="form-control" path="address" />
+							<br />
+						</div>
+						<div class="form-group col-md-6">
+							<label>phone:</label>
+							<form:input class="form-control" path="phone" />
 							<br /> <label>email:</label>
-							<form:input path="email" />
+							<form:input class="form-control" path="email" />
 							<br /> <label>Image:</label>
 							<output id="list">
 								<img src="/HotelManagement/resources/image/441.jpg" width="120">
@@ -258,12 +261,13 @@
 												handleFileSelect, false);
 							</script>
 							<br /> <br /> <label>CC number:</label>
-							<form:input path="ccnumber" />
+							<form:input class="form-control" path="ccnumber" />
 							<br />
-							<button type="submit">Thêm</button>
-							<button type="submit">
-								<a href="<c:url value="/customerList" />">List Customer</a>
+							<button type="submit" class="btn btn-success">Thêm</button>
+							<button type="submit" class="btn btn-danger">
+								<a href="<c:url value="/customerList" />"><i class="fas fa-window-close"></i></a>
 							</button>
+						</div>
 				</form:form>
 			</div>
 		</div>
