@@ -26,7 +26,7 @@
 <!-- Custom styles for this template-->
 <link href="resources/css/sb-admin.css" rel="stylesheet">
 </head>
-
+//ooo
 <body id="page-top">
 	<c:url value="/customer-save" var="urlSave" />
 	<c:url value="/customer-view/" var="urlView" />
