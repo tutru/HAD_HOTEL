@@ -16,7 +16,7 @@ public class Employee {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Employee(int employeeid, String name, Date birthday, String government, String phone, String email,
+	public Employee(int employeeid, String name, Date birthday, String governmentid, String phone, String email,
 			String address, String image, Double salary) {
 		super();
 		this.employeeid = employeeid;

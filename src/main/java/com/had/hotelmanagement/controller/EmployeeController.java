@@ -100,11 +100,5 @@ public class EmployeeController {
 		return "employee-list";
 	}
 
-	@RequestMapping(value = "/employee-search")
-	public String search(String name, Model model) {
-		List<Employee> employee = employeeService.searchEmployee(name);
-		model.addAttribute("search", employee);
-		return "employee-search";
-	}
 
 }

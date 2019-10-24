@@ -46,10 +46,6 @@ public class EmployeeDAO {
 		return jdbcTemplate.query(sql, new EmployeeMapper());
 	}
 	
-	public List<Employee>findEmployee(String name){
-		String sql = "SELECT * FROM employee WHERE name LIKE '%"+name+"%'";
-		return jdbcTemplate.query(sql, new EmployeeMapper());
-	}
 
 
 }
