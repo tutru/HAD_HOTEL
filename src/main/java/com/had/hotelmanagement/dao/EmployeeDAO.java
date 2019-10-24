@@ -19,9 +19,9 @@ public class EmployeeDAO {
 	private JdbcTemplate jdbcTemplate;
 
 	public void save(Employee employee) {
-		String sql = "INSERT INTO employee (name,birthday,government,phone,email,address,image,salary) VALUES (?,?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO employee (name,birthday,governmentid,phone,email,address,image,salary) VALUES (?,?,?,?,?,?,?,?)";
 		jdbcTemplate.update(sql, employee.getName(),employee.getBirthday(),
-				employee.getGovernment(),employee.getPhone(),employee.getEmail(),employee.getAddress(),employee.getImage(),employee.getSalary());
+				employee.getGovernmentid(),employee.getPhone(),employee.getEmail(),employee.getAddress(),employee.getImage(),employee.getSalary());
 	}
 
 	public void delete(int employeeid) {
@@ -30,10 +30,10 @@ public class EmployeeDAO {
 	}
 	
 	public void update(Employee employee) {
-		String sql = "UPDATE employee SET  name = ?, birthday=? , government=?, phone=?, email=?"
+		String sql = "UPDATE employee SET  name = ?, birthday=? , governmentid=?, phone=?, email=?,"
 				+ "address=?,image=?,salary=? WHERE employeeid = ? ";
 		jdbcTemplate.update(sql, employee.getName(),employee.getBirthday(),
-				employee.getGovernment(),employee.getPhone(),employee.getEmail(),employee.getAddress(),employee.getImage(),employee.getSalary());
+				employee.getGovernmentid(),employee.getPhone(),employee.getEmail(),employee.getAddress(),employee.getImage(),employee.getSalary(),employee.getEmployeeid());
 	}
 
 	public Employee findById(int employeeid) {
@@ -46,10 +46,6 @@ public class EmployeeDAO {
 		return jdbcTemplate.query(sql, new EmployeeMapper());
 	}
 	
-	public List<Employee>findEmployee(String name){
-		String sql = "SELECT * FROM employee WHERE name LIKE '%"+name+"%'";
-		return jdbcTemplate.query(sql, new EmployeeMapper());
-	}
 
 
 }

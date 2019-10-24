@@ -13,7 +13,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>List Employee</title>
+<title>Employee List</title>
 
 <!-- Custom fonts for this template-->
 <link href="resources/vendor/fontawesome-free/css/all.min.css"
@@ -241,12 +241,11 @@
 											<td>${employee.employeeid}</td>
 											<td>${employee.name}</td>
 											<td>${employee.birthday}</td>
-											<td>${employee.government }</td>
+											<td>${employee.governmentid }</td>
 											<td>${employee.phone}</td>
 											<td>${employee.email}</td>
 											<td>${employee.address}</td>
-											<td><img
-												src="/HotelManagement/resources/image/${employee.image}"
+											<td><img src="<%=request.getContextPath()%>/resources/image/${employee.image}"
 												width="120"></td>
 											<td>${employee.salary}</td>
 											<td><button type="button" class="btn btn-primary">

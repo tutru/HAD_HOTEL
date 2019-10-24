@@ -4,20 +4,39 @@
 
 <!DOCTYPE html>
 <html>
-<head>
+<link rel="stylesheet"
+	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
 <body>
-Customer Update
-<c:url value="/updateEmployee" var="updateEmployee" />
-<form:form action="${updateEmployee}" method="POST" modelAttribute="employee">
-	    Mã nhân viên: <form:input path="employeeid" readonly="true" />
+
+	<script>
+		$("#menu-toggle").click(function(e) {
+			e.preventDefault();
+			$("#wrapper").toggleClass("menuDisplayed");
+		});
+	</script>
+
+	<div>THÊM MỚI THÔNG TIN KHÁCH HÀNG</div>
+	<c:url value="/updateEmployee" var="updateEmployee" />
+	<form:form id="employeeUpdate" action="${updateEmployee}"
+		modelAttribute="employee" enctype="multipart/form-data">
+
+
+
+		<label>ID:</label>
+		<form:input type="text" path="employeeid" />
 		<br />
-		Tên: <form:input path="name" />
 		<br />
-    	Ngày sinh: <form:input path="birthday" id="datepicker" />
-    	<script>
+		<label>Name:</label>
+		<form:input type="text" path="name" />
+		<br />
+		<br />
+		<label>Birthday:</label>
+		<form:input type="text" path="birthday" id="datepicker" />
+
+		<script>
 			$(function() {
 				$.datepicker.setDefaults({
 					onClose : function(date, inst) {
@@ -29,20 +48,73 @@ Customer Update
 			});
 		</script>
 		<br />
-		Số CMND: <form:input path="government" />
 		<br />
-		Số ĐT: <form:input path="phone" />
+		<label>Government ID:</label>
+		<form:input type="text" path="governmentid" />
 		<br />
-		Email: <form:input path="email" />
 		<br />
-		Địa chỉ: <form:input path="address" />
+		<label>Phone:</label>
+		<form:input type="text" path="phone" />
 		<br />
-		Hình: <form:input path="image" />
 		<br />
-		Lương: <form:input path="salary" />
+		<label>Email</label>
+		<form:input path="email" type="text" />
+
 		<br />
-		<button type="submit">Update</button>
-		<button type="submit"><a href="<c:url value="/employee-list" />">Danh sách nhân viên</a></button>
+		<br />
+		<label>Address</label>
+		<form:input path="address" type="text" />
+		<br />
+		<br />
+
+		<label>Image:</label>
+		<output id="list">
+			<img
+				src="<%=request.getContextPath()%>/resources/image/${employee.image}"
+				width="120" />
+		</output>
+
+		<span class="input-group-btn"> <span
+			class="btn btn-default btn-file"> <input type="file"
+				id="files" name="uploadImg" required="required">
+		</span>
+		</span>
+		<script>
+			if (window.FileReader) {
+				function handleFileSelect(evt) {
+					var files = evt.target.files;
+					var f = files[0];
+					var reader = new FileReader();
+
+					reader.onload = (function(theFile) {
+						return function(e) {
+							document.getElementById('list').innerHTML = [ '<img src="', e.target.result, '" title="', theFile.name, '" width="120"/>' ]
+									.join('');
+						};
+					})(f);
+
+					reader.readAsDataURL(f);
+				}
+			} else {
+				alert('This browser does not support FileReader');
+			}
+
+			document.getElementById('files').addEventListener('change',
+					handleFileSelect, false);
+		</script>
+		<br />
+		<br />
+
+		<label>Salary:</label>
+		<form:input path="salary" />
+
+		<br />
+		<br />
+		<form:button type="submit"> Thêm</form:button>
+		<form:button type="submit">
+			<a href="<c:url value="/employee-list" />"> Xem danh sách khách
+				hàng</a>
+		</form:button>
 	</form:form>
 
 </body>

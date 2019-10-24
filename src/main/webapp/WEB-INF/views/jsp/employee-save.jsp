@@ -44,7 +44,7 @@
 		<br />
 		<br />
 		<label>Government ID:</label>
-		<form:input type="text" path="government" />
+		<form:input type="text" path="governmentid" />
 		<br />
 		<br />
 		<label>Phone:</label>
@@ -101,7 +101,7 @@
 
 		<br />
 		<br />
-		<form:button type="submit"> Thêm</form:button>
+		<form:button type="submit"> Save</form:button>
 		<form:button type="submit">
 			<a href="<c:url value="/employee-list" />"> Xem danh sách khách
 				hàng</a>
