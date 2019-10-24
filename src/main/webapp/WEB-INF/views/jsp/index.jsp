@@ -1,4 +1,3 @@
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
@@ -115,7 +114,7 @@
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Customer:</h6>
 					<a class="dropdown-item" href="customer-list">List Customer</a> <a
-						class="dropdown-item" href="register.html">Create Customer</a>
+						class="dropdown-item" href="customer-save">Create Customer</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Employee:</h6>
 					<a class="dropdown-item" href="employee-list">List Employee</a> <a

@@ -326,5 +326,4 @@
 	<script src="resources/js/demo/datatables-demo.js"></script>
 
 </body>
-</body>
 </html>
