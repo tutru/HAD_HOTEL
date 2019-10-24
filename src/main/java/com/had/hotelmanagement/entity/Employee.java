@@ -6,7 +6,7 @@ public class Employee {
 	private int employeeid;
 	private String name;
 	private Date birthday;
-	private String  government;
+	private String  governmentid;
 	private String phone;
 	private String email;
 	private String address;
@@ -22,7 +22,7 @@ public class Employee {
 		this.employeeid = employeeid;
 		this.name = name;
 		this.birthday = birthday;
-		this.government = government;
+		this.governmentid = governmentid;
 		this.phone = phone;
 		this.email = email;
 		this.address = address;
@@ -31,8 +31,8 @@ public class Employee {
 	}
 	@Override
 	public String toString() {
-		return "Employee [employeeid=" + employeeid + ", name=" + name + ", birthday=" + birthday + ", government="
-				+ government + ", phone=" + phone + ", email=" + email + ", address=" + address + ", image=" + image
+		return "Employee [employeeid=" + employeeid + ", name=" + name + ", birthday=" + birthday + ", governmentid="
+				+ governmentid + ", phone=" + phone + ", email=" + email + ", address=" + address + ", image=" + image
 				+ ", salary=" + salary + "]";
 	}
 	public int getEmployeeid() {
@@ -53,11 +53,12 @@ public class Employee {
 	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
 	}
-	public String getGovernment() {
-		return government;
+
+	public String getGovernmentid() {
+		return governmentid;
 	}
-	public void setGovernment(String government) {
-		this.government = government;
+	public void setGovernmentid(String governmentid) {
+		this.governmentid = governmentid;
 	}
 	public String getPhone() {
 		return phone;

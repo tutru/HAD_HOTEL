@@ -6,7 +6,6 @@
 <html>
 
 <head>
-
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
@@ -14,7 +13,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>List Customer</title>
+<title>List Employee</title>
 
 <!-- Custom fonts for this template-->
 <link href="resources/vendor/fontawesome-free/css/all.min.css"
@@ -26,7 +25,6 @@
 
 <!-- Custom styles for this template-->
 <link href="resources/css/sb-admin.css" rel="stylesheet">
-
 </head>
 
 <body id="page-top">
@@ -107,8 +105,8 @@
 
 		<!-- Sidebar -->
 		<ul class="sidebar navbar-nav">
-			<li class="nav-item active"><a class="nav-link"
-				href="index"> <i class="fas fa-home"></i> <span>Home</span>
+			<li class="nav-item active"><a class="nav-link" href="index">
+					<i class="fas fa-home"></i> <span>Home</span>
 			</a></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -121,8 +119,8 @@
 						class="dropdown-item" href="register.html">Create Customer</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Employee:</h6>
-					<a class="dropdown-item" href="customer-list">List Employee</a> <a
-						class="dropdown-item" href="register.html">Create Employee</a>
+					<a class="dropdown-item" href="employee-list">List Employee</a> <a
+						class="dropdown-item" href="employee-save">Create Employee</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Account:</h6>
 					<a class="dropdown-item" href="customer-list">List Account</a> <a
@@ -151,13 +149,13 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Room Type:</h6>
-					<a class="dropdown-item" href="customer-list">List Room Type</a> <a
-						class="dropdown-item" href="register.html">Create Room Type</a>
+					<a class="dropdown-item" href="roomtype-list">List Room Type</a> <a
+						class="dropdown-item" href="roomtype-save">Create Room Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room Status:</h6>
-					<a class="dropdown-item" href="customer-list">List Room Status</a>
-					<a class="dropdown-item" href="register.html">Create Room
-						Status</a>
+					<a class="dropdown-item" href="roomstatus-list">List Room
+						Status</a> <a class="dropdown-item" href="roomstatus-save">Create
+						Room Status</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room:</h6>
 					<a class="dropdown-item" href="customer-list">List Room</a> <a
@@ -210,12 +208,12 @@
 				<!-- Breadcrumbs-->
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="#">Persion</a></li>
-					<li class="breadcrumb-item active">List Customer</li>
+					<li class="breadcrumb-item active">List Employee</li>
 				</ol>
 				<!-- DataTables Example -->
 				<div class="card mb-3">
 					<div class="card-header">
-						<i class="fas fa-table"></i> List Customer
+						<i class="fas fa-table"></i> List Employee
 					</div>
 					<div class="card-body">
 						<div class="table-responsive">
@@ -223,46 +221,49 @@
 								cellspacing="0">
 								<thead>
 									<tr>
-										<th>customerid</th>
-										<th>name</th>
-										<th>governmentid</th>
-										<th>address</th>
-										<th>phone</th>
-										<th>email</th>
-										<th>image</th>
-										<th>ccnumber</th>
-										<th></th>
+										<td>customerid</td>
+										<td>name</td>
+										<td>governmentid</td>
+										<td>address</td>
+										<td>phone</td>
+										<td>email</td>
+										<td>image</td>
+										<td>ccnumber</td>
+										<td></td>
+										<td></td>
 									</tr>
 								</thead>
-									<c:if test="${not empty listCustomer}">
-										<c:forEach var="customer" items="${listCustomer}">
-											<tfoot>
-												<tr>
-													<td>${customer.customerid}</td>
-													<td>${customer.name}</td>
-													<td>${customer.governmentid}</td>
-													<td>${customer.address}</td>
-													<td>${customer.phone}</td>
-													<td>${customer.email}</td>
-													<td><img src="/HotelManagement/resources/image/${customer.image}" width="80"></td>
-													<td>${customer.ccnumber}</td>
-													<td><button type="button" class="btn btn-primary">
-															<a href="${urlUpdate}/${customer.customerid}"><i class="fas fa-pen" style="color: black"></i></a>
-														</button></td>
-													<td><button type="button" class="btn btn-danger">
-															<a href="${urlDelete}/${customer.customerid}"><i class="fas fa-trash-alt" style="color: black"></i></a>
-														</button></td>
-												</tr>
-											</tfoot>
-										</c:forEach>
-									</c:if>
+								<c:if test="${not empty listCustomer}">
+									<c:forEach var="customer" items="${listCustomer}">
+
+										<tr>
+											<td>${customer.customerid}</td>
+											<td>${customer.name}</td>
+											<td>${customer.governmentid}</td>
+											<td>${customer.address}</td>
+											<td>${customer.phone}</td>
+											<td>${customer.email}</td>
+											<td><img
+												src="/HotelManagement/resources/image/${customer.image}"
+												width="80"></td>
+											<td>${customer.ccnumber}</td>
+											<td><button type="button" class="btn btn-primary">
+													<a href="${urlUpdate}/${customer.customerid}"><i
+														class="fas fa-pen" style="color: black"></i></a>
+												</button></td>
+											<td><button type="button" class="btn btn-danger">
+													<a href="${urlDelete}/${customer.customerid}"><i
+														class="fas fa-trash-alt" style="color: black"></i></a>
+												</button></td>
+									</c:forEach>
+								</c:if>
 							</table>
+
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
 		<!-- Sticky Footer -->
 		<footer class="sticky-footer">
 			<div class="container my-auto">

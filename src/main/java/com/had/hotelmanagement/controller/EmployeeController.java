@@ -74,8 +74,21 @@ public class EmployeeController {
 	}
 
 	@RequestMapping("/updateEmployee")
-	public String doUpdateEmployee(@ModelAttribute("Employee") Employee employee, Model model) {
-		employeeService.update(employee);
+	public String doUpdateEmployee(@ModelAttribute("Employee") Employee employee, Model model, @RequestParam("uploadImg") MultipartFile image) {
+		
+		if (image.isEmpty()) {
+		} else {
+			try {
+				String path = "E:\\QUANLYDOAN\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
+						+ image.getOriginalFilename();
+
+				image.transferTo(new File(path));
+				employee.setImage(image.getOriginalFilename());
+				employeeService.update(employee);
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+		}
 		model.addAttribute("listEmployee", employeeService.findAll());
 		return "employee-list";
 	}
