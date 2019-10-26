@@ -26,12 +26,12 @@
 <!-- Custom styles for this template-->
 <link href="resources/css/sb-admin.css" rel="stylesheet">
 </head>
-//ooo
+
 <body id="page-top">
 	<c:url value="/customer-save" var="urlSave" />
 	<c:url value="/customer-view/" var="urlView" />
 	<c:url value="/customer-update/" var="urlUpdate" />
-	<c:url value="/customerDelete/" var="urlDelete" />
+	<c:url value="/customer-delete/" var="urlDelete" />
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
