@@ -17,7 +17,11 @@
 		base-package="com.had.hotelmanagement" />
 	<mvc:resources mapping="/resources/**"
 		location="/resources/" />
-		<mvc:resources mapping="**//resources/**"
+		<mvc:resources mapping="/employeeDelete/resources/**"
+		location="/resources/" />
+		<mvc:resources mapping="/roomtypeDelete/resources/**"
+		location="/resources/" />
+		<mvc:resources mapping="/roomstatus-delete/resources/**"
 		location="/resources/" />
 	<mvc:annotation-driven />
 	<context:annotation-config />
