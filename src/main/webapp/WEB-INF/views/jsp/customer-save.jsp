@@ -14,7 +14,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>HAD Hotel</title>
+<title>Create Customer</title>
 
 <!-- Custom fonts for this template-->
 <link href="resources/vendor/fontawesome-free/css/all.min.css"
@@ -213,19 +213,23 @@
 						<div class="form-group col-md-6">
 							<label>ID:</label>
 							<form:input class="form-control" path="customerid" />
-							<br /> <label>Name:</label>
-							<form:input class="form-control" path="name" />
-							<br /> <label>government ID:</label>
-							<form:input class="form-control" path="governmentid" />
-							<br /> <label>address:</label>
-							<form:input class="form-control" path="address" />
+							<br />
+							 <label>Full Name:</label>
+							<form:input class="form-control" path="name" placeholder="Full name"/>
+							<br /> <label>Government ID:</label>
+							<form:input class="form-control" path="governmentid" placeholder="Government ID"/>
+							<br /> <label>Address:</label>
+							<form:input class="form-control" path="address" placeholder="Address"/>
 							<br />
 						</div>
 						<div class="form-group col-md-6">
-							<label>phone:</label>
-							<form:input class="form-control" path="phone" />
-							<br /> <label>email:</label>
-							<form:input class="form-control" path="email" />
+							<label>Phone:</label>
+							<form:input class="form-control" path="phone" placeholder="Phone"/>
+							<br /> <label>Email:</label>
+							<form:input class="form-control" path="email" placeholder="Email"/>
+							<br /> <label>CC number:</label>
+							<form:input class="form-control" path="ccnumber"/>
+							<br />
 							<br /> <label>Image:</label>
 							<output id="list">
 								<img src="/HotelManagement/resources/image/441.jpg" width="120">
@@ -260,10 +264,8 @@
 										.addEventListener('change',
 												handleFileSelect, false);
 							</script>
-							<br /> <br /> <label>CC number:</label>
-							<form:input class="form-control" path="ccnumber" />
-							<br />
-							<button type="submit" class="btn btn-success">Thêm</button>
+							<br /> 
+							<button type="submit" class="btn btn-success">Save</button>
 							<button type="submit" class="btn btn-danger">
 								<a href="<c:url value="/customerList" />"><i class="fas fa-window-close"></i></a>
 							</button>
