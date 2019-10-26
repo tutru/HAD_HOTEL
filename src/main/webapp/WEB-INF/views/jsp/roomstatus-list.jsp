@@ -12,7 +12,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>List Employee</title>
+<title>List Room Status</title>
 
 <!-- Custom fonts for this template-->
 <link href="resources/vendor/fontawesome-free/css/all.min.css"
@@ -27,10 +27,10 @@
 </head>
 
 <body id="page-top">
-	<c:url value="/roomstatus-save" var="urlSave" />
-	<c:url value="/roomstatus-view/" var="urlView" />
-	<c:url value="/roomstatus-update/" var="urlUpdate" />
-	<c:url value="/roomstatus-delete/" var="urlDelete" />
+	<c:url value="/roomtype-save" var="urlSave" />
+	<c:url value="/roomtype-view/" var="urlView" />
+	<c:url value="/roomtype-update/" var="urlUpdate" />
+	<c:url value="/roomtypeDelete/" var="urlDelete" />
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
@@ -219,7 +219,6 @@
 							<table class="table table-bordered" id="dataTable" width="100%"
 								cellspacing="0">
 								<thead>
-
 									<tr>
 										<td>Mã trạng thái phòng</td>
 										<td>Tên trạng thái phòng</td>

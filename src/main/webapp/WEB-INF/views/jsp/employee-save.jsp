@@ -213,9 +213,9 @@
 					<div class="form-row">
 						<div class="form-group col-md-5">
 							<label>Name:</label>
-							<form:input class="form-control" path="name" />
+							<form:input class="form-control" path="name" placeholder="Full name"/>
 							<br /> <label>Birthday:</label>
-							<form:input class="form-control" path="birthday" id="datepicker" />
+							<form:input class="form-control" path="birthday" id="datepicker" placeholder="Birthday"/>
 
 							<script>
 								$(function() {
@@ -229,16 +229,19 @@
 								});
 							</script>
 							<br /> <label>Government ID:</label>
-							<form:input class="form-control" path="governmentid" />
+							<form:input class="form-control" path="governmentid" placeholder="Government ID" />
 							<br /> <label>Phone:</label>
-							<form:input class="form-control" path="phone" pattern=".10,}" />
+							<form:input class="form-control" path="phone" pattern=".10,}" placeholder="Phone"  />
 						</div>
 						<br />
-						<div class="form-group col-md-5">
+						<div class="form-group col-md-6">
 							<label>Email</label>
-							<form:input class="form-control" path="email" />
+							<form:input class="form-control" path="email"  placeholder="Email"  />
 							<br /> <label>Address</label>
-							<form:input class="form-control" path="address" />
+							<form:input class="form-control" path="address" placeholder="Address"  />
+							
+							<br /> <label>Salary:</label>
+							<form:input class="form-control" path="salary"  placeholder="Salary"  />
 							<br /> <label>Image:</label>
 							<output id="list">
 								<img src="/HotelManagement/resources/image/441.jpg" width="120">
@@ -272,9 +275,7 @@
 										.addEventListener('change',
 												handleFileSelect, false);
 							</script>
-							<br /> <label>Salary:</label>
-							<form:input class="form-control" path="salary" />
-							<br />
+						<br />
 							<button type="submit" class="btn btn-success">Save</button>
 							<button type="submit" class="btn btn-danger">
 								<a href="<c:url value="/employee-list" />"> <i

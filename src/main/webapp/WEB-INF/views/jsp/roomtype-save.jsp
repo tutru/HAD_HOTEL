@@ -1,9 +1,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ page isELIgnored="false"%>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>HAD Hotel</title>
+<title>List Employee</title>
 
 <!-- Custom fonts for this template-->
 <link href="resources/vendor/fontawesome-free/css/all.min.css"
@@ -24,9 +24,13 @@
 
 <!-- Custom styles for this template-->
 <link href="resources/css/sb-admin.css" rel="stylesheet">
-
 </head>
+
 <body id="page-top">
+	<c:url value="/roomtype-save" var="urlSave" />
+	<c:url value="/roomtype-view/" var="urlView" />
+	<c:url value="/roomtype-update/" var="urlUpdate" />
+	<c:url value="/roomtypeDelete/" var="urlDelete" />
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
@@ -86,10 +90,8 @@
 			</a>
 				<div class="dropdown-menu dropdown-menu-right"
 					aria-labelledby="userDropdown">
-
-					<a class="dropdown-item">Tài Khoản: ${msg}</a>
-					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="#">Settings</a>
+					<a class="dropdown-item" href="#">Settings</a> <a
+						class="dropdown-item" href="#">Activity Log</a>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#" data-toggle="modal"
 						data-target="#logoutModal">Logout</a>
@@ -97,6 +99,7 @@
 		</ul>
 
 	</nav>
+
 	<div id="wrapper">
 
 		<!-- Sidebar -->
@@ -112,12 +115,18 @@
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Customer:</h6>
 					<a class="dropdown-item" href="customer-list">List Customer</a> <a
-						class="dropdown-item" href="customer-save">Create Customer</a>
+						class="dropdown-item" href="register.html">Create Customer</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Employee:</h6>
 					<a class="dropdown-item" href="employee-list">List Employee</a> <a
 						class="dropdown-item" href="employee-save">Create Employee</a>
 					<div class="dropdown-divider"></div>
+					<h6 class="dropdown-header">Account:</h6>
+					<a class="dropdown-item" href="customer-list">List Account</a> <a
+						class="dropdown-item" href="register.html">Create Account</a>
+					<h6 class="dropdown-header">Role:</h6>
+					<a class="dropdown-item" href="customer-list">List Role</a> <a
+						class="dropdown-item" href="register.html">Create Role</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -140,15 +149,15 @@
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Room Type:</h6>
 					<a class="dropdown-item" href="roomtype-list">List Room Type</a> <a
-						class="dropdown-item" href="roomtype_save">Create Room Type</a>
+						class="dropdown-item" href="roomtype-save">Create Room Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room Status:</h6>
 					<a class="dropdown-item" href="roomstatus-list">List Room
 						Status</a> <a class="dropdown-item" href="roomstatus-save">Create
-						Room Status Status</a>
+						Room Status</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room:</h6>
-					<a class="dropdown-item" href="room-list">List Room</a> <a
+					<a class="dropdown-item" href="customer-list">List Room</a> <a
 						class="dropdown-item" href="register.html">Create Room</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
@@ -173,13 +182,12 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Reservation:</h6>
-					<a class="dropdown-item" href="reservation-list">List
-						Reservation</a> <a class="dropdown-item" href="reservation-save">Create
-						Resertvation</a>
+					<a class="dropdown-item" href="login.html">List Reservation</a> <a
+						class="dropdown-item" href="register.html">Create Resertvation</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Reception:</h6>
-					<a class="dropdown-item" href="reception-list">List Reception</a> <a
-						class="dropdown-item" href="reception-save">Create Reception</a>
+					<a class="dropdown-item" href="login.html">List Reception</a> <a
+						class="dropdown-item" href="register.html">Create Reception</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -199,7 +207,7 @@
 				<!-- Breadcrumbs-->
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="#">Persion</a></li>
-					<li class="breadcrumb-item active">Create Employee</li>
+					<li class="breadcrumb-item active">List Room Type</li>
 				</ol>
 				<c:url value="/saveRoomType" var="saveRoomType" />
 				<form:form id="roomTypeAdd" action="${saveRoomType}"
@@ -226,14 +234,16 @@
 				</form:form>
 			</div>
 		</div>
-		<!-- Sticky Footer -->
-		<footer class="sticky-footer">
-			<div class="container my-auto">
-				<div class="copyright text-center my-auto">
-					<span>Copyright © HAD Hotel 2019</span>
-				</div>
+	</div>
+
+	<!-- Sticky Footer -->
+	<footer class="sticky-footer">
+		<div class="container my-auto">
+			<div class="copyright text-center my-auto">
+				<span>Copyright © HAD Hotel 2019</span>
 			</div>
-		</footer>
+		</div>
+	</footer>
 
 	</div>
 	<!-- /.content-wrapper -->
@@ -268,8 +278,10 @@
 			</div>
 		</div>
 	</div>
-	<!-- Bootstrap core JavaScript-->
 
+
+	<!-- Bootstrap core JavaScript-->
+	<script src="resources/vendor/jquery/jquery.min.js"></script>
 	<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 	<!-- Core plugin JavaScript-->
@@ -284,5 +296,6 @@
 
 	<!-- Demo scripts for this page-->
 	<script src="resources/js/demo/datatables-demo.js"></script>
+</body>
 </body>
 </html>

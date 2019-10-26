@@ -26,7 +26,7 @@
 
 
 		<label>ID:</label>
-		<form:input type="text" path="employeeid" />
+		<form:input type="text" path="employeeid"  readonly="true"/>
 		<br />
 		<br />
 		<label>Name:</label>
