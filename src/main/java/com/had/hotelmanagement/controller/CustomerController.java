@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.had.hotelmanagement.entity.Customer;
-import com.had.hotelmanagement.entity.Employee;
 import com.had.hotelmanagement.service.CustomerService;
 
 
@@ -79,7 +78,7 @@ public class CustomerController {
 		return "customer-list";
 	}
 	
-	@RequestMapping("/customerDelete/{customerid}")
+	@RequestMapping(value = "/customer-delete/{customerid}", method = RequestMethod.GET)
 	public String doDeleteCustomer(@PathVariable int customerid, Model model) {
 		customerService.delete(customerid);
 		model.addAttribute("listCustomer", customerService.findAll());
