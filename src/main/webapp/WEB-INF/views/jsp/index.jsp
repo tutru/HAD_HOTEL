@@ -128,11 +128,11 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Account:</h6>
-					<a class="dropdown-item" href="customer-list">List Account</a> <a
-						class="dropdown-item" href="register.html">Create Account</a>
+					<a class="dropdown-item" href="account-list">List Account</a> <a
+						class="dropdown-item" href="account-save">Create Account</a>
 					<h6 class="dropdown-header">Role:</h6>
-					<a class="dropdown-item" href="customer-list">List Role</a> <a
-						class="dropdown-item" href="register.html">Create Role</a>
+					<a class="dropdown-item" href="role-list">List Role</a> <a
+						class="dropdown-item" href="role-save">Create Role</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -151,7 +151,7 @@
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room:</h6>
 					<a class="dropdown-item" href="room-list">List Room</a> <a
-						class="dropdown-item" href="register.html">Create Room</a>
+						class="dropdown-item" href="room-save">Create Room</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -160,7 +160,7 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Payment Type:</h6>
-					<a class="dropdown-item" href="customer-list">List Payment Type</a>
+					<a class="dropdown-item" href="payment-list">List Payment Type</a>
 					<a class="dropdown-item" href="register.html">Create Payment
 						Type</a>
 					<div class="dropdown-divider"></div>
@@ -188,8 +188,8 @@
 				aria-expanded="false"> <i class="fas fa-list-ol"></i> <span>Service</span>
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
-					<a class="dropdown-item" href="login.html">List Service</a> <a
-						class="dropdown-item" href="register.html">Create Service</a>
+					<a class="dropdown-item" href="service-list">List Service</a> <a
+						class="dropdown-item" href="service-save">Create Service</a>
 				</div></li>
 		</ul>
 
