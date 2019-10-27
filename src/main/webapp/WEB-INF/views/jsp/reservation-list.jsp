@@ -207,20 +207,20 @@
 
 				<!-- Breadcrumbs-->
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="#">Booking</a></li>
-					<li class="breadcrumb-item active">List Reservation</li>
+					<li class="breadcrumb-item"><a href="#">Persion</a></li>
+					<li class="breadcrumb-item active">List Employee</li>
 				</ol>
 				<!-- DataTables Example -->
 				<div class="card mb-3">
 					<div class="card-header">
-						<i class="fas fa-table"></i> List Reservation
+						<i class="fas fa-table"></i> List Employee
 					</div>
 					<div class="card-body">
 						<div class="table-responsive">
 							<table class="table table-bordered" id="dataTable" width="100%"
 								cellspacing="0">
 								<thead>
-									<tr>
+								<tr>
 										<td>reservationid</td>
 										<td>customerid</td>
 										<td>roomtypeid</td>
@@ -234,8 +234,7 @@
 								</thead>
 								<c:if test="${not empty listReservation}">
 									<c:forEach var="reservation" items="${listReservation}">
-										<tfoot>
-											<tr>
+										<tr>
 												<td>${reservation.reservationid}</td>
 												<td>${reservation.customerid}</td>
 												<td>${reservation.roomtypeid}</td>
@@ -252,7 +251,6 @@
 															class="fas fa-trash-alt" style="color: black"></i></a>
 													</button></td>
 											</tr>
-										</tfoot>
 									</c:forEach>
 								</c:if>
 							</table>
@@ -261,7 +259,6 @@
 				</div>
 			</div>
 		</div>
-		<!-- Sticky Footer -->
 		<footer class="sticky-footer">
 			<div class="container my-auto">
 				<div class="copyright text-center my-auto">
@@ -313,7 +310,6 @@
 	<script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 	<!-- Page level plugin JavaScript-->
-	<script src="resources/vendor/chart.js/Chart.min.js"></script>
 	<script src="resources/vendor/datatables/jquery.dataTables.js"></script>
 	<script src="resources/vendor/datatables/dataTables.bootstrap4.js"></script>
 
@@ -322,6 +318,5 @@
 
 	<!-- Demo scripts for this page-->
 	<script src="resources/js/demo/datatables-demo.js"></script>
-	<script src="resources/js/demo/chart-area-demo.js"></script>
 </body>
 </html>

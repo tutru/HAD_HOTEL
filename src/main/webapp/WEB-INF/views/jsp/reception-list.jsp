@@ -13,7 +13,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>List Reservation</title>
+<title>Reception List</title>
 
 <!-- Custom fonts for this template-->
 <link href="resources/vendor/fontawesome-free/css/all.min.css"
@@ -237,8 +237,7 @@
 								</thead>
 								<c:if test="${not empty listReception}">
 									<c:forEach var="reception" items="${listReception}">
-										<tfoot>
-											<tr>
+										<tr>
 												<td>${reception.receptionid}</td>
 												<td>${reception.customerid}</td>
 												<td>${reception.reservationid}</td>
@@ -257,7 +256,6 @@
 															class="fas fa-trash-alt" style="color: black"></i></a>
 													</button></td>
 											</tr>
-										</tfoot>
 									</c:forEach>
 								</c:if>
 							</table>

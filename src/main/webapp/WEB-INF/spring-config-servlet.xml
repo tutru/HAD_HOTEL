@@ -29,15 +29,21 @@
 		mapping="/reservation-update//resources/**" location="/resources/" />
 	<mvc:resources mapping="/receptionDelete//resources/**"
 		location="/resources/" />
-	<mvc:resources
-		mapping="/reception-update//resources/**" location="/resources/" />
+	<mvc:resources mapping="/reception-update//resources/**"
+		location="/resources/" />
 
 	<!-- Dienlt -->
-	<mvc:resources mapping="/employeeDelete/resources/**"
+	<mvc:resources mapping="/employeeDelete//resources/**"
 		location="/resources/" />
-	<mvc:resources mapping="/roomtypeDelete/resources/**"
+	<mvc:resources mapping="/roomtypeDelete//resources/**"
 		location="/resources/" />
-	<mvc:resources mapping="/roomstatus-delete/resources/**"
+	<mvc:resources mapping="/roomstatus-delete//resources/**"
+		location="/resources/" />
+	<mvc:resources
+		mapping="/employee-update//resources/**" location="/resources/" />
+	<mvc:resources mapping="/roomstatus-update//resources/**"
+		location="/resources/" />
+	<mvc:resources mapping="/roomtype-update//resources/**"
 		location="/resources/" />
 
 

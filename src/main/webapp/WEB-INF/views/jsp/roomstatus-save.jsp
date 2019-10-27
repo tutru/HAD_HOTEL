@@ -115,18 +115,11 @@
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Customer:</h6>
 					<a class="dropdown-item" href="customer-list">List Customer</a> <a
-						class="dropdown-item" href="register.html">Create Customer</a>
+						class="dropdown-item" href="customer-save">Create Customer</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Employee:</h6>
 					<a class="dropdown-item" href="employee-list">List Employee</a> <a
 						class="dropdown-item" href="employee-save">Create Employee</a>
-					<div class="dropdown-divider"></div>
-					<h6 class="dropdown-header">Account:</h6>
-					<a class="dropdown-item" href="customer-list">List Account</a> <a
-						class="dropdown-item" href="register.html">Create Account</a>
-					<h6 class="dropdown-header">Role:</h6>
-					<a class="dropdown-item" href="customer-list">List Role</a> <a
-						class="dropdown-item" href="register.html">Create Role</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -157,8 +150,8 @@
 						Room Status</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room:</h6>
-					<a class="dropdown-item" href="customer-list">List Room</a> <a
-						class="dropdown-item" href="register.html">Create Room</a>
+					<a class="dropdown-item" href="room-list">List Room</a> <a
+						class="dropdown-item" href="room-save">Create Room</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -167,13 +160,13 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Payment Type:</h6>
-					<a class="dropdown-item" href="customer-list">List Payment Type</a>
-					<a class="dropdown-item" href="register.html">Create Payment
+					<a class="dropdown-item" href="paymenttype-list">List Payment Type</a>
+					<a class="dropdown-item" href="paymenttype-save">Create Payment
 						Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Payment:</h6>
-					<a class="dropdown-item" href="customer-list">List Payment</a> <a
-						class="dropdown-item" href="register.html">Create Payment</a>
+					<a class="dropdown-item" href="payment-list">List Payment</a> <a
+						class="dropdown-item" href="payment-save">Create Payment</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -182,12 +175,13 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Reservation:</h6>
-					<a class="dropdown-item" href="login.html">List Reservation</a> <a
-						class="dropdown-item" href="register.html">Create Resertvation</a>
+					<a class="dropdown-item" href="reservation-list">List
+						Reservation</a> <a class="dropdown-item" href="reservation-save">Create
+						Resertvation</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Reception:</h6>
-					<a class="dropdown-item" href="login.html">List Reception</a> <a
-						class="dropdown-item" href="register.html">Create Reception</a>
+					<a class="dropdown-item" href="reception-list">List Reception</a> <a
+						class="dropdown-item" href="reception-save">Create Reception</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -195,8 +189,8 @@
 				aria-expanded="false"> <i class="fas fa-list-ol"></i> <span>Service</span>
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
-					<a class="dropdown-item" href="login.html">List Service</a> <a
-						class="dropdown-item" href="register.html">Create Service</a>
+					<a class="dropdown-item" href="service-list">List Service</a> <a
+						class="dropdown-item" href="service-save">Create Service</a>
 				</div></li>
 		</ul>
 
@@ -207,43 +201,41 @@
 				<!-- Breadcrumbs-->
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="#">Persion</a></li>
-					<li class="breadcrumb-item active">Save RoomStatus</li>
+					<li class="breadcrumb-item active">Save Room Status</li>
 				</ol>
 				<c:url value="/saveRoomStatus" var="saveRoomStatus" />
 				<form:form id="roomStatusAdd" action="${saveRoomStatus}"
 					modelAttribute="roomstatus" enctype="multipart/form-data">
 					<div class="form-row">
 						<div class="form-group col-md-5">
-							<label>Tên trạng thái:</label>
+							<label>Name status:</label>
 							<form:input class="form-control" path="roomstatusname" />
 						</div>
-					
-					<div class="form-group col-md-5">
-							<label>Mô tả trạng thái:</label>
+
+						<div class="form-group col-md-5">
+							<label>Status desc:</label>
 							<form:input class="form-control" path="roomstatusdesc" />
 							<br /> <br />
-							<button type="submit" class="btn btn-success">Thêm</button>
+							<button type="submit" class="btn btn-success">Save</button>
 							<button type="submit" class="btn btn-danger">
-								<a href="<c:url value="/roomstatus-list" />"> <i
+								<a href="<c:url value="/roomstatus-list" />">Reset <i
 									class="fas fa-window-close"></i></a>
 							</button>
 						</div>
-						</div>
-				</form:form>
-						</div>
 					</div>
-				</div>
-			
-		<!-- Sticky Footer -->
-		<footer class="sticky-footer">
-			<div class="container my-auto">
-				<div class="copyright text-center my-auto">
-					<span>Copyright © HAD Hotel 2019</span>
-				</div>
+				</form:form>
 			</div>
-		</footer>
-
+		</div>
 	</div>
+
+	<!-- Sticky Footer -->
+	<footer class="sticky-footer">
+		<div class="container my-auto">
+			<div class="copyright text-center my-auto">
+				<span>Copyright © HAD Hotel 2019</span>
+			</div>
+		</div>
+	</footer>
 	<!-- /.content-wrapper -->
 
 
