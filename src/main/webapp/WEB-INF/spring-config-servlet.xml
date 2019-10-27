@@ -17,26 +17,35 @@
 		base-package="com.had.hotelmanagement" />
 	<mvc:resources mapping="/resources/**"
 		location="/resources/" />
-		
-		<!-- Haodq -->
-		<mvc:resources mapping="/customerDelete//resources/**"
+
+	<!-- Haodq -->
+	<mvc:resources mapping="/customerDelete//resources/**"
 		location="/resources/" />
-		<mvc:resources mapping="/customer-update//resources/**"
+	<mvc:resources mapping="/customer-update//resources/**"
 		location="/resources/" />
-		
-		<!-- Dienlt -->
-		<mvc:resources mapping="/employeeDelete/resources/**"
+	<mvc:resources mapping="/reservationDelete//resources/**"
 		location="/resources/" />
-		<mvc:resources mapping="/roomtypeDelete/resources/**"
+	<mvc:resources
+		mapping="/reservation-update//resources/**" location="/resources/" />
+	<mvc:resources mapping="/receptionDelete//resources/**"
 		location="/resources/" />
-		<mvc:resources mapping="/roomstatus-delete/resources/**"
+	<mvc:resources
+		mapping="/reception-update//resources/**" location="/resources/" />
+
+	<!-- Dienlt -->
+	<mvc:resources mapping="/employeeDelete/resources/**"
 		location="/resources/" />
-		
+	<mvc:resources mapping="/roomtypeDelete/resources/**"
+		location="/resources/" />
+	<mvc:resources mapping="/roomstatus-delete/resources/**"
+		location="/resources/" />
+
 
 	<mvc:annotation-driven />
 	<context:annotation-config />
 	<mvc:resources mapping="/css/**" location="/css/" />
-	<mvc:resources mapping="/image/**" location="src/main/webapp/resources/image/" />
+	<mvc:resources mapping="/image/**"
+		location="src/main/webapp/resources/image/" />
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">

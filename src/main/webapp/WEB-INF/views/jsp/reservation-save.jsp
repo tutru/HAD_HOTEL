@@ -206,8 +206,8 @@
 
 				<!-- Breadcrumbs-->
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="#">Persion</a></li>
-					<li class="breadcrumb-item active">Create Customer</li>
+					<li class="breadcrumb-item"><a href="#">Booking</a></li>
+					<li class="breadcrumb-item active">Create Reservation</li>
 				</ol>
 				<c:url value="/saveReservation" var="saveReservation" />
 				<form:form action="${saveReservation}" method="POST"
@@ -230,7 +230,7 @@
 							<br /> <label>reservationstatus:</label>
 							<form:input class="form-control" path="reservationstatus" />
 							<br />
-							<form:button type="submit"> Thêm</form:button>
+							<form:button type="submit" class="btn btn-success">Save</form:button>
 							<button type="submit">
 								<a href="<c:url value="/reservation-list"/>">List
 									Reservation</a>

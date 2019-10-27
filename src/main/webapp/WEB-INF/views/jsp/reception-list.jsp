@@ -209,12 +209,12 @@
 				<!-- Breadcrumbs-->
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="#">Booking</a></li>
-					<li class="breadcrumb-item active">List Reservation</li>
+					<li class="breadcrumb-item active">List Reception</li>
 				</ol>
 				<!-- DataTables Example -->
 				<div class="card mb-3">
 					<div class="card-header">
-						<i class="fas fa-table"></i> List Reservation
+						<i class="fas fa-table"></i> List Reception
 					</div>
 					<div class="card-body">
 						<div class="table-responsive">
@@ -248,11 +248,11 @@
 												<td>${reception.checkoutdate}</td>
 												<td>${reception.serviceid}</td>
 												<td>${reception.reservationstatus}</td>
-												<td><button>
+												<td><button type="button" class="btn btn-primary">
 														<a href="${urlUpdate}/${reception.receptionid}"><i
-															class="fas fa-pen" style="color: black"></i></a>
+															class="fas fa-pen" style="color: black"></i></i></a>
 													</button></td>
-												<td><button>
+												<td><button type="button" class="btn btn-danger">
 														<a href="${urlDelete}/${reception.receptionid}"><i
 															class="fas fa-trash-alt" style="color: black"></i></a>
 													</button></td>

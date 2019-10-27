@@ -28,10 +28,10 @@
 </head>
 
 <body id="page-top">
-	<c:url value="/customer-save" var="urlSave" />
-	<c:url value="/customer-view/" var="urlView" />
-	<c:url value="/customer-update/" var="urlUpdate" />
-	<c:url value="/customerDelete/" var="urlDelete" />
+	<c:url value="/reservation-save" var="urlSave" />
+	<c:url value="/reservation-view/" var="urlView" />
+	<c:url value="/reservation-update/" var="urlUpdate" />
+	<c:url value="/reservationDelete/" var="urlDelete" />
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
@@ -221,15 +221,15 @@
 								cellspacing="0">
 								<thead>
 									<tr>
-										<th>reservationid</th>
-										<th>customerid</th>
-										<th>roomtypeid</th>
-										<th>expectedcheckdate</th>
-										<th>expectedroom</th>
-										<th>isdeposit</th>
-										<th>reservationstatus</th>
-										<th></th>
-										<th></th>
+										<td>reservationid</td>
+										<td>customerid</td>
+										<td>roomtypeid</td>
+										<td>expectedcheckdate</td>
+										<td>expectedroom</th>
+										<td>isdeposit</th>
+										<td>reservationstatus</td>
+										<td></td>
+										<td></td>
 									</tr>
 								</thead>
 								<c:if test="${not empty listReservation}">
