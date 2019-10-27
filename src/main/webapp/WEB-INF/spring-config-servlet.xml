@@ -17,12 +17,22 @@
 		base-package="com.had.hotelmanagement" />
 	<mvc:resources mapping="/resources/**"
 		location="/resources/" />
+		
+		<!-- Haodq -->
+		<mvc:resources mapping="/customerDelete//resources/**"
+		location="/resources/" />
+		<mvc:resources mapping="/customer-update//resources/**"
+		location="/resources/" />
+		
+		<!-- Dienlt -->
 		<mvc:resources mapping="/employeeDelete/resources/**"
 		location="/resources/" />
 		<mvc:resources mapping="/roomtypeDelete/resources/**"
 		location="/resources/" />
 		<mvc:resources mapping="/roomstatus-delete/resources/**"
 		location="/resources/" />
+		
+
 	<mvc:annotation-driven />
 	<context:annotation-config />
 	<mvc:resources mapping="/css/**" location="/css/" />
