@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.had.hotelmanagement.entity.Customer;
+import com.had.hotelmanagement.entity.Employee;
 import com.had.hotelmanagement.service.CustomerService;
 
 
@@ -72,13 +73,26 @@ public class CustomerController {
 	}
 
 	@RequestMapping("/updateCustomer")
-	public String doUpdateCustomer(@ModelAttribute("Customer") Customer customer, Model model) {
-		customerService.update(customer);
+public String doupdateCustomer(@ModelAttribute("customer") Customer customer, Model model, @RequestParam("uploadImg") MultipartFile image) {
+		
+		if (image.isEmpty()) {
+		} else {
+			try {
+				String path = "E:\\study-fpoly\\datn\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
+						+ image.getOriginalFilename();
+
+				image.transferTo(new File(path));
+				customer.setImage(image.getOriginalFilename());
+				customerService.save(customer);
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+		}
 		model.addAttribute("listCustomer", customerService.findAll());
 		return "customer-list";
 	}
 	
-	@RequestMapping(value = "/customer-delete/{customerid}", method = RequestMethod.GET)
+	@RequestMapping(value = "/customerDelete/{customerid}", method = RequestMethod.GET)
 	public String doDeleteCustomer(@PathVariable int customerid, Model model) {
 		customerService.delete(customerid);
 		model.addAttribute("listCustomer", customerService.findAll());

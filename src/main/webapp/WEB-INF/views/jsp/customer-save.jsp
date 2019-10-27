@@ -267,7 +267,7 @@
 							<br /> 
 							<button type="submit" class="btn btn-success">Save</button>
 							<button type="submit" class="btn btn-danger">
-								<a href="<c:url value="/customerList" />"><i class="fas fa-window-close"></i></a>
+								<a href="<c:url value="/customer-list" />"><i class="fas fa-window-close"></i></a>
 							</button>
 						</div>
 				</form:form>

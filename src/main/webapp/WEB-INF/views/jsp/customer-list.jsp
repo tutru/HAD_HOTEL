@@ -31,7 +31,7 @@
 	<c:url value="/customer-save" var="urlSave" />
 	<c:url value="/customer-view/" var="urlView" />
 	<c:url value="/customer-update/" var="urlUpdate" />
-	<c:url value="/customer-delete/" var="urlDelete" />
+	<c:url value="/customerDelete/" var="urlDelete" />
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
