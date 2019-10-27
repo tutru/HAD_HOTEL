@@ -39,8 +39,6 @@ public class EmployeeService {
 		// validate business
 		employeeDAO.delete(employeeid);
 	}
-	public List<Employee> searchEmployee(String name) {
-		return employeeDAO.findEmployee(name);
-	}
+	
 
 }

@@ -7,10 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.had.hotelmanagement.entity.Customer;
-import com.had.hotelmanagement.entity.CustomerMapper;
-import com.had.hotelmanagement.entity.EmployeeEntity;
-import com.had.hotelmanagement.entity.EmployeeMapper;
+
 import com.had.hotelmanagement.entity.ServiceEntity;
 import com.had.hotelmanagement.entity.ServiceMapper;
 

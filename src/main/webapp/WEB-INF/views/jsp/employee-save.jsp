@@ -122,7 +122,6 @@
 					<h6 class="dropdown-header">Employee:</h6>
 					<a class="dropdown-item" href="employee-list">List Employee</a> <a
 						class="dropdown-item" href="employee-save">Create Employee</a>
-					<div class="dropdown-divider"></div>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -145,16 +144,16 @@
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Room Type:</h6>
 					<a class="dropdown-item" href="roomtype-list">List Room Type</a> <a
-						class="dropdown-item" href="roomtype_save">Create Room Type</a>
+						class="dropdown-item" href="roomtype-save">Create Room Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room Status:</h6>
 					<a class="dropdown-item" href="roomstatus-list">List Room
 						Status</a> <a class="dropdown-item" href="roomstatus-save">Create
-						Room Status Status</a>
+						Room Status</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room:</h6>
 					<a class="dropdown-item" href="room-list">List Room</a> <a
-						class="dropdown-item" href="register.html">Create Room</a>
+						class="dropdown-item" href="room-save">Create Room</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -163,13 +162,13 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Payment Type:</h6>
-					<a class="dropdown-item" href="customer-list">List Payment Type</a>
-					<a class="dropdown-item" href="register.html">Create Payment
+					<a class="dropdown-item" href="paymenttype-list">List Payment Type</a>
+					<a class="dropdown-item" href="paymenttype-save">Create Payment
 						Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Payment:</h6>
-					<a class="dropdown-item" href="customer-list">List Payment</a> <a
-						class="dropdown-item" href="register.html">Create Payment</a>
+					<a class="dropdown-item" href="payment-list">List Payment</a> <a
+						class="dropdown-item" href="payment-save">Create Payment</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -192,8 +191,8 @@
 				aria-expanded="false"> <i class="fas fa-list-ol"></i> <span>Service</span>
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
-					<a class="dropdown-item" href="login.html">List Service</a> <a
-						class="dropdown-item" href="register.html">Create Service</a>
+					<a class="dropdown-item" href="service-list">List Service</a> <a
+						class="dropdown-item" href="service-save">Create Service</a>
 				</div></li>
 		</ul>
 
@@ -208,8 +207,7 @@
 				</ol>
 				<c:url value="/saveEmployee" var="saveEmployee" />
 				<form:form name="myForm" id="employeeAdd" action="${saveEmployee}"
-					modelAttribute="employee" enctype="multipart/form-data"
-					onsubmit="return validateForm()">
+					modelAttribute="employee" enctype="multipart/form-data">
 					<div class="form-row">
 						<div class="form-group col-md-5">
 							<label>Name:</label>
@@ -231,7 +229,7 @@
 							<br /> <label>Government ID:</label>
 							<form:input class="form-control" path="governmentid" placeholder="Government ID" />
 							<br /> <label>Phone:</label>
-							<form:input class="form-control" path="phone" pattern=".10,}" placeholder="Phone"  />
+							<form:input class="form-control" path="phone" placeholder="Phone"  />
 						</div>
 						<br />
 						<div class="form-group col-md-6">
@@ -278,7 +276,7 @@
 						<br />
 							<button type="submit" class="btn btn-success">Save</button>
 							<button type="submit" class="btn btn-danger">
-								<a href="<c:url value="/employee-list" />"> <i
+								<a href="<c:url value="/employee-list" />"> Reset<i
 									class="fas fa-window-close"></i></a>
 							</button>
 						</div>
@@ -328,42 +326,6 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript">
-		var input = document.getElementById('password');
-		input.oninvalid = function(event) {
-			event.target
-					.setCustomValidity('Số điện thoại phải 10 số');
-		}
-		function validateForm() {
-			var name = document.forms["myForm"]["name"].value;
-			var phone = document.forms["myForm"]["phone"].value;
-			var email = document.forms["myForm"]["email"].value;
-			var address = document.forms["myForm"]["address"].value;
-			var salary = document.forms["myForm"]["salary"].value;
-			if (name == "") {
-				alert("Tên không được bỏ trống ");
-				return false;
-			}
-			if (phone == "") {
-				alert("Số điện thoại không được bỏ trống ");
-				return false;
-			}
-			if (email == "") {
-				alert("Email không được bỏ trống ");
-				return false;
-			}
-			if (address == "") {
-				alert("Địa chỉ không được bỏ trống ");
-				return false;
-			}
-			if (salary == "") {
-				alert("Lương không được bỏ trống ");
-				return false;
-			}
-
-			return true;
-		}
-	</script>
 	<!-- Bootstrap core JavaScript-->
 
 	<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

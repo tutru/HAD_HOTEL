@@ -116,18 +116,11 @@
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Customer:</h6>
 					<a class="dropdown-item" href="customer-list">List Customer</a> <a
-						class="dropdown-item" href="register.html">Create Customer</a>
+						class="dropdown-item" href="customer-save">Create Customer</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Employee:</h6>
 					<a class="dropdown-item" href="employee-list">List Employee</a> <a
 						class="dropdown-item" href="employee-save">Create Employee</a>
-					<div class="dropdown-divider"></div>
-					<h6 class="dropdown-header">Account:</h6>
-					<a class="dropdown-item" href="customer-list">List Account</a> <a
-						class="dropdown-item" href="register.html">Create Account</a>
-					<h6 class="dropdown-header">Role:</h6>
-					<a class="dropdown-item" href="customer-list">List Role</a> <a
-						class="dropdown-item" href="register.html">Create Role</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -158,8 +151,8 @@
 						Room Status</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room:</h6>
-					<a class="dropdown-item" href="customer-list">List Room</a> <a
-						class="dropdown-item" href="register.html">Create Room</a>
+					<a class="dropdown-item" href="room-list">List Room</a> <a
+						class="dropdown-item" href="room-save">Create Room</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -168,13 +161,13 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Payment Type:</h6>
-					<a class="dropdown-item" href="customer-list">List Payment Type</a>
-					<a class="dropdown-item" href="register.html">Create Payment
+					<a class="dropdown-item" href="paymenttype-list">List Payment Type</a>
+					<a class="dropdown-item" href="paymenttype-save">Create Payment
 						Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Payment:</h6>
-					<a class="dropdown-item" href="customer-list">List Payment</a> <a
-						class="dropdown-item" href="register.html">Create Payment</a>
+					<a class="dropdown-item" href="payment-list">List Payment</a> <a
+						class="dropdown-item" href="payment-save">Create Payment</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -183,12 +176,13 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Reservation:</h6>
-					<a class="dropdown-item" href="login.html">List Reservation</a> <a
-						class="dropdown-item" href="register.html">Create Resertvation</a>
+					<a class="dropdown-item" href="reservation-list">List
+						Reservation</a> <a class="dropdown-item" href="reservation-save">Create
+						Resertvation</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Reception:</h6>
-					<a class="dropdown-item" href="login.html">List Reception</a> <a
-						class="dropdown-item" href="register.html">Create Reception</a>
+					<a class="dropdown-item" href="reception-list">List Reception</a> <a
+						class="dropdown-item" href="reception-save">Create Reception</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -196,8 +190,8 @@
 				aria-expanded="false"> <i class="fas fa-list-ol"></i> <span>Service</span>
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
-					<a class="dropdown-item" href="login.html">List Service</a> <a
-						class="dropdown-item" href="register.html">Create Service</a>
+					<a class="dropdown-item" href="service-list">List Service</a> <a
+						class="dropdown-item" href="service-save">Create Service</a>
 				</div></li>
 		</ul>
 
@@ -221,15 +215,15 @@
 								cellspacing="0">
 								<thead>
 									<tr>
-										<td>Mã nhân viên</td>
-										<td>Tên nhân viên</td>
-										<td>Ngày sinh</td>
-										<td>Số CMND</td>
-										<td>Số ĐT</td>
+										<td>ID</td>
+										<td>Name</td>
+										<td>Birthday</td>
+										<td>Government ID</td>
+										<td>Phone</td>
 										<td>Email</td>
-										<td>Địa chỉ</td>
-										<td>Hình</td>
-										<td>Lương</td>
+										<td>Address</td>
+										<td>Image</td>
+										<td>Salary</td>
 										<td></td>
 										<td></td>
 									</tr>
