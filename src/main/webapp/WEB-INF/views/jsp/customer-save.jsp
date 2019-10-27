@@ -120,13 +120,6 @@
 					<h6 class="dropdown-header">Employee:</h6>
 					<a class="dropdown-item" href="employee-list">List Employee</a> <a
 						class="dropdown-item" href="employee-save">Create Employee</a>
-					<div class="dropdown-divider"></div>
-					<h6 class="dropdown-header">Account:</h6>
-					<a class="dropdown-item" href="customer-list">List Account</a> <a
-						class="dropdown-item" href="register.html">Create Account</a>
-					<h6 class="dropdown-header">Role:</h6>
-					<a class="dropdown-item" href="customer-list">List Role</a> <a
-						class="dropdown-item" href="register.html">Create Role</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"

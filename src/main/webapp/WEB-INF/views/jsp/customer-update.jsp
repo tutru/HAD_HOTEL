@@ -120,13 +120,6 @@
 					<h6 class="dropdown-header">Employee:</h6>
 					<a class="dropdown-item" href="employee-list">List Employee</a> <a
 						class="dropdown-item" href="employee-save">Create Employee</a>
-					<div class="dropdown-divider"></div>
-					<h6 class="dropdown-header">Account:</h6>
-					<a class="dropdown-item" href="customer-list">List Account</a> <a
-						class="dropdown-item" href="register.html">Create Account</a>
-					<h6 class="dropdown-header">Role:</h6>
-					<a class="dropdown-item" href="customer-list">List Role</a> <a
-						class="dropdown-item" href="register.html">Create Role</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -182,8 +175,9 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Reservation:</h6>
-					<a class="dropdown-item" href="reservation-list">List Reservation</a> <a
-						class="dropdown-item" href="reservation-save">Create Resertvation</a>
+					<a class="dropdown-item" href="reservation-list">List
+						Reservation</a> <a class="dropdown-item" href="reservation-save">Create
+						Resertvation</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Reception:</h6>
 					<a class="dropdown-item" href="reception-list">List Reception</a> <a
@@ -215,16 +209,18 @@
 					modelAttribute="customer">
 					<div class="form-row">
 						<div class="form-group col-md-6">
+							<label>ID:</label>
+							<form:input class="form-control" path="customerid" disabled="true"/>
 							<label>Full Name:</label>
 							<form:input class="form-control" path="name" />
 							<br /> <label>Government ID:</label>
 							<form:input class="form-control" path="governmentid" />
 							<br /> <label>Address:</label>
 							<form:input class="form-control" path="address" />
-							<br /> <label>Phone:</label>
-							<form:input class="form-control" path="phone" />
-						</div>
+							</div>
 						<div class="form-group col-md-6">
+							<label>Phone:</label>
+							<form:input class="form-control" path="phone" />
 							<label>Email:</label>
 							<form:input class="form-control" path="email" />
 							<br /> <label>CC number:</label>
@@ -265,7 +261,7 @@
 							</script>
 							<br />
 
-							<button type="submit" class="btn btn-success">Save</button>
+							<button type="submit" class="btn btn-success">Update</button>
 							<button type="submit" class="btn btn-danger">
 								<a href="<c:url value="/customer-list" />"><i
 									class="fas fa-window-close"></i></a>
