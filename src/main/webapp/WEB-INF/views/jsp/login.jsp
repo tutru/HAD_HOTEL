@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@ page isELIgnored="false"%>
@@ -98,6 +98,23 @@
 
 	<!-- Custom scripts for all pages-->
 	<script src="resources/js/sb-admin-2.min.js"></script>
+	<script type="text/javascript">
+		function validateForm() {
+			var name = document.forms["myForm"]["username"].value;
+			var a = document.forms["myForm"]["password"].value;
+
+			if (name == "") {
+				alert("Tên đang nhập không được bỏ trống ");
+				return false;
+			}
+			if (a == "") {
+				alert("Mật Khẩu không được bỏ trống ");
+				return false;
+			}
+
+			return true;
+		}
+	</script>
 	<script>
 		// initialize and setup facebook js sdk
 		window.fbAsyncInit = function() {

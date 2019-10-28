@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.had.hotelmanagement.entity.Account;
-
+    
 @Repository
 @Transactional
 public class LoginDao {

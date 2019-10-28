@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.had.hotelmanagement.entity.Account;
 import com.had.hotelmanagement.entity.Role;
 import com.had.hotelmanagement.entity.RoleMapper;
 
@@ -19,7 +20,7 @@ public class RoleDao {
 	public void save(Role role) {
 		String sql = "INSERT INTO role (rolename,roledesc) VALUES (?,?)";
 		jdbcTemplate.update(sql, role.getRolename(), role.getRoledesc());
-
+////
 	}
 
 	public void delete(int id) {
@@ -40,6 +41,17 @@ public class RoleDao {
 	public List<Role> findAll() {
 		String sql = "SELECT * FROM role";
 		return jdbcTemplate.query(sql, new RoleMapper());
+	}
+	public String ckeck(Role role) {
+		try {
+			String sql = "select count(* ) from role where rolename = ?";
+			String name = jdbcTemplate.queryForObject(sql, new Object[] { role.getRolename() }, String.class);
+
+			return name;
+		} catch (Exception e) {
+			return null;
+		}
+	
 	}
 
 }
