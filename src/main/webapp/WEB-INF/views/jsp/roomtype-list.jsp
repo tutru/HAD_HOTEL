@@ -207,6 +207,9 @@
 				<div class="card mb-3">
 					<div class="card-header">
 						<i class="fas fa-table"></i> List Room Type
+						<button type="submit" class="btn btn-dark float-right">
+							<a href="<c:url value="/roomtype-save" />"> New Room Type</a>
+						</button>
 					</div>
 					<div class="card-body">
 						<div class="table-responsive">

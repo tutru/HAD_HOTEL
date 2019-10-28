@@ -37,13 +37,6 @@ public class EmployeeController {
 		return "employee-save";
 	}
 
-	@RequestMapping("/employee-view/{employeeid}")
-	public String viewEmployee(@PathVariable int employeeid, Model model) {
-		Employee employee = employeeService.findByIdEmployee(employeeid);
-		model.addAttribute("employee", employee);
-		return "employee-view";
-	}
-
 	@RequestMapping("/employee-update/{employeeid}")
 	public String updateCustomer(@PathVariable int employeeid, Model model) {
 		Employee employee = employeeService.findByIdEmployee(employeeid);

@@ -39,9 +39,6 @@ public class RoomStatusService {
 		// validate business
 		roomStatusDAO.delete(roomstatusid);
 	}
-	public List<RoomStatus> searchRoomStatus(String roomstatus) {
-		return roomStatusDAO.findRoomStatus(roomstatus);
-	}
-
+	
 
 }

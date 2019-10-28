@@ -41,12 +41,5 @@ public class RoomStatusDAO {
 		String sql = "SELECT * FROM roomstatus";
 		return jdbcTemplate.query(sql, new RoomStatusMapper());
 	}
-	
-	public List<RoomStatus>findRoomStatus(String roomstatusname){
-		String sql = "SELECT * FROM roomstatus WHERE roomstatusname LIKE '%"+roomstatusname+"%'";
-		return jdbcTemplate.query(sql, new RoomStatusMapper());
-	}
-
-
 
 }

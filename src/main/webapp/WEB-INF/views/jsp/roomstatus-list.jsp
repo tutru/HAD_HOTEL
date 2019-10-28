@@ -27,10 +27,10 @@
 </head>
 
 <body id="page-top">
-	<c:url value="/roomtype-save" var="urlSave" />
-	<c:url value="/roomtype-view/" var="urlView" />
-	<c:url value="/roomtype-update/" var="urlUpdate" />
-	<c:url value="/roomtypeDelete/" var="urlDelete" />
+	<c:url value="/roomstatus-save" var="urlSave" />
+	<c:url value="/roomstatus-view/" var="urlView" />
+	<c:url value="/roomstatus-update/" var="urlUpdate" />
+	<c:url value="/roomstatus-delete/" var="urlDelete" />
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
@@ -114,12 +114,12 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Customer:</h6>
-					<a class="dropdown-item" href="customer-list">List Customer</a> <a
-						class="dropdown-item" href="customer-save">Create Customer</a>
+					<a class="dropdown-item" href="/HotelManagement/customer-list">List Customer</a> <a
+						class="dropdown-item" href="/HotelManagement/customer-save">Create Customer</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Employee:</h6>
-					<a class="dropdown-item" href="employee-list">List Employee</a> <a
-						class="dropdown-item" href="employee-save">Create Employee</a>
+					<a class="dropdown-item" href="/HotelManagement/employee-list">List Employee</a> <a
+						class="dropdown-item" href="/HotelManagement/employee-save">Create Employee</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -128,8 +128,8 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Account:</h6>
-					<a class="dropdown-item" href="customer-list">List Account</a> <a
-						class="dropdown-item" href="register.html">Create Account</a>
+					<a class="dropdown-item" href="/HotelManagement/list-account">List Account</a> <a
+						class="dropdown-item" href="/HotelManagement/save-account">Create Account</a>
 					<h6 class="dropdown-header">Role:</h6>
 					<a class="dropdown-item" href="customer-list">List Role</a> <a
 						class="dropdown-item" href="register.html">Create Role</a>
@@ -141,17 +141,17 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Room Type:</h6>
-					<a class="dropdown-item" href="roomtype-list">List Room Type</a> <a
-						class="dropdown-item" href="roomtype-save">Create Room Type</a>
+					<a class="dropdown-item" href="/HotelManagement/roomtype-list">List Room Type</a> <a
+						class="dropdown-item" href="/HotelManagement/roomtype-save">Create Room Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room Status:</h6>
-					<a class="dropdown-item" href="roomstatus-list">List Room
-						Status</a> <a class="dropdown-item" href="roomstatus-save">Create
+					<a class="dropdown-item" href="/HotelManagement/roomstatus-list">List Room
+						Status</a> <a class="dropdown-item" href="/HotelManagement/roomstatus-save">Create
 						Room Status</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room:</h6>
-					<a class="dropdown-item" href="room-list">List Room</a> <a
-						class="dropdown-item" href="room-save">Create Room</a>
+					<a class="dropdown-item" href="/HotelManagement/room-list">List Room</a> <a
+						class="dropdown-item" href="/HotelManagement/room-save">Create Room</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -160,13 +160,13 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Payment Type:</h6>
-					<a class="dropdown-item" href="paymenttype-list">List Payment Type</a>
-					<a class="dropdown-item" href="paymenttype-save">Create Payment
+					<a class="dropdown-item" href="/HotelManagement/paymenttype-list">List Payment Type</a>
+					<a class="dropdown-item" href="/HotelManagement/paymenttype-save">Create Payment
 						Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Payment:</h6>
-					<a class="dropdown-item" href="payment-list">List Payment</a> <a
-						class="dropdown-item" href="payment-save">Create Payment</a>
+					<a class="dropdown-item" href="/HotelManagement/payment-list">List Payment</a> <a
+						class="dropdown-item" href="/HotelManagement/payment-save">Create Payment</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -175,13 +175,13 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Reservation:</h6>
-					<a class="dropdown-item" href="reservation-list">List
-						Reservation</a> <a class="dropdown-item" href="reservation-save">Create
+					<a class="dropdown-item" href="/HotelManagement/reservation-list">List
+						Reservation</a> <a class="dropdown-item" href="/HotelManagement/reservation-save">Create
 						Resertvation</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Reception:</h6>
-					<a class="dropdown-item" href="reception-list">List Reception</a> <a
-						class="dropdown-item" href="reception-save">Create Reception</a>
+					<a class="dropdown-item" href="/HotelManagement/reception-list">List Reception</a> <a
+						class="dropdown-item" href="/HotelManagement/reception-save">Create Reception</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -189,8 +189,8 @@
 				aria-expanded="false"> <i class="fas fa-list-ol"></i> <span>Service</span>
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
-					<a class="dropdown-item" href="service-list">List Service</a> <a
-						class="dropdown-item" href="service-save">Create Service</a>
+					<a class="dropdown-item" href="/HotelManagement/service-list">List Service</a> <a
+						class="dropdown-item" href="/HotelManagement/service-save">Create Service</a>
 				</div></li>
 		</ul>
 
@@ -207,6 +207,9 @@
 				<div class="card mb-3">
 					<div class="card-header">
 						<i class="fas fa-table"></i> List Room Status
+						<button type="submit" class="btn btn-dark float-right">
+							<a href="<c:url value="/roomstatus-save" />"> New Room Status</a>
+						</button>
 					</div>
 					<div class="card-body">
 						<div class="table-responsive">

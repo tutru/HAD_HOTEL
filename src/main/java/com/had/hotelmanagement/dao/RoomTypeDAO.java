@@ -43,11 +43,5 @@ public class RoomTypeDAO {
 		String sql = "SELECT * FROM roomtype";
 		return jdbcTemplate.query(sql, new RoomTypeMapper());
 	}
-	
-	public List<RoomType>findRoomType(String roomtypename){
-		String sql = "SELECT * FROM roomtype WHERE roomtypename LIKE '%"+roomtypename+"%'";
-		return jdbcTemplate.query(sql, new RoomTypeMapper());
-	}
-
 
 }

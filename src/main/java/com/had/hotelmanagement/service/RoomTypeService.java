@@ -39,9 +39,5 @@ public class RoomTypeService {
 		// validate business
 		roomTypeDAO.delete(roomtypeid);
 	}
-	public List<RoomType> searchRoomType(String roomtypename) {
-		return roomTypeDAO.findRoomType(roomtypename);
-	}
-
-
+	
 }

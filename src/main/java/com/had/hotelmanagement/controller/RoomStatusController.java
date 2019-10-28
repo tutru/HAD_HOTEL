@@ -34,13 +34,6 @@ public class RoomStatusController {
 		return "roomstatus-save";
 	}
 
-	@RequestMapping("/roomstatus-view/{roomstatusid}")
-	public String viewRoomStatus(@PathVariable int roomstatusid, Model model) {
-		RoomStatus roomstatus = roomStatusService.findByIdRoomStatus(roomstatusid);
-		model.addAttribute("roomstatus", roomstatus);
-		return "roomstatus-view";
-	}
-
 	@RequestMapping("/roomstatus-update/{roomstatusid}")
 	public String updateRoomStatus(@PathVariable int roomstatusid, Model model) {
 		RoomStatus roomstatus = roomStatusService.findByIdRoomStatus(roomstatusid);
@@ -69,13 +62,6 @@ public class RoomStatusController {
 		roomStatusService.delete(roomstatusid);
 		model.addAttribute("listRoomStatus", roomStatusService.findAll());
 		return "roomstatus-list";
-	}
-
-	@RequestMapping(value = "/roomstatus-search")
-	public String search(String roomstatusname, Model model) {
-		List<RoomStatus> roomstatus =roomStatusService.searchRoomStatus(roomstatusname);
-		model.addAttribute("search", roomstatus);
-		return "roomstatus-search";
 	}
 
 }

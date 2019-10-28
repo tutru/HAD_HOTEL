@@ -16,15 +16,13 @@
 <title>Employee List</title>
 
 <!-- Custom fonts for this template-->
-<link href="resources/vendor/fontawesome-free/css/all.min.css"
-	rel="stylesheet" type="text/css">
+<link rel="stylesheet"
+	href="<c:url value="/resources/vendor/fontawesome-free/css/all.min.css"></c:url>">
+<link rel="stylesheet"
+	href="<c:url value="/resources/css/sb-admin.css"></c:url>">
+<link rel="stylesheet"
+	href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
 
-<!-- Page level plugin CSS-->
-<link href="resources/vendor/datatables/dataTables.bootstrap4.css"
-	rel="stylesheet">
-
-<!-- Custom styles for this template-->
-<link href="resources/css/sb-admin.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -161,9 +159,9 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Payment Type:</h6>
-					<a class="dropdown-item" href="paymenttype-list">List Payment Type</a>
-					<a class="dropdown-item" href="paymenttype-save">Create Payment
-						Type</a>
+					<a class="dropdown-item" href="paymenttype-list">List Payment
+						Type</a> <a class="dropdown-item" href="paymenttype-save">Create
+						Payment Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Payment:</h6>
 					<a class="dropdown-item" href="payment-list">List Payment</a> <a
@@ -208,6 +206,9 @@
 				<div class="card mb-3">
 					<div class="card-header">
 						<i class="fas fa-table"></i> List Employee
+						<button type="submit" class="btn btn-dark float-right">
+							<a href="<c:url value="/employee-save" />"> New Employee</a>
+						</button>
 					</div>
 					<div class="card-body">
 						<div class="table-responsive">
@@ -239,7 +240,8 @@
 											<td>${employee.phone}</td>
 											<td>${employee.email}</td>
 											<td>${employee.address}</td>
-											<td><img src="<%=request.getContextPath()%>/resources/image/${employee.image}"
+											<td><img
+												src="<%=request.getContextPath()%>/resources/image/${employee.image}"
 												width="120"></td>
 											<td>${employee.salary}</td>
 											<td><button type="button" class="btn btn-primary">
@@ -303,21 +305,21 @@
 
 
 	<!-- Bootstrap core JavaScript-->
-	<script src="resources/vendor/jquery/jquery.min.js"></script>
-	<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+	<script src="<c:url value="/resources/vendor/jquery/jquery.min.js"/>"></script>
+	<script
+		src="<c:url value="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
 	<!-- Core plugin JavaScript-->
-	<script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
-
+	<script
+		src="<c:url value="/resources/vendor/jquery-easing/jquery.easing.min.js"/>"></script>
 	<!-- Page level plugin JavaScript-->
-	<script src="resources/vendor/datatables/jquery.dataTables.js"></script>
-	<script src="resources/vendor/datatables/dataTables.bootstrap4.js"></script>
-
+	<script
+		src="<c:url value="/resources/vendor/datatables/jquery.dataTables.js"/>"></script>
+	<script
+		src="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.js"/>"></script>
 	<!-- Custom scripts for all pages-->
-	<script src="resources/js/sb-admin.min.js"></script>
-
+	<script src="<c:url value="/resources/js/sb-admin.min.js"/>"></script>
 	<!-- Demo scripts for this page-->
-	<script src="resources/js/demo/datatables-demo.js"></script>
+	<script src="<c:url value="/resources/js/demo/datatables-demo.js"/>"></script>
 
 </body>
 </body>
