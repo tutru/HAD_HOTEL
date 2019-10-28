@@ -56,7 +56,7 @@ public class RoomController {
 		return "room-update";
 	}
 
-	@RequestMapping(value = "/saveRoom", method = RequestMethod.POST, produces = "application/x-www-form-urlencoded;charset=UTF-8")
+	@RequestMapping(value = "/saveRoom", method = RequestMethod.POST)
 	public String doSaveRoom(ModelMap model, HttpServletRequest request, @ModelAttribute("room") Room room,
 			@RequestParam("uploadImg") MultipartFile image) {
 
@@ -64,7 +64,7 @@ public class RoomController {
 		} else {
 			try {
 				String path = "D:\\duantotnghiep\\HotelManagement\\src\\main\\webapp\\resources\\image\\"
-						+ image.getInputStream();
+						+ image.getOriginalFilename();
 
 				image.transferTo(new File(path));
 				room.setRoomimage(image.getOriginalFilename());
@@ -94,7 +94,7 @@ public class RoomController {
 			}
 		}
 		model.addAttribute("listRoom", roomService.findAll());
-		return "room-list";
+		return "redirect:room-list";
 
 	}
 

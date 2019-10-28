@@ -29,17 +29,15 @@ public class LoginController {
 		ac.setUsername(username);
 		ac.setPassword(password);
 		String name = dao.xacnhan(ac);
-        String user = dao.user(ac);
+		String user = dao.user(ac);
 		if (name != null) {
 			if (name.equals("admin")) {
-				mv.addObject("msg",user);
+				mv.addObject("msg", user);
 				mv.setViewName("index");
-
 			} else if (name.equals("user")) {
-				mv.addObject("msg", "chào mừng " + name + ", You have successfully logged in.");
-				mv.setViewName("login");
-			}
-			else {
+				mv.addObject("msg", user);
+				mv.setViewName("admin");
+			} else {
 				mv.addObject("msg", "vui lòng nhập lại.");
 				mv.setViewName("login");
 			}
@@ -52,4 +50,5 @@ public class LoginController {
 		return mv;
 
 	}
+
 }
