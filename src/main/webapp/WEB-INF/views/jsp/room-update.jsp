@@ -206,8 +206,8 @@
 
 				</div>
 				<div class="container">
-					<c:url value="/saveRoom" var="saveRoom" />
-					<form:form id="roomsAdd" action="${saveRoom}" modelAttribute="room"
+					<c:url value="/updateRoom" var="updateRoom" />
+					<form:form id="roomsAdd" action="${updateRoom}" modelAttribute="room"
 						enctype="multipart/form-data">
 						<div class="form-group">
 							<label>ID</label>
