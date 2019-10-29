@@ -102,7 +102,7 @@
 	<div id="wrapper">
 
 		<!-- Sidebar -->
-		<ul class="sidebar navbar-nav">
+			<ul class="sidebar navbar-nav">
 			<li class="nav-item active"><a class="nav-link" href="index">
 					<i class="fas fa-home"></i> <span>Home</span>
 			</a></li>
@@ -128,14 +128,14 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Account:</h6>
-					<a class="dropdown-item" href="account-list">List Account</a> <a
-						class="dropdown-item" href="account-save">Create Account</a>
+					<a class="dropdown-item" href="list-account">List Account</a> <a
+						class="dropdown-item" href="save-account">Create Account</a>
 					<h6 class="dropdown-header">Role:</h6>
-					<a class="dropdown-item" href="role-list">List Role</a> <a
-						class="dropdown-item" href="role-save">Create Role</a>
+					<a class="dropdown-item" href="list-role">List Role</a> <a
+						class="dropdown-item" href="save-role">Create Role</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
+				class="nav-link dropdown-toggle" id="pagesDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
 				aria-expanded="false"> <i class="fas fa-door-open"></i> <span>Room</span>
 			</a>
@@ -145,45 +145,46 @@
 						class="dropdown-item" href="roomtype_save">Create Room Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room Status:</h6>
-					<a class="dropdown-item" href="roomstatus-list">List Room Status</a>
-					<a class="dropdown-item" href="roomstatus-save">Create Room Status
-						Status</a>
+					<a class="dropdown-item" href="roomstatus-list">List Room
+						Status</a> <a class="dropdown-item" href="roomstatus-save">Create
+						Room Status Status</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room:</h6>
 					<a class="dropdown-item" href="room-list">List Room</a> <a
 						class="dropdown-item" href="room-save">Create Room</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
+				class="nav-link dropdown-toggle" id="pagesDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
 				aria-expanded="false"><i class="fas fa-money-check-alt"></i> <span>Payment</span>
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Payment Type:</h6>
-					<a class="dropdown-item" href="payment-list">List Payment Type</a>
-					<a class="dropdown-item" href="register.html">Create Payment
+					<a class="dropdown-item" href="paymenttype-list">List Payment Type</a>
+					<a class="dropdown-item" href="paymenttype-save">Create Payment
 						Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Payment:</h6>
-					<a class="dropdown-item" href="customer-list">List Payment</a> <a
-						class="dropdown-item" href="register.html">Create Payment</a>
+					<a class="dropdown-item" href="payment-list">List Payment</a> <a
+						class="dropdown-item" href="payment-save">Create Payment</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
+				class="nav-link dropdown-toggle" id="pagesDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
 				aria-expanded="false"> <i class="fas fa-check-square"></i> <span>Booking</span>
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Reservation:</h6>
-					<a class="dropdown-item" href="reservation-list">List Reservation</a> <a
-						class="dropdown-item" href="reservation-save">Create Resertvation</a>
+					<a class="dropdown-item" href="reservation-list">List
+						Reservation</a> <a class="dropdown-item" href="reservation-save">Create
+						Resertvation</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Reception:</h6>
 					<a class="dropdown-item" href="reception-list">List Reception</a> <a
 						class="dropdown-item" href="reception-save">Create Reception</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
+				class="nav-link dropdown-toggle" id="pagesDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
 				aria-expanded="false"> <i class="fas fa-list-ol"></i> <span>Service</span>
 			</a>
