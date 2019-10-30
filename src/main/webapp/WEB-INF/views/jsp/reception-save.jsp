@@ -1,10 +1,9 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page isELIgnored="false"%>
-<!DOCTYPE html>
-<html lang="en">
-
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8" import="java.sql.*"%>
+<html lang="vn">
 <head>
 
 <meta charset="utf-8">
@@ -16,16 +15,14 @@
 
 <title>Create Reservation</title>
 
-<!-- Custom fonts for this template-->
-<link href="resources/vendor/fontawesome-free/css/all.min.css"
-	rel="stylesheet" type="text/css">
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<!-- Page level plugin CSS-->
-<link href="resources/vendor/datatables/dataTables.bootstrap4.css"
-	rel="stylesheet">
-
-<!-- Custom styles for this template-->
-<link href="resources/css/sb-admin.css" rel="stylesheet">
+<link rel="stylesheet"
+	href="<c:url value="/resources/vendor/fontawesome-free/css/all.min.css"></c:url>">
+<link rel="stylesheet"
+	href="<c:url value="/resources/css/sb-admin.css"></c:url>">
+<link rel="stylesheet"
+	href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
 
 </head>
 

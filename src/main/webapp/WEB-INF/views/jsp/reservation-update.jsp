@@ -1,10 +1,9 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page isELIgnored="false"%>
-<!DOCTYPE html>
-<html lang="en">
-
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8" import="java.sql.*"%>
+<html lang="vn">
 <head>
 
 <meta charset="utf-8">
@@ -16,16 +15,15 @@
 
 <title>Customer Update</title>
 
-<!-- Custom fonts for this template-->
-<link href="resources/vendor/fontawesome-free/css/all.min.css"
-	rel="stylesheet" type="text/css">
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<!-- Page level plugin CSS-->
-<link href="resources/vendor/datatables/dataTables.bootstrap4.css"
-	rel="stylesheet">
+<link rel="stylesheet"
+	href="<c:url value="/resources/vendor/fontawesome-free/css/all.min.css"></c:url>">
+<link rel="stylesheet"
+	href="<c:url value="/resources/css/sb-admin.css"></c:url>">
+<link rel="stylesheet"
+	href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
 
-<!-- Custom styles for this template-->
-<link href="resources/css/sb-admin.css" rel="stylesheet">
 
 </head>
 
@@ -114,12 +112,12 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Customer:</h6>
-					<a class="dropdown-item" href="customer-list">List Customer</a> <a
-						class="dropdown-item" href="customer-save">Create Customer</a>
+					<a class="dropdown-item" href="/HotelManagement/customer-list">List Customer</a> <a
+						class="dropdown-item" href="/HotelManagement/customer-save">Create Customer</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Employee:</h6>
-					<a class="dropdown-item" href="employee-list">List Employee</a> <a
-						class="dropdown-item" href="employee-save">Create Employee</a>
+					<a class="dropdown-item" href="/HotelManagement/employee-list">List Employee</a> <a
+						class="dropdown-item" href="/HotelManagement/employee-save">Create Employee</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -175,13 +173,13 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Reservation:</h6>
-					<a class="dropdown-item" href="reservation-list">List
-						Reservation</a> <a class="dropdown-item" href="reservation-save">Create
+					<a class="dropdown-item" href="/HotelManagement/reservation-list">List
+						Reservation</a> <a class="dropdown-item" href="/HotelManagement/reservation-save">Create
 						Resertvation</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Reception:</h6>
-					<a class="dropdown-item" href="reception-list">List Reception</a> <a
-						class="dropdown-item" href="reception-save">Create Reception</a>
+					<a class="dropdown-item" href="/HotelManagement/reception-list">List Reception</a> <a
+						class="dropdown-item" href="/HotelManagement/reception-save">Create Reception</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -209,22 +207,22 @@
 					modelAttribute="reservation">
 					<div class="form-row">
 						<div class="form-group col-md-6">
-							reservationid:
+							<label>ID</label>
 							<form:input class="form-control" path="reservationid"
 								disabled="true" />
-							<br /> customerid:
+							<br /> <label>Customer ID:</label>
 							<form:input class="form-control" path="customerid" />
-							<br /> roomtypeid:
+							<br /> <label>Room Type ID:</label>
 							<form:input class="form-control" path="roomtypeid" />
-							<br /> expectedcheckdate:
+							<br /> <label>Expected Check Date:</label>
 							<form:input class="form-control" path="expectedcheckdate" />
 						</div>
 						<div class="form-group col-md-6">
-							expectedroom:
+							<label>Expected Room:</label>
 							<form:input class="form-control" path="expectedroom" />
-							<br /> isdeposit:
+							<br /> <label>Is Deposit:</label>
 							<form:input class="form-control" path="isdeposit" />
-							<br /> reservationstatus:
+							<br /> <label>Reservation Status:</label>
 							<form:input class="form-control" path="reservationstatus" />
 							<br />
 							<br />
