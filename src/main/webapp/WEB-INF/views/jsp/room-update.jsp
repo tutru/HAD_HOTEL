@@ -214,8 +214,8 @@
 							<form:input path="roomid" class="form-control" readonly="true" />
 						</div>
 						<div class="form-group">
-							<label> Tên loại phòng:</label> <select name="roomtypeid"
-								class="form-control">
+							<label> Tên loại phòng:</label> 
+							<select name="roomtypeid" class="form-control">
 								<c:if test="${not empty listRoomType}">
 									<c:forEach var="roomtype" items="${listRoomType}">
 										<option value=${roomtype.roomtypeid}>${roomtype.roomtypename}</option>
@@ -226,7 +226,8 @@
 						<br />
 						<br />
 						<div class="form-group">
-							<label>Tên trạng thái phòng:</label> <select name="roomstatusid"
+							<label>Tên trạng thái phòng:</label> 
+							<select name="roomstatusid"
 								class="form-control">
 								<c:if test="${not empty listRoomStatus}">
 									<c:forEach var="roomstatus" items="${listRoomStatus}">
@@ -272,9 +273,7 @@
 						<br />
 						<div class="form-group">
 							<label>Mô tả phòng</label>
-							<textarea name="roomdesc" rows="4" cols="50" class="form-control">
-
-							</textarea>
+							<form:textarea path="roomdesc" id="roomdesc" rows="4" cols="50" class="form-control"/>
 						</div>
 						<br />
 						<br />

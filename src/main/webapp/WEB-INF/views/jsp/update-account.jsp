@@ -1,22 +1,29 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page isELIgnored="false"%>
-<html lang="en">
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8" import="java.sql.*"%>
+<html lang="vn">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>HAD Hotel</title>
 
-<link rel="stylesheet" href="<c:url value="/resources/vendor/fontawesome-free/css/all.min.css"></c:url>">
-<link rel="stylesheet" href="<c:url value="/resources/css/sb-admin.css"></c:url>">
-<link rel="stylesheet" href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet"
+	href="<c:url value="/resources/vendor/fontawesome-free/css/all.min.css"></c:url>">
+<link rel="stylesheet"
+	href="<c:url value="/resources/css/sb-admin.css"></c:url>">
+<link rel="stylesheet"
+	href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
 </head>
 
 <body id="page-top">
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-		<a class="navbar-brand mr-1" href="index" ><img src="<%=request.getContextPath()%>/resources/image/logo.JPG" width="120"></a>
+		<a class="navbar-brand mr-1" href="index"><img
+			src="<%=request.getContextPath()%>/resources/image/logo.JPG"
+			width="120"></a>
 
 		<button class="btn btn-link btn-sm text-white order-1 order-sm-0"
 			id="sidebarToggle" href="#">
@@ -119,9 +126,9 @@
 						class="dropdown-item" href="save-role">Create Role</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" id="pagesDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> <i class="fas fa-door-open"></i> <span>Room</span>
+				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-door-open"></i> <span>Room</span>
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Room Type:</h6>
@@ -138,24 +145,23 @@
 						class="dropdown-item" href="room-save">Create Room</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" id="pagesDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"><i class="fas fa-money-check-alt"></i> <span>Payment</span>
-			</a>
+				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+					class="fas fa-money-check-alt"></i> <span>Payment</span> </a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Payment Type:</h6>
-					<a class="dropdown-item" href="paymenttype-list">List Payment Type</a>
-					<a class="dropdown-item" href="paymenttype-save">Create Payment
-						Type</a>
+					<a class="dropdown-item" href="paymenttype-list">List Payment
+						Type</a> <a class="dropdown-item" href="paymenttype-save">Create
+						Payment Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Payment:</h6>
 					<a class="dropdown-item" href="payment-list">List Payment</a> <a
 						class="dropdown-item" href="payment-save">Create Payment</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" id="pagesDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> <i class="fas fa-check-square"></i> <span>Booking</span>
+				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-check-square"></i> <span>Booking</span>
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Reservation:</h6>
@@ -168,9 +174,9 @@
 						class="dropdown-item" href="reception-save">Create Reception</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" id="pagesDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> <i class="fas fa-list-ol"></i> <span>Service</span>
+				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-list-ol"></i> <span>Service</span>
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<a class="dropdown-item" href="service-list">List Service</a> <a
@@ -184,50 +190,64 @@
 
 				<!-- Breadcrumbs-->
 				<ol class="breadcrumb">
-				
+
 					<li class="breadcrumb-item active">Đổi Mật Khẩu</li>
 				</ol>
 				<div class="container">
+				
+				
 					<c:url value="/updateaccount" var="updateaccount" />
-					<form:form name="myForm" action="${updateaccount}" onsubmit="return validateForm()" modelAttribute="account"
+					<form:form name="myForm" action="${updateaccount}"
+						onsubmit="return validateForm()" modelAttribute="account"
 						method="POST">
 
 						<div class="form-group col-12">
 							<label>id</label>
 							<form:input path="accountid" readonly="true" class="form-control" />
-							<br /> <label>Tên Nhân Viên</label> 
-							<select name="employeeid"
+							
+							<br /> <label>Tên Nhân Viên</label>
+							 <select name="employeeid"
 								class="form-control">
 								<c:if test="${not empty listEmployee}">
 									<c:forEach var="employee" items="${listEmployee}">
 										<option value=${employee.employeeid}>${employee.name}</option>
 									</c:forEach>
 								</c:if>
-							</select> <br /> <label>Vai trò</label> <select name="roleid"
+							</select> 
+							
+							<br /> 
+							
+							<label>Vai trò</label> 
+							<select name="roleid"
 								class="form-control">
 								<c:if test="${not empty listRole}">
 									<c:forEach var="role" items="${listRole}">
 										<option value=${role.roleid}>${role.rolename}</option>
 									</c:forEach>
 								</c:if>
-							</select> <br /> <label>Tên Đang Nhập</label>
+							</select> <br />
+							
+							 <label>Tên Đang Nhập</label>
 							<form:input path="username" class="form-control"
 								placeholder="Mời Bạn Nhập tên" readonly="true" />
+								
 							<div style="color: red;">${msg}</div>
-							<br /> <label>Mật Khẩu</label>
-
+							
+							<br /> 
+							<label>Mật Khẩu</label>
 							<form:input type="password" id="password" path="password"
 								placeholder="Mời bạn nhập Mật Khẩu" class="form-control"
 								pattern=".{6,}" title="Mật Khẩu Phải trên 6 chữ hoặc số" />
 							<br /> <br /> <br /> <br />
-							<button type="submit" class="btn btn-warning float-left">Đổi Mật Khẩu</button>
+							<button type="submit" class="btn btn-warning float-left">Đổi
+								Mật Khẩu</button>
 
 						</div>
 					</form:form>
-					
+
 				</div>
 				<script type="text/javascript">
-					function validateForm() {					
+					function validateForm() {
 						var a = document.forms["myForm"]["password"].value;
 
 						if (a == "") {
@@ -284,16 +304,20 @@
 			</div>
 		</div>
 	</div>
-   
-    <script src="<c:url value="/resources/vendor/jquery/jquery.min.js"/>"></script>
-	<script src="<c:url value="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
+
+	<script src="<c:url value="/resources/vendor/jquery/jquery.min.js"/>"></script>
+	<script
+		src="<c:url value="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
 
 	<!-- Core plugin JavaScript-->
-	<script src="<c:url value="/resources/vendor/jquery-easing/jquery.easing.min.js"/>"></script>
+	<script
+		src="<c:url value="/resources/vendor/jquery-easing/jquery.easing.min.js"/>"></script>
 
 	<!-- Page level plugin JavaScript-->
-	<script src="<c:url value="/resources/vendor/datatables/jquery.dataTables.js"/>"></script>
-	<script src="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.js"/>"></script>
+	<script
+		src="<c:url value="/resources/vendor/datatables/jquery.dataTables.js"/>"></script>
+	<script
+		src="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.js"/>"></script>
 
 	<!-- Custom scripts for all pages-->
 	<script src="<c:url value="/resources/js/sb-admin.min.js"/>"></script>

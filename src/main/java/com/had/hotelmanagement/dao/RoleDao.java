@@ -44,7 +44,7 @@ public class RoleDao {
 	}
 	public String ckeck(Role role) {
 		try {
-			String sql = "select count(* ) from role where rolename = ?";
+			String sql = "select count(*) from role where rolename = ?";
 			String name = jdbcTemplate.queryForObject(sql, new Object[] { role.getRolename() }, String.class);
 
 			return name;
