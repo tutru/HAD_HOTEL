@@ -35,7 +35,9 @@
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-		<a class="navbar-brand mr-1" href="index.html">HAD Hotel</a>
+		<a class="navbar-brand mr-1" href="index"><img
+			src="<%=request.getContextPath()%>/resources/image/logo.JPG"
+			width="120"></a>
 
 		<button class="btn btn-link btn-sm text-white order-1 order-sm-0"
 			id="sidebarToggle" href="#">
@@ -327,20 +329,21 @@
 		</div>
 	</div>
 	<!-- Bootstrap core JavaScript-->
-
-	<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+<!-- Bootstrap core JavaScript-->
+	<script src="<c:url value="/resources/vendor/jquery/jquery.min.js"/>"></script>
+	<script
+		src="<c:url value="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
 	<!-- Core plugin JavaScript-->
-	<script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
-
+	<script
+		src="<c:url value="/resources/vendor/jquery-easing/jquery.easing.min.js"/>"></script>
 	<!-- Page level plugin JavaScript-->
-	<script src="resources/vendor/datatables/jquery.dataTables.js"></script>
-	<script src="resources/vendor/datatables/dataTables.bootstrap4.js"></script>
-
+	<script
+		src="<c:url value="/resources/vendor/datatables/jquery.dataTables.js"/>"></script>
+	<script
+		src="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.js"/>"></script>
 	<!-- Custom scripts for all pages-->
-	<script src="resources/js/sb-admin.min.js"></script>
-
+	<script src="<c:url value="/resources/js/sb-admin.min.js"/>"></script>
 	<!-- Demo scripts for this page-->
-	<script src="resources/js/demo/datatables-demo.js"></script>
+	<script src="<c:url value="/resources/js/demo/datatables-demo.js"/>"></script>
 </body>
 </html>
