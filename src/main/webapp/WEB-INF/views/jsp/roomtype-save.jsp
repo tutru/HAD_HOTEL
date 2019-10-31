@@ -162,9 +162,9 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Payment Type:</h6>
-					<a class="dropdown-item" href="paymenttype-list">List Payment Type</a>
-					<a class="dropdown-item" href="paymenttype-save">Create Payment
-						Type</a>
+					<a class="dropdown-item" href="paymenttype-list">List Payment
+						Type</a> <a class="dropdown-item" href="paymenttype-save">Create
+						Payment Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Payment:</h6>
 					<a class="dropdown-item" href="payment-list">List Payment</a> <a
@@ -206,19 +206,27 @@
 					<li class="breadcrumb-item active">List Room Type</li>
 				</ol>
 				<c:url value="/saveRoomType" var="saveRoomType" />
-				<form:form id="roomTypeAdd" action="${saveRoomType}"
+				<form:form  id="roomTypeAdd" action="${saveRoomType}"
 					modelAttribute="roomtype" enctype="multipart/form-data">
+					<!-- name="f1" action="#" onsubmit="return validate()" -->
 					<div class="form-row">
-						<div class="form-group col-md-5">
+						<div class="form-group col-md-6">
 							<label>Name type room:</label>
 							<form:input class="form-control" path="roomtypename" />
-							<br /> <label>Room type desc:</label>
-							<form:input class="form-control" path="roomtypedesc" />
+							<!-- <span id="roomtypename"></span> -->
+							
+							<!-- <span id="roomtypedesc"></span> -->
+							<br/>
+							<div class="form-group">
+							<label>Room type desc</label>
+							<form:textarea path="roomtypedesc" id="roomtypedesc" rows="4" cols="50" class="form-control"/>
+						</div>
 						</div>
 						<br />
-						<div class="form-group col-md-5">
+						<div class="form-group col-md-6">
 							<label>Price:</label>
 							<form:input class="form-control" path="roomprice" />
+						<!-- 	<span id="roomprice"></span> -->
 							<br /> <br />
 							<form:button type="submit" class="btn btn-success"> Save</form:button>
 							<form:button type="submit" class="btn btn-danger">
@@ -231,6 +239,37 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- <script>
+		function validate() {
+			var roomtypename = document.f1.roomtypename.value;
+			var roomtypedesc = document.f1.roomtypedesc.value;
+			var roomprice = document.f1.roomprice.value;
+			var status = false;
+
+			if (roomtypename.length < 1) {
+				document.getElementById("roomtypename").innerHTML = " <img src='unchecked.gif'/> Please enter your name";
+				status = false;
+			} else {
+				document.getElementById("roomtypename").innerHTML = " <img src='checked.gif'/>";
+				status = true;
+			}
+			if (roomtypedesc.length < 1) {
+				document.getElementById("roomtypedesc").innerHTML = " <img src='unchecked.gif'/> Please enter your name";
+				status = false;
+			} else {
+				document.getElementById("roomtypedesc").innerHTML = " <img src='checked.gif'/>";
+				status = true;
+			}
+			if (roomprice.length < 1) {
+				document.getElementById("roomprice").innerHTML = " <img src='unchecked.gif'/> Please enter your name";
+				status = false;
+			} else {
+				document.getElementById("roomprice").innerHTML = " <img src='checked.gif'/>";
+				status = true;
+			}
+		}
+	</script> -->
 
 	<!-- Sticky Footer -->
 	<footer class="sticky-footer">
