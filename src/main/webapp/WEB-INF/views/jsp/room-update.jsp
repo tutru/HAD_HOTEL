@@ -207,14 +207,15 @@
 				<div class="container">
 					<c:url value="/updateRoom" var="updateRoom" />
 					<form:form id="roomsAdd" action="${updateRoom}" modelAttribute="room"
-						enctype="multipart/form-data">
+						enctype="multipart/form-data" onsubmit="return validateForm()" name="myForm">
 						<div class="form-group">
 							<label>ID</label>
 							<form:input path="roomid" class="form-control" readonly="true" />
 						</div>
-						<div class="form-group">
-							<label> Tên loại phòng:</label> 
-							<select name="roomtypeid" class="form-control">
+						<div class="form-group row">
+						<div class="col-md-6">
+							<label> Tên loại phòng:</label> <select name="roomtypeid"
+								class="form-control">
 								<c:if test="${not empty listRoomType}">
 									<c:forEach var="roomtype" items="${listRoomType}">
 										<option value=${roomtype.roomtypeid}>${roomtype.roomtypename}</option>
@@ -222,11 +223,9 @@
 								</c:if>
 							</select>
 						</div>
-						<br />
-						<br />
-						<div class="form-group">
-							<label>Tên trạng thái phòng:</label> 
-							<select name="roomstatusid"
+
+						<div class="col-md-6">
+							<label>Tên trạng thái phòng:</label> <select name="roomstatusid"
 								class="form-control">
 								<c:if test="${not empty listRoomStatus}">
 									<c:forEach var="roomstatus" items="${listRoomStatus}">
@@ -235,6 +234,23 @@
 								</c:if>
 							</select>
 						</div>
+					</div>
+					<br />
+					<br />
+						<div class="form-group row">
+						<div class="col-md-6">
+							<label>Số Phòng</label> 
+							<form:input path="roomnumber"
+								class="form-control" type="number" placeholder="Mời bạn nhập số Phòng" />
+							<div style="color: red;">${msg}</div>
+						</div>
+						<br /> <br />
+						<div class="col-md-6">
+							<label>Số tiền</label> 
+							<form:input path="roomprice" type="number" class="form-control" placeholder="Mời bạn nhập số Tiền" />
+
+						</div>
+					</div>
 						<br />
 						<br />
 						<label>Image:</label>
@@ -282,6 +298,25 @@
 								thái phòng</a>
 						</form:button>
 					</form:form>
+					
+					<script type="text/javascript">
+					function validateForm() {
+						var name = document.forms["myForm"]["roomnumber"].value;
+						var a = document.forms["myForm"]["roomprice"].value;
+
+						if (name == "") {
+							alert("Số Phòng không được bỏ trống ");
+							return false;
+						}
+						if (a == "") {
+							alert("Tiền không được bỏ trống ");
+							return false;
+						}
+
+						return true;
+					}
+				</script>
+					
 				</div>
 			</div>
 		</div>

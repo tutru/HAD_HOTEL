@@ -14,6 +14,7 @@
 <meta name="author" content="">
 
 <title>Thêm Phòng</title>
+
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
@@ -38,13 +39,15 @@
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-		<a class="navbar-brand mr-1" href="index" ><img src="<%=request.getContextPath()%>/resources/image/logo.JPG" width="120"></a>
+		<a class="navbar-brand mr-1" href="index"><img
+			src="<%=request.getContextPath()%>/resources/image/logo.JPG"
+			width="120"></a>
 
 		<button class="btn btn-link btn-sm text-white order-1 order-sm-0"
 			id="sidebarToggle" href="#">
 			<i class="fas fa-bars"></i>
 		</button>
-  
+
 		<!-- Navbar Search -->
 		<form
 			class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
@@ -139,9 +142,9 @@
 						class="dropdown-item" href="save-role">Create Role</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" id="pagesDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> <i class="fas fa-door-open"></i> <span>Room</span>
+				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-door-open"></i> <span>Room</span>
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Room Type:</h6>
@@ -158,24 +161,23 @@
 						class="dropdown-item" href="room-save">Create Room</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" id="pagesDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"><i class="fas fa-money-check-alt"></i> <span>Payment</span>
-			</a>
+				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+					class="fas fa-money-check-alt"></i> <span>Payment</span> </a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Payment Type:</h6>
-					<a class="dropdown-item" href="paymenttype-list">List Payment Type</a>
-					<a class="dropdown-item" href="paymenttype-save">Create Payment
-						Type</a>
+					<a class="dropdown-item" href="paymenttype-list">List Payment
+						Type</a> <a class="dropdown-item" href="paymenttype-save">Create
+						Payment Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Payment:</h6>
 					<a class="dropdown-item" href="payment-list">List Payment</a> <a
 						class="dropdown-item" href="payment-save">Create Payment</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" id="pagesDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> <i class="fas fa-check-square"></i> <span>Booking</span>
+				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-check-square"></i> <span>Booking</span>
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Reservation:</h6>
@@ -188,9 +190,9 @@
 						class="dropdown-item" href="reception-save">Create Reception</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" id="pagesDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> <i class="fas fa-list-ol"></i> <span>Service</span>
+				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-list-ol"></i> <span>Service</span>
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<a class="dropdown-item" href="service-list">List Service</a> <a
@@ -213,13 +215,17 @@
 						<i class="fas fa-table"></i> THÊM MỚI THÔNG TIN TRẠNG THÁI PHÒNG
 					</div>
 
-
 				</div>
-				<div class="container">
-					<c:url value="/saveRoom" var="saveRoom" />
-					<form:form id="roomsAdd" action="${saveRoom}" modelAttribute="room"
-						enctype="multipart/form-data">
-						<div class="form-group">
+			</div>
+
+
+
+			<div class="container">
+				<c:url value="/saveRoom" var="saveRoom" />
+				<form:form id="roomsAdd" action="${saveRoom}" modelAttribute="room"
+					enctype="multipart/form-data" onsubmit="return validateForm()" name="myForm">
+					<div class="form-group row">
+						<div class="col-md-6">
 							<label> Tên loại phòng:</label> <select name="roomtypeid"
 								class="form-control">
 								<c:if test="${not empty listRoomType}">
@@ -229,11 +235,9 @@
 								</c:if>
 							</select>
 						</div>
-						<br />
-						<br />
-						<div class="form-group">
-							<label>Tên trạng thái phòng:</label> 
-							<select name="roomstatusid"
+						
+						<div class="col-md-6">
+							<label>Tên trạng thái phòng:</label> <select name="roomstatusid"
 								class="form-control">
 								<c:if test="${not empty listRoomStatus}">
 									<c:forEach var="roomstatus" items="${listRoomStatus}">
@@ -242,61 +246,95 @@
 								</c:if>
 							</select>
 						</div>
-						<br />
-						<br />
-						<label>Image:</label>
-						<span class="btn btn-default btn-file"> <input type="file"
-							id="files" name="uploadImg" required="required">
-						</span>
-						<script>
-							if (window.FileReader) {
-								function handleFileSelect(evt) {
-									var files = evt.target.files;
-									var f = files[0];
-									var reader = new FileReader();
+					</div>
+					<br />
+					<br />
+					<div class="form-group row">
+					<div class="col-md-6">
+						<label>Số Phòng</label> 
+						<input name="roomnumber" class="form-control" type="number" placeholder="Mời bạn nhập số Phòng" />
+					<div style="color: red;">${msg}</div>
+					</div>
+					<br />
+					<br />
+					<div class="col-md-6">
+						<label>Số tiền</label> 
+						<input name="roomprice" type="number" class="form-control"  placeholder="Mời bạn nhập số Tiền" />
+					
+					</div>
+					</div>
+					
+					<br />
+					<br />
+					<label>Image:</label>
+					<span class="btn btn-default btn-file">
+					 <input type="file" id="files" name="uploadImg" required="required" title="Mật Khẩu Phải trên 6 chữ hoặc số">
+					</span>
+					<script>
+						if (window.FileReader) {
+							function handleFileSelect(evt) {
+								var files = evt.target.files;
+								var f = files[0];
+								var reader = new FileReader();
 
-									reader.onload = (function(theFile) {
-										return function(e) {
-											document.getElementById('list').innerHTML = [ '<img src="', e.target.result, '" title="', theFile.name, '"width="304" height="236"/>' ]
-													.join('');
-										};
-									})(f);
+								reader.onload = (function(theFile) {
+									return function(e) {
+										document.getElementById('list').innerHTML = [ '<img src="', e.target.result, '" title="', theFile.name, '"width="304" height="236"/>' ]
+												.join('');
+									};
+								})(f);
 
-									reader.readAsDataURL(f);
-								}
-							} else {
-								alert('Trình duyệt này không hỗ trợ FileReader');
+								reader.readAsDataURL(f);
 							}
+						} else {
+							alert('Trình duyệt này không hỗ trợ FileReader');
+						}
 
-							document.getElementById('files').addEventListener(
-									'change', handleFileSelect, false);
-						</script>
-						<output id="list">
-							<img src="<%=request.getContextPath()%>/resources/image/441.jpg"
-								class="img-thumbnail" alt="Cinque Terre" width="304"
-								height="236" />
-						</output>
-						<br />
-						<br />
-						<div class="form-group">
-							<label>Mô tả phòng</label>
-							<textarea name="roomdesc" rows="4" cols="50" class="form-control" >
+						document.getElementById('files').addEventListener(
+								'change', handleFileSelect, false);
+					</script>
+					<output id="list">
+						<img src="<%=request.getContextPath()%>/resources/image/441.jpg"
+							class="img-thumbnail" alt="Cinque Terre" width="304" height="236" />
+					</output>
+					<br />
+					<br />
+					<div class="form-group">
+						<label>Mô tả phòng</label>
+						<textarea name="roomdesc" rows="4" cols="50" class="form-control" >
 
 							</textarea>
-						</div>
-						<br />
-						<br />
-						<button class="btn btn-warning" type="submit" > Thêm</button>
-						<button type="submit" class="btn btn-dark float-right">
-							<a href="<c:url value="/room-list" />"> Xem danh sách trạng
-								thái phòng</a>
-						</button>
-					</form:form>
-						<br />
-						<br />
-				</div>
+					</div>
+					<br />
+					<br />
+					<button class="btn btn-warning" type="submit">Thêm Phòng</button>
+					
+				</form:form>
+				
+				
+				<script type="text/javascript">
+					function validateForm() {
+						var name = document.forms["myForm"]["roomnumber"].value;
+						var a = document.forms["myForm"]["roomprice"].value;
+
+						if (name == "") {
+							alert("Số Phòng không được bỏ trống ");
+							return false;
+						}
+						if (a == "") {
+							alert("Tiền không được bỏ trống ");
+							return false;
+						}
+
+						return true;
+					}
+				</script>
+
+
+				<br />
 			</div>
 		</div>
+
 		<!-- Sticky Footer -->
 		<footer class="sticky-footer">
 			<div class="container my-auto">
