@@ -27,7 +27,6 @@
 
 <body id="page-top">
 	<c:url value="/employee-save" var="urlSave" />
-	<c:url value="/employee-view/" var="urlView" />
 	<c:url value="/employee-update/" var="urlUpdate" />
 	<c:url value="/employeeDelete/" var="urlDelete" />
 

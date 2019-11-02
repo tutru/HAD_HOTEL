@@ -219,12 +219,9 @@
 					<li class="breadcrumb-item"><a href="#">Persion</a></li>
 					<li class="breadcrumb-item active">Update Employee</li>
 				</ol>
-
-
 				<c:url value="/updateEmployee" var="updateEmployee" />
 				<form:form id="employeeUpdate" action="${updateEmployee}"
 					modelAttribute="employee" enctype="multipart/form-data">
-
 					<div class="form-row">
 						<div class="form-group col-md-6">
 							<label>ID:</label>
@@ -256,7 +253,7 @@
 							<form:input class="form-control" path="email" />
 							<br /> <label>Salary:</label>
 							<form:input class="form-control" path="salary" />
-							<br/>
+							<br />
 							<div class="form-group">
 								<label>Address</label>
 								<form:textarea path="address" id="address" rows="2" cols="50"
@@ -291,12 +288,11 @@
 
 										reader.readAsDataURL(f);
 									}
-								}
-								else {
+								} else {
 									alert('This browser does not support FileReader');
 								}
 
-								 document.getElementById('files')
+								document.getElementById('files')
 										.addEventListener('change',
 												handleFileSelect, false);
 							</script>
@@ -322,8 +318,6 @@
 			</div>
 		</div>
 	</footer>
-
-	</div>
 	<!-- /.content-wrapper -->
 
 
@@ -361,7 +355,7 @@
 	<!-- Bootstrap core JavaScript-->
 
 	<!-- Bootstrap core JavaScript-->
-	
+
 	<script
 		src="<c:url value="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
 	<!-- Core plugin JavaScript-->

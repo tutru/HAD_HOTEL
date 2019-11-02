@@ -1,9 +1,14 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page isELIgnored="false"%>
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8" import="java.sql.*"%>
-<html lang="vn">
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet"
+	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<meta charset="ISO-8859-1">
 <head>
 
 <meta charset="utf-8">
@@ -13,10 +18,9 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Customer Update1</title>
+<title>Employee Update</title>
 
-<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<!-- Custom fonts for this template-->
 <link rel="stylesheet"
 	href="<c:url value="/resources/vendor/fontawesome-free/css/all.min.css"></c:url>">
 <link rel="stylesheet"
@@ -25,12 +29,16 @@
 	href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
 
 </head>
-
 <body id="page-top">
+	<c:url value="/customer-save" var="urlSave" />
+	<c:url value="/customer-update/" var="urlUpdate" />
+	<c:url value="/customerDelete/" var="urlDelete" />
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-		<a class="navbar-brand mr-1" href="index.html">HAD Hotel</a>
+		<a class="navbar-brand mr-1" href="index"><img
+			src="<%=request.getContextPath()%>/resources/image/logo.JPG"
+			width="120"></a>
 
 		<button class="btn btn-link btn-sm text-white order-1 order-sm-0"
 			id="sidebarToggle" href="#">
@@ -101,8 +109,8 @@
 
 		<!-- Sidebar -->
 		<ul class="sidebar navbar-nav">
-			<li class="nav-item active"><a class="nav-link" href="<c:url value="/index"/>">
-					<i class="fas fa-home"></i> <span>Home</span>
+			<li class="nav-item active"><a class="nav-link"
+				href="<c:url value="/index"/>"> <i class="fas fa-home"></i> <span>Home</span>
 			</a></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -111,12 +119,14 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Customer:</h6>
-					<a class="dropdown-item" href="<c:url value="/customer-list"/>">List Customer</a> <a
-						class="dropdown-item" href="<c:url value="/customer-save"/>">Create Customer</a>
+					<a class="dropdown-item" href="<c:url value="/customer-list"/>">List
+						Customer</a> <a class="dropdown-item"
+						href="<c:url value="/customer-save"/>">Create Customer</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Employee:</h6>
-					<a class="dropdown-item" href="<c:url value="/employee-list"/>">List Employee</a> <a
-						class="dropdown-item" href="<c:url value="/employee-save"/>">Create Employee</a>
+					<a class="dropdown-item" href="<c:url value="/employee-list"/>">List
+						Employee</a> <a class="dropdown-item"
+						href="<c:url value="/employee-save"/>">Create Employee</a>
 					<div class="dropdown-divider"></div>
 				</div></li>
 			<li class="nav-item dropdown"><a
@@ -126,11 +136,13 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Account:</h6>
-					<a class="dropdown-item" href="<c:url value="/list-account"/>">List Account</a> <a
-						class="dropdown-item" href="<c:url value="/save-account"/>">Create Account</a>
+					<a class="dropdown-item" href="<c:url value="/list-account"/>">List
+						Account</a> <a class="dropdown-item"
+						href="<c:url value="/save-account"/>">Create Account</a>
 					<h6 class="dropdown-header">Role:</h6>
-					<a class="dropdown-item" href="<c:url value="/list-role"/>">List Role</a> <a
-						class="dropdown-item" href="<c:url value="/save-role"/>">Create Role</a>
+					<a class="dropdown-item" href="<c:url value="/list-role"/>">List
+						Role</a> <a class="dropdown-item" href="<c:url value="/save-role"/>">Create
+						Role</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
@@ -139,17 +151,20 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Room Type:</h6>
-					<a class="dropdown-item" href="<c:url value="/roomtype-list"/>">List Room Type</a> <a
-						class="dropdown-item" href="<c:url value="/roomtype-save"/>">Create Room Type</a>
+					<a class="dropdown-item" href="<c:url value="/roomtype-list"/>">List
+						Room Type</a> <a class="dropdown-item"
+						href="<c:url value="/roomtype-save"/>">Create Room Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room Status:</h6>
-					<a class="dropdown-item" href="<c:url value="/roomstatus-list"/>">List Room
-						Status</a> <a class="dropdown-item" href="<c:url value="/roomstatus-save"/>">Create
-						Room Status Status</a>
+					<a class="dropdown-item" href="<c:url value="/roomstatus-list"/>">List
+						Room Status</a> <a class="dropdown-item"
+						href="<c:url value="/roomstatus-save"/>">Create Room Status
+						Status</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room:</h6>
-					<a class="dropdown-item" href="<c:url value="/room-list"/>">List Room</a> <a
-						class="dropdown-item" href="<c:url value="/room-list"/>">Create Room</a>
+					<a class="dropdown-item" href="<c:url value="/room-list"/>">List
+						Room</a> <a class="dropdown-item" href="<c:url value="/room-list"/>">Create
+						Room</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
@@ -157,12 +172,14 @@
 					class="fas fa-money-check-alt"></i> <span>Payment</span> </a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Payment Type:</h6>
-					<a class="dropdown-item" href="<c:url value="/paymenttype-list"/>">List Payment Type</a> 
-					<a class="dropdown-item" href="<c:url value="/paymenttype-save"/>">Create Payment Type</a>
+					<a class="dropdown-item" href="<c:url value="/paymenttype-list"/>">List
+						Payment Type</a> <a class="dropdown-item"
+						href="<c:url value="/paymenttype-save"/>">Create Payment Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Payment:</h6>
-					<a class="dropdown-item" href="<c:url value="/payment-list"/>">List Payment</a> <a
-						class="dropdown-item" href="<c:url value="/payment-save"/>">Create Payment</a>
+					<a class="dropdown-item" href="<c:url value="/payment-list"/>">List
+						Payment</a> <a class="dropdown-item"
+						href="<c:url value="/payment-save"/>">Create Payment</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
@@ -172,12 +189,13 @@
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Reservation:</h6>
 					<a class="dropdown-item" href="<c:url value="/reservation-list"/>">List
-						Reservation</a> <a class="dropdown-item" href="<c:url value="/reservation-list"/>">Create
-						Resertvation</a>
+						Reservation</a> <a class="dropdown-item"
+						href="<c:url value="/reservation-list"/>">Create Resertvation</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Reception:</h6>
-					<a class="dropdown-item" href="<c:url value="/reception-list"/>">List Reception</a> <a
-						class="dropdown-item" href="<c:url value="/reception-save"/>">Create Reception</a>
+					<a class="dropdown-item" href="<c:url value="/reception-list"/>">List
+						Reception</a> <a class="dropdown-item"
+						href="<c:url value="/reception-save"/>">Create Reception</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
@@ -185,8 +203,9 @@
 					<i class="fas fa-list-ol"></i> <span>Service</span>
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
-					<a class="dropdown-item" href="<c:url value="/service-list"/>">List Service</a> <a
-						class="dropdown-item" href="<c:url value="/service-save"/>">Create Service</a>
+					<a class="dropdown-item" href="<c:url value="/service-list"/>">List
+						Service</a> <a class="dropdown-item"
+						href="<c:url value="/service-save"/>">Create Service</a>
 				</div></li>
 		</ul>
 
@@ -197,23 +216,23 @@
 				<!-- Breadcrumbs-->
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="#">Persion</a></li>
-					<li class="breadcrumb-item active">Create Customer</li>
+					<li class="breadcrumb-item active">Update Employee</li>
 				</ol>
-
 				<c:url value="/updateCustomer" var="updateCustomer" />
-				<form:form action="${updateCustomer}" method="POST"
-					modelAttribute="customer">
+				<form:form id="updateCustomer" action="${updateCustomer}"
+					modelAttribute="customer" enctype="multipart/form-data">
 					<div class="form-row">
 						<div class="form-group col-md-6">
 							<label>ID:</label>
-							<form:input class="form-control" path="customerid" disabled="true"/>
+							<form:input class="form-control" path="customerid"
+								disabled="true" />
 							<label>Full Name:</label>
 							<form:input class="form-control" path="name" />
 							<br /> <label>Government ID:</label>
 							<form:input class="form-control" path="governmentid" />
 							<br /> <label>Address:</label>
 							<form:input class="form-control" path="address" />
-							</div>
+						</div>
 						<div class="form-group col-md-6">
 							<label>Phone:</label>
 							<form:input class="form-control" path="phone" />
@@ -223,12 +242,14 @@
 							<form:input class="form-control" path="ccnumber" />
 							<br /> <label>Image:</label>
 							<output id="list">
-								<img src="/HotelManagement/resources/image/441.jpg" width="120">
+								<img
+									src="<%=request.getContextPath()%>/resources/image/${customer.image}"
+									width="120" />
 							</output>
 
 							<span class="input-group-btn"> <span
 								class="btn btn-default btn-file"> <input type="file"
-									id="files" name="uploadImg">
+									id="files" name="uploadImg" required="required">
 							</span>
 							</span>
 							<script>
@@ -256,28 +277,27 @@
 												handleFileSelect, false);
 							</script>
 							<br />
-
-							<button type="submit" class="btn btn-success">Update</button>
-							<button type="submit" class="btn btn-danger">
-								<a href="<c:url value="/customer-list" />"><i
+							<form:button type="submit" class="btn btn-success"> Update</form:button>
+							<form:button type="submit" class="btn btn-danger">
+								<a href="<c:url value="/customer-list" />">Reset<i
 									class="fas fa-window-close"></i></a>
-							</button>
+							</form:button>
 						</div>
+					</div>
 				</form:form>
 			</div>
 		</div>
-
-
-		<!-- Sticky Footer -->
-		<footer class="sticky-footer">
-			<div class="container my-auto">
-				<div class="copyright text-center my-auto">
-					<span>Copyright © HAD Hotel 2019</span>
-				</div>
-			</div>
-		</footer>
-
 	</div>
+
+	<!-- Sticky Footer -->
+	<footer class="sticky-footer">
+		<div class="container my-auto">
+			<div class="copyright text-center my-auto">
+				<span>Copyright © HAD Hotel 2019</span>
+			</div>
+		</div>
+	</footer>
+
 	<!-- /.content-wrapper -->
 
 
@@ -312,10 +332,8 @@
 	</div>
 
 
-		<!-- Bootstrap core JavaScript-->
-	<script src="<c:url value="/resources/vendor/jquery/jquery.min.js"/>"></script>
-	<script
-		src="<c:url value="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
+	<!-- Bootstrap core JavaScript-->
+
 	<!-- Core plugin JavaScript-->
 	<script
 		src="<c:url value="/resources/vendor/jquery-easing/jquery.easing.min.js"/>"></script>

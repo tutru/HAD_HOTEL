@@ -290,11 +290,11 @@
 												handleFileSelect, false);
 							</script>
 							<br />
-							<button type="submit" class="btn btn-success">Save</button>
-							<button type="submit" class="btn btn-danger">
-								<a href="<c:url value="/employee-list" />"> Reset<i
+							<form:button type="submit" class="btn btn-success"> Update</form:button>
+							<form:button type="submit" class="btn btn-danger">
+								<a href="<c:url value="/employee-list" />">Reset<i
 									class="fas fa-window-close"></i></a>
-							</button>
+							</form:button>
 						</div>
 					</div>
 				</form:form>
