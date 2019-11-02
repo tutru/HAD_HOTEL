@@ -4,6 +4,11 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8" import="java.sql.*"%>
 <html lang="vn">
+<link rel="stylesheet"
+	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<meta charset="ISO-8859-1">
 <head>
 
 <meta charset="utf-8">
@@ -218,14 +223,47 @@
 							<br /> <label>roomid:</label>
 							<form:input class="form-control" path="roomid" />
 							<br /> <label>checkindate:</label>
-							<form:input class="form-control" path="checkindate" />
+							<form:input class="form-control" path="checkindate" id="datepicker" placeholder="Check In Date"/>
+								<script>
+								$(function() {
+									$.datepicker.setDefaults({
+										onClose : function(date, inst) {
+											$("#selectedDtaeVal").html(date);
+										}
+									});
+
+									$("#datepicker").datepicker();
+								});
+							</script>
 							<br />
 						</div>
 						<div class="form-group col-md-6">
 							<label>expectedcheckindate:</label>
-							<form:input class="form-control" path="expectedcheckindate" />
+							<form:input class="form-control" path="expectedcheckindate" id="datepicker1" placeholder="Expected Check In Date"/>
+							<script>
+								$(function() {
+									$.datepicker.setDefaults({
+										onClose : function(date, inst) {
+											$("#selectedDtaeVal").html(date);
+										}
+									});
+
+									$("#datepicker1").datepicker();
+								});
+							</script>
 							<br /> <label>checkoutdate:</label>
-							<form:input class="form-control" path="checkoutdate" />
+							<form:input class="form-control" path="checkoutdate" id="datepicker2" placeholder="Expected Check Out Date"/>
+									<script>
+								$(function() {
+									$.datepicker.setDefaults({
+										onClose : function(date, inst) {
+											$("#selectedDtaeVal").html(date);
+										}
+									});
+
+									$("#datepicker2").datepicker();
+								});
+							</script>
 							<br /> <label>serviceid:</label>
 							<form:input class="form-control" path="serviceid" />
 							<br /> <label>reservationstatus:</label>
@@ -286,7 +324,6 @@
 
 
 	<!-- Bootstrap core JavaScript-->
-	<script src="resources/vendor/jquery/jquery.min.js"></script>
 	<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 	<!-- Core plugin JavaScript-->

@@ -231,7 +231,7 @@
 
 							<span class="input-group-btn"> <span
 								class="btn btn-default btn-file"> <input type="file"
-									id="files" name="uploadImg" required="required">
+									id="files" name="uploadImg">
 							</span>
 							</span>
 							<script>

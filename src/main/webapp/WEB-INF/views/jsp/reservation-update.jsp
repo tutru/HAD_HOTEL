@@ -4,6 +4,11 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8" import="java.sql.*"%>
 <html lang="vn">
+<link rel="stylesheet"
+	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<meta charset="ISO-8859-1">
 <head>
 
 <meta charset="utf-8">
@@ -215,7 +220,18 @@
 							<br /> <label>Room Type ID:</label>
 							<form:input class="form-control" path="roomtypeid" />
 							<br /> <label>Expected Check Date:</label>
-							<form:input class="form-control" path="expectedcheckdate" />
+							<form:input class="form-control" path="expectedcheckdate" id="datepicker" placeholder="Expected Check Date"/>
+							<script>
+								$(function() {
+									$.datepicker.setDefaults({
+										onClose : function(date, inst) {
+											$("#selectedDtaeVal").html(date);
+										}
+									});
+
+									$("#datepicker").datepicker();
+								});
+							</script>
 						</div>
 						<div class="form-group col-md-6">
 							<label>Expected Room:</label>
@@ -282,7 +298,6 @@
 
 
 	<!-- Bootstrap core JavaScript-->
-	<script src="resources/vendor/jquery/jquery.min.js"></script>
 	<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 	<!-- Core plugin JavaScript-->
