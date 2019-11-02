@@ -13,7 +13,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Create Reception</title>
+<title>Create_Reception</title>
 
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
