@@ -32,6 +32,13 @@
 
 </head>
 <body id="page-top">
+	<script>
+		$("#menu-toggle").click(function(e) {
+			e.preventDefault();
+			$("#wrapper").toggleClass("menuDisplayed");
+		});
+	</script>
+
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
@@ -164,9 +171,9 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Payment Type:</h6>
-					<a class="dropdown-item" href="paymenttype-list">List Payment Type</a>
-					<a class="dropdown-item" href="paymenttype-save">Create Payment
-						Type</a>
+					<a class="dropdown-item" href="paymenttype-list">List Payment
+						Type</a> <a class="dropdown-item" href="paymenttype-save">Create
+						Payment Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Payment:</h6>
 					<a class="dropdown-item" href="payment-list">List Payment</a> <a
@@ -205,7 +212,7 @@
 				<!-- Breadcrumbs-->
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="#">Persion</a></li>
-					<li class="breadcrumb-item active">Create Employee </li>
+					<li class="breadcrumb-item active">Create Employee</li>
 				</ol>
 				<c:url value="/saveEmployee" var="saveEmployee" />
 				<form:form name="myForm" id="employeeAdd" action="${saveEmployee}"
@@ -213,9 +220,11 @@
 					<div class="form-row">
 						<div class="form-group col-md-5">
 							<label>Name:</label>
-							<form:input class="form-control" path="name" placeholder="Full name"/>
+							<form:input class="form-control" path="name"
+								placeholder="Full name" />
 							<br /> <label>Birthday:</label>
-							<form:input class="form-control" path="birthday" id="datepicker" placeholder="Birthday"/>
+							<form:input class="form-control" path="birthday" id="datepicker"
+								placeholder="Birthday" />
 
 							<script>
 								$(function() {
@@ -229,19 +238,24 @@
 								});
 							</script>
 							<br /> <label>Government ID:</label>
-							<form:input class="form-control" path="governmentid" placeholder="Government ID" />
+							<form:input class="form-control" path="governmentid"
+								placeholder="Government ID" />
 							<br /> <label>Phone:</label>
-							<form:input class="form-control" path="phone" placeholder="Phone"  />
+							<form:input class="form-control" path="phone" placeholder="Phone" />
 						</div>
 						<br />
 						<div class="form-group col-md-6">
 							<label>Email</label>
-							<form:input class="form-control" path="email"  placeholder="Email"  />
-							<br /> <label>Address</label>
-							<form:input class="form-control" path="address" placeholder="Address"  />
-							
+							<form:input class="form-control" path="email" placeholder="Email" />
 							<br /> <label>Salary:</label>
-							<form:input class="form-control" path="salary"  placeholder="Salary"  />
+							<form:input class="form-control" path="salary"
+								placeholder="Salary" />
+							<br />
+							<div class="form-group">
+								<label>Address</label>
+								<form:textarea path="address" id="address" rows="2" cols="50"
+									class="form-control" placeholder="Address" />
+							</div>
 							<br /> <label>Image:</label>
 							<output id="list">
 								<img src="/HotelManagement/resources/image/441.jpg" width="120">
@@ -275,7 +289,7 @@
 										.addEventListener('change',
 												handleFileSelect, false);
 							</script>
-						<br />
+							<br />
 							<button type="submit" class="btn btn-success">Save</button>
 							<button type="submit" class="btn btn-danger">
 								<a href="<c:url value="/employee-list" />"> Reset<i
@@ -329,8 +343,8 @@
 		</div>
 	</div>
 	<!-- Bootstrap core JavaScript-->
-<!-- Bootstrap core JavaScript-->
-	<script src="<c:url value="/resources/vendor/jquery/jquery.min.js"/>"></script>
+	<!-- Bootstrap core JavaScript-->
+
 	<script
 		src="<c:url value="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
 	<!-- Core plugin JavaScript-->
