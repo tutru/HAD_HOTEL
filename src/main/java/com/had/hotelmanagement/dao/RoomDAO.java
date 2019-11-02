@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.had.hotelmanagement.entity.Account;
 import com.had.hotelmanagement.entity.Room;
 import com.had.hotelmanagement.entity.RoomMapper;
 
@@ -19,8 +20,8 @@ public class RoomDAO {
 	private JdbcTemplate jdbcTemplate;
 
 	public void save(Room room) {
-		String sql = "INSERT INTO room (roomtypeid,roomstatusid,roomimage,roomdesc) VALUES (?,?,?,?)";
-		jdbcTemplate.update(sql, room.getRoomtypeid(),room.getRoomstatusid(),room.getRoomimage(),room.getRoomdesc());
+		String sql = "INSERT INTO room (roomtypeid,roomstatusid,roomnumber,roomprice,roomimage,roomdesc) VALUES (?,?,?,?,?,?)";
+		jdbcTemplate.update(sql, room.getRoomtypeid(),room.getRoomstatusid(),room.getRoomnumber(),room.getRoomprice(),room.getRoomimage(),room.getRoomdesc());
 	}
 
 	public void delete(int roomid) {
@@ -29,8 +30,8 @@ public class RoomDAO {
 	}
 	
 	public void update(Room room) {
-		String sql = "UPDATE room SET  roomtypeid = ?, roomstatusid=? , roomimage=?, roomdesc=? WHERE roomid = ? ";
-		jdbcTemplate.update(sql, room.getRoomtypeid(),room.getRoomstatusid(),room.getRoomimage(),room.getRoomdesc(),room.getRoomid());
+		String sql = "UPDATE room SET  roomtypeid = ?, roomstatusid=? , roomnumber=? , roomprice=? , roomimage=?, roomdesc=? WHERE roomid = ? ";
+		jdbcTemplate.update(sql, room.getRoomtypeid(),room.getRoomstatusid(),room.getRoomnumber(),room.getRoomprice(),room.getRoomimage(),room.getRoomdesc(),room.getRoomid());
 	}
 
 	public Room findByIdRoom(int roomid) {
@@ -42,11 +43,20 @@ public class RoomDAO {
 		String sql = "SELECT * FROM room";
 		return jdbcTemplate.query(sql, new RoomMapper());
 	}
-	
-	public List<Room>findRoom(String roomname){
-		String sql = "SELECT * FROM room WHERE roomname LIKE '%"+roomname+"%'";
-		return jdbcTemplate.query(sql, new RoomMapper());
+	 
+	public String ckeckroom(Room room) {
+		try {
+			String sql = "select  count(*) FROM room where roomnumber = ?";
+			String name = jdbcTemplate.queryForObject(sql, new Object[] { room.getRoomnumber() }, String.class);
+
+			return name;
+		} catch (Exception e) {
+			return null;
+		}
+
 	}
+	
+	
 
 
 }

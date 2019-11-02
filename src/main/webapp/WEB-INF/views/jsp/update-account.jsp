@@ -189,7 +189,6 @@
 
 				<!-- Breadcrumbs-->
 				<ol class="breadcrumb">
-
 					<li class="breadcrumb-item active">Đổi Mật Khẩu</li>
 				</ol>
 				<div class="container">
@@ -205,14 +204,13 @@
 							<form:input path="accountid" readonly="true" class="form-control" />
 							
 							<br /> <label>Tên Nhân Viên</label>
-							 <select name="employeeid"
-								class="form-control">
+							 <select name="employeeid" id="employeeid" class="form-control">
 								<c:if test="${not empty listEmployee}">
 									<c:forEach var="employee" items="${listEmployee}">
 										<option value=${employee.employeeid}>${employee.name}</option>
 									</c:forEach>
 								</c:if>
-							</select> 
+							</select>
 							
 							<br /> 
 							
@@ -221,7 +219,7 @@
 								class="form-control">
 								<c:if test="${not empty listRole}">
 									<c:forEach var="role" items="${listRole}">
-										<option value=${role.roleid}>${role.rolename}</option>
+										<option value=${role.roleid} >${role.rolename}</option>
 									</c:forEach>
 								</c:if>
 							</select> <br />

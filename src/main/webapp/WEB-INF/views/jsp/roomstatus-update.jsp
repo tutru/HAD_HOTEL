@@ -202,7 +202,7 @@
 				<!-- Breadcrumbs-->
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="#">Persion</a></li>
-					<li class="breadcrumb-item active">Update Room Type</li>
+					<li class="breadcrumb-item active">Update Room Status</li>
 				</ol>
 
 				<c:url value="/updateRoomStatus" var="updateRoomStatus" />
@@ -217,8 +217,9 @@
 							<form:input class="form-control" path="roomstatusname" />
 						</div>
 						<div class="form-group col-md-5">
-							Status desc:
-							<form:input class="form-control" path="roomstatusdesc" />
+							<label>Room status desc</label>
+							<form:textarea path="roomstatusdesc" id="roomstatusdesc" rows="4"
+								cols="50" class="form-control" />
 							<br />
 
 							<button type="submit" class="btn btn-success">Update</button>

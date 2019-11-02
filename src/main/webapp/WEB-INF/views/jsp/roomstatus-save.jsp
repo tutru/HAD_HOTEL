@@ -215,8 +215,9 @@
 						</div>
 
 						<div class="form-group col-md-5">
-							<label>Status desc:</label>
-							<form:input class="form-control" path="roomstatusdesc" />
+							<label>Room status desc</label>
+							<form:textarea path="roomstatusdesc" id="roomstatusdesc" rows="4"
+								cols="50" class="form-control" />
 							<br /> <br />
 							<button type="submit" class="btn btn-success">Save</button>
 							<button type="submit" class="btn btn-danger">

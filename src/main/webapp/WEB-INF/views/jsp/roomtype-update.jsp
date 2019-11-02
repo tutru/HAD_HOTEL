@@ -106,8 +106,8 @@
 
 		<!-- Sidebar -->
 		<ul class="sidebar navbar-nav">
-			<li class="nav-item active"><a class="nav-link" href="<c:url value="/index"/>">
-					<i class="fas fa-home"></i> <span>Home</span>
+			<li class="nav-item active"><a class="nav-link"
+				href="<c:url value="/index"/>"> <i class="fas fa-home"></i> <span>Home</span>
 			</a></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -116,12 +116,14 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Customer:</h6>
-					<a class="dropdown-item" href="<c:url value="/customer-list"/>">List Customer</a> <a
-						class="dropdown-item" href="<c:url value="/customer-save"/>">Create Customer</a>
+					<a class="dropdown-item" href="<c:url value="/customer-list"/>">List
+						Customer</a> <a class="dropdown-item"
+						href="<c:url value="/customer-save"/>">Create Customer</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Employee:</h6>
-					<a class="dropdown-item" href="<c:url value="/employee-list"/>">List Employee</a> <a
-						class="dropdown-item" href="<c:url value="/employee-save"/>">Create Employee</a>
+					<a class="dropdown-item" href="<c:url value="/employee-list"/>">List
+						Employee</a> <a class="dropdown-item"
+						href="<c:url value="/employee-save"/>">Create Employee</a>
 					<div class="dropdown-divider"></div>
 				</div></li>
 			<li class="nav-item dropdown"><a
@@ -131,11 +133,13 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Account:</h6>
-					<a class="dropdown-item" href="<c:url value="/list-account"/>">List Account</a> <a
-						class="dropdown-item" href="<c:url value="/save-account"/>">Create Account</a>
+					<a class="dropdown-item" href="<c:url value="/list-account"/>">List
+						Account</a> <a class="dropdown-item"
+						href="<c:url value="/save-account"/>">Create Account</a>
 					<h6 class="dropdown-header">Role:</h6>
-					<a class="dropdown-item" href="<c:url value="/list-role"/>">List Role</a> <a
-						class="dropdown-item" href="<c:url value="/save-role"/>">Create Role</a>
+					<a class="dropdown-item" href="<c:url value="/list-role"/>">List
+						Role</a> <a class="dropdown-item" href="<c:url value="/save-role"/>">Create
+						Role</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
@@ -144,17 +148,20 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Room Type:</h6>
-					<a class="dropdown-item" href="<c:url value="/roomtype-list"/>">List Room Type</a> <a
-						class="dropdown-item" href="<c:url value="/roomtype-save"/>">Create Room Type</a>
+					<a class="dropdown-item" href="<c:url value="/roomtype-list"/>">List
+						Room Type</a> <a class="dropdown-item"
+						href="<c:url value="/roomtype-save"/>">Create Room Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room Status:</h6>
-					<a class="dropdown-item" href="<c:url value="/roomstatus-list"/>">List Room
-						Status</a> <a class="dropdown-item" href="<c:url value="/roomstatus-save"/>">Create
-						Room Status Status</a>
+					<a class="dropdown-item" href="<c:url value="/roomstatus-list"/>">List
+						Room Status</a> <a class="dropdown-item"
+						href="<c:url value="/roomstatus-save"/>">Create Room Status
+						Status</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room:</h6>
-					<a class="dropdown-item" href="<c:url value="/room-list"/>">List Room</a> <a
-						class="dropdown-item" href="<c:url value="/room-list"/>">Create Room</a>
+					<a class="dropdown-item" href="<c:url value="/room-list"/>">List
+						Room</a> <a class="dropdown-item" href="<c:url value="/room-list"/>">Create
+						Room</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
@@ -162,12 +169,14 @@
 					class="fas fa-money-check-alt"></i> <span>Payment</span> </a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Payment Type:</h6>
-					<a class="dropdown-item" href="<c:url value="/paymenttype-list"/>">List Payment Type</a> 
-					<a class="dropdown-item" href="<c:url value="/paymenttype-save"/>">Create Payment Type</a>
+					<a class="dropdown-item" href="<c:url value="/paymenttype-list"/>">List
+						Payment Type</a> <a class="dropdown-item"
+						href="<c:url value="/paymenttype-save"/>">Create Payment Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Payment:</h6>
-					<a class="dropdown-item" href="<c:url value="/payment-list"/>">List Payment</a> <a
-						class="dropdown-item" href="<c:url value="/payment-save"/>">Create Payment</a>
+					<a class="dropdown-item" href="<c:url value="/payment-list"/>">List
+						Payment</a> <a class="dropdown-item"
+						href="<c:url value="/payment-save"/>">Create Payment</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
@@ -177,12 +186,13 @@
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Reservation:</h6>
 					<a class="dropdown-item" href="<c:url value="/reservation-list"/>">List
-						Reservation</a> <a class="dropdown-item" href="<c:url value="/reservation-list"/>">Create
-						Resertvation</a>
+						Reservation</a> <a class="dropdown-item"
+						href="<c:url value="/reservation-list"/>">Create Resertvation</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Reception:</h6>
-					<a class="dropdown-item" href="<c:url value="/reception-list"/>">List Reception</a> <a
-						class="dropdown-item" href="<c:url value="/reception-save"/>">Create Reception</a>
+					<a class="dropdown-item" href="<c:url value="/reception-list"/>">List
+						Reception</a> <a class="dropdown-item"
+						href="<c:url value="/reception-save"/>">Create Reception</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
@@ -190,8 +200,9 @@
 					<i class="fas fa-list-ol"></i> <span>Service</span>
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
-					<a class="dropdown-item" href="<c:url value="/service-list"/>">List Service</a> <a
-						class="dropdown-item" href="<c:url value="/service-save"/>">Create Service</a>
+					<a class="dropdown-item" href="<c:url value="/service-list"/>">List
+						Service</a> <a class="dropdown-item"
+						href="<c:url value="/service-save"/>">Create Service</a>
 				</div></li>
 		</ul>
 
@@ -213,13 +224,16 @@
 							<label>ID type:</label>
 							<form:input class="form-control" path="roomtypeid"
 								readonly="true" />
+								<br/>
+								<br/>
 							<br /> <label>Name type room:</label>
 							<form:input class="form-control" path="roomtypename" />
 						</div>
+						<br />
 						<div class="form-group col-md-5">
-							<label>Room type desc:</label>
-							<form:input class="form-control" path="roomtypedesc" />
-							<br />
+							<label>Room type desc</label>
+							<form:textarea path="roomtypedesc" id="roomtypedesc" rows="4"
+								cols="50" class="form-control" />
 							<label>Price:</label>
 							<form:input class="form-control" path="roomprice" />
 							<br /> <br />

@@ -14,7 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.had.hotelmanagement.dao.RoleDao;
+import com.had.hotelmanagement.dao.RoomDAO;
 import com.had.hotelmanagement.entity.Room;
 import com.had.hotelmanagement.service.RoomService;
 
@@ -24,15 +27,16 @@ public class RoomController {
 
 	@Autowired
 	private RoomService roomService;
+	@Autowired
+	private RoomDAO dao;
 
-	@RequestMapping(value = {
-			"/room-list" }, method = RequestMethod.GET, produces = "application/x-www-form-urlencoded;charset=UTF-8")
+	@RequestMapping(value = { "/room-list" }, method = RequestMethod.GET)
 	public String listrole(Model model) {
 		model.addAttribute("listRoom", roomService.findAll());
 		return "room-list";
 	}
 
-	@RequestMapping(value = "/room-save", produces = "application/x-www-form-urlencoded;charset=UTF-8")
+	@RequestMapping(value = "/room-save")
 	public String insertRoom(Model model) {
 		model.addAttribute("room", new Room());
 		model.addAttribute("listRoomType", roomService.listRoomType());
@@ -57,22 +61,38 @@ public class RoomController {
 	}
 
 	@RequestMapping(value = "/saveRoom", method = RequestMethod.POST)
-	public String doSaveRoom(ModelMap model, @ModelAttribute("room") Room room,
-			@RequestParam("uploadImg") MultipartFile image) {
-		if (image.isEmpty()) {
-		} else {
-			try {
-				String path = "D:\\DU_AN\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
-						+ image.getOriginalFilename();
-				image.transferTo(new File(path));
-				room.setRoomimage(image.getOriginalFilename());
-				roomService.save(room);
-			} catch (Exception ex) {
-				ex.printStackTrace();
+	public ModelAndView doSaveRoom(ModelMap model, @ModelAttribute("room") Room room,
+			@RequestParam("uploadImg") MultipartFile image, @RequestParam("roomnumber") int roomnumber) {
+		ModelAndView mv = new ModelAndView();	
+		room.setRoomnumber(roomnumber);
+		String user = dao.ckeckroom(room);
+		if (user.equals("0")) {
+			if (image.isEmpty()) {
+			} else {
+				try {
+					String path = "D:\\DU_AN\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
+							+ image.getOriginalFilename();
+					image.transferTo(new File(path));
+					room.setRoomimage(image.getOriginalFilename());
+					roomService.save(room);
+				} catch (Exception ex) {
+					ex.printStackTrace();
+				}
 			}
+			model.addAttribute("listRoom", roomService.findAll());
+			mv.addObject("msg", "thành công");
+			mv.setViewName("room-list");
 		}
-		model.addAttribute("listRoom", roomService.findAll());
-		return "redirect:room-list";
+
+		else {
+
+			mv.setViewName("room-save");
+			mv.addObject("msg", "Số Phòng đã có mời bạn nhập lại số khác");
+			mv.addObject("listRoomType", roomService.listRoomType());
+			mv.addObject("listRoomStatus", roomService.listRoomStatus());
+		}
+
+		return mv;
 	}
 
 	@RequestMapping(value = "/updateRoom", method = RequestMethod.POST, produces = "application/x-www-form-urlencoded;charset=UTF-8")

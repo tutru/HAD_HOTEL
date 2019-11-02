@@ -1,6 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html>
@@ -30,7 +31,7 @@
 	<c:url value="/roomDelete/" var="urlDelete" />
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-		<a class="navbar-brand mr-1" href="index"><img
+		<a class="navbar-brand mr-1" href="<c:url value="/index"/>"><img
 			src="<%=request.getContextPath()%>/resources/image/logo.JPG"
 			width="120"></a>
 
@@ -217,6 +218,8 @@
 										<td>Mã Phòng</td>
 										<td>Mã Loại Phòng</td>
 										<td>Mã Trạng Thái Phòng</td>
+										<td>Số Phòng</td>
+										<td>Gía Tiền</td>
 										<td>Hình</td>
 										<td>Mô tả</td>
 										<td></td>
@@ -230,7 +233,10 @@
 											<td>${room.roomid}</td>
 											<td>${room.roomtypeid}</td>
 											<td>${room.roomstatusid}</td>
-											<td><img
+											<td>${room.roomnumber}</td>
+											<td><fmt:formatNumber value = "${room.roomprice}"/></td>		
+											
+																													<td><img
 												src="<%=request.getContextPath()%>/resources/image/${room.roomimage}"
 												width="120" /></td>
 											<td>${room.roomdesc }</td>
@@ -296,22 +302,25 @@
 	</div>
 
 
-	<!-- Bootstrap core JavaScript-->
-	<script src="resources/vendor/jquery/jquery.min.js"></script>
-	<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="<c:url value="/resources/vendor/jquery/jquery.min.js"/>"></script>
+	<script
+		src="<c:url value="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
 
 	<!-- Core plugin JavaScript-->
-	<script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+	<script
+		src="<c:url value="/resources/vendor/jquery-easing/jquery.easing.min.js"/>"></script>
 
 	<!-- Page level plugin JavaScript-->
-	<script src="resources/vendor/datatables/jquery.dataTables.js"></script>
-	<script src="resources/vendor/datatables/dataTables.bootstrap4.js"></script>
+	<script
+		src="<c:url value="/resources/vendor/datatables/jquery.dataTables.js"/>"></script>
+	<script
+		src="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.js"/>"></script>
 
 	<!-- Custom scripts for all pages-->
-	<script src="resources/js/sb-admin.min.js"></script>
+	<script src="<c:url value="/resources/js/sb-admin.min.js"/>"></script>
 
 	<!-- Demo scripts for this page-->
-	<script src="resources/js/demo/datatables-demo.js"></script>
+	<script src="<c:url value="/resources/js/demo/datatables-demo.js"/>"></script>
 
 </body>
 </body>
