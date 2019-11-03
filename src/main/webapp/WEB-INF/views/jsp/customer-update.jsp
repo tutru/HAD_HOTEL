@@ -225,7 +225,7 @@
 						<div class="form-group col-md-6">
 							<label>ID:</label>
 							<form:input class="form-control" path="customerid"
-								disabled="true" />
+								readonly="true" />
 							<label>Full Name:</label>
 							<form:input class="form-control" path="name" />
 							<br /> <label>Government ID:</label>

@@ -214,7 +214,7 @@
 						<div class="form-group col-md-6">
 							<label>ID</label>
 							<form:input class="form-control" path="reservationid"
-								disabled="true" />
+								readonly="true" />
 							<br /> <label>Customer ID:</label>
 							<form:input class="form-control" path="customerid" />
 							<br /> <label>Room Type ID:</label>
