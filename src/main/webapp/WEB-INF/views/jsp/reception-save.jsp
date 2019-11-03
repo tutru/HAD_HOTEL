@@ -264,8 +264,15 @@
 									$("#datepicker2").datepicker();
 								});
 							</script>
-							<br /> <label>serviceid:</label>
-							<form:input class="form-control" path="serviceid" />
+							<br /> <label>Service:</label>
+							<select
+								class="form-control" name="serviceid">
+								<c:if test="${not empty listService}">
+									<c:forEach var="service" items="${listService}">
+										<option value=${service.serviceid}>${service.servicename}</option>
+									</c:forEach>
+								</c:if>
+							</select>
 							<br /> <label>reservationstatus:</label>
 							<form:input class="form-control" path="reservationstatus" />
 							<br />

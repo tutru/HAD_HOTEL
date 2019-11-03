@@ -184,8 +184,9 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Reservation:</h6>
-					<a class="dropdown-item" href="reservation-list">List Reservation</a> <a
-						class="dropdown-item" href="reservation-save">Create Resertvation</a>
+					<a class="dropdown-item" href="reservation-list">List
+						Reservation</a> <a class="dropdown-item" href="reservation-save">Create
+						Resertvation</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Reception:</h6>
 					<a class="dropdown-item" href="reception-list">List Reception</a> <a
@@ -216,12 +217,25 @@
 					modelAttribute="reservation">
 					<div class="form-row">
 						<div class="form-group col-md-6">
-							<label>customerid:</label>
-							<form:input class="form-control" path="customerid" />
-							<br /> <label>roomtypeid:</label>
-							<form:input class="form-control" path="roomtypeid" />
+							<label>Customer Name:</label> <select
+								class="form-control" name="customerid">
+								<c:if test="${not empty listCustomer}">
+									<c:forEach var="customer" items="${listCustomer}">
+										<option value=${customer.customerid}>${customer.name}</option>
+									</c:forEach>
+								</c:if>
+							</select> <br /> <label>Room Type:</label>
+							<select
+								class="form-control" name="roomtypeid">
+								<c:if test="${not empty listRoomType}">
+									<c:forEach var="roomType" items="${listRoomType}">
+										<option value=${roomType.roomtypeid}>${roomType.roomtypename}</option>
+									</c:forEach>
+								</c:if>
+							</select>
 							<br /> <label>expectedcheckdate:</label>
-							<form:input class="form-control" path="expectedcheckdate" id="datepicker" placeholder="Expected Check Date"/>
+							<form:input class="form-control" path="expectedcheckdate"
+								id="datepicker" placeholder="Expected Check Date" />
 							<script>
 								$(function() {
 									$.datepicker.setDefaults({
@@ -241,7 +255,8 @@
 							<br /> <label>isdeposit:</label>
 							<form:input class="form-control" path="isdeposit" />
 							<br /> <label>reservationstatus:</label>
-							<form:input class="form-control" path="reservationstatus" placeholder="Reservation Status"/>
+							<form:input class="form-control" path="reservationstatus"
+								placeholder="Reservation Status" />
 							<br />
 							<form:button type="submit" class="btn btn-success">Save</form:button>
 							<button type="submit">

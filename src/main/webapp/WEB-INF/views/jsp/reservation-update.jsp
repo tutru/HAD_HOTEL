@@ -18,7 +18,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Customer_Update</title>
+<title>Customer Update</title>
 
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 

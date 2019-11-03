@@ -10,12 +10,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.had.hotelmanagement.entity.Reception;
 import com.had.hotelmanagement.service.ReceptionService;
+import com.had.hotelmanagement.service.ServiceService;
 
 @Controller
 @RequestMapping(value = "")
 public class ReceptionController {
 	@Autowired
 	private ReceptionService receptionService;
+	@Autowired
+	private ServiceService  serviceService;
 	
 	@RequestMapping(value={"/reception-list"},method = RequestMethod.GET)
 	public String listReception(Model model) {
@@ -25,6 +28,7 @@ public class ReceptionController {
 	@RequestMapping(value = "/reception-save", method = RequestMethod.GET)
 	public String insertReception(Model model) {
 		model.addAttribute("reception", new Reception());
+		model.addAttribute("listService", serviceService.findAll());
 		return "reception-save";
 	}
 	

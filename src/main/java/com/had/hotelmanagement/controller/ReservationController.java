@@ -8,9 +8,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.had.hotelmanagement.entity.Customer;
 import com.had.hotelmanagement.entity.Reservation;
+import com.had.hotelmanagement.service.CustomerService;
 import com.had.hotelmanagement.service.ReservationService;
+import com.had.hotelmanagement.service.RoomTypeService;
 
 @Controller
 @RequestMapping(value = "")
@@ -18,6 +19,10 @@ public class ReservationController {
 
 	@Autowired
 	private ReservationService reservationService;
+	@Autowired
+	private CustomerService  customerService;
+	@Autowired
+	private RoomTypeService  roomTypeService;
 	
 	@RequestMapping(value={"/reservation-list"},method = RequestMethod.GET)
 	public String listReservation(Model model) {
@@ -27,6 +32,8 @@ public class ReservationController {
 	@RequestMapping(value = "/reservation-save", method = RequestMethod.GET)
 	public String insertReservation(Model model) {
 		model.addAttribute("reservation", new Reservation());
+		model.addAttribute("listCustomer", customerService.findAll());
+		model.addAttribute("listRoomType", roomTypeService.findAll());
 		return "reservation-save";
 	}
 	
