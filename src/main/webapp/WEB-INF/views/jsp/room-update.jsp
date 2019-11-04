@@ -13,7 +13,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Thêm Phòng</title>
+<title>Room Update</title>
 <link rel="stylesheet" href="<c:url value="/resources/vendor/fontawesome-free/css/all.min.css"></c:url>">
 <link rel="stylesheet" href="<c:url value="/resources/css/sb-admin.css"></c:url>">
 <link rel="stylesheet" href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
@@ -199,7 +199,7 @@
 				<!-- DataTables Example -->
 				<div class="card mb-3">
 					<div class="card-header">
-						<i class="fas fa-table"></i> Sửa Phòng
+						<i class="fas fa-table"></i> Room Update
 					</div>
 
 
@@ -214,7 +214,7 @@
 						</div>
 						<div class="form-group row">
 						<div class="col-md-6">
-							<label> Tên loại phòng:</label> <select name="roomtypeid"
+							<label> Name Room Type:</label> <select name="roomtypeid"
 								class="form-control">
 								<c:if test="${not empty listRoomType}">
 									<c:forEach var="roomtype" items="${listRoomType}">
@@ -225,7 +225,7 @@
 						</div>
 
 						<div class="col-md-6">
-							<label>Tên trạng thái phòng:</label> <select name="roomstatusid"
+							<label>Name Room Status:</label> <select name="roomstatusid"
 								class="form-control">
 								<c:if test="${not empty listRoomStatus}">
 									<c:forEach var="roomstatus" items="${listRoomStatus}">
@@ -239,15 +239,15 @@
 					<br />
 						<div class="form-group row">
 						<div class="col-md-6">
-							<label>Số Phòng</label> 
+							<label>Room Number</label> 
 							<form:input path="roomnumber"
-								class="form-control" type="number" placeholder="Mời bạn nhập số Phòng" />
+								class="form-control" type="number" placeholder="Please enter the Room number" />
 							<div style="color: red;">${msg}</div>
 						</div>
 						<br /> <br />
 						<div class="col-md-6">
-							<label>Số tiền</label> 
-							<form:input path="roomprice" type="number" class="form-control" placeholder="Mời bạn nhập số Tiền" />
+							<label>Price</label> 
+							<form:input path="roomprice" type="number" class="form-control" placeholder="Please enter the Amount" />
 
 						</div>
 					</div>
@@ -287,16 +287,13 @@
 						<br />
 						<br />
 						<div class="form-group">
-							<label>Mô tả phòng</label>
+							<label>Room Desc</label>
 							<form:textarea path="roomdesc" id="roomdesc" rows="4" cols="50" class="form-control"/>
 						</div>
 						<br />
 						<br />
-						<form:button class="btn btn-warning" type="submit"> Thêm</form:button>
-						<form:button type="submit" class="btn btn-dark">
-							<a href="<c:url value="/room-list" />"> Xem danh sách trạng
-								thái phòng</a>
-						</form:button>
+						<form:button class="btn btn-warning" type="submit"> Room Update</form:button>
+						
 					</form:form>
 					
 					<script type="text/javascript">

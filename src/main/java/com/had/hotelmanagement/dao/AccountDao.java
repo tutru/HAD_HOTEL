@@ -3,14 +3,14 @@ package com.had.hotelmanagement.dao;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.had.hotelmanagement.entity.Account;
 import com.had.hotelmanagement.entity.AccountMapper;
-import com.had.hotelmanagement.entity.Role;
-import com.had.hotelmanagement.entity.RoleMapper;
+
 
 @Repository
 @Transactional
@@ -37,19 +37,24 @@ public class AccountDao {
 
 	public Account findById(int id) {
 		String sql = "SELECT * FROM account WHERE accountid = ?";
-		return jdbcTemplate.queryForObject(sql, new AccountMapper(), id);
+		//return jdbcTemplate.queryForObject(sql, new AccountMapper(), id);
+		return (Account) jdbcTemplate.queryForObject(sql, new Object[] { id }, new BeanPropertyRowMapper(Account.class));
+
 	}
 
 	public List<Account> findAll() {
-		String sql = "SELECT * FROM account";
+		String sql = "select accountid ,ac.employeeid ,ac.roleid , name , rolename , username , password "
+				+ "from employee em join account ac on em.employeeid = ac.employeeid join role ro on ro.roleid = ac.roleid"; 			
+		//String sql = "SELECT * FROM account";
 		return jdbcTemplate.query(sql, new AccountMapper());
+		
 	}
 
-	public List<Account> findaccount(String nhanvien) {
-		String sql = "SELECT * FROM account WHERE username LIKE '%" + nhanvien + "%'";
-		return jdbcTemplate.query(sql, new AccountMapper());
-	}
-
+	/*
+	 * public List<Account> findaccount(String nhanvien) { String sql =
+	 * "SELECT * FROM account WHERE username LIKE '%" + nhanvien + "%'"; return
+	 * jdbcTemplate.query(sql, new AccountMapper()); }
+	 */
 	public String ckeck(Account ac) {
 		try {
 			String sql = "select  count(*) FROM had_hotel.account ac where ac.username  = ?";

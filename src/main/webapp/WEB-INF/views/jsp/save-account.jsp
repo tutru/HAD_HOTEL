@@ -199,7 +199,7 @@
 
 					<div class="form-group col-12">
 
-						<label>Tên Nhân Viên</label> <select name="employeeid"
+						<label>Employee Name</label> <select name="employeeid"
 							class="form-control">
 							<c:if test="${not empty listEmployee}">
 								<c:forEach var="employee" items="${listEmployee}">
@@ -208,7 +208,7 @@
 							</c:if>
 						</select>
                          <br /> 
-						<label>Vai trò</label> 
+						<label>Role</label> 
 						<select name="roleid"
 							class="form-control">
 							<c:if test="${not empty listRole}">
@@ -218,24 +218,21 @@
 							</c:if>
 						</select>
 						<br /> 
-						 <label>Tên Đang Nhập</label>
-						<form:input path="username" class="form-control" placeholder="Mời Bạn Nhập tên"/>
+						 <label>User Name</label>
+						<form:input path="username" class="form-control" placeholder="Please Enter Your Name"/>
 						<div style="color: red;">${msg}</div>
 						 <br /> 
-						<label>Mật Khẩu</label>
+						<label>Password</label>
 
-						<form:input type="password" id="password" path="password" placeholder="Mời bạn nhập Mật Khẩu"
+						<form:input type="password" id="password" path="password" placeholder="Please Enter Your Password"
 							class="form-control" pattern=".{6,}"
 							title="Mật Khẩu Phải trên 6 chữ hoặc số" />
 						<br /> <br />	<br /> <br />
-						<button type="submit" class="btn btn-warning float-left">Thêm Tài Khoản</button>
+						<button type="submit" class="btn btn-warning float-left">Account Save</button>
 						
 					</div>
 				</form:form>
-				<button type="submit" class="btn btn-dark float-right">
-							<a href="<c:url value="/list-account" />"> Xem danh sách trạng
-								thái phòng</a>
-						</button>
+				
                   </div>
 				<script type="text/javascript">
 					function validateForm() {

@@ -9,8 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.had.hotelmanagement.dao.AccountDao;
 import com.had.hotelmanagement.dao.EmployeeDAO;
 import com.had.hotelmanagement.dao.RoleDao;
-import com.had.hotelmanagement.dao.RoomStatusDAO;
-import com.had.hotelmanagement.dao.RoomTypeDAO;
 import com.had.hotelmanagement.entity.Account;
 import com.had.hotelmanagement.entity.Employee;
 import com.had.hotelmanagement.entity.Role;
@@ -55,7 +53,8 @@ public class AccountService {
 		// validate business
 		dao.delete(id);
 	}
-	public List<Account> searchaccount(String username) {
-		return dao.findaccount(username);
-	}
+	/*
+	 * public List<Account> searchaccount(String username) { return
+	 * dao.findaccount(username); }
+	 */
 }

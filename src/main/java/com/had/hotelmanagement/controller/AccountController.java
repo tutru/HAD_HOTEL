@@ -92,12 +92,11 @@ public class AccountController {
 		return nv;
 	}
 
-	@RequestMapping(value = "/account-search")
-	public String search(String username, Model model) {
-		List<Account> accounts = service.searchaccount(username);
-		model.addAttribute("search", accounts);
-		// model.addAttribute("search",service.findAll());
-		return "account-search";
-	}
+	/*
+	 * @RequestMapping(value = "/account-search") public String search(String
+	 * username, Model model) { List<Account> accounts =
+	 * service.searchaccount(username); model.addAttribute("search", accounts); //
+	 * model.addAttribute("search",service.findAll()); return "account-search"; }
+	 */
 
 }

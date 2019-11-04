@@ -204,9 +204,9 @@
 				<!-- DataTables Example -->
 				<div class="card mb-3">
 					<div class="card-header">
-						<i class="fas fa-table"></i> Danh Sách Phòng
+						<i class="fas fa-table"></i> Room List
 						<button type="submit" class="btn btn-dark float-right">
-							<a href="<c:url value="/room-save" />"> Thêm Phòng</a>
+							<a href="<c:url value="/room-save" />"> Room Save</a>
 						</button>
 					</div>
 					<div class="card-body">
@@ -215,13 +215,14 @@
 								cellspacing="0">
 								<thead>
 									<tr>
-										<td>Mã Phòng</td>
-										<td>Mã Loại Phòng</td>
-										<td>Mã Trạng Thái Phòng</td>
-										<td>Số Phòng</td>
-										<td>Gía Tiền</td>
-										<td>Hình</td>
-										<td>Mô tả</td>
+										<td>ID</td>
+										<td>Name Room Type</td>
+										<td>Name Room Status</td>
+										<td>Room Number</td>
+										<td>Price</td>
+										<td>Image</td>
+										<td>Room Desc</td>
+								
 										<td></td>
 										<td></td>
 
@@ -231,12 +232,12 @@
 									<c:forEach var="room" items="${listRoom}">
 										<tr>
 											<td>${room.roomid}</td>
-											<td>${room.roomtypeid}</td>
-											<td>${room.roomstatusid}</td>
+										    <td>${room.roomtypename}</td>
+											<td>${room.roomstatusname}</td>
 											<td>${room.roomnumber}</td>
-											<td><fmt:formatNumber value = "${room.roomprice}"/></td>		
-											
-																													<td><img
+											<td><fmt:formatNumber value = "${room.roomprice}"/></td>
+
+											<td><img
 												src="<%=request.getContextPath()%>/resources/image/${room.roomimage}"
 												width="120" /></td>
 											<td>${room.roomdesc }</td>

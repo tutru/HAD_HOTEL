@@ -13,7 +13,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Thêm Phòng</title>
+<title>Room Save</title>
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -207,12 +207,12 @@
 				<!-- Breadcrumbs-->
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="#">Persion</a></li>
-					<li class="breadcrumb-item active">Thêm Phòng</li>
+					<li class="breadcrumb-item active">Room Save</li>
 				</ol>
 				<!-- DataTables Example -->
 				<div class="card mb-3">
 					<div class="card-header">
-						<i class="fas fa-table"></i> THÊM MỚI THÔNG TIN TRẠNG THÁI PHÒNG
+						<i class="fas fa-table"></i> Add Information Room
 					</div>
 
 				</div>
@@ -226,7 +226,7 @@
 					enctype="multipart/form-data" onsubmit="return validateForm()" name="myForm">
 					<div class="form-group row">
 						<div class="col-md-6">
-							<label> Tên loại phòng:</label> <select name="roomtypeid"
+							<label> Name Room Type:</label> <select name="roomtypeid"
 								class="form-control">
 								<c:if test="${not empty listRoomType}">
 									<c:forEach var="roomtype" items="${listRoomType}">
@@ -237,7 +237,7 @@
 						</div>
 						
 						<div class="col-md-6">
-							<label>Tên trạng thái phòng:</label> <select name="roomstatusid"
+							<label>Name Room Status:</label> <select name="roomstatusid"
 								class="form-control">
 								<c:if test="${not empty listRoomStatus}">
 									<c:forEach var="roomstatus" items="${listRoomStatus}">
@@ -251,15 +251,15 @@
 					<br />
 					<div class="form-group row">
 					<div class="col-md-6">
-						<label>Số Phòng</label> 
-						<input name="roomnumber" class="form-control" type="number" placeholder="Mời bạn nhập số Phòng" />
+						<label>Room Number: </label> 
+						<input name="roomnumber" class="form-control" type="number" placeholder="Please enter the Room number" />
 					<div style="color: red;">${msg}</div>
 					</div>
 					<br />
 					<br />
 					<div class="col-md-6">
-						<label>Số tiền</label> 
-						<input name="roomprice" type="number" class="form-control"  placeholder="Mời bạn nhập số Tiền" />
+						<label>Price</label> 
+						<input name="roomprice" type="number" class="form-control"  placeholder="Please enter the Amount" />
 					
 					</div>
 					</div>
@@ -268,7 +268,7 @@
 					<br />
 					<label>Image:</label>
 					<span class="btn btn-default btn-file">
-					 <input type="file" id="files" name="uploadImg" required="required" title="Mật Khẩu Phải trên 6 chữ hoặc số">
+					 <input type="file" id="files" name="uploadImg" required="required" >
 					</span>
 					<script>
 						if (window.FileReader) {
@@ -300,14 +300,14 @@
 					<br />
 					<br />
 					<div class="form-group">
-						<label>Mô tả phòng</label>
+						<label>Room Desc</label>
 						<textarea name="roomdesc" rows="4" cols="50" class="form-control" >
 
 							</textarea>
 					</div>
 					<br />
 					<br />
-					<button class="btn btn-warning" type="submit">Thêm Phòng</button>
+					<button class="btn btn-warning" type="submit">Room Save</button>
 					
 				</form:form>
 				

@@ -200,9 +200,9 @@
 				<!-- DataTables Example -->
 				<div class="card mb-3">
 					<div class="card-header">
-						<i class="fas fa-table"></i> Tài Khoản
+						<i class="fas fa-table"></i> Account
 						<button type="submit" class="btn btn-dark float-right">
-							<a href="<c:url value="/save-account" />"> Thêm Tài khoản</a>
+							<a href="<c:url value="/save-account" />"> Account Save</a>
 						</button>
 					</div>
 
@@ -214,10 +214,10 @@
 								<thead>
 									<tr>
 										<td>Id</td>
-										<td>ID Nhân Viên</td>
-										<td>ID trạng thái</td>
-										<td>Tài khoản</td>
-										<td>Mật khẩu</td>
+										<td>Employee Name</td>
+										<td>Role Name</td>
+										<td>User name</td>
+										<td>PassWord</td>
 										<td></td>
 										<td></td>
 									</tr>
@@ -226,8 +226,8 @@
 									<c:forEach var="ac" items="${list}">
 										<tr>
 											<td>${ac.accountid}</td>
-											<td>${ac.employeeid}</td>
-											<td>${ac.roleid}</td>
+											<td>${ac.name}</td>
+											<td>${ac.rolename}</td>
 											<td>${ac.username}</td>
 											<td>${ac.password}</td>
 											<td>

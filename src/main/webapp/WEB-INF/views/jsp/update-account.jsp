@@ -189,7 +189,7 @@
 
 				<!-- Breadcrumbs-->
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item active">Đổi Mật Khẩu</li>
+					<li class="breadcrumb-item active">Update Account</li>
 				</ol>
 				<div class="container">
 				
@@ -200,10 +200,10 @@
 						method="POST">
 
 						<div class="form-group col-12">
-							<label>id</label>
+							<label>Id</label>
 							<form:input path="accountid" readonly="true" class="form-control" />
 							
-							<br /> <label>Tên Nhân Viên</label>
+							<br /> <label>Employee Name</label>
 							 <select name="employeeid" id="employeeid" class="form-control">
 								<c:if test="${not empty listEmployee}">
 									<c:forEach var="employee" items="${listEmployee}">
@@ -214,7 +214,7 @@
 							
 							<br /> 
 							
-							<label>Vai trò</label> 
+							<label>Role</label> 
 							<select name="roleid"
 								class="form-control">
 								<c:if test="${not empty listRole}">
@@ -224,20 +224,19 @@
 								</c:if>
 							</select> <br />
 							
-							 <label>Tên Đang Nhập</label>
+							 <label>User Name</label>
 							<form:input path="username" class="form-control"
-								placeholder="Mời Bạn Nhập tên" readonly="true" />
+								placeholder="Please Enter Your Name" readonly="true" />
 								
 							<div style="color: red;">${msg}</div>
 							
 							<br /> 
-							<label>Mật Khẩu</label>
+							<label>Password</label>
 							<form:input type="password" id="password" path="password"
-								placeholder="Mời bạn nhập Mật Khẩu" class="form-control"
+								placeholder="Please enter your Password" class="form-control"
 								pattern=".{6,}" title="Mật Khẩu Phải trên 6 chữ hoặc số" />
 							<br /> <br /> <br /> <br />
-							<button type="submit" class="btn btn-warning float-left">Đổi
-								Mật Khẩu</button>
+							<button type="submit" class="btn btn-warning float-left">Account Update</button>
 
 						</div>
 					</form:form>

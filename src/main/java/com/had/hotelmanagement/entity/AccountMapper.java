@@ -14,6 +14,8 @@ public class AccountMapper implements RowMapper<Account> {
 		ac.setRoleid(rs.getInt("roleid"));
 		ac.setUsername(rs.getString("username"));
 		ac.setPassword(rs.getString("password"));
+		ac.setName(rs.getString("name"));
+		ac.setRolename(rs.getString("rolename"));
 		return ac;
 	}
 
