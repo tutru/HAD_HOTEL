@@ -211,18 +211,18 @@
 							modelAttribute="role" onsubmit="return validateForm()"
 							method="GET">
 
-							<label>Vai Trò:</label>
-							<form:input path="rolename" class="form-control" />
+							<label>Role Name</label>
+							<form:input path="rolename" class="form-control" placeholder="Please Enter Your Name"/>
                             <div style="color: red;">${msg}</div>
 							<br />
 
-							<label>Mô Tả Quyền</label>
-							<textarea name="roledesc" rows="4" cols="50" class="form-control">
+							<label>Role Desc</label>
+							<textarea name="roledesc" rows="4" cols="50" class="form-control" >
 							
 							</textarea>
 							<br />
 							<br />
-							<button type="submit" class="btn btn-dark">Thêm Quyền</button>
+							<button type="submit" class="btn btn-dark">Role Save</button>
 
 						</form:form>
 						

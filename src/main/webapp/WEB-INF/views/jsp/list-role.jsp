@@ -1,15 +1,16 @@
+<!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<!DOCTYPE html>
 <html>
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-<title>danh sách</title>
-       
+<title>Tài Khoản</title>
+
+
 <!-- Custom styles for this template-->
 <link rel="stylesheet"
 	href="<c:url value="/resources/vendor/fontawesome-free/css/all.min.css"></c:url>">
@@ -17,7 +18,7 @@
 	href="<c:url value="/resources/css/sb-admin.css"></c:url>">
 <link rel="stylesheet"
 	href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
- 
+
 </head>
 
 <body id="page-top">
@@ -26,7 +27,7 @@
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-		<a class="navbar-brand mr-1" href="index"><img
+		 <a class="navbar-brand mr-1" href="<c:url value="/index"/>"><img
 			src="<%=request.getContextPath()%>/resources/image/logo.JPG"
 			width="120"></a>
 
@@ -186,6 +187,7 @@
 						class="dropdown-item" href="<c:url value="/service-save"/>">Create Service</a>
 				</div></li>
 		</ul>
+
 		<div id="content-wrapper">
 
 			<div class="container-fluid">
@@ -198,9 +200,9 @@
 				<!-- DataTables Example -->
 				<div class="card mb-3">
 					<div class="card-header">
-						<i class="fas fa-table"></i> Vai Trò
+						<i class="fas fa-table"></i> Role
 						<button type="submit" class="btn btn-dark float-right">
-							<a href="<c:url value="/save-rolet" />"> Thêm Quyền</a>
+							<a href="<c:url value="/save-role" />"> Role Save</a>
 						</button>
 					</div>
 
@@ -211,31 +213,32 @@
 								cellspacing="0">
 								<thead>
 									<tr>
-										<th>Id</th>
-										<th>Tên Quyền Quản Trị</th>
-										<th>Mô Tả</th>
-										<th></th>
-										<th></th>
+										<td>Id</td>
+										<td>Employee</td>
+										<td>Role</td>
+										<td></td>
+										<td></td>
 									</tr>
 								</thead>
 								<c:if test="${not empty list}">
 									<c:forEach var="role" items="${list}">
 										<tr>
 											<td>${role.roleid}</td>
+											
+											
 											<td>${role.rolename}</td>
 											<td>${role.roledesc}</td>
 											<td>
-											<button type="submit">
+												<button type="submit" class="btn btn-primary">
 													<a href="${urlUpdate}/${role.roleid}"><i
 														class="fas fa-pen" style="color: black"></i></a>
-											</button>
+												</button>
 											</td>
-											
 											<td>
-											<button type="submit">
+												<button type="submit" class="btn btn-danger">
 													<a href="${urlDelete}/${role.roleid}"><i
 														class="fas fa-trash-alt" style="color: black"></i></a>
-											</button>
+												</button>
 											</td>
 										</tr>
 									</c:forEach>

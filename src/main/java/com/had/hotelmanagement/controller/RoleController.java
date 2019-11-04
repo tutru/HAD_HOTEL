@@ -58,9 +58,8 @@ public class RoleController {
 	}
 
 	@RequestMapping("/update-role/{roleid}")
-	public String updatenrole(@PathVariable int roleid, Model model,Role role) {
-		service.findByIdhd(roleid);
-		model.addAttribute("list", service.findAll());
+	public String updatenrole(@PathVariable int roleid, Model model) {
+		Role role = service.findById(roleid);
 		model.addAttribute("role", role);
 		return "update-role";
 	}
@@ -69,7 +68,6 @@ public class RoleController {
 		service.update(role);
 		model.addAttribute("list", service.findAll());
 		return "list-role";
-
 	}
 
 	@RequestMapping("/roleDelete/{roleid}")

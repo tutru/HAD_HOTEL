@@ -35,8 +35,8 @@ public class LoginController {
 				mv.addObject("msg", user);
 				mv.setViewName("index");
 			} else if (name.equals("user")) {
-				mv.addObject("msg", user);
-				mv.setViewName("admin");
+				mv.addObject("msg", "vui lòng đang nhập bằng quyền admin");
+				mv.setViewName("login");
 			} else {
 				mv.addObject("msg", "vui lòng nhập lại.");
 				mv.setViewName("login");

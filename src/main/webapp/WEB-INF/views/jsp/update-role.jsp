@@ -1,30 +1,38 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ page isELIgnored="false"%>
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8" import="java.sql.*"%>
-<html lang="vn">
+
+<!DOCTYPE html>
+<html>
+
 <head>
-<title>HAD Hotel</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
 
-<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<title>Role Update</title>
 <link rel="stylesheet"
 	href="<c:url value="/resources/vendor/fontawesome-free/css/all.min.css"></c:url>">
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/sb-admin.css"></c:url>">
 <link rel="stylesheet"
 	href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
+
 </head>
 
 <body id="page-top">
+	<c:url value="/role-save" var="urlSave" />
+	<c:url value="/role-update/" var="urlUpdate" />
+	<c:url value="/roleDelete/" var="urlDelete" />
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
 		<a class="navbar-brand mr-1" href="<c:url value="/index"/>"><img
 			src="<%=request.getContextPath()%>/resources/image/logo.JPG"
 			width="120"></a>
-
 		<button class="btn btn-link btn-sm text-white order-1 order-sm-0"
 			id="sidebarToggle" href="#">
 			<i class="fas fa-bars"></i>
@@ -43,7 +51,6 @@
 				</div>
 			</div>
 		</form>
-
 		<!-- Navbar -->
 		<ul class="navbar-nav ml-auto ml-md-0">
 			<li class="nav-item dropdown no-arrow mx-1"><a
@@ -79,10 +86,8 @@
 			</a>
 				<div class="dropdown-menu dropdown-menu-right"
 					aria-labelledby="userDropdown">
-
-					<a class="dropdown-item">Tài Khoản: ${msg}</a>
-					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="#">Settings</a>
+					<a class="dropdown-item" href="#">Settings</a> <a
+						class="dropdown-item" href="#">Activity Log</a>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#" data-toggle="modal"
 						data-target="#logoutModal">Logout</a>
@@ -90,6 +95,7 @@
 		</ul>
 
 	</nav>
+
 	<div id="wrapper">
 
 		<!-- Sidebar -->
@@ -200,51 +206,44 @@
 
 				<!-- Breadcrumbs-->
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item active">Role Update</li>
+					<li class="breadcrumb-item"><a href="#">Persion</a></li>
+					<li class="breadcrumb-item active">Update Room</li>
 				</ol>
-				<div class="container">
-
-
-					<c:url value="/updaterole" var="updaterole" />
-					<form:form name="myForm" action="${updaterole}"
-						onsubmit="return validateForm()" modelAttribute="role"
-						method="POST">
-
-						<div class="form-group col-12">
-							<label>id</label>
-							<form:input path="roleid" id="roleid" readonly="true"
-								class="form-control" />
-							<br /> <br /> <label>Tên Đang Nhập</label>
-							<form:input path="rolename" id="rolename" class="form-control"
-								placeholder="Mời Bạn Nhập tên" />
-							<br /> <br /> <br />
-							<form:textarea path="roledesc" id="roledesc" rows="4"
-								class="form-control" />
-
-							<br /> <br /> <br /> <br />
-							<button type="submit" class="btn btn-warning float-left">Đổi
-								Mật Khẩu</button>
-
-						</div>
-					</form:form>
+				<!-- DataTables Example -->
+				<div class="card mb-3">
+					<div class="card-header">
+						<i class="fas fa-table"></i> Room Update
+					</div>
 
 				</div>
-				<script type="text/javascript">
-					function validateForm() {
-						var a = document.forms["myForm"]["rolename"].value;
+				<div class="container">
+					<c:url value="/updaterole" var="updaterole" />
+					<form:form name="myForm" action="${updaterole}"
+						modelAttribute="role" onsubmit="return validateForm()">
+						
+						<label>ID</label>
+						<form:input path="roleid" class="form-control"/>
 
-						if (a == "") {
-							alert("Mật Khẩu không được bỏ trống ");
-							return false;
-						}
+						<br />
+						<label>Role Name</label>
+						<form:input path="rolename" class="form-control"
+							placeholder="Please Enter Your Name" />
 
-						return true;
-					}
-				</script>
+						<br />
 
+						<label>Role Desc</label>
+						<form:textarea path="roledesc" rows="4" cols="50"
+							class="form-control" />
+						<br />
+						<br />
+						<button type="submit" class="btn btn-dark">Role Update</button>
+
+					</form:form>
+
+
+				</div>
 			</div>
 		</div>
-
 		<!-- Sticky Footer -->
 		<footer class="sticky-footer">
 			<div class="container my-auto">
@@ -307,5 +306,10 @@
 
 	<!-- Demo scripts for this page-->
 	<script src="<c:url value="/resources/js/demo/datatables-demo.js"/>"></script>
+
+</body>
 </body>
 </html>
+
+
+

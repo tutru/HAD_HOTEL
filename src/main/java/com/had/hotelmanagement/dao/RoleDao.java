@@ -33,9 +33,10 @@ public class RoleDao {
 		jdbcTemplate.update(sql, role.getRolename(), role.getRoledesc(), role.getRoleid());
 	}
 
-	public Role findById(int roleid) {
-		String sql = "SELECT * FROM role WHERE roleid = ?";
-		return jdbcTemplate.queryForObject(sql, new RoleMapper(), roleid);
+	public Role findById(int id) {
+		String sql = "SELECT * FROM role WHERE roleid = ? ";
+		return jdbcTemplate.queryForObject(sql, new RoleMapper(), id);
+
 	}
 
 	public List<Role> findAll() {
