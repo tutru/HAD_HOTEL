@@ -13,6 +13,7 @@ import com.had.hotelmanagement.entity.ReceptionMapper;
 @Repository
 @Transactional
 public class ReceptionDAO {
+	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	

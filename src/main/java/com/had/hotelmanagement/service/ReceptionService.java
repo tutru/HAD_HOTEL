@@ -19,7 +19,6 @@ public class ReceptionService {
 		return receptionDAO.findAll();
 	}
 
-
 	public Reception findById(int receptionid) {
 		return receptionDAO.findById(receptionid);
 	}

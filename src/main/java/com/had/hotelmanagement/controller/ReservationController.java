@@ -36,6 +36,7 @@ public class ReservationController {
 		return "reservation-save";
 	}
 	
+	
 	@RequestMapping("/reservation-view/{reservationid}")
 	public String viewReservation(@PathVariable int reservationid, Model model) {
 		Reservation reservation = reservationService.findById(reservationid);

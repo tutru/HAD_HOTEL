@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 public class ReceptionMapper implements RowMapper<Reception>{
 	public Reception mapRow(ResultSet rs, int rowNum) throws SQLException {
+		
 		Reception reception = new Reception();
 		reception.setReceptionid(rs.getInt("receptionid"));
 		reception.setCustomerid(rs.getInt("customerid"));

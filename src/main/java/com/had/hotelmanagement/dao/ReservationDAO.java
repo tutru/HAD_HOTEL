@@ -14,6 +14,7 @@ import com.had.hotelmanagement.entity.ReservationMapper;
 @Repository
 @Transactional
 public class ReservationDAO {
+	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	

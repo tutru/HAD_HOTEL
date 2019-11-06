@@ -24,7 +24,6 @@ public class ReservationService {
 		return reservationDAO.findById(reservationid);
 	}
 	
-	
 	public void save(Reservation reservation){
 		// validate business
 		reservationDAO.save(reservation);

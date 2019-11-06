@@ -21,6 +21,7 @@ public class Reservation {
 
 	public Reservation() {
 	}
+	
 
 	public Reservation(int reservationid, int customerid, int roomtypeid, Date expectedcheckdate, int expectedroom,
 			double isdeposit, String reservationstatus, String customername, String roomtypename) {

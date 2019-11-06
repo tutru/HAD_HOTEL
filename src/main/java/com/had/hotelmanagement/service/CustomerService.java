@@ -12,6 +12,7 @@ import com.had.hotelmanagement.entity.Customer;
 @Service
 @Transactional
 public class CustomerService {
+	
 	@Autowired
 	private CustomerDAO customerDAO;
 	

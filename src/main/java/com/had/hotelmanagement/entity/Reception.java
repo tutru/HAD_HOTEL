@@ -19,7 +19,6 @@ public class Reception {
 	private int serviceid;
 	private String reservationstatus;
 	
-	
 	public Reception() {
 		super();
 	}
