@@ -14,7 +14,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>List_Reservation</title>
+<title>List Reservation</title>
 
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 

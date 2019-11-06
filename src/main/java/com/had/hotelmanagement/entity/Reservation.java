@@ -16,7 +16,6 @@ public class Reservation {
 	private int expectedroom;
 	private double isdeposit;
 	private String reservationstatus;
-
 	private String customername;
 	private String roomtypename;
 

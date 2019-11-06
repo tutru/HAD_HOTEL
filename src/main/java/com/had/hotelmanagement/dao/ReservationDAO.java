@@ -17,7 +17,6 @@ public class ReservationDAO {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
-
 	public void save(Reservation reservation) {
 		String sql = "INSERT INTO reservation (customerid, roomtypeid, expectedcheckdate, expectedroom, isdeposit, reservationstatus) VALUES (?,?,?,?,?,?)";
 		jdbcTemplate.update(sql, reservation.getCustomerid(), reservation.getRoomtypeid(),reservation.getExpectedcheckdate(),

@@ -23,7 +23,6 @@ public class ReservationController {
 	private CustomerService  customerService;
 	@Autowired
 	private RoomTypeService  roomTypeService;
-	
 	@RequestMapping(value={"/reservation-list"},method = RequestMethod.GET)
 	public String listReservation(Model model) {
 		model.addAttribute("listReservation", reservationService.findAll());
