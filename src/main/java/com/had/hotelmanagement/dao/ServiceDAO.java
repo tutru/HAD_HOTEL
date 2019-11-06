@@ -17,9 +17,9 @@ public class ServiceDAO {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	public void save(ServiceEntity service) {
-		String sql = "INSERT INTO service (servicename,servicedesc) VALUES (?,?)";
+		String sql = "INSERT INTO service (servicename,servicedesc,serviceprice) VALUES (?,?,?)";
 		jdbcTemplate.update(sql, service.getServicename(),
-				service.getServicedesc());
+				service.getServicedesc(),service.getServiceprice());
 	}
 
 	public void delete(int serviceid) {
@@ -28,8 +28,8 @@ public class ServiceDAO {
 	}
 	
 	public void update(ServiceEntity service) {
-		String sql = "UPDATE service SET  servicename = ?, servicedesc=?  WHERE serviceid = ? ";
-		jdbcTemplate.update(sql, service.getServicename(),service.getServicedesc(), service.getServiceid());
+		String sql = "UPDATE service SET  servicename = ?, servicedesc=?,serviceprice=?  WHERE serviceid = ? ";
+		jdbcTemplate.update(sql, service.getServicename(),service.getServicedesc(), service.getServiceprice(), service.getServiceid());
 	}
 
 	public ServiceEntity findById(int id) {

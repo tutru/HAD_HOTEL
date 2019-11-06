@@ -24,7 +24,7 @@ public class PaymentController {
 	@Autowired
 	private PaymentService paymentService;
 	
-	@RequestMapping(value={"/paymentList"},method = RequestMethod.GET)
+	@RequestMapping(value={"/payment-list"},method = RequestMethod.GET)
 	public String listpayment(Model model) {
 		model.addAttribute("listpayment", paymentService.findAll());
 		return "payment-list";

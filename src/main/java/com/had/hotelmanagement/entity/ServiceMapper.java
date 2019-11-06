@@ -9,6 +9,7 @@ public class ServiceMapper implements RowMapper<ServiceEntity> {
 		service.setServiceid(rs.getInt("serviceid"));
 		service.setServicename(rs.getString("servicename"));
 		service.setServicedesc(rs.getString("servicedesc"));
+		service.setServiceprice(rs.getDouble("serviceprice"));
 		return service;
 	}	
 
