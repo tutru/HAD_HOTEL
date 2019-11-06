@@ -273,7 +273,7 @@
 									</c:forEach>
 								</c:if>
 							</select>
-							<br /> <label>reservationstatus:</label>
+							<br /> <label>receptionstatus:</label>
 							<form:input class="form-control" path="reservationstatus" />
 							<br />
 							<form:button type="submit"> Thêm</form:button>

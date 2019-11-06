@@ -227,7 +227,7 @@
 										<th>expectedcheckindate</th>
 										<th>checkoutdate</th>
 										<th>serviceid</th>
-										<th>reservationstatus</th>
+										<th>receptionstatus</th>
 										<th></th>
 										<th></th>
 									</tr>
@@ -243,7 +243,7 @@
 												<td>${reception.expectedcheckindate}</td>
 												<td>${reception.checkoutdate}</td>
 												<td>${reception.serviceid}</td>
-												<td>${reception.reservationstatus}</td>
+												<td>${reception.receptionstatus}</td>
 												<td><button type="button" class="btn btn-primary">
 														<a href="${urlUpdate}/${reception.receptionid}"><i
 															class="fas fa-pen" style="color: black"></i></i></a>

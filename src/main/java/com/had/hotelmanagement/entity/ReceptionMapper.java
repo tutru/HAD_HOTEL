@@ -17,7 +17,7 @@ public class ReceptionMapper implements RowMapper<Reception>{
 		reception.setExpectedcheckindate(rs.getDate("expectedcheckindate"));
 		reception.setCheckoutdate(rs.getDate("checkoutdate"));
 		reception.setServiceid(rs.getInt("serviceid"));
-		reception.setReservationstatus(rs.getString("reservationstatus"));
+		reception.setReceptionstatus(rs.getString("receptionstatus"));
 		return reception;
 	}
 }

@@ -231,7 +231,7 @@
 							<form:input class="form-control" path="checkoutdate" />
 							<br /> serviceid:
 							<form:input class="form-control" path="serviceid" />
-							<br /> reservationstatus:
+							<br /> receptionstatus:
 							<form:input class="form-control" path="reservationstatus" />
 							<br />
 <br />

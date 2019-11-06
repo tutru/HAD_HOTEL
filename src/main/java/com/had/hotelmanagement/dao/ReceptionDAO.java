@@ -19,9 +19,9 @@ public class ReceptionDAO {
 	
 
 	public void save(Reception reception) {
-		String sql = "INSERT INTO reception (customerid, reservationid, roomid, checkindate, expectedcheckindate, checkoutdate, serviceid, reservationstatus) VALUES (?,?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO reception (customerid, reservationid, roomid, checkindate, expectedcheckindate, checkoutdate, serviceid, receptionstatus) VALUES (?,?,?,?,?,?,?,?)";
 		jdbcTemplate.update(sql, reception.getCustomerid(), reception.getReservationid(),reception.getRoomid(),
-				reception.getCheckindate(),reception.getExpectedcheckindate(),reception.getCheckoutdate(),reception.getServiceid(),reception.getReservationstatus());
+				reception.getCheckindate(),reception.getExpectedcheckindate(),reception.getCheckoutdate(),reception.getServiceid(),reception.getReceptionstatus());
 	}
 
 	public void delete(int receptionid) {
@@ -30,9 +30,9 @@ public class ReceptionDAO {
 	}
 	
 	public void update(Reception reception) {
-		String sql = "UPDATE reception SET customerid = ? , reservationid = ? , roomid = ? , checkindate = ? , expectedcheckindate = ? , checkoutdate = ? , serviceid = ? , reservationstatus = ? WHERE receptionid = ? ";
+		String sql = "UPDATE reception SET customerid = ? , reservationid = ? , roomid = ? , checkindate = ? , expectedcheckindate = ? , checkoutdate = ? , serviceid = ? , receptionstatus = ? WHERE receptionid = ? ";
 		jdbcTemplate.update(sql, reception.getCustomerid(), reception.getReservationid(), reception.getRoomid(),
-				reception.getCheckindate(),reception.getExpectedcheckindate(),reception.getCheckoutdate(), reception.getReservationid(), reception.getReservationstatus(), reception.getReceptionid());
+				reception.getCheckindate(),reception.getExpectedcheckindate(),reception.getCheckoutdate(), reception.getReservationid(), reception.getReceptionstatus(), reception.getReceptionid());
 	}
 
 	public Reception findById(int receptionid) {
