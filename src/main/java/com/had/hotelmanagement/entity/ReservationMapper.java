@@ -15,6 +15,8 @@ public class ReservationMapper implements RowMapper<Reservation>{
 		reservation.setExpectedroom(rs.getInt("expectedroom"));
 		reservation.setIsdeposit(rs.getDouble("isdeposit"));
 		reservation.setReservationstatus(rs.getString("reservationstatus"));
+		reservation.setCustomername(rs.getString("name"));
+		reservation.setRoomtypename(rs.getString("roomtypename"));
 		return reservation;
 	}
 }

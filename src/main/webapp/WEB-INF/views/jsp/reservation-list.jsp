@@ -221,8 +221,8 @@
 								<thead>
 								<tr>
 										<td>reservationid</td>
-										<td>customerid</td>
-										<td>roomtypeid</td>
+										<td>Customer Name</td>
+										<td>Room Type</td>
 										<td>expectedcheckdate</td>
 										<td>expectedroom</th>
 										<td>isdeposit</th>
@@ -235,8 +235,8 @@
 									<c:forEach var="reservation" items="${listReservation}">
 										<tr>
 												<td>${reservation.reservationid}</td>
-												<td>${reservation.customerid}</td>
-												<td>${reservation.roomtypeid}</td>
+												<td>${reservation.customername}</td>
+												<td>${reservation.roomtypename}</td>
 												<td>${reservation.expectedcheckdate}</td>
 												<td>${reservation.expectedroom}</td>
 												<td>${reservation.isdeposit}</td>

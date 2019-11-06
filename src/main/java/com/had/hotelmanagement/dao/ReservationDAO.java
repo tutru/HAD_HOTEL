@@ -41,7 +41,11 @@ public class ReservationDAO {
 	}
 
 	public List<Reservation> findAll() {
-		String sql = "SELECT * FROM reservation";
+		String sql = "SELECT RSV.reservationid, RSV.customerid, RSV.roomtypeid, RSV.expectedcheckdate, RSV.expectedroom, RSV.isdeposit,\r\n" + 
+				"RSV.reservationstatus, CTM.name, RT.roomtypename\r\n" + 
+				"FROM reservation AS RSV\r\n" + 
+				"INNER JOIN customer AS CTM ON RSV.customerid = CTM.customerid\r\n" + 
+				"INNER JOIN roomtype AS RT ON RSV.roomtypeid = RT.roomtypeid";
 		return jdbcTemplate.query(sql, new ReservationMapper());
 	}
 }

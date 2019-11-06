@@ -8,7 +8,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "reservation")
 public class Reservation {
-	
+
 	private int reservationid;
 	private int customerid;
 	private int roomtypeid;
@@ -16,12 +16,15 @@ public class Reservation {
 	private int expectedroom;
 	private double isdeposit;
 	private String reservationstatus;
-	
+
+	private String customername;
+	private String roomtypename;
+
 	public Reservation() {
 	}
 
 	public Reservation(int reservationid, int customerid, int roomtypeid, Date expectedcheckdate, int expectedroom,
-			double isdeposit, String reservationstatus) {
+			double isdeposit, String reservationstatus, String customername, String roomtypename) {
 		super();
 		this.reservationid = reservationid;
 		this.customerid = customerid;
@@ -30,15 +33,16 @@ public class Reservation {
 		this.expectedroom = expectedroom;
 		this.isdeposit = isdeposit;
 		this.reservationstatus = reservationstatus;
+		this.customername = customername;
+		this.roomtypename = roomtypename;
 	}
-	
-	
 
 	@Override
 	public String toString() {
 		return "Reservation [reservationid=" + reservationid + ", customerid=" + customerid + ", roomtypeid="
 				+ roomtypeid + ", expectedcheckdate=" + expectedcheckdate + ", expectedroom=" + expectedroom
-				+ ", isdeposit=" + isdeposit + ", reservationstatus=" + reservationstatus + "]";
+				+ ", isdeposit=" + isdeposit + ", reservationstatus=" + reservationstatus + ", customername="
+				+ customername + ", roomtypename=" + roomtypename + "]";
 	}
 
 	public int getReservationid() {
@@ -97,5 +101,20 @@ public class Reservation {
 		this.reservationstatus = reservationstatus;
 	}
 
-	
+	public String getCustomername() {
+		return customername;
+	}
+
+	public void setCustomername(String customername) {
+		this.customername = customername;
+	}
+
+	public String getRoomtypename() {
+		return roomtypename;
+	}
+
+	public void setRoomtypename(String roomtypename) {
+		this.roomtypename = roomtypename;
+	}
+
 }
