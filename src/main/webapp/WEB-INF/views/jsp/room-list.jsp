@@ -147,7 +147,7 @@
 					<h6 class="dropdown-header">Room Status:</h6>
 					<a class="dropdown-item" href="<c:url value="/roomstatus-list"/>">List Room
 						Status</a> <a class="dropdown-item" href="<c:url value="/roomstatus-save"/>">Create
-						Room Status Status</a>
+						Room Status </a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room:</h6>
 					<a class="dropdown-item" href="<c:url value="/room-list"/>">List Room</a> <a

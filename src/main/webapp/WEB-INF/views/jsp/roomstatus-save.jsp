@@ -162,9 +162,9 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Payment Type:</h6>
-					<a class="dropdown-item" href="paymenttype-list">List Payment Type</a>
-					<a class="dropdown-item" href="paymenttype-save">Create Payment
-						Type</a>
+					<a class="dropdown-item" href="paymenttype-list">List Payment
+						Type</a> <a class="dropdown-item" href="paymenttype-save">Create
+						Payment Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Payment:</h6>
 					<a class="dropdown-item" href="payment-list">List Payment</a> <a
@@ -207,17 +207,19 @@
 				</ol>
 				<c:url value="/saveRoomStatus" var="saveRoomStatus" />
 				<form:form id="roomStatusAdd" action="${saveRoomStatus}"
-					modelAttribute="roomstatus" enctype="multipart/form-data">
+					modelAttribute="roomstatus" enctype="multipart/form-data" name="f1"  onsubmit="return validate()">
 					<div class="form-row">
 						<div class="form-group col-md-5">
 							<label>Name status:</label>
-							<form:input class="form-control" path="roomstatusname" />
+							<form:input class="form-control" path="roomstatusname" name="roomstatusname" />
+							<span id="roomstatusname"></span>
 						</div>
 
 						<div class="form-group col-md-5">
 							<label>Room status desc</label>
-							<form:textarea path="roomstatusdesc" id="roomstatusdesc" rows="4"
+							<form:textarea path="roomstatusdesc" id="roomstatusdesc" rows="2" name ="roomstatusdesc"
 								cols="50" class="form-control" />
+								<span id="roomstatusdesc"></span>
 							<br /> <br />
 							<button type="submit" class="btn btn-success">Save</button>
 							<button type="submit" class="btn btn-danger">
@@ -230,7 +232,28 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		function validate() {
+			var roomstatusname = document.f1.roomstatusname.value;
+			var roomstatusdesc = document.f1.roomstatusdesc.value;
+			var status = false;
 
+			if (name.length < 1) {
+				document.getElementById("roomstatusname").innerHTML = " <img src='unchecked.gif'/> Please enter your name";
+				status = false;
+			} else {
+				document.getElementById("roomstatusname").innerHTML = " <img src='checked.gif'/>";
+				status = true;
+			}
+			if (password.length < 1) {
+				document.getElementById("roomstatusdesc").innerHTML = " <img src='unchecked.gif'/> Password must be at least 6 char long";
+				status = false;
+			} else {
+				document.getElementById("roomstatusdesc").innerHTML = " <img src='checked.gif'/>";
+			}
+			return status;
+		}
+	</script>
 	<!-- Sticky Footer -->
 	<footer class="sticky-footer">
 		<div class="container my-auto">
