@@ -214,7 +214,8 @@
 						</div>
 						<div class="form-group row">
 						<div class="col-md-6">
-							<label> Name Room Type:</label> <select name="roomtypeid"
+							<label> Name Room Type:</label> 
+							<select name="roomtypeid"
 								class="form-control">
 								<c:if test="${not empty listRoomType}">
 									<c:forEach var="roomtype" items="${listRoomType}">

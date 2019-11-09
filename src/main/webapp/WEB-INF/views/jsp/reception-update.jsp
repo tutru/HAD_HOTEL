@@ -13,7 +13,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Create_Reception</title>
+<title>Update Reception</title>
 
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -215,12 +215,26 @@
 							receptionid:
 							<form:input class="form-control" path="receptionid"
 								readonly="true" />
-							<br /> customerid:
-							<form:input class="form-control" path="customerid" />
+							<br /> Customer:
+							<select
+								class="form-control" name="customerid">
+								<c:if test="${not empty listCustomer}">
+									<c:forEach var="customer" items="${listCustomer}">
+										<option value=${customer.customerid}>${customer.name}</option>
+									</c:forEach>
+								</c:if>
+							</select>
 							<br /> reservationid:
 							<form:input class="form-control" path="reservationid" />
-							<br /> roomid:
-							<form:input class="form-control" path="roomid" />
+							<br /> Room:
+							<select
+								class="form-control" name="roomid">
+								<c:if test="${not empty listRoom}">
+									<c:forEach var="room" items="${listRoom}">
+										<option value=${room.roomid}>${room.roomnumber}</option>
+									</c:forEach>
+								</c:if>
+							</select>
 							<br /> checkindate:
 							<form:input class="form-control" path="checkindate" />
 						</div>
@@ -229,8 +243,15 @@
 							<form:input class="form-control" path="expectedcheckindate" />
 							<br /> checkoutdate:
 							<form:input class="form-control" path="checkoutdate" />
-							<br /> serviceid:
-							<form:input class="form-control" path="serviceid" />
+							<br /> Service:
+							<select
+								class="form-control" name="serviceid">
+								<c:if test="${not empty listService}">
+									<c:forEach var="service" items="${listService}">
+										<option value=${service.serviceid}>${service.servicename}</option>
+									</c:forEach>
+								</c:if>
+							</select>
 							<br /> receptionstatus:
 							<form:input class="form-control" path="receptionstatus" />
 							<br />

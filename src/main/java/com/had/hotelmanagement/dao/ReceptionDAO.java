@@ -3,12 +3,14 @@ package com.had.hotelmanagement.dao;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.had.hotelmanagement.entity.Reception;
 import com.had.hotelmanagement.entity.ReceptionMapper;
+import com.had.hotelmanagement.entity.Reservation;
 
 @Repository
 @Transactional
@@ -36,7 +38,8 @@ public class ReceptionDAO {
 
 	public Reception findById(int receptionid) {
 		String sql = "SELECT * FROM reception WHERE receptionid = ?";
-		return jdbcTemplate.queryForObject(sql, new ReceptionMapper(), receptionid);
+//		return jdbcTemplate.queryForObject(sql, new ReceptionMapper(), receptionid);
+		return (Reception) jdbcTemplate.queryForObject(sql, new Object[] { receptionid }, new BeanPropertyRowMapper(Reception.class));
 	}
 
 	public List<Reception> findAll() {
