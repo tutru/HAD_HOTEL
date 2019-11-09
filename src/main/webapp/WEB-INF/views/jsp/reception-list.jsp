@@ -219,15 +219,15 @@
 								cellspacing="0">
 								<thead>
 									<tr>
-										<th>receptionid</th>
-										<th>customerid</th>
-										<th>reservationid</th>
-										<th>roomid</th>
-										<th>checkindate</th>
-										<th>expectedcheckindate</th>
-										<th>checkoutdate</th>
-										<th>serviceid</th>
-										<th>receptionstatus</th>
+										<th>Reception ID</th>
+										<th>Customer</th>
+										<th>Reservation ID</th>
+										<th>Room</th>
+										<th>Checkin Date</th>
+										<th>Expected Checkin</th>
+										<th>Checkout</th>
+										<th>Service</th>
+										<th>Status</th>
 										<th></th>
 										<th></th>
 									</tr>
@@ -236,13 +236,13 @@
 									<c:forEach var="reception" items="${listReception}">
 										<tr>
 												<td>${reception.receptionid}</td>
-												<td>${reception.customerid}</td>
+												<td>${reception.customername}</td>
 												<td>${reception.reservationid}</td>
-												<td>${reception.roomid}</td>
+												<td>${reception.roomnumber}</td>
 												<td>${reception.checkindate}</td>
 												<td>${reception.expectedcheckindate}</td>
 												<td>${reception.checkoutdate}</td>
-												<td>${reception.serviceid}</td>
+												<td>${reception.servicename}</td>
 												<td>${reception.receptionstatus}</td>
 												<td><button type="button" class="btn btn-primary">
 														<a href="${urlUpdate}/${reception.receptionid}"><i

@@ -16,7 +16,6 @@ public class ReceptionDAO {
 	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-	//hao
 
 	public void save(Reception reception) {
 		String sql = "INSERT INTO reception (customerid, reservationid, roomid, checkindate, expectedcheckindate, checkoutdate, serviceid, receptionstatus) VALUES (?,?,?,?,?,?,?,?)";
@@ -41,7 +40,13 @@ public class ReceptionDAO {
 	}
 
 	public List<Reception> findAll() {
-		String sql = "SELECT * FROM reception";
+		String sql = "SELECT RCT.receptionid, RCT.customerid, RCT.reservationid, RCT.roomid, RCT.checkindate,\r\n" + 
+				"        RCT.expectedcheckindate, RCT.checkoutdate, RCT.serviceid, RCT.receptionstatus,\r\n" + 
+				"        CTM.name, R.roomnumber, SV.servicename\r\n" + 
+				"FROM reception AS RCT\r\n" + 
+				"INNER JOIN customer AS CTM ON RCT.customerid = CTM.customerid\r\n" + 
+				"INNER JOIN room AS R ON RCT.roomid = R.roomid\r\n" + 
+				"INNER JOIN service AS SV ON RCT.serviceid = SV.serviceid";
 		return jdbcTemplate.query(sql, new ReceptionMapper());
 	}
 }

@@ -19,6 +19,9 @@ public class ReceptionMapper implements RowMapper<Reception>{
 		reception.setServiceid(rs.getInt("serviceid"));
 		reception.setReceptionstatus(rs.getString("receptionstatus"));
 		//get name
+		reception.setCustomername(rs.getString("name"));
+		reception.setRoomnumber(rs.getInt("roomnumber"));
+		reception.setServicename(rs.getString("servicename"));
 		return reception;
 	}
 }

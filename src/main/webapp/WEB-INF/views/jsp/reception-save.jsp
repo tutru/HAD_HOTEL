@@ -216,13 +216,27 @@
 					modelAttribute="reception">
 					<div class="form-row">
 						<div class="form-group col-md-6">
-							<label>customerid</label>
-							<form:input class="form-control" path="customerid" />
-							<br /> <label>reservationid:</label>
+							<label>Customer Name</label>
+							<select
+								class="form-control" name="customerid">
+								<c:if test="${not empty listCustomer}">
+									<c:forEach var="customer" items="${listCustomer}">
+										<option value=${customer.customerid}>${customer.name}</option>
+									</c:forEach>
+								</c:if>
+							</select>
+							<br /> <label>Reservation ID:</label>
 							<form:input class="form-control" path="reservationid" />
-							<br /> <label>roomid:</label>
-							<form:input class="form-control" path="roomid" />
-							<br /> <label>checkindate:</label>
+							<br /> <label>Room Number</label>
+							<select
+								class="form-control" name="roomid">
+								<c:if test="${not empty listRoom}">
+									<c:forEach var="room" items="${listRoom}">
+										<option value=${room.roomid}>${room.roomnumber}</option>
+									</c:forEach>
+								</c:if>
+							</select>
+							<br /> <label>Checkin Date:</label>
 							<form:input class="form-control" path="checkindate" id="datepicker" placeholder="Check In Date"/>
 								<script>
 								$(function() {
@@ -238,7 +252,7 @@
 							<br />
 						</div>
 						<div class="form-group col-md-6">
-							<label>expectedcheckindate:</label>
+							<label>Expected Checkin Date:</label>
 							<form:input class="form-control" path="expectedcheckindate" id="datepicker1" placeholder="Expected Check In Date"/>
 							<script>
 								$(function() {
@@ -251,7 +265,7 @@
 									$("#datepicker1").datepicker();
 								});
 							</script>
-							<br /> <label>checkoutdate:</label>
+							<br /> <label>Checkout Date:</label>
 							<form:input class="form-control" path="checkoutdate" id="datepicker2" placeholder="Expected Check Out Date"/>
 									<script>
 								$(function() {
@@ -273,7 +287,7 @@
 									</c:forEach>
 								</c:if>
 							</select>
-							<br /> <label>receptionstatus:</label>
+							<br /> <label>Reception Status:</label>
 							<form:input class="form-control" path="receptionstatus" />
 							<br />
 							<form:button type="submit"> Thêm</form:button>
