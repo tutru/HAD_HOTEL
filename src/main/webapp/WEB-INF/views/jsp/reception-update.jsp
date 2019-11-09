@@ -232,7 +232,7 @@
 							<br /> serviceid:
 							<form:input class="form-control" path="serviceid" />
 							<br /> receptionstatus:
-							<form:input class="form-control" path="reservationstatus" />
+							<form:input class="form-control" path="receptionstatus" />
 							<br />
 <br />
 							<button type="submit"class="btn btn-success">Update</button>

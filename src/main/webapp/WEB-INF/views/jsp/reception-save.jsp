@@ -274,7 +274,7 @@
 								</c:if>
 							</select>
 							<br /> <label>receptionstatus:</label>
-							<form:input class="form-control" path="reservationstatus" />
+							<form:input class="form-control" path="receptionstatus" />
 							<br />
 							<form:button type="submit"> Thêm</form:button>
 							<button type="submit">

@@ -16,7 +16,7 @@ public class ReceptionDAO {
 	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-	
+	//hao
 
 	public void save(Reception reception) {
 		String sql = "INSERT INTO reception (customerid, reservationid, roomid, checkindate, expectedcheckindate, checkoutdate, serviceid, receptionstatus) VALUES (?,?,?,?,?,?,?,?)";

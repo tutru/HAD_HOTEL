@@ -18,7 +18,7 @@ public class Reception {
 	private Date checkoutdate;
 	private int serviceid;
 	private String receptionstatus;
-	
+	//get name by id
 	private String customername;
 	private int roomnumber;
 	private String servicename;

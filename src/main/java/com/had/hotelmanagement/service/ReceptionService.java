@@ -12,7 +12,7 @@ import com.had.hotelmanagement.entity.Reception;
 @Service
 @Transactional
 public class ReceptionService {
-	
+	//hao
 	@Autowired
 	private ReceptionDAO receptionDAO;
 	public List<Reception> findAll() {
