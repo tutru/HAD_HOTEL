@@ -16,7 +16,7 @@ public class LoginController {
 	@Autowired
 	LoginDao dao;
 
-	@RequestMapping(value = { "/login" }, method = RequestMethod.GET)
+	@RequestMapping(value = {"/", "/login" }, method = RequestMethod.GET)
 	public String Login(Model model) {
 		return "login";
 	}
@@ -35,8 +35,8 @@ public class LoginController {
 				mv.addObject("msg", user);
 				mv.setViewName("index");
 			} else if (name.equals("user")) {
-				mv.addObject("msg", "vui lòng đang nhập bằng quyền admin");
-				mv.setViewName("login");
+				mv.addObject("msg", user);
+				mv.setViewName("admin");
 			} else {
 				mv.addObject("msg", "vui lòng nhập lại.");
 				mv.setViewName("login");
