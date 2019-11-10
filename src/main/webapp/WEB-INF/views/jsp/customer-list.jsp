@@ -13,7 +13,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Employee List</title>
+<title>Customer List</title>
 
 <!-- Custom fonts for this template-->
 <link rel="stylesheet"
@@ -227,14 +227,14 @@
 								cellspacing="0">
 								<thead>
 									<tr>
-										<td>customerid</td>
-										<td>name</td>
-										<td>governmentid</td>
-										<td>address</td>
-										<td>phone</td>
-										<td>email</td>
-										<td>image</td>
-										<td>ccnumber</td>
+										<td>ID</td>
+										<td>Name</td>
+										<td>Government ID</td>
+										<td>Address</td>
+										<td>Phone</td>
+										<td>Email</td>
+										<td>Image</td>
+										<td>CC Number</td>
 										<td></td>
 										<td></td>
 									</tr>

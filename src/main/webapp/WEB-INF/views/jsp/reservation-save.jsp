@@ -18,7 +18,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Create_Reservation</title>
+<title>Create Reservation</title>
 
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -217,14 +217,14 @@
 					modelAttribute="reservation">
 					<div class="form-row">
 						<div class="form-group col-md-6">
-							<label>Customer Name:</label> <select
+							<label>Customer</label> <select
 								class="form-control" name="customerid">
 								<c:if test="${not empty listCustomer}">
 									<c:forEach var="customer" items="${listCustomer}">
 										<option value=${customer.customerid}>${customer.name}</option>
 									</c:forEach>
 								</c:if>
-							</select> <br /> <label>Room Type:</label>
+							</select> <br /> <label>Room Type</label>
 							<select
 								class="form-control" name="roomtypeid">
 								<c:if test="${not empty listRoomType}">
@@ -233,7 +233,7 @@
 									</c:forEach>
 								</c:if>
 							</select>
-							<br /> <label>expectedcheckdate:</label>
+							<br /> <label>Expected Check Date</label>
 							<form:input class="form-control" path="expectedcheckdate"
 								id="datepicker" placeholder="Expected Check Date" />
 							<script>
@@ -250,11 +250,11 @@
 							<br />
 						</div>
 						<div class="form-group col-md-6">
-							<label>expectedroom:</label>
+							<label>Expected Room:</label>
 							<form:input class="form-control" path="expectedroom" />
-							<br /> <label>isdeposit:</label>
+							<br /> <label>Is Deposit:</label>
 							<form:input class="form-control" path="isdeposit" />
-							<br /> <label>reservationstatus:</label>
+							<br /> <label>Status:</label>
 							<form:input class="form-control" path="reservationstatus"
 								placeholder="Reservation Status" />
 							<br />

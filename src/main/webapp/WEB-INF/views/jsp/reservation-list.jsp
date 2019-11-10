@@ -220,13 +220,13 @@
 								cellspacing="0">
 								<thead>
 								<tr>
-										<td>reservationid</td>
-										<td>Customer Name</td>
+										<td>ID</td>
+										<td>Customer</td>
 										<td>Room Type</td>
-										<td>expectedcheckdate</td>
-										<td>expectedroom</th>
-										<td>isdeposit</th>
-										<td>reservationstatus</td>
+										<td>Expected Check Date</td>
+										<td>Expected Room</th>
+										<td>Is Deposit</th>
+										<td>Status</td>
 										<td></td>
 										<td></td>
 									</tr>

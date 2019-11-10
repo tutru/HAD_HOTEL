@@ -217,7 +217,7 @@
 					modelAttribute="reception">
 					<div class="form-row">
 						<div class="form-group col-md-6">
-							receptionid:
+							ID
 							<form:input class="form-control" path="receptionid"
 								readonly="true" />
 							<br /> Customer:
@@ -229,9 +229,9 @@
 									</c:forEach>
 								</c:if>
 							</select>
-							<br /> reservationid:
+							<br /> Reservation ID
 							<form:input class="form-control" path="reservationid" />
-							<br /> Room:
+							<br /> Room
 							<select
 								class="form-control" name="roomid">
 								<c:if test="${not empty listRoom}">
@@ -240,7 +240,7 @@
 									</c:forEach>
 								</c:if>
 							</select>
-							<br /> checkindate:
+							<br /> Checkin Date:
 							<form:input class="form-control" path="checkindate" id="datepicker" placeholder="Check In Date"/>
 								<script>
 								$(function() {
@@ -255,7 +255,7 @@
 							</script>
 						</div>
 						<div class="form-group col-md-6">
-							expectedcheckindate:
+							Expected Checkin Date:
 							<form:input class="form-control" path="expectedcheckindate" id="datepicker1" placeholder="Expected Check In Date"/>
 							<script>
 								$(function() {
@@ -268,7 +268,7 @@
 									$("#datepicker1").datepicker();
 								});
 							</script>
-							<br /> checkoutdate:
+							<br /> Checkout Date:
 							<form:input class="form-control" path="checkoutdate" id="datepicker2" placeholder="Expected Check Out Date"/>
 									<script>
 								$(function() {
@@ -290,7 +290,7 @@
 									</c:forEach>
 								</c:if>
 							</select>
-							<br /> receptionstatus:
+							<br />Status:
 							<form:input class="form-control" path="receptionstatus" />
 							<br />
 <br />
