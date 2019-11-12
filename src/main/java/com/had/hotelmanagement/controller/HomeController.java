@@ -14,5 +14,30 @@ public class HomeController {
 	public String admin() {
 		return "admin";
 	}
+	@RequestMapping(value={"/index_user"})
+	public String index_user() {
+		return "index_user";
+	}
+	//
+	@RequestMapping(value={"/about"})
+	public String about() {
+		return "about";
+	}
+	@RequestMapping(value={"/events"})
+	public String events() {
+		return "events";
+	}
+	@RequestMapping(value={"/contact"})
+	public String contact() {
+		return "contact";
+	}
+	@RequestMapping(value={"/reservation_user"})
+	public String reservation() {
+		return "reservation_user";
+	}
 
+	@RequestMapping(value={"/room_user"})
+	public String room_user() {
+		return "room_user";
+	}
 }
