@@ -206,27 +206,29 @@
 					<li class="breadcrumb-item active">List Room Type</li>
 				</ol>
 				<c:url value="/saveRoomType" var="saveRoomType" />
-				<form:form  id="roomTypeAdd" action="${saveRoomType}"
+				<form:form id="roomTypeAdd" action="${saveRoomType}"
 					modelAttribute="roomtype" enctype="multipart/form-data">
 					<!-- name="f1" action="#" onsubmit="return validate()" -->
 					<div class="form-row">
 						<div class="form-group col-md-6">
 							<label>Name type room:</label>
-							<form:input class="form-control" path="roomtypename" />
-							<!-- <span id="roomtypename"></span> -->
-							
-							<!-- <span id="roomtypedesc"></span> -->
-							<br/>
+							<form:input class="form-control" path="roomtypename"
+								placeholder="Name Type Room" required="required"
+								pattern="[a-z0-9]\{30}" title="Please enter name type room" />
+							<br />
 							<div class="form-group">
-							<label>Room type desc</label>
-							<form:textarea path="roomtypedesc" id="roomtypedesc" rows="4" cols="50" class="form-control"/>
-						</div>
+								<label>Room type desc</label>
+								<form:textarea path="roomtypedesc" id="roomtypedesc" rows="2"
+									cols="50" class="form-control" placeholder="Room Type Desc"
+									required="required" pattern="[a-z0-9]\{50}"
+									title="Please enter room type desc" />
+							</div>
 						</div>
 						<br />
 						<div class="form-group col-md-6">
 							<label>Price:</label>
-							<form:input class="form-control" path="roomprice" />
-						<!-- 	<span id="roomprice"></span> -->
+							<form:input class="form-control" path="roomprice" placeholder="Price" required="required"
+								pattern="[0-9]{30}" title="Please enter price number" />
 							<br /> <br />
 							<form:button type="submit" class="btn btn-success"> Save</form:button>
 							<form:button type="submit" class="btn btn-danger">

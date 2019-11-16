@@ -207,20 +207,25 @@
 				</ol>
 				<c:url value="/saveRoomStatus" var="saveRoomStatus" />
 				<form:form id="roomStatusAdd" action="${saveRoomStatus}"
-					modelAttribute="roomstatus" enctype="multipart/form-data" name="f1"  onsubmit="return validate()">
+					modelAttribute="roomstatus" enctype="multipart/form-data"
+					name="myForm" onsubmit="return validateForm()">
 					<div class="form-row">
 						<div class="form-group col-md-5">
-							<label>Name status:</label>
-							<form:input class="form-control" path="roomstatusname" name="roomstatusname" />
-							<span id="roomstatusname"></span>
+							<label>Name room status:</label>
+							<form:input class="form-control" path="roomstatusname"
+								name="roomstatusname" placeholder="Name room"
+								required="required" pattern="[a-z]\{20}"
+								title="Please enter name status room" />
 						</div>
 
 						<div class="form-group col-md-5">
 							<label>Room status desc</label>
-							<form:textarea path="roomstatusdesc" id="roomstatusdesc" rows="2" name ="roomstatusdesc"
-								cols="50" class="form-control" />
-								<span id="roomstatusdesc"></span>
-							<br /> <br />
+							<form:textarea path="roomstatusdesc" id="roomstatusdesc" rows="2"
+								name="roomstatusdesc" cols="50" class="form-control" placeholder="Room status desc"
+								required="required" pattern="[a-z]\{50}"
+								title="Please enter room status desc" />
+
+							<span id="roomstatusdesc"></span> <br /> <br />
 							<button type="submit" class="btn btn-success">Save</button>
 							<button type="submit" class="btn btn-danger">
 								<a href="<c:url value="/roomstatus-list" />">Reset <i
@@ -232,28 +237,6 @@
 			</div>
 		</div>
 	</div>
-	<script>
-		function validate() {
-			var roomstatusname = document.f1.roomstatusname.value;
-			var roomstatusdesc = document.f1.roomstatusdesc.value;
-			var status = false;
-
-			if (name.length < 1) {
-				document.getElementById("roomstatusname").innerHTML = " <img src='unchecked.gif'/> Please enter your name";
-				status = false;
-			} else {
-				document.getElementById("roomstatusname").innerHTML = " <img src='checked.gif'/>";
-				status = true;
-			}
-			if (password.length < 1) {
-				document.getElementById("roomstatusdesc").innerHTML = " <img src='unchecked.gif'/> Password must be at least 6 char long";
-				status = false;
-			} else {
-				document.getElementById("roomstatusdesc").innerHTML = " <img src='checked.gif'/>";
-			}
-			return status;
-		}
-	</script>
 	<!-- Sticky Footer -->
 	<footer class="sticky-footer">
 		<div class="container my-auto">

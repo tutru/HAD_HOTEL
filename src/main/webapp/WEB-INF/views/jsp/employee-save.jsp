@@ -221,10 +221,12 @@
 						<div class="form-group col-md-5">
 							<label>Name:</label>
 							<form:input class="form-control" path="name"
-								placeholder="Full name" />
+								placeholder="Full name" required="required" pattern="[a-z]\{25}"
+								title="A credit card number" />
 							<br /> <label>Birthday:</label>
 							<form:input class="form-control" path="birthday" id="datepicker"
-								placeholder="Birthday" />
+								placeholder="Birthday" required="required" pattern="[0-9]{12}"
+								title="Please enter birthday" />
 
 							<script>
 								$(function() {
@@ -239,22 +241,28 @@
 							</script>
 							<br /> <label>Government ID:</label>
 							<form:input class="form-control" path="governmentid"
-								placeholder="Government ID" />
+								placeholder="Government ID" required="required" pattern="[0-9]{9,12}"
+								title="A credit card government id" />
 							<br /> <label>Phone:</label>
-							<form:input class="form-control" path="phone" placeholder="Phone" />
+							<form:input class="form-control" path="phone" placeholder="Phone"
+								required="required" pattern="[0-9]{10}"
+								title="A credit card number" />
 						</div>
 						<br />
 						<div class="form-group col-md-6">
 							<label>Email</label>
-							<form:input class="form-control" path="email" placeholder="Email" />
+							<form:input class="form-control" path="email" placeholder="Email" required="required"
+									 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter  format email" />
 							<br /> <label>Salary:</label>
-							<form:input class="form-control" path="salary"
-								placeholder="Salary" />
+							<form:input class="form-control" path="salary" 
+								placeholder="Salary" required="required" pattern="[0-9]{10}"
+								title="Please enter salary" />
 							<br />
 							<div class="form-group">
 								<label>Address</label>
 								<form:textarea path="address" id="address" rows="2" cols="50"
-									class="form-control" placeholder="Address" />
+									class="form-control" placeholder="Address" required="required"
+									pattern="[a-z0-9]\{50}" title="Enter Adress" />
 							</div>
 							<br /> <label>Image:</label>
 							<output id="list">
@@ -290,7 +298,8 @@
 												handleFileSelect, false);
 							</script>
 							<br />
-							<form:button type="submit" class="btn btn-success"> Update</form:button>
+							<br />
+							<form:button type="submit" class="btn btn-success"> Save</form:button>
 							<form:button type="submit" class="btn btn-danger">
 								<a href="<c:url value="/employee-list" />">Reset<i
 									class="fas fa-window-close"></i></a>
