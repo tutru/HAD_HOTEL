@@ -288,7 +288,7 @@
 								</c:if>
 							</select>
 							<br /> <label>Reception Status:</label>
-							<form:input class="form-control" path="receptionstatus" />
+							<form:textarea rows="5" class="form-control" path="receptionstatus" />
 							<br />
 							<form:button type="submit"> Thêm</form:button>
 							<button type="submit">

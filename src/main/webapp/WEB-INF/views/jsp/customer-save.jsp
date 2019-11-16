@@ -14,7 +14,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Create Customer1</title>
+<title>Create Customer</title>
 
 <!-- Custom fonts for this template-->
 <link href="resources/vendor/fontawesome-free/css/all.min.css"
@@ -120,7 +120,6 @@
 					<h6 class="dropdown-header">Employee:</h6>
 					<a class="dropdown-item" href="<c:url value="/employee-list"/>">List Employee</a> <a
 						class="dropdown-item" href="<c:url value="/employee-save"/>">Create Employee</a>
-					<div class="dropdown-divider"></div>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -203,14 +202,13 @@
 					<li class="breadcrumb-item active">Create Customer</li>
 				</ol>
 
-
 				<c:url value="/saveCustomer" var="saveCustomer" />
 				<form:form action="${saveCustomer}" method="POST"
 					modelAttribute="customer" enctype="multipart/form-data">
 					<div class="form-row">
 						<div class="form-group col-md-6">
 							<label>ID:</label>
-							<form:input class="form-control" path="customerid" />
+							<form:input class="form-control" path="customerid" readonly="true" />
 							<br />
 							 <label>Full Name:</label>
 							<form:input class="form-control" path="name" placeholder="Full name"/>

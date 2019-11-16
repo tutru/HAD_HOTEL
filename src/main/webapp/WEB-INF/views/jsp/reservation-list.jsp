@@ -212,7 +212,10 @@
 				<!-- DataTables Example -->
 				<div class="card mb-3">
 					<div class="card-header">
-						<i class="fas fa-table"></i> List Employee
+						<i class="fas fa-table"></i> List Reservation
+						<button type="submit" class="btn btn-dark float-right">
+							<a href="<c:url value="/reservation-save" />"> New Reservation</a>
+						</button>
 					</div>
 					<div class="card-body">
 						<div class="table-responsive">

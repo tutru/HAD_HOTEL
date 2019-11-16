@@ -217,23 +217,24 @@
 					modelAttribute="reservation">
 					<div class="form-row">
 						<div class="form-group col-md-6">
-							<label>Customer</label> <select
-								class="form-control" name="customerid">
+							<label>ID:</label>
+							<form:input class="form-control" path="reservationid"
+								readonly="true" />
+							<br /> <label>Customer</label> <select class="form-control"
+								name="customerid">
 								<c:if test="${not empty listCustomer}">
 									<c:forEach var="customer" items="${listCustomer}">
 										<option value=${customer.customerid}>${customer.name}</option>
 									</c:forEach>
 								</c:if>
-							</select> <br /> <label>Room Type</label>
-							<select
-								class="form-control" name="roomtypeid">
+							</select> <br /> <label>Room Type</label> <select class="form-control"
+								name="roomtypeid">
 								<c:if test="${not empty listRoomType}">
 									<c:forEach var="roomType" items="${listRoomType}">
 										<option value=${roomType.roomtypeid}>${roomType.roomtypename}</option>
 									</c:forEach>
 								</c:if>
-							</select>
-							<br /> <label>Expected Check Date</label>
+							</select> <br /> <label>Expected Check Date</label>
 							<form:input class="form-control" path="expectedcheckdate"
 								id="datepicker" placeholder="Expected Check Date" />
 							<script>
@@ -255,7 +256,7 @@
 							<br /> <label>Is Deposit:</label>
 							<form:input class="form-control" path="isdeposit" />
 							<br /> <label>Status:</label>
-							<form:input class="form-control" path="reservationstatus"
+							<form:textarea rows="5" class="form-control" path="reservationstatus"
 								placeholder="Reservation Status" />
 							<br />
 							<form:button type="submit" class="btn btn-success">Save</form:button>

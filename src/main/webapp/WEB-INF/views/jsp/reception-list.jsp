@@ -212,6 +212,9 @@
 				<div class="card mb-3">
 					<div class="card-header">
 						<i class="fas fa-table"></i> List Reception
+						<button type="submit" class="btn btn-dark float-right">
+							<a href="<c:url value="/reception-save" />"> New Reception</a>
+						</button>
 					</div>
 					<div class="card-body">
 						<div class="table-responsive">
