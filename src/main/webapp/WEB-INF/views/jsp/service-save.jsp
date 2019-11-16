@@ -216,16 +216,23 @@
 				</ol>
 				<c:url value="/saveService" var="saveService" />
 					<form:form action="${saveService}" modelAttribute="service"
-						method="GET">
+						method="GET" enctype="multipart/form-data"
+						name="myForm" onsubmit="return validateForm()">
 
 						<label>Service Name</label>
-						<form:input class="form-control form-control-lg" path="servicename" />
+						<form:input class="form-control form-control-lg" path="servicename" placeholder="Service Name" required="required"
+							pattern="[a-z]\{4}"
+							title="Do not enter number and enter at least 4 words" />
 						<br />
 						<label>Service Desc</label>
-						<form:input  class="form-control form-control-lg" path="servicedesc" />
+						<form:input  class="form-control form-control-lg" path="servicedesc" placeholder="Service Desc " required="required"
+							pattern="[a-z]\{4}"
+							title="Do not enter number and enter at least 4 words" />
 						<br />
 						<label>Service Price</label>
-						<form:input  class="form-control form-control-lg" path="serviceprice" />
+						<form:input  class="form-control form-control-lg" path="serviceprice" placeholder="Service Price " required="required"
+							pattern="[0-9]"
+							title="Do not enter number and enter at least 4 words"/>
 						<br/>
 						<button type="submit" class="btn btn-danger">Save</button>
 

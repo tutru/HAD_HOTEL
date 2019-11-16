@@ -218,23 +218,32 @@
 				</ol>
 				<c:url value="/updateService" var="updateService" />
 					<form:form action="${updateService}" modelAttribute="service"
-						method="POST">
+						method="POST" enctype="multipart/form-data"
+						name="myForm" onsubmit="return validateForm()">
 
 						<label id="textfield" class="col-sm-12">Service ID</label>
 						<form:input class="form-control form-control-lg" readonly="true"
-							path="serviceid" />
+							path="serviceid"  placeholder="Service ID" required="required"
+							pattern="[a-z]\{4}"
+							title="Do not enter number and enter at least 4 words"/>
 						</br>
 						<label id="textfield" class="col-sm-12">Service Name</label>
 						<form:input path="servicename"
-							class="form-control form-control-lg" />
+							class="form-control form-control-lg" placeholder="Service Name" required="required"
+							pattern="[a-z]\{4}"
+							title="Do not enter number and enter at least 4 words"/>
 						<br />
 						<label id="textfield" class="col-sm-12">Service Desc</label>
 						<form:input path="servicedesc"
-							class="form-control form-control-lg" />
+							class="form-control form-control-lg" placeholder="Service Desc" required="required"
+							pattern="[a-z]\{4}"
+							title="Do not enter number and enter at least 4 words"/>
 						<br />
 						<label id="textfield" class="col-sm-12">Service Price</label>
 						<form:input path="serviceprice"
-							class="form-control form-control-lg" />
+							class="form-control form-control-lg" placeholder="Service Price" required="required"
+							pattern="[0-9]"
+							title="Do not enter number and enter at least 4 words"/>
 						<br />
 
 						<button type="submit" class="btn btn-danger">Update</button>
