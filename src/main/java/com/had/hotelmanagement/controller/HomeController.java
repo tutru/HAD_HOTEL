@@ -36,8 +36,8 @@ public class HomeController {
 		return "reservation_user";
 	}
 
-	@RequestMapping(value={"/room_user"})
-	public String room_user() {
-		return "room_user";
+	@RequestMapping(value={"/rooms_user"})
+	public String room_users() {
+		return "rooms_user";
 	}
 }

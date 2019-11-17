@@ -33,6 +33,8 @@ public class PaymentController {
 	@RequestMapping(value = "/payment-save", method = RequestMethod.GET)
 	public String insertPayment(Model model) {
 		model.addAttribute("payment", new PaymentEntity());
+		model.addAttribute("listPaymentType", paymentService.listPaymentType());
+		model.addAttribute("listReception", paymentService.listReception());
 		return "payment-save";
 	}
 

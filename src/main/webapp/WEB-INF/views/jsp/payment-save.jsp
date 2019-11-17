@@ -211,17 +211,35 @@
 				<form:form action="${savePayment}" modelAttribute="payment"
 					method="GET" enctype="multipart/form-data">
 					<label>Payment Type ID</label>
-					<form:input class="form-control form-control-lg" path="paymenttypeid" />
+					<select name="paymenttypeid" class="form-control">
+						<c:if test="${not empty listPaymentType}">
+							<c:forEach var="payment" items="${listPaymentType}">
+								<option value=${payment.paymenttypeid}>${payment.paymenttypename}</option>
+							</c:forEach>
+						</c:if>
+					</select>
 					<br />
 					<label>Reception ID</label>
-					<form:input class="form-control form-control-lg" path="receptionid" />
+					<select name="receptionid" class="form-control"
+						enctype="multipart/form-data" name="myForm"
+						onsubmit="return validateForm()">
+						<c:if test="${not empty listReception}">
+							<c:forEach var="payment" items="${listReception}">
+								<option value=${payment.receptionid}>${payment.receptionid}</option>
+							</c:forEach>
+						</c:if>
+					</select>
 					<br />
 					<label>Payment Amount</label>
-					<form:input class="form-control form-control-lg" path="paymentamount" />
+					<form:input class="form-control form-control-lg"
+						path="paymentamount" placeholder="Service Price " required="required"
+							pattern="[0-9]{4,9}"
+							 />
 					<br />
 					<label>Payment Date</label>
-					<form:input class="form-control form-control-lg" path="paymentdate" id="datepicker"
-						placeholder="Paymentdate" />
+					<form:input class="form-control form-control-lg" path="paymentdate"
+						id="datepicker" placeholder="Payment Date" required="required"
+							title="Do not enter number and enter at least 4 words"/>
 
 					<script>
 						$(function() {
@@ -234,16 +252,17 @@
 							$("#datepicker").datepicker();
 						});
 					</script>
-					<br/>
-					<div >
-					<button style="margin-bottom: 10px; " class="btn btn-danger" type="submit">Save</button>
-</div>
+					<br />
+					<div>
+						<button style="margin-bottom: 10px;" class="btn btn-danger"
+							type="submit">Save</button>
+					</div>
 				</form:form>
 			</div>
 		</div>
-		
+
 		<!-- Sticky Footer -->
-		<footer  class="sticky-footer">
+		<footer class="sticky-footer">
 			<div class="container my-auto">
 				<div class="copyright text-center my-auto">
 					<span>Copyright © HAD Hotel 2019</span>
@@ -286,7 +305,7 @@
 	</div>
 	<!-- Bootstrap core JavaScript-->
 	<!-- Bootstrap core JavaScript-->
-	
+
 	<script
 		src="<c:url value="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
 	<!-- Core plugin JavaScript-->

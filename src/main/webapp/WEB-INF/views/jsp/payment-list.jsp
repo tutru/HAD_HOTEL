@@ -1,6 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html>
@@ -231,10 +232,10 @@
 											<td>${payment.paymentid}</td>
 											<td>${payment.paymenttypeid}</td>
 											<td>${payment.receptionid}</td>
-											<td>${payment.paymentamount}</td>
+											<td><fmt:formatNumber value = "${payment.paymentamount}"/> VND</td>
 											<td>${payment.paymentdate}</td>
 											<td><button type="submit" class="btn btn-primary">
-													<a href="${urlUpdate}/${payment.paymentid}"><i class="fas fa-pen" style="color: black"></i></a>
+													<a href="${urlUpdate}/${payment.paymentid} "><i class="fas fa-pen" style="color: black"></i></a>
 												</button></td>
 											<td><button type="submit" class="btn btn-danger">
 													<a href="${urlDelete}/${payment.paymentid}""><i class="fas fa-trash-alt" style="color: black"></i></a>
