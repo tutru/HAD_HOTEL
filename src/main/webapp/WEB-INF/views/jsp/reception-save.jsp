@@ -3,12 +3,10 @@
 <%@ page isELIgnored="false"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8" import="java.sql.*"%>
-<html lang="vn">
-<link rel="stylesheet"
-	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<meta charset="ISO-8859-1">
+	
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
 
 <meta charset="utf-8">
@@ -18,16 +16,25 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
+<link rel="stylesheet"
+	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<meta charset="ISO-8859-1">
+
 <title>Create Reservation</title>
 
-<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- Custom fonts for this template-->
+<link href="resources/vendor/fontawesome-free/css/all.min.css"
+	rel="stylesheet" type="text/css">
 
-<link rel="stylesheet"
-	href="<c:url value="/resources/vendor/fontawesome-free/css/all.min.css"></c:url>">
-<link rel="stylesheet"
-	href="<c:url value="/resources/css/sb-admin.css"></c:url>">
-<link rel="stylesheet"
-	href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
+<!-- Page level plugin CSS-->
+<link href="resources/vendor/datatables/dataTables.bootstrap4.css"
+	rel="stylesheet">
+
+<!-- Custom styles for this template-->
+<link href="resources/css/sb-admin.css" rel="stylesheet">
+
 
 </head>
 
@@ -237,7 +244,9 @@
 								</c:if>
 							</select>
 							<br /> <label>Checkin Date:</label>
-							<form:input class="form-control" path="checkindate" id="datepicker" placeholder="Check In Date"/>
+							<form:input class="form-control" path="checkindate" id="datepicker" placeholder="Check In Date"
+							required="required" pattern="[a-z]\{20}"
+								title="Please type Date"/>
 								<script>
 								$(function() {
 									$.datepicker.setDefaults({
@@ -290,7 +299,7 @@
 							<br /> <label>Reception Status:</label>
 							<form:textarea rows="5" class="form-control" path="receptionstatus" />
 							<br />
-							<form:button type="submit"> Thêm</form:button>
+							<form:button type="submit" class="btn btn-success"> Save</form:button>
 							<button type="submit">
 								<a href="<c:url value="/reception-list"/>">List Reception</a>
 							</button>

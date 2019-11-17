@@ -1,9 +1,10 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ page isELIgnored="false"%>
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8" import="java.sql.*"%>
-<html lang="vn">
+
+<!DOCTYPE html>
+<html>
+
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,16 +15,15 @@
 
 <title>Reception List</title>
 
-<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<!-- Custom fonts for this template-->
 <link rel="stylesheet"
 	href="<c:url value="/resources/vendor/fontawesome-free/css/all.min.css"></c:url>">
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/sb-admin.css"></c:url>">
 <link rel="stylesheet"
 	href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
-</head>
 
+</head>
 <body id="page-top">
 	<c:url value="/reception-save" var="urlSave" />
 	<c:url value="/reception-view/" var="urlView" />

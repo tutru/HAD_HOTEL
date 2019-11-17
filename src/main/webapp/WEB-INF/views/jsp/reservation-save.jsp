@@ -236,7 +236,8 @@
 								</c:if>
 							</select> <br /> <label>Expected Check Date</label>
 							<form:input class="form-control" path="expectedcheckdate"
-								id="datepicker" placeholder="Expected Check Date" />
+								id="datepicker" placeholder="Expected Check Date" required="required" pattern="[a-z]\{20}"
+								title="Please choose Date"/>
 							<script>
 								$(function() {
 									$.datepicker.setDefaults({
@@ -253,8 +254,9 @@
 						<div class="form-group col-md-6">
 							<label>Expected Room:</label>
 							<form:input class="form-control" path="expectedroom" />
-							<br /> <label>Is Deposit:</label>
-							<form:input class="form-control" path="isdeposit" />
+							<br /> <label>Advance Deposit:</label>
+							<form:input class="form-control" path="isdeposit" required="required" pattern="[0-9]"
+								title="Please type Deposit"/>
 							<br /> <label>Status:</label>
 							<form:textarea rows="5" class="form-control" path="reservationstatus"
 								placeholder="Reservation Status" />

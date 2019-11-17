@@ -104,8 +104,8 @@
 
 		<!-- Sidebar -->
 		<ul class="sidebar navbar-nav">
-			<li class="nav-item active"><a class="nav-link" href="<c:url value="/index"/>">
-					<i class="fas fa-home"></i> <span>Home</span>
+			<li class="nav-item active"><a class="nav-link"
+				href="<c:url value="/index"/>"> <i class="fas fa-home"></i> <span>Home</span>
 			</a></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -114,12 +114,14 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Customer:</h6>
-					<a class="dropdown-item" href="<c:url value="/customer-list"/>">List Customer</a> <a
-						class="dropdown-item" href="<c:url value="/customer-save"/>">Create Customer</a>
+					<a class="dropdown-item" href="<c:url value="/customer-list"/>">List
+						Customer</a> <a class="dropdown-item"
+						href="<c:url value="/customer-save"/>">Create Customer</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Employee:</h6>
-					<a class="dropdown-item" href="<c:url value="/employee-list"/>">List Employee</a> <a
-						class="dropdown-item" href="<c:url value="/employee-save"/>">Create Employee</a>
+					<a class="dropdown-item" href="<c:url value="/employee-list"/>">List
+						Employee</a> <a class="dropdown-item"
+						href="<c:url value="/employee-save"/>">Create Employee</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -128,11 +130,13 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Account:</h6>
-					<a class="dropdown-item" href="<c:url value="/list-account"/>">List Account</a> <a
-						class="dropdown-item" href="<c:url value="/save-account"/>">Create Account</a>
+					<a class="dropdown-item" href="<c:url value="/list-account"/>">List
+						Account</a> <a class="dropdown-item"
+						href="<c:url value="/save-account"/>">Create Account</a>
 					<h6 class="dropdown-header">Role:</h6>
-					<a class="dropdown-item" href="<c:url value="/list-role"/>">List Role</a> <a
-						class="dropdown-item" href="<c:url value="/save-role"/>">Create Role</a>
+					<a class="dropdown-item" href="<c:url value="/list-role"/>">List
+						Role</a> <a class="dropdown-item" href="<c:url value="/save-role"/>">Create
+						Role</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
@@ -141,17 +145,19 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Room Type:</h6>
-					<a class="dropdown-item" href="<c:url value="/roomtype-list"/>">List Room Type</a> <a
-						class="dropdown-item" href="<c:url value="/roomtype-save"/>">Create Room Type</a>
+					<a class="dropdown-item" href="<c:url value="/roomtype-list"/>">List
+						Room Type</a> <a class="dropdown-item"
+						href="<c:url value="/roomtype-save"/>">Create Room Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room Status:</h6>
-					<a class="dropdown-item" href="<c:url value="/roomstatus-list"/>">List Room
-						Status</a> <a class="dropdown-item" href="<c:url value="/roomstatus-save"/>">Create
-						Room Status</a>
+					<a class="dropdown-item" href="<c:url value="/roomstatus-list"/>">List
+						Room Status</a> <a class="dropdown-item"
+						href="<c:url value="/roomstatus-save"/>">Create Room Status</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room:</h6>
-					<a class="dropdown-item" href="<c:url value="/room-list"/>">List Room</a> <a
-						class="dropdown-item" href="<c:url value="/room-list"/>">Create Room</a>
+					<a class="dropdown-item" href="<c:url value="/room-list"/>">List
+						Room</a> <a class="dropdown-item" href="<c:url value="/room-list"/>">Create
+						Room</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
@@ -159,12 +165,14 @@
 					class="fas fa-money-check-alt"></i> <span>Payment</span> </a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Payment Type:</h6>
-					<a class="dropdown-item" href="<c:url value="/paymenttype-list"/>">List Payment Type</a> 
-					<a class="dropdown-item" href="<c:url value="/paymenttype-save"/>">Create Payment Type</a>
+					<a class="dropdown-item" href="<c:url value="/paymenttype-list"/>">List
+						Payment Type</a> <a class="dropdown-item"
+						href="<c:url value="/paymenttype-save"/>">Create Payment Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Payment:</h6>
-					<a class="dropdown-item" href="<c:url value="/payment-list"/>">List Payment</a> <a
-						class="dropdown-item" href="<c:url value="/payment-save"/>">Create Payment</a>
+					<a class="dropdown-item" href="<c:url value="/payment-list"/>">List
+						Payment</a> <a class="dropdown-item"
+						href="<c:url value="/payment-save"/>">Create Payment</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
@@ -174,12 +182,13 @@
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Reservation:</h6>
 					<a class="dropdown-item" href="<c:url value="/reservation-list"/>">List
-						Reservation</a> <a class="dropdown-item" href="<c:url value="/reservation-list"/>">Create
-						Resertvation</a>
+						Reservation</a> <a class="dropdown-item"
+						href="<c:url value="/reservation-list"/>">Create Resertvation</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Reception:</h6>
-					<a class="dropdown-item" href="<c:url value="/reception-list"/>">List Reception</a> <a
-						class="dropdown-item" href="<c:url value="/reception-save"/>">Create Reception</a>
+					<a class="dropdown-item" href="<c:url value="/reception-list"/>">List
+						Reception</a> <a class="dropdown-item"
+						href="<c:url value="/reception-save"/>">Create Reception</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
@@ -187,8 +196,9 @@
 					<i class="fas fa-list-ol"></i> <span>Service</span>
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
-					<a class="dropdown-item" href="<c:url value="/service-list"/>">List Service</a> <a
-						class="dropdown-item" href="<c:url value="/service-save"/>">Create Service</a>
+					<a class="dropdown-item" href="<c:url value="/service-list"/>">List
+						Service</a> <a class="dropdown-item"
+						href="<c:url value="/service-save"/>">Create Service</a>
 				</div></li>
 		</ul>
 
@@ -203,30 +213,40 @@
 				</ol>
 
 				<c:url value="/saveCustomer" var="saveCustomer" />
-				<form:form action="${saveCustomer}" method="POST"
-					modelAttribute="customer" enctype="multipart/form-data">
+				<form:form id="customerAdd" action="${saveCustomer}"
+					modelAttribute="customer" enctype="multipart/form-data"
+					name="myForm" onsubmit="return validateForm()">
 					<div class="form-row">
 						<div class="form-group col-md-6">
 							<label>ID:</label>
-							<form:input class="form-control" path="customerid" readonly="true" />
-							<br />
-							 <label>Full Name:</label>
-							<form:input class="form-control" path="name" placeholder="Full name"/>
+							<form:input class="form-control" path="customerid"
+								readonly="true" />
+							<br /> <label>Full Name:</label>
+							<form:input class="form-control" path="name"
+								placeholder="Full name" required="required" pattern="[a-z]\{20}"
+								title="Please type Full Name" />
 							<br /> <label>Government ID:</label>
-							<form:input class="form-control" path="governmentid" placeholder="Government ID"/>
+							<form:input class="form-control" path="governmentid"
+								placeholder="Government ID" required="required"
+								pattern="[0-9]\{12}" title="Please type Government ID" />
 							<br /> <label>Address:</label>
-							<form:input class="form-control" path="address" placeholder="Address"/>
+							<form:input class="form-control" path="address"
+								placeholder="Address" required="required" pattern="[a-z]\{100}"
+								title="Please Address" />
 							<br />
 						</div>
 						<div class="form-group col-md-6">
 							<label>Phone:</label>
-							<form:input class="form-control" path="phone" placeholder="Phone"/>
+							<form:input class="form-control" path="phone" placeholder="Phone"
+								required="required" pattern="[0-9]{10,11}"
+								title="Please type Phone Number" />
 							<br /> <label>Email:</label>
-							<form:input class="form-control" path="email" placeholder="Email"/>
+							<form:input class="form-control" path="email" placeholder="Email"
+								required="required" required="required" pattern="[0-9]{10,11}"
+								title="Please type Email" />
 							<br /> <label>CC number:</label>
-							<form:input class="form-control" path="ccnumber"/>
-							<br />
-							<br /> <label>Image:</label>
+							<form:input class="form-control" path="ccnumber" />
+							<br /> <br /> <label>Image:</label>
 							<output id="list">
 								<img src="/HotelManagement/resources/image/441.jpg" width="120">
 							</output>
@@ -260,10 +280,11 @@
 										.addEventListener('change',
 												handleFileSelect, false);
 							</script>
-							<br /> 
+							<br />
 							<button type="submit" class="btn btn-success">Save</button>
 							<button type="submit" class="btn btn-danger">
-								<a href="<c:url value="/customer-list" />"><i class="fas fa-window-close"></i></a>
+								<a href="<c:url value="/customer-list" />"><i
+									class="fas fa-window-close"></i></a>
 							</button>
 						</div>
 				</form:form>
@@ -314,7 +335,7 @@
 	</div>
 
 
-		<!-- Bootstrap core JavaScript-->
+	<!-- Bootstrap core JavaScript-->
 	<script src="<c:url value="/resources/vendor/jquery/jquery.min.js"/>"></script>
 	<script
 		src="<c:url value="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
