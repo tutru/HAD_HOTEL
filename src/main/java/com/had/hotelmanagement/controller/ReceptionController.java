@@ -62,7 +62,7 @@ public class ReceptionController {
 	@RequestMapping("/saveReception")
 	public String doSaveReception(Reception reception, Model model) {
 		receptionService.save(reception);
-		model.addAttribute("listReservation", receptionService.findAll());
+		model.addAttribute("listReception", receptionService.findAll());
 		return "reception-list";
 	}
 
