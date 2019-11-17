@@ -19,9 +19,11 @@
 <!-- Custom fonts for this template-->
 <link href="resources/vendor/fontawesome-free/css/all.min.css"
 	rel="stylesheet" type="text/css">
+
 <!-- Page level plugin CSS-->
 <link href="resources/vendor/datatables/dataTables.bootstrap4.css"
 	rel="stylesheet">
+
 <!-- Custom styles for this template-->
 <link href="resources/css/sb-admin.css" rel="stylesheet">
 
@@ -31,7 +33,7 @@
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-		<a class="navbar-brand mr-1" href="index.html">HAD Hotel</a>
+		<a class="navbar-brand mr-1" href="index.html" ><img src="/HotelManagement/resources/image/logo.JPG" width="120"></a>
 
 		<button class="btn btn-link btn-sm text-white order-1 order-sm-0"
 			id="sidebarToggle" href="#">
@@ -240,7 +242,7 @@
 								title="Please type Phone Number" />
 							<br /> <label>Email:</label>
 							<form:input class="form-control" path="email" placeholder="Email"
-								required="required" required="required" pattern="[0-9]{10,11}"
+								required="required" pattern="[0-9]{10,11}"
 								title="Please type Email" />
 							<br /> <label>CC number:</label>
 							<form:input class="form-control" path="ccnumber" />

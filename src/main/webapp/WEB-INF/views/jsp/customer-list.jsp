@@ -22,7 +22,6 @@
 	href="<c:url value="/resources/css/sb-admin.css"></c:url>">
 <link rel="stylesheet"
 	href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
-
 </head>
 
 <body id="page-top">
