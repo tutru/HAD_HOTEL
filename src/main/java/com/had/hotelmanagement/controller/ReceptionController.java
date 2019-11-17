@@ -16,6 +16,7 @@ import com.had.hotelmanagement.service.ServiceService;
 
 @Controller
 @RequestMapping(value = "")
+
 public class ReceptionController {
 
 	@Autowired
