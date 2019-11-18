@@ -1,12 +1,13 @@
 
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
@@ -14,7 +15,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>SB Admin 2 - Login</title>
+<title>Login</title>
 
 <!-- Custom fonts for this template-->
 <link href="resources/vendor/fontawesome-free/css/all.min.css"
@@ -41,16 +42,16 @@
 					<div class="card-body p-0">
 						<!-- Nested Row within Card Body -->
 						<div class="row">
-							<div class="col-lg-6 d-none d-lg-block bg-login-image">						
+							<div class="col-lg-6 d-none d-lg-block bg-login-image">
 								<img
-			src="<%=request.getContextPath()%>/resources/image/01_singapore.jpg"
-			width="500" height="500">
-							
+									src="<%=request.getContextPath()%>/resources/image/01_singapore.jpg"
+									width="500" height="500">
+
 							</div>
 							<div class="col-lg-6">
 								<div class="p-5">
 									<div class="text-center">
-										<h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+										<h1 class="h4 text-gray-900 mb-4">Welcome</h1>
 									</div>
 									<form name="myForm" action="xacnhan" method="post"
 										onsubmit="return validateForm()" class="user">
@@ -69,19 +70,18 @@
 												<p class="text-danger">${msg}</p>
 											</div>
 										</div>
-										<button type="submit"
-											class="btn btn-primary btn-user btn-block">Đang
-											Nhập</button>
+										<div class="text-center">
+											<button type="submit" class="btn btn-primary">   Login   </button>
+										</div>
 
 									</form>
 									<div></div>
 									<hr>
 									<div class="text-center">
-										<button onclick="login()" id="login" class="btn btn-primary btn-user">Đang Nhập Với FaceBook</button>
+										<button onclick="login()" id="login"
+											class="btn btn-primary btn-user">Login With FaceBook</button>
 									</div>
-									<div class="text-center">
-										<a class="small" href="register.html">Create an Account!</a>
-									</div>
+
 								</div>
 							</div>
 						</div>
@@ -109,11 +109,11 @@
 			var a = document.forms["myForm"]["password"].value;
 
 			if (name == "") {
-				alert("Tên đang nhập không được bỏ trống ");
+				alert("Username can not be blank ");
 				return false;
 			}
 			if (a == "") {
-				alert("Mật Khẩu không được bỏ trống ");
+				alert("Password can not be blank");
 				return false;
 			}
 
@@ -132,13 +132,13 @@
 					.getLoginStatus(function(response) {
 						//dang nhap thanh cong
 						if (response.status === 'connected') {
-						
+
 							document.getElementById('login').style.visibility = 'hidden';
 							window.location.href = 'index';
 						} else if (response.status === 'not_authorized') {
-							
+
 						} else {
-						
+
 						}
 					});
 		};
@@ -163,7 +163,7 @@
 									document.getElementById('login').style.visibility = 'hidden';
 									window.location.href = 'index';
 								} else if (response.status === 'not_authorized') {
-									
+
 								} else {
 								}
 							}, {
@@ -182,8 +182,8 @@
 	</script>
 
 	<div id="status"></div>
-		<!--<button onclick="getInfo()">Get Info</button>-->
-	
+	<!--<button onclick="getInfo()">Get Info</button>-->
+
 
 </body>
 

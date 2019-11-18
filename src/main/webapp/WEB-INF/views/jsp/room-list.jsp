@@ -14,7 +14,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>List Employee</title>
+<title>List Room</title>
 
 <link rel="stylesheet"
 	href="<c:url value="/resources/vendor/fontawesome-free/css/all.min.css"></c:url>">

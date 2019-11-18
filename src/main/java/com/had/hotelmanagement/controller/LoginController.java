@@ -38,12 +38,12 @@ public class LoginController {
 				mv.addObject("msg", user);
 				mv.setViewName("admin");
 			} else {
-				mv.addObject("msg", "vui lòng nhập lại.");
+				mv.addObject("msg", "Password incorrect, please enter again");
 				mv.setViewName("login");
 			}
 
 		} else {
-			mv.addObject("msg", "vui lòng nhập lại.");
+			mv.addObject("msg", "Password incorrect, please enter again");
 			mv.setViewName("login");
 		}
 
