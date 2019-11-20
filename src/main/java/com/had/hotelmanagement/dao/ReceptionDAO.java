@@ -30,6 +30,11 @@ public class ReceptionDAO {
 		jdbcTemplate.update(sql);
 	}
 	
+	public void deleteRctByRstId(int reservationid) {
+		String sql = "DELETE FROM reception WHERE reservationid = " + reservationid;
+		jdbcTemplate.update(sql);
+	}
+	
 	public void update(Reception reception) {
 		String sql = "UPDATE reception SET customerid = ? , reservationid = ? , roomid = ? , checkindate = ? , expectedcheckindate = ? , checkoutdate = ? , serviceid = ? , receptionstatus = ? WHERE receptionid = ? ";
 		jdbcTemplate.update(sql, reception.getCustomerid(), reception.getReservationid(), reception.getRoomid(),
@@ -44,8 +49,8 @@ public class ReceptionDAO {
 
 	public List<Reception> findAll() {
 		String sql = "SELECT RCT.receptionid, RCT.customerid, RCT.reservationid, RCT.roomid, RCT.checkindate,\r\n" + 
-				"        RCT.expectedcheckindate, RCT.checkoutdate, RCT.serviceid, RCT.receptionstatus,\r\n" + 
-				"        CTM.name, R.roomnumber, SV.servicename\r\n" + 
+				"RCT.expectedcheckindate, RCT.checkoutdate, RCT.serviceid, RCT.receptionstatus,\r\n" + 
+				"CTM.name, R.roomnumber, SV.servicename\r\n" + 
 				"FROM reception AS RCT\r\n" + 
 				"INNER JOIN customer AS CTM ON RCT.customerid = CTM.customerid\r\n" + 
 				"INNER JOIN room AS R ON RCT.roomid = R.roomid\r\n" + 

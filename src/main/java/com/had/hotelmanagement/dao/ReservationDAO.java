@@ -8,7 +8,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.had.hotelmanagement.entity.Account;
 import com.had.hotelmanagement.entity.Reservation;
 import com.had.hotelmanagement.entity.ReservationMapper;
 
