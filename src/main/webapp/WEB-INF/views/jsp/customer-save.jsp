@@ -242,7 +242,7 @@
 								title="Please type Phone Number" />
 							<br /> <label>Email:</label>
 							<form:input class="form-control" path="email" placeholder="Email"
-								required="required" pattern="[0-9]{10,11}"
+								required="required" pattern="^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$"
 								title="Please type Email" />
 							<br /> <label>CC number:</label>
 							<form:input class="form-control" path="ccnumber" />
