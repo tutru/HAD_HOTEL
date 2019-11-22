@@ -257,7 +257,7 @@
 							<label>Expected Room:</label>
 							<form:input class="form-control" path="expectedroom" />
 							<br /> <label>Advance Deposit:</label>
-							<form:input class="form-control" path="isdeposit" required="required" pattern="[0-9]"
+							<form:input class="form-control" path="isdeposit" required="required" pattern="[0-9]\{20}"
 								title="Please type Deposit"/>
 							<br /> <label>Status:</label>
 							<form:textarea rows="5" class="form-control" path="reservationstatus"

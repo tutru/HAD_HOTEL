@@ -42,4 +42,8 @@ public class ReceptionService {
 		// validate business
 		receptionDAO.deleteRctByRstId(reservationid);
 	}
+	public void deleteRctByCtmId(int customerid){
+		// validate business
+		receptionDAO.deleteRctByCtmId(customerid);
+	}
 }

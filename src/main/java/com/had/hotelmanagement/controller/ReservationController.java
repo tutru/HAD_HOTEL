@@ -74,9 +74,9 @@ public class ReservationController {
 	public String doDeleteReservation(@PathVariable int reservationid, Model model) {
 		try {
 			reservationService.delete(reservationid);
-
 		} catch (Exception e) {
 			receptionService.deleteRctByRstId(reservationid);
+			reservationService.delete(reservationid);
 		} finally {
 			model.addAttribute("listReservation", reservationService.findAll());
 			return "reservation-list";

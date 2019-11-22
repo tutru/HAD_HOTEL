@@ -16,13 +16,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import com.had.hotelmanagement.entity.Customer;
 import com.had.hotelmanagement.service.CustomerService;
+import com.had.hotelmanagement.service.ReceptionService;
+import com.had.hotelmanagement.service.ReservationService;
 
 @Controller
 @RequestMapping(value = "")
 public class CustomerController {
-	
+
 	@Autowired
 	private CustomerService customerService;
+	@Autowired
+	private ReservationService reservationService;
+	@Autowired
+	private ReceptionService receptionService;
 
 	@RequestMapping(value = { "/customer-list" }, method = RequestMethod.GET)
 	public String listCustomer(Model model) {
@@ -65,8 +71,8 @@ public class CustomerController {
 	}
 
 	@RequestMapping("/updateCustomer")
-	public String doupdateCustomer(ModelMap model,
-			@ModelAttribute("customer") Customer customer, @RequestParam("uploadImg") MultipartFile image) {
+	public String doupdateCustomer(ModelMap model, @ModelAttribute("customer") Customer customer,
+			@RequestParam("uploadImg") MultipartFile image) {
 		if (image.isEmpty()) {
 		} else {
 			try {
@@ -86,9 +92,16 @@ public class CustomerController {
 
 	@RequestMapping(value = "/customerDelete/{customerid}", method = RequestMethod.GET)
 	public String doDeleteCustomer(@PathVariable int customerid, Model model) {
-		customerService.delete(customerid);
-		model.addAttribute("listCustomer", customerService.findAll());
-		return "customer-list";
+		try {
+			customerService.delete(customerid);
+		} catch (Exception e) {
+			reservationService.deleteRstByCtmId(customerid);
+			receptionService.deleteRctByCtmId(customerid);
+		} finally {
+			customerService.delete(customerid);
+			model.addAttribute("listCustomer", customerService.findAll());
+			return "customer-list";
+		}
 	}
 
 	@RequestMapping("/findById/{customerid}")
