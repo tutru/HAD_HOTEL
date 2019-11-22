@@ -1,6 +1,6 @@
 package com.had.hotelmanagement.controller;
 
-import java.util.List;
+
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.had.hotelmanagement.entity.RoomStatus;
+import com.had.hotelmanagement.service.RoomService;
 import com.had.hotelmanagement.service.RoomStatusService;
 
 @Controller
@@ -21,6 +22,8 @@ import com.had.hotelmanagement.service.RoomStatusService;
 public class RoomStatusController {
 	@Autowired
 	private RoomStatusService roomStatusService;
+	@Autowired
+	private RoomService roomService;
 
 	@RequestMapping(value = { "/roomstatus-list" }, method = RequestMethod.GET)
 	public String listrole(Model model) {
@@ -59,9 +62,14 @@ public class RoomStatusController {
 
 	@RequestMapping("/roomstatus-delete/{roomstatusid}")
 	public String doDeleteRoomStatus(@PathVariable int roomstatusid, Model model) {
+		try {
 		roomStatusService.delete(roomstatusid);
+		} catch(Exception e) {
+			roomService.deleteStatus(roomstatusid);
+		} finally {
 		model.addAttribute("listRoomStatus", roomStatusService.findAll());
 		return "roomstatus-list";
+		}
 	}
 
 }
