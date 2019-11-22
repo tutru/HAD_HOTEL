@@ -57,9 +57,15 @@ public class RoomService {
 		// validate business
 		roomDAO.delete(roomid);
 	}
-//	public List<Room> searchRoom(String roomid) {
-//		return roomDAO.findRoom(roomid);
-//	}
+	public void deleteStatus(int roomstatusid){
+		// validate business
+		roomDAO.deleteStatus(roomstatusid);
+	}
+	
+	public void deleteType(int roomtypeid){
+		// validate business
+		roomDAO.deleteType(roomtypeid);
+	}
 
 
 }
