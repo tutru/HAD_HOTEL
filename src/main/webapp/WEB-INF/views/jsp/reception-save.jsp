@@ -253,7 +253,9 @@
 										}
 									});
 
-									$("#datepicker").datepicker();
+									$("#datepicker").datepicker({
+										dateFormat : 'yy-mm-dd'
+									});
 								});
 							</script>
 							<br />
@@ -269,7 +271,9 @@
 										}
 									});
 
-									$("#datepicker1").datepicker();
+									$("#datepicker1").datepicker({
+										dateFormat : 'yy-mm-dd'
+									});
 								});
 							</script>
 							<br /> <label>Checkout Date:</label>
@@ -282,7 +286,9 @@
 										}
 									});
 
-									$("#datepicker2").datepicker();
+									$("#datepicker2").datepicker({
+										dateFormat : 'yy-mm-dd'
+									});
 								});
 							</script>
 							<br /> <label>Service:</label>
