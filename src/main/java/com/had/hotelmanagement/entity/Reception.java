@@ -1,6 +1,6 @@
 package com.had.hotelmanagement.entity;
 
-import java.util.Date;
+import java.sql.Date;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
