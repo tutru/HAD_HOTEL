@@ -35,7 +35,8 @@
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-		<a class="navbar-brand mr-1" href="index.html" ><img src="/HotelManagement/resources/image/logo.JPG" width="120"></a>
+		<a class="navbar-brand mr-1" href="index.html"><img
+			src="/HotelManagement/resources/image/logo.JPG" width="120"></a>
 
 		<button class="btn btn-link btn-sm text-white order-1 order-sm-0"
 			id="sidebarToggle" href="#">
@@ -220,43 +221,23 @@
 							ID
 							<form:input class="form-control" path="receptionid"
 								readonly="true" />
-							<br /> Customer:
-							<select
-								class="form-control" name="customerid">
+							<br /> Customer: <select class="form-control" name="customerid">
 								<c:if test="${not empty listCustomer}">
 									<c:forEach var="customer" items="${listCustomer}">
 										<option value=${customer.customerid}>${customer.name}</option>
 									</c:forEach>
 								</c:if>
-							</select>
-							<br /> Reservation ID
+							</select> <br /> Reservation ID
 							<form:input class="form-control" path="reservationid" />
-							<br /> Room
-							<select
-								class="form-control" name="roomid">
+							<br /> Room <select class="form-control" name="roomid">
 								<c:if test="${not empty listRoom}">
 									<c:forEach var="room" items="${listRoom}">
 										<option value=${room.roomid}>${room.roomnumber}</option>
 									</c:forEach>
 								</c:if>
-							</select>
-							<br /> Checkin Date:
-							<form:input class="form-control" path="checkindate" id="datepicker" placeholder="Check In Date"/>
-								<script>
-								$(function() {
-									$.datepicker.setDefaults({
-										onClose : function(date, inst) {
-											$("#selectedDtaeVal").html(date);
-										}
-									});
-
-									$("#datepicker").datepicker();
-								});
-							</script>
-						</div>
-						<div class="form-group col-md-6">
-							Expected Checkin Date:
-							<form:input class="form-control" path="expectedcheckindate" id="datepicker1" placeholder="Expected Check In Date"/>
+							</select> <br /> Checkin Date:
+							<form:input class="form-control" path="checkindate"
+								id="datepicker" placeholder="Check In Date" />
 							<script>
 								$(function() {
 									$.datepicker.setDefaults({
@@ -265,12 +246,17 @@
 										}
 									});
 
-									$("#datepicker1").datepicker();
+									$("#datepicker").datepicker({
+										dateFormat : 'yy-mm-dd'
+									});
 								});
 							</script>
-							<br /> Checkout Date:
-							<form:input class="form-control" path="checkoutdate" id="datepicker2" placeholder="Expected Check Out Date"/>
-									<script>
+						</div>
+						<div class="form-group col-md-6">
+							Expected Checkin Date:
+							<form:input class="form-control" path="expectedcheckindate"
+								id="datepicker1" placeholder="Expected Check In Date" />
+							<script>
 								$(function() {
 									$.datepicker.setDefaults({
 										onClose : function(date, inst) {
@@ -278,23 +264,37 @@
 										}
 									});
 
-									$("#datepicker2").datepicker();
+									$("#datepicker1").datepicker({
+										dateFormat : 'yy-mm-dd'
+									});
 								});
 							</script>
-							<br /> Service:
-							<select
-								class="form-control" name="serviceid">
+							<br /> Checkout Date:
+							<form:input class="form-control" path="checkoutdate"
+								id="datepicker2" placeholder="Expected Check Out Date" />
+							<script>
+								$(function() {
+									$.datepicker.setDefaults({
+										onClose : function(date, inst) {
+											$("#selectedDtaeVal").html(date);
+										}
+									});
+
+									$("#datepicker2").datepicker({
+										dateFormat : 'yy-mm-dd'
+									});
+								});
+							</script>
+							<br /> Service: <select class="form-control" name="serviceid">
 								<c:if test="${not empty listService}">
 									<c:forEach var="service" items="${listService}">
 										<option value=${service.serviceid}>${service.servicename}</option>
 									</c:forEach>
 								</c:if>
-							</select>
-							<br />Status:
+							</select> <br />Status:
 							<form:input class="form-control" path="receptionstatus" />
-							<br />
-<br />
-							<button type="submit"class="btn btn-success">Update</button>
+							<br /> <br />
+							<button type="submit" class="btn btn-success">Update</button>
 							<button type="submit">
 								<a href="<c:url value="/reservation-list" />">List Reception</a>
 							</button>

@@ -36,7 +36,8 @@
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-		<a class="navbar-brand mr-1" href="index.html" ><img src="/HotelManagement/resources/image/logo.JPG" width="120"></a>
+		<a class="navbar-brand mr-1" href="index.html"><img
+			src="/HotelManagement/resources/image/logo.JPG" width="120"></a>
 
 		<button class="btn btn-link btn-sm text-white order-1 order-sm-0"
 			id="sidebarToggle" href="#">
@@ -117,12 +118,14 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Customer:</h6>
-					<a class="dropdown-item" href="/HotelManagement/customer-list">List Customer</a> <a
-						class="dropdown-item" href="/HotelManagement/customer-save">Create Customer</a>
+					<a class="dropdown-item" href="/HotelManagement/customer-list">List
+						Customer</a> <a class="dropdown-item"
+						href="/HotelManagement/customer-save">Create Customer</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Employee:</h6>
-					<a class="dropdown-item" href="/HotelManagement/employee-list">List Employee</a> <a
-						class="dropdown-item" href="/HotelManagement/employee-save">Create Employee</a>
+					<a class="dropdown-item" href="/HotelManagement/employee-list">List
+						Employee</a> <a class="dropdown-item"
+						href="/HotelManagement/employee-save">Create Employee</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -179,12 +182,13 @@
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Reservation:</h6>
 					<a class="dropdown-item" href="/HotelManagement/reservation-list">List
-						Reservation</a> <a class="dropdown-item" href="/HotelManagement/reservation-save">Create
-						Resertvation</a>
+						Reservation</a> <a class="dropdown-item"
+						href="/HotelManagement/reservation-save">Create Resertvation</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Reception:</h6>
-					<a class="dropdown-item" href="/HotelManagement/reception-list">List Reception</a> <a
-						class="dropdown-item" href="/HotelManagement/reception-save">Create Reception</a>
+					<a class="dropdown-item" href="/HotelManagement/reception-list">List
+						Reception</a> <a class="dropdown-item"
+						href="/HotelManagement/reception-save">Create Reception</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -220,7 +224,8 @@
 							<br /> <label>Room Type ID:</label>
 							<form:input class="form-control" path="roomtypeid" />
 							<br /> <label>Expected Check Date:</label>
-							<form:input class="form-control" path="expectedcheckdate" id="datepicker" placeholder="Expected Check Date"/>
+							<form:input class="form-control" path="expectedcheckdate"
+								id="datepicker" />
 							<script>
 								$(function() {
 									$.datepicker.setDefaults({
@@ -229,7 +234,12 @@
 										}
 									});
 
-									$("#datepicker").datepicker();
+									$("#datepicker").datepicker(
+
+									{
+										dateFormat : 'yy-mm-dd'
+									});
+
 								});
 							</script>
 						</div>
@@ -240,8 +250,7 @@
 							<form:input class="form-control" path="isdeposit" />
 							<br /> <label>Reservation Status:</label>
 							<form:input class="form-control" path="reservationstatus" />
-							<br />
-							<br />
+							<br /> <br />
 
 							<button type="submit" class="btn btn-success">Update</button>
 							<button type="submit">
