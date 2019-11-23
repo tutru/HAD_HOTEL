@@ -248,8 +248,10 @@
 							</output>
 
 							<span class="input-group-btn"> <span
-								class="btn btn-default btn-file"> <input type="file"
-									id="files" name="uploadImg" required="required">
+								class="btn btn-default btn-file">
+								<form:input type="hidden" path="image" readonly="true"></form:input>
+								 <input type="file"
+									id="files" name="uploadImg">
 							</span>
 							</span>
 							<script>

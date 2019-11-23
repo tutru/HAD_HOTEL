@@ -71,9 +71,10 @@ public class CustomerController {
 	}
 
 	@RequestMapping("/updateCustomer")
-	public String doupdateCustomer(ModelMap model, @ModelAttribute("customer") Customer customer,
+	public String doupdateCustomer(Model model, @ModelAttribute("customer") Customer customer,
 			@RequestParam("uploadImg") MultipartFile image) {
 		if (image.isEmpty()) {
+			customerService.update(customer);
 		} else {
 			try {
 				String path = "E:\\study-fpoly\\datn\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
