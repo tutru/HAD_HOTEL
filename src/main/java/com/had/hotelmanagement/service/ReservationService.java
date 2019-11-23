@@ -42,5 +42,4 @@ public class ReservationService {
 		// validate business
 		reservationDAO.deleteRstByCtmId(customerid);
 	}
-
 }
