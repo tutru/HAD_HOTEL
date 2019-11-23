@@ -111,9 +111,4 @@ public class CustomerController {
 		return "customer-list";
 	}
 
-//	@RequestMapping(value={"/finHoaDon/{tenkh}"})
-//	public String findHoaDon(@PathVariable String tenkh, Model model) {
-//		model.addAttribute("findHoaDon", hoaDonService.findHoaDon(tenkh));
-//		return "hoadon-list";
-//	}
 }
