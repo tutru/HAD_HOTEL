@@ -97,8 +97,8 @@ public class CustomerController {
 		} catch (Exception e) {
 			reservationService.deleteRstByCtmId(customerid);
 			receptionService.deleteRctByCtmId(customerid);
-		} finally {
 			customerService.delete(customerid);
+		} finally {
 			model.addAttribute("listCustomer", customerService.findAll());
 			return "customer-list";
 		}
