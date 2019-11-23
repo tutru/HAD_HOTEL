@@ -35,6 +35,11 @@ public class ReceptionDAO {
 		jdbcTemplate.update(sql);
 	}
 	
+	public void deleteRctByCtmId(int customerid) {
+		String sql = "DELETE FROM reception WHERE customerid = " + customerid;
+		jdbcTemplate.update(sql);
+	}
+	
 	public void update(Reception reception) {
 		String sql = "UPDATE reception SET customerid = ? , reservationid = ? , roomid = ? , checkindate = ? , expectedcheckindate = ? , checkoutdate = ? , serviceid = ? , receptionstatus = ? WHERE receptionid = ? ";
 		jdbcTemplate.update(sql, reception.getCustomerid(), reception.getReservationid(), reception.getRoomid(),
