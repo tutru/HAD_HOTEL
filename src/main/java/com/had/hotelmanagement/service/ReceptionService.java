@@ -12,9 +12,10 @@ import com.had.hotelmanagement.entity.Reception;
 @Service
 @Transactional
 public class ReceptionService {
-	//hao
+
 	@Autowired
 	private ReceptionDAO receptionDAO;
+	
 	public List<Reception> findAll() {
 		return receptionDAO.findAll();
 	}
@@ -44,7 +45,7 @@ public class ReceptionService {
 	}
 	public void deleteRctByCtmId(int customerid){
 		// validate business
-		receptionDAO.deleteRstByCtmId(customerid);
+		receptionDAO.deleteRctByRstId(customerid);
 		
 	}
 }
