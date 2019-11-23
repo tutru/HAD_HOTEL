@@ -44,6 +44,7 @@ public class ReceptionService {
 	}
 	public void deleteRctByCtmId(int customerid){
 		// validate business
-		receptionDAO.deleteRctByCtmId(customerid);
+		receptionDAO.deleteRstByCtmId(customerid);
+		
 	}
 }
