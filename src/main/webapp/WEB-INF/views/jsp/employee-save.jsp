@@ -225,9 +225,8 @@
 								title="A credit card number" />
 							<br /> <label>Birthday:</label>
 							<form:input class="form-control" path="birthday" id="datepicker"
-								placeholder="Birthday" required="required" pattern="[0-9]{12}"
+								placeholder="Birthday" required="required" 
 								title="Please enter birthday" />
-
 							<script>
 								$(function() {
 									$.datepicker.setDefaults({
@@ -236,13 +235,15 @@
 										}
 									});
 
-									$("#datepicker").datepicker();
+									$("#datepicker").datepicker({
+										dateFormat : 'yy-mm-dd'
+									});
 								});
 							</script>
 							<br /> <label>Government ID:</label>
 							<form:input class="form-control" path="governmentid"
-								placeholder="Government ID" required="required" pattern="[0-9]{9,12}"
-								title="A credit card government id" />
+								placeholder="Government ID" required="required"
+								pattern="[0-9]{9,12}" title="A credit card government id" />
 							<br /> <label>Phone:</label>
 							<form:input class="form-control" path="phone" placeholder="Phone"
 								required="required" pattern="[0-9]{10}"
@@ -251,11 +252,13 @@
 						<br />
 						<div class="form-group col-md-6">
 							<label>Email</label>
-							<form:input class="form-control" path="email" placeholder="Email" required="required"
-									 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter  format email" />
+							<form:input class="form-control" path="email" placeholder="Email"
+								required="required"
+								pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+								title="Please enter  format email" />
 							<br /> <label>Salary:</label>
-							<form:input class="form-control" path="salary" 
-								placeholder="Salary" required="required" pattern="[0-9]{10}"
+							<form:input class="form-control" path="salary"
+								placeholder="Salary" required="required" pattern="[0-9]{7,9}"
 								title="Please enter salary" />
 							<br />
 							<div class="form-group">
@@ -297,8 +300,7 @@
 										.addEventListener('change',
 												handleFileSelect, false);
 							</script>
-							<br />
-							<br />
+							<br /> <br />
 							<form:button type="submit" class="btn btn-success"> Save</form:button>
 							<form:button type="submit" class="btn btn-danger">
 								<a href="<c:url value="/employee-list" />">Reset<i

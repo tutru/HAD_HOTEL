@@ -208,7 +208,6 @@
 				<c:url value="/saveRoomType" var="saveRoomType" />
 				<form:form id="roomTypeAdd" action="${saveRoomType}"
 					modelAttribute="roomtype" enctype="multipart/form-data">
-					<!-- name="f1" action="#" onsubmit="return validate()" -->
 					<div class="form-row">
 						<div class="form-group col-md-6">
 							<label>Name type room:</label>
@@ -228,7 +227,7 @@
 						<div class="form-group col-md-6">
 							<label>Price:</label>
 							<form:input class="form-control" path="roomprice" placeholder="Price" required="required"
-								pattern="[0-9]{30}" title="Please enter price number" />
+								pattern="[0-9]{7,8}" title="Please enter price number" />
 							<br /> <br />
 							<form:button type="submit" class="btn btn-success"> Save</form:button>
 							<form:button type="submit" class="btn btn-danger">
@@ -241,39 +240,7 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- <script>
-		function validate() {
-			var roomtypename = document.f1.roomtypename.value;
-			var roomtypedesc = document.f1.roomtypedesc.value;
-			var roomprice = document.f1.roomprice.value;
-			var status = false;
-
-			if (roomtypename.length < 1) {
-				document.getElementById("roomtypename").innerHTML = " <img src='unchecked.gif'/> Please enter your name";
-				status = false;
-			} else {
-				document.getElementById("roomtypename").innerHTML = " <img src='checked.gif'/>";
-				status = true;
-			}
-			if (roomtypedesc.length < 1) {
-				document.getElementById("roomtypedesc").innerHTML = " <img src='unchecked.gif'/> Please enter your name";
-				status = false;
-			} else {
-				document.getElementById("roomtypedesc").innerHTML = " <img src='checked.gif'/>";
-				status = true;
-			}
-			if (roomprice.length < 1) {
-				document.getElementById("roomprice").innerHTML = " <img src='unchecked.gif'/> Please enter your name";
-				status = false;
-			} else {
-				document.getElementById("roomprice").innerHTML = " <img src='checked.gif'/>";
-				status = true;
-			}
-		}
-	</script> -->
-
-	<!-- Sticky Footer -->
+<!-- Sticky Footer -->
 	<footer class="sticky-footer">
 		<div class="container my-auto">
 			<div class="copyright text-center my-auto">

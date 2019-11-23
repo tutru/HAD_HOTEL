@@ -57,14 +57,14 @@ public class RoomService {
 		// validate business
 		roomDAO.delete(roomid);
 	}
-	public void deleteStatus(int roomstatusid){
+	public void deleteRoom(int roomstatusid){
 		// validate business
-		roomDAO.deleteStatus(roomstatusid);
+		roomDAO.deleteRoom(roomstatusid);
 	}
 	
-	public void deleteType(int roomtypeid){
+	public void deleteRoomType(int roomtypeid){
 		// validate business
-		roomDAO.deleteType(roomtypeid);
+		roomDAO.deleteRoomType(roomtypeid);
 	}
 
 

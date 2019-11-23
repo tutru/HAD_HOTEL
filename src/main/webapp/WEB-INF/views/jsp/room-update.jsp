@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html>
-   
+
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,9 +14,12 @@
 <meta name="author" content="">
 
 <title>Room Update</title>
-<link rel="stylesheet" href="<c:url value="/resources/vendor/fontawesome-free/css/all.min.css"></c:url>">
-<link rel="stylesheet" href="<c:url value="/resources/css/sb-admin.css"></c:url>">
-<link rel="stylesheet" href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
+<link rel="stylesheet"
+	href="<c:url value="/resources/vendor/fontawesome-free/css/all.min.css"></c:url>">
+<link rel="stylesheet"
+	href="<c:url value="/resources/css/sb-admin.css"></c:url>">
+<link rel="stylesheet"
+	href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
 
 </head>
 
@@ -28,7 +31,7 @@
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-           <a class="navbar-brand mr-1" href="<c:url value="/index"/>"><img
+		<a class="navbar-brand mr-1" href="<c:url value="/index"/>"><img
 			src="<%=request.getContextPath()%>/resources/image/logo.JPG"
 			width="120"></a>
 		<button class="btn btn-link btn-sm text-white order-1 order-sm-0"
@@ -98,8 +101,8 @@
 
 		<!-- Sidebar -->
 		<ul class="sidebar navbar-nav">
-			<li class="nav-item active"><a class="nav-link" href="<c:url value="/index"/>">
-					<i class="fas fa-home"></i> <span>Home</span>
+			<li class="nav-item active"><a class="nav-link"
+				href="<c:url value="/index"/>"> <i class="fas fa-home"></i> <span>Home</span>
 			</a></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -108,12 +111,14 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Customer:</h6>
-					<a class="dropdown-item" href="<c:url value="/customer-list"/>">List Customer</a> <a
-						class="dropdown-item" href="<c:url value="/customer-save"/>">Create Customer</a>
+					<a class="dropdown-item" href="<c:url value="/customer-list"/>">List
+						Customer</a> <a class="dropdown-item"
+						href="<c:url value="/customer-save"/>">Create Customer</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Employee:</h6>
-					<a class="dropdown-item" href="<c:url value="/employee-list"/>">List Employee</a> <a
-						class="dropdown-item" href="<c:url value="/employee-save"/>">Create Employee</a>
+					<a class="dropdown-item" href="<c:url value="/employee-list"/>">List
+						Employee</a> <a class="dropdown-item"
+						href="<c:url value="/employee-save"/>">Create Employee</a>
 					<div class="dropdown-divider"></div>
 				</div></li>
 			<li class="nav-item dropdown"><a
@@ -123,11 +128,13 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Account:</h6>
-					<a class="dropdown-item" href="<c:url value="/list-account"/>">List Account</a> <a
-						class="dropdown-item" href="<c:url value="/save-account"/>">Create Account</a>
+					<a class="dropdown-item" href="<c:url value="/list-account"/>">List
+						Account</a> <a class="dropdown-item"
+						href="<c:url value="/save-account"/>">Create Account</a>
 					<h6 class="dropdown-header">Role:</h6>
-					<a class="dropdown-item" href="<c:url value="/list-role"/>">List Role</a> <a
-						class="dropdown-item" href="<c:url value="/save-role"/>">Create Role</a>
+					<a class="dropdown-item" href="<c:url value="/list-role"/>">List
+						Role</a> <a class="dropdown-item" href="<c:url value="/save-role"/>">Create
+						Role</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
@@ -136,17 +143,19 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Room Type:</h6>
-					<a class="dropdown-item" href="<c:url value="/roomtype-list"/>">List Room Type</a> <a
-						class="dropdown-item" href="<c:url value="/roomtype-save"/>">Create Room Type</a>
+					<a class="dropdown-item" href="<c:url value="/roomtype-list"/>">List
+						Room Type</a> <a class="dropdown-item"
+						href="<c:url value="/roomtype-save"/>">Create Room Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room Status:</h6>
-					<a class="dropdown-item" href="<c:url value="/roomstatus-list"/>">List Room
-						Status</a> <a class="dropdown-item" href="<c:url value="/roomstatus-save"/>">Create
-						Room Status</a>
+					<a class="dropdown-item" href="<c:url value="/roomstatus-list"/>">List
+						Room Status</a> <a class="dropdown-item"
+						href="<c:url value="/roomstatus-save"/>">Create Room Status</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room:</h6>
-					<a class="dropdown-item" href="<c:url value="/room-list"/>">List Room</a> <a
-						class="dropdown-item" href="<c:url value="/room-list"/>">Create Room</a>
+					<a class="dropdown-item" href="<c:url value="/room-list"/>">List
+						Room</a> <a class="dropdown-item" href="<c:url value="/room-list"/>">Create
+						Room</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
@@ -154,12 +163,14 @@
 					class="fas fa-money-check-alt"></i> <span>Payment</span> </a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Payment Type:</h6>
-					<a class="dropdown-item" href="<c:url value="/paymenttype-list"/>">List Payment Type</a> 
-					<a class="dropdown-item" href="<c:url value="/paymenttype-save"/>">Create Payment Type</a>
+					<a class="dropdown-item" href="<c:url value="/paymenttype-list"/>">List
+						Payment Type</a> <a class="dropdown-item"
+						href="<c:url value="/paymenttype-save"/>">Create Payment Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Payment:</h6>
-					<a class="dropdown-item" href="<c:url value="/payment-list"/>">List Payment</a> <a
-						class="dropdown-item" href="<c:url value="/payment-save"/>">Create Payment</a>
+					<a class="dropdown-item" href="<c:url value="/payment-list"/>">List
+						Payment</a> <a class="dropdown-item"
+						href="<c:url value="/payment-save"/>">Create Payment</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
@@ -169,12 +180,13 @@
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Reservation:</h6>
 					<a class="dropdown-item" href="<c:url value="/reservation-list"/>">List
-						Reservation</a> <a class="dropdown-item" href="<c:url value="/reservation-list"/>">Create
-						Resertvation</a>
+						Reservation</a> <a class="dropdown-item"
+						href="<c:url value="/reservation-list"/>">Create Resertvation</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Reception:</h6>
-					<a class="dropdown-item" href="<c:url value="/reception-list"/>">List Reception</a> <a
-						class="dropdown-item" href="<c:url value="/reception-save"/>">Create Reception</a>
+					<a class="dropdown-item" href="<c:url value="/reception-list"/>">List
+						Reception</a> <a class="dropdown-item"
+						href="<c:url value="/reception-save"/>">Create Reception</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
@@ -182,8 +194,9 @@
 					<i class="fas fa-list-ol"></i> <span>Service</span>
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
-					<a class="dropdown-item" href="<c:url value="/service-list"/>">List Service</a> <a
-						class="dropdown-item" href="<c:url value="/service-save"/>">Create Service</a>
+					<a class="dropdown-item" href="<c:url value="/service-list"/>">List
+						Service</a> <a class="dropdown-item"
+						href="<c:url value="/service-save"/>">Create Service</a>
 				</div></li>
 		</ul>
 
@@ -206,116 +219,110 @@
 				</div>
 				<div class="container">
 					<c:url value="/updateRoom" var="updateRoom" />
-					<form:form id="roomsAdd" action="${updateRoom}" modelAttribute="room"
-						enctype="multipart/form-data" onsubmit="return validateForm()" name="myForm">
+					<form:form id="roomsAdd" action="${updateRoom}"
+						modelAttribute="room" enctype="multipart/form-data">
 						<div class="form-group">
 							<label>ID</label>
 							<form:input path="roomid" class="form-control" readonly="true" />
 						</div>
 						<div class="form-group row">
-						<div class="col-md-6">
-							<label> Name Room Type:</label> 
-							<select name="roomtypeid"
-								class="form-control">
-								<c:if test="${not empty listRoomType}">
-									<c:forEach var="roomtype" items="${listRoomType}">
-										<option value=${roomtype.roomtypeid}>${roomtype.roomtypename}</option>
-									</c:forEach>
-								</c:if>
-							</select>
-						</div>
+							<div class="col-md-6">
+								<label> Name Room Type:</label> <select name="roomtypeid"
+									class="form-control">
+									<c:if test="${not empty listRoomType}">
+										<c:forEach var="roomtype" items="${listRoomType}">
+											<option value=${roomtype.roomtypeid}>${roomtype.roomtypename}</option>
+										</c:forEach>
+									</c:if>
+								</select>
+							</div>
 
-						<div class="col-md-6">
-							<label>Name Room Status:</label> <select name="roomstatusid"
-								class="form-control">
-								<c:if test="${not empty listRoomStatus}">
-									<c:forEach var="roomstatus" items="${listRoomStatus}">
-										<option value=${roomstatus.roomstatusid } class="form-group">${roomstatus.roomstatusname}</option>
-									</c:forEach>
-								</c:if>
-							</select>
+							<div class="col-md-6">
+								<label>Name Room Status:</label> <select name="roomstatusid"
+									class="form-control">
+									<c:if test="${not empty listRoomStatus}">
+										<c:forEach var="roomstatus" items="${listRoomStatus}">
+											<option value=${roomstatus.roomstatusid } class="form-group">${roomstatus.roomstatusname}</option>
+										</c:forEach>
+									</c:if>
+								</select>
+							</div>
 						</div>
-					</div>
-					<br />
-					<br />
+						<br />
+						<br />
 						<div class="form-group row">
-						<div class="col-md-6">
-							<label>Room Number</label> 
-							<form:input path="roomnumber"
-								class="form-control" type="number" placeholder="Please enter the Room number" />
-							<div style="color: red;">${msg}</div>
-						</div>
-						<br /> <br />
-						<div class="col-md-6">
-							<label>Price</label> 
-							<form:input path="roomprice" type="number" class="form-control" placeholder="Please enter the Amount" />
+							<div class="col-md-6">
+								<label>Room Number: </label>
+								<form:input class="form-control" path="roomnumber" />
 
+							</div>
+							<br /> <br />
+							<div class="col-md-6">
+								<label>Price</label>
+								<form:input class="form-control" path="roomprice"
+									placeholder="Price"  />
+
+							</div>
 						</div>
-					</div>
+
 						<br />
 						<br />
-						<label>Image:</label>
-						<span class="btn btn-default btn-file"> <input type="file"
-							id="files" name="uploadImg" required="required">
-						</span>
-						<output id="list">
-							<img src="<%=request.getContextPath()%>/resources/image/${room.roomimage}" width="304" height="236" />
-						</output>
-						<script>
-							if (window.FileReader) {
-								function handleFileSelect(evt) {
-									var files = evt.target.files;
-									var f = files[0];
-									var reader = new FileReader();
+						<div class="form-group row">
+							<div class="col-md-6">
+								<label>Image:</label>
+								<br/>
+								<output id="list">
+								<img
+									src="<%=request.getContextPath()%>/resources/image/${room.roomimage}"
+									width="120" style="border: 2px solid #7bb8cc; border-radius: 6px" />
+							</output>
 
-									reader.onload = (function(theFile) {
-										return function(e) {
-											document.getElementById('list').innerHTML = [ '<img src="', e.target.result, '" title="', theFile.name, '"width="304" height="236"/>' ]
-													.join('');
-										};
-									})(f);
+							<span class="input-group-btn"> <span
+								class="btn btn-default btn-file"> <input type="file"
+									id="files" name="uploadImg"> 
+									
+							</span>
+							<form:input type="hidden" path="roomimage" readonly="true"></form:input>
+							</span>
+							<script>
+								if (window.FileReader) {
+									function handleFileSelect(evt) {
+										var files = evt.target.files;
+										var f = files[0];
+										var reader = new FileReader();
 
-									reader.readAsDataURL(f);
+										reader.onload = (function(theFile) {
+											return function(e) {
+												document.getElementById('list').innerHTML = [ '<img src="', e.target.result, '" title="', theFile.name, '" width="120"/>' ]
+														.join('');
+											};
+										})(f);
+
+										reader.readAsDataURL(f);
+									}
+								} else {
+									alert('This browser does not support FileReader');
 								}
-							} else {
-								alert('Trình duyệt này không hỗ trợ FileReader');
-							}
 
-							document.getElementById('files').addEventListener(
-									'change', handleFileSelect, false);
-						</script>
-						
-						<br />
-						<br />
-						<div class="form-group">
-							<label>Room Desc</label>
-							<form:textarea path="roomdesc" id="roomdesc" rows="4" cols="50" class="form-control"/>
+								document.getElementById('files')
+										.addEventListener('change',
+												handleFileSelect, false);
+							</script>
+								<br /> <br />
+							</div>
+							<div class="col-md-6">
+								<label>Room Desc</label>
+								<textarea name="roomdesc" rows="3" cols="50"
+									class="form-control">
+</textarea>
+							</div>
 						</div>
 						<br />
 						<br />
 						<form:button class="btn btn-warning" type="submit"> Room Update</form:button>
-						
+
 					</form:form>
-					
-					<script type="text/javascript">
-					function validateForm() {
-						var name = document.forms["myForm"]["roomnumber"].value;
-						var a = document.forms["myForm"]["roomprice"].value;
-
-						if (name == "") {
-							alert("Số Phòng không được bỏ trống ");
-							return false;
-						}
-						if (a == "") {
-							alert("Tiền không được bỏ trống ");
-							return false;
-						}
-
-						return true;
-					}
-				</script>
-					
-				</div>
+</div>
 			</div>
 		</div>
 		<!-- Sticky Footer -->

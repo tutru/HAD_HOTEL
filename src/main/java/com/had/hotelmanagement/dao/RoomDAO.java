@@ -28,13 +28,13 @@ public class RoomDAO {
 		jdbcTemplate.update(sql);
 	}
 	
-	public void deleteStatus(int roomstatusid) {
-		String sql = "DELETE FROM roomstatus WHERE roomstatusid = " + roomstatusid;
+	public void deleteRoom(int roomstatusid) {
+		String sql = "DELETE FROM room WHERE roomstatusid = " + roomstatusid;
 		jdbcTemplate.update(sql);
 	}
 	
-	public void deleteType(int roomtypeid) {
-		String sql = "DELETE FROM roomtype WHERE roomtypeid = " + roomtypeid;
+	public void deleteRoomType(int roomtypeid) {
+		String sql = "DELETE FROM room WHERE roomtypeid = " + roomtypeid;
 		jdbcTemplate.update(sql);
 	}
 

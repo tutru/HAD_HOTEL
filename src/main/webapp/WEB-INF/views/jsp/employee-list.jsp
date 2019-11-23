@@ -1,6 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <!DOCTYPE html>
 <html>
@@ -243,7 +244,7 @@
 											<td><img
 												src="<%=request.getContextPath()%>/resources/image/${employee.image}"
 												width="120"></td>
-											<td>${employee.salary}</td>
+											<td><fmt:formatNumber value="${employee.salary}" /> VND</td>
 											<td><button type="button" class="btn btn-primary">
 													<a href="${urlUpdate}/${employee.employeeid}"><i
 														class="fas fa-pen" style="color: black"></i></a>

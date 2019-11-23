@@ -65,7 +65,8 @@ public class RoomTypeController {
 		try {
 		roomTypeService.delete(roomtypeid);
 		}catch(Exception e) {
-			roomService.deleteType(roomtypeid);
+			roomService.deleteRoomType(roomtypeid);
+			roomTypeService.delete(roomtypeid);
 		}finally {
 		model.addAttribute("listRoomType", roomTypeService.findAll());
 		return "roomtype-list";

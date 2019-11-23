@@ -65,7 +65,8 @@ public class RoomStatusController {
 		try {
 		roomStatusService.delete(roomstatusid);
 		} catch(Exception e) {
-			roomService.deleteStatus(roomstatusid);
+			roomService.deleteRoom(roomstatusid);
+			roomStatusService.delete(roomstatusid);
 		} finally {
 		model.addAttribute("listRoomStatus", roomStatusService.findAll());
 		return "roomstatus-list";

@@ -260,8 +260,7 @@
 								<form:textarea path="address" id="address" rows="2" cols="50"
 									class="form-control" placeholder="Address" />
 							</div>
-
-							<br /> <label>Image:</label>
+							<label>Image:</label>
 							<output id="list">
 								<img
 									src="<%=request.getContextPath()%>/resources/image/${employee.image}"
@@ -297,15 +296,13 @@
 										.addEventListener('change',
 												handleFileSelect, false);
 							</script>
-
 							<br /> <br />
+
 							<form:button type="submit" class="btn btn-success"> Update</form:button>
 							<form:button type="submit" class="btn btn-danger">
 								<a href="<c:url value="/employee-list" />">Reset<i
 									class="fas fa-window-close"></i></a>
 							</form:button>
-						</div>
-					</div>
 				</form:form>
 			</div>
 		</div>

@@ -2,7 +2,6 @@ package com.had.hotelmanagement.controller;
 
 import java.io.File;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,8 +24,6 @@ public class RoomController {
 
 	@Autowired
 	private RoomService roomService;
-	@Autowired
-	private RoomDAO dao;
 
 	@RequestMapping(value = { "/room-list" }, method = RequestMethod.GET)
 	public String listrole(Model model) {
@@ -59,48 +56,34 @@ public class RoomController {
 	}
 
 	@RequestMapping(value = "/saveRoom", method = RequestMethod.POST)
-	public ModelAndView doSaveRoom(ModelMap model, @ModelAttribute("room") Room room,
-			@RequestParam("uploadImg") MultipartFile image, @RequestParam("roomnumber") int roomnumber) {
-		ModelAndView mv = new ModelAndView();	
-		room.setRoomnumber(roomnumber);
-		String user = dao.ckeckroom(room);
-		if (user.equals("0")) {
-			if (image.isEmpty()) {
-			} else {
-				try {
-					String path = "D:\\DU_AN\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
-							+ image.getOriginalFilename();
-					image.transferTo(new File(path));
-					room.setRoomimage(image.getOriginalFilename());
-					roomService.save(room);
-				} catch (Exception ex) {
-					ex.printStackTrace();
-				}
-			}
-			model.addAttribute("listRoom", roomService.findAll());
-			mv.addObject("msg", "thành công");
-			mv.setViewName("room-list");
-		}
-
-		else {
-
-			mv.setViewName("room-save");
-			mv.addObject("msg", "Số Phòng đã có mời bạn nhập lại số khác");
-			mv.addObject("listRoomType", roomService.listRoomType());
-			mv.addObject("listRoomStatus", roomService.listRoomStatus());
-		}
-
-		return mv;
-	}
-
-	@RequestMapping(value = "/updateRoom", method = RequestMethod.POST, produces = "application/x-www-form-urlencoded;charset=UTF-8")
-	public String doUpdateRoom(Model model, @ModelAttribute("room") Room room,
+	public String doSaveRoom(ModelMap model, @ModelAttribute("room") Room room,
 			@RequestParam("uploadImg") MultipartFile image) {
 
 		if (image.isEmpty()) {
 		} else {
 			try {
-				String path = "D:\\DU_AN\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
+				String path = "E:\\QUANLYDOAN\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
+						+ image.getOriginalFilename();
+				image.transferTo(new File(path));
+				room.setRoomimage(image.getOriginalFilename());
+				roomService.save(room);
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+		}
+		model.addAttribute("listRoom", roomService.findAll());
+		return "room-list";
+	}
+
+	@RequestMapping(value = "/updateRoom", method = RequestMethod.POST)
+	public String doUpdateRoom(Model model, @ModelAttribute("room") Room room,
+			@RequestParam("uploadImg") MultipartFile image) {
+
+		if (image.isEmpty()) {
+			roomService.update(room);
+		} else {
+			try {
+				String path = "E:\\QUANLYDOAN\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
 						+ image.getOriginalFilename();
 				image.transferTo(new File(path));
 				room.setRoomimage(image.getOriginalFilename());
@@ -110,7 +93,7 @@ public class RoomController {
 			}
 		}
 		model.addAttribute("listRoom", roomService.findAll());
-		return "redirect:room-list";
+		return "room-list";
 
 	}
 

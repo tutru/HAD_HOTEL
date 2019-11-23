@@ -223,7 +223,8 @@
 			<div class="container">
 				<c:url value="/saveRoom" var="saveRoom" />
 				<form:form id="roomsAdd" action="${saveRoom}" modelAttribute="room"
-					enctype="multipart/form-data" onsubmit="return validateForm()" name="myForm">
+					enctype="multipart/form-data" onsubmit="return validateForm()"
+					name="myForm">
 					<div class="form-group row">
 						<div class="col-md-6">
 							<label> Name Room Type:</label> <select name="roomtypeid"
@@ -235,7 +236,7 @@
 								</c:if>
 							</select>
 						</div>
-						
+
 						<div class="col-md-6">
 							<label>Name Room Status:</label> <select name="roomstatusid"
 								class="form-control">
@@ -250,68 +251,76 @@
 					<br />
 					<br />
 					<div class="form-group row">
-					<div class="col-md-6">
-						<label>Room Number: </label> 
-						<input name="roomnumber" class="form-control" type="number" placeholder="Please enter the Room number" />
-					<div style="color: red;">${msg}</div>
+						<div class="col-md-6">
+							<label>Room Number: </label>
+							<form:input class="form-control" path="roomnumber"
+								placeholder="Room number" required="required"
+								pattern="[0-9]{1,2}" title="Please enter room number" />
+
+						</div>
+						<br /> <br />
+						<div class="col-md-6">
+							<label>Price</label>
+							<form:input class="form-control" path="roomprice"
+								placeholder="Price" required="required" pattern="[0-9]{7,8}"
+								title="Please enter price" />
+
+						</div>
 					</div>
-					<br />
-					<br />
-					<div class="col-md-6">
-						<label>Price</label> 
-						<input name="roomprice" type="number" class="form-control"  placeholder="Please enter the Amount" />
-					
-					</div>
-					</div>
-					
-					<br />
-					<br />
-					<label>Image:</label>
-					<span class="btn btn-default btn-file">
-					 <input type="file" id="files" name="uploadImg" required="required" >
-					</span>
-					<script>
-						if (window.FileReader) {
-							function handleFileSelect(evt) {
-								var files = evt.target.files;
-								var f = files[0];
-								var reader = new FileReader();
 
-								reader.onload = (function(theFile) {
-									return function(e) {
-										document.getElementById('list').innerHTML = [ '<img src="', e.target.result, '" title="', theFile.name, '"width="304" height="236"/>' ]
-												.join('');
-									};
-								})(f);
-
-								reader.readAsDataURL(f);
-							}
-						} else {
-							alert('Trình duyệt này không hỗ trợ FileReader');
-						}
-
-						document.getElementById('files').addEventListener(
-								'change', handleFileSelect, false);
-					</script>
-					<output id="list">
-						<img src="<%=request.getContextPath()%>/resources/image/441.jpg"
-							class="img-thumbnail" alt="Cinque Terre" width="304" height="236" />
-					</output>
 					<br />
 					<br />
-					<div class="form-group">
-						<label>Room Desc</label>
-						<textarea name="roomdesc" rows="4" cols="50" class="form-control" >
+					<div class="form-group row">
+						<div class="col-md-6">
+							<label>Image:</label>
+							<output id="list">
+								<img src="/HotelManagement/resources/image/441.jpg" width="120">
+							</output>
+							<span class="input-group-btn"> <span
+								class="btn btn-default btn-file"> <input type="file"
+									id="files" name="uploadImg">
+							</span>
+							</span>
+							<script>
+								if (window.FileReader) {
+									function handleFileSelect(evt) {
+										var files = evt.target.files;
+										var f = files[0];
+										var reader = new FileReader();
 
-							</textarea>
+										reader.onload = (function(theFile) {
+											return function(e) {
+												document.getElementById('list').innerHTML = [ '<img src="', e.target.result, '" title="', theFile.name, '" width="120"/>' ]
+														.join('');
+											};
+										})(f);
+
+										reader.readAsDataURL(f);
+									}
+								} else {
+									alert('This browser does not support FileReader');
+								}
+
+								document.getElementById('files')
+										.addEventListener('change',
+												handleFileSelect, false);
+							</script>
+							<br /> <br />
+						</div>
+						<div class="col-md-6">
+							<label>Room Desc</label>
+							<textarea name="roomdesc" rows="3" cols="50" class="form-control"
+								required="required" title="Please enter desc" placeholder="desc">
+</textarea>
+						</div>
 					</div>
 					<br />
 					<br />
 					<button class="btn btn-warning" type="submit">Room Save</button>
-					
+
 				</form:form>
-				
-				
+
+
 				<script type="text/javascript">
 					function validateForm() {
 						var name = document.forms["myForm"]["roomnumber"].value;
