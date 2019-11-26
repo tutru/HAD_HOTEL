@@ -1,11 +1,17 @@
 package com.had.hotelmanagement.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.had.hotelmanagement.service.RoomService;
 
 @Controller
 public class HomeController {
-   
+	@Autowired
+	private RoomService roomService;
+	
 	@RequestMapping(value={"/index"})
 	public String index() {
 		return "index";
@@ -37,7 +43,8 @@ public class HomeController {
 	}
 
 	@RequestMapping(value={"/rooms_user"})
-	public String room_users() {
+	public String room_users(Model model) {
+		model.addAttribute("listRoom", roomService.findAll());
 		return "rooms_user";
 	}
 }
