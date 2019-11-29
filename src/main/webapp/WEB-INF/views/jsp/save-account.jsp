@@ -5,22 +5,26 @@
 <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
-   
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
 <title>HAD Hotel</title>
 
-<link rel="stylesheet" href="<c:url value="/resources/vendor/fontawesome-free/css/all.min.css"></c:url>">
-<link rel="stylesheet" href="<c:url value="/resources/css/sb-admin.css"></c:url>">
-<link rel="stylesheet" href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
+<link rel="stylesheet"
+	href="<c:url value="/resources/vendor/fontawesome-free/css/all.min.css"></c:url>">
+<link rel="stylesheet"
+	href="<c:url value="/resources/css/sb-admin.css"></c:url>">
+<link rel="stylesheet"
+	href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
 </head>
 
 <body id="page-top">
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-		<a class="navbar-brand mr-1" href="index.html" ><img src="/HotelManagement/resources/image/logo.JPG" width="120"></a>
+		<a class="navbar-brand mr-1" href="index.html"><img
+			src="/HotelManagement/resources/image/logo.JPG" width="120"></a>
 
 		<button class="btn btn-link btn-sm text-white order-1 order-sm-0"
 			id="sidebarToggle" href="#">
@@ -76,8 +80,7 @@
 			</a>
 				<div class="dropdown-menu dropdown-menu-right"
 					aria-labelledby="userDropdown">
-
-					<a class="dropdown-item">Tài Khoản: ${msg}</a>
+					<a class="dropdown-item">Tài Khoản: ${name}</a>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#">Settings</a>
 					<div class="dropdown-divider"></div>
@@ -123,9 +126,9 @@
 						class="dropdown-item" href="save-role">Create Role</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" id="pagesDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> <i class="fas fa-door-open"></i> <span>Room</span>
+				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-door-open"></i> <span>Room</span>
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Room Type:</h6>
@@ -142,24 +145,23 @@
 						class="dropdown-item" href="room-save">Create Room</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" id="pagesDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"><i class="fas fa-money-check-alt"></i> <span>Payment</span>
-			</a>
+				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+					class="fas fa-money-check-alt"></i> <span>Payment</span> </a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Payment Type:</h6>
-					<a class="dropdown-item" href="paymenttype-list">List Payment Type</a>
-					<a class="dropdown-item" href="paymenttype-save">Create Payment
-						Type</a>
+					<a class="dropdown-item" href="paymenttype-list">List Payment
+						Type</a> <a class="dropdown-item" href="paymenttype-save">Create
+						Payment Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Payment:</h6>
 					<a class="dropdown-item" href="payment-list">List Payment</a> <a
 						class="dropdown-item" href="payment-save">Create Payment</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" id="pagesDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> <i class="fas fa-check-square"></i> <span>Booking</span>
+				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-check-square"></i> <span>Booking</span>
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Reservation:</h6>
@@ -172,9 +174,9 @@
 						class="dropdown-item" href="reception-save">Create Reception</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" id="pagesDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> <i class="fas fa-list-ol"></i> <span>Service</span>
+				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-list-ol"></i> <span>Service</span>
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<a class="dropdown-item" href="service-list">List Service</a> <a
@@ -191,49 +193,45 @@
 					<li class="breadcrumb-item"><a href="#">Security</a></li>
 					<li class="breadcrumb-item active">Create Account</li>
 				</ol>
-           <div class="container">
-				<c:url value="/saveaccount" var="saveaccount" />
-				<form:form name="myForm" action="${saveaccount}"
-					modelAttribute="account" onsubmit="return validateForm()"
-					method="GET">
+				<div class="container">
+					<c:url value="/saveaccount" var="saveaccount" />
+					<form:form name="myForm" action="${saveaccount}"
+						modelAttribute="account" onsubmit="return validateForm()"
+						method="GET">
 
-					<div class="form-group col-12">
+						<div class="form-group col-12">
 
-						<label>Employee Name</label> <select name="employeeid"
-							class="form-control">
-							<c:if test="${not empty listEmployee}">
-								<c:forEach var="employee" items="${listEmployee}">
-									<option value=${employee.employeeid}>${employee.name}</option>
-								</c:forEach>
-							</c:if>
-						</select>
-                         <br /> 
-						<label>Role</label> 
-						<select name="roleid"
-							class="form-control">
-							<c:if test="${not empty listRole}">
-								<c:forEach var="role" items="${listRole}">
-									<option value=${role.roleid}>${role.rolename}</option>
-								</c:forEach>
-							</c:if>
-						</select>
-						<br /> 
-						 <label>User Name</label>
-						<form:input path="username" class="form-control" placeholder="Please Enter Your Name"/>
-						<div style="color: red;">${msg}</div>
-						 <br /> 
-						<label>Password</label>
+							<label>Employee Name</label> <select name="employeeid"
+								class="form-control">
+								<c:if test="${not empty listEmployee}">
+									<c:forEach var="employee" items="${listEmployee}">
+										<option value=${employee.employeeid}>${employee.name}</option>
+									</c:forEach>
+								</c:if>
+							</select> <br /> <label>Role</label> <select name="roleid"
+								class="form-control">
+								<c:if test="${not empty listRole}">
+									<c:forEach var="role" items="${listRole}">
+										<option value=${role.roleid}>${role.rolename}</option>
+									</c:forEach>
+								</c:if>
+							</select> <br /> <label>User Name</label>
+							<form:input path="username" class="form-control"
+								placeholder="Please Enter Your Name" />
+							<div style="color: red;">${msg}</div>
+							<br /> <label>Password</label>
 
-						<form:input type="password" id="password" path="password" placeholder="Please Enter Your Password"
-							class="form-control" pattern=".{6,}"
-							title="Mật Khẩu Phải trên 6 chữ hoặc số" />
-						<br /> <br />	<br /> <br />
-						<button type="submit" class="btn btn-warning float-left">Account Save</button>
-						
-					</div>
-				</form:form>
-				
-                  </div>
+							<form:input type="password" id="password" path="password"
+								placeholder="Please Enter Your Password" class="form-control"
+								pattern=".{6,}" title="Mật Khẩu Phải trên 6 chữ hoặc số" />
+							<br /> <br /> <br /> <br />
+							<button type="submit" class="btn btn-warning float-left">Account
+								Save</button>
+
+						</div>
+					</form:form>
+
+				</div>
 				<script type="text/javascript">
 					function validateForm() {
 						var name = document.forms["myForm"]["username"].value;
@@ -292,7 +290,7 @@
 				<div class="modal-footer">
 					<button class="btn btn-secondary" type="button"
 						data-dismiss="modal">Cancel</button>
-					<a class="btn btn-primary" href="login.html">Logout</a>
+					<a class="btn btn-primary" href="<c:url value="/logout"/>">Logout</a>
 				</div>
 			</div>
 		</div>

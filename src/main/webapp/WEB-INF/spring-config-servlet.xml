@@ -15,15 +15,66 @@
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 	<context:component-scan
 		base-package="com.had.hotelmanagement" />
+
+	<!-- interceptor -->
+
+	<mvc:interceptors>
+		<mvc:interceptor>
+	     	<mvc:mapping path="/index"/>
+			<mvc:mapping path="/list-role"/>
+			<mvc:mapping path="/list-account"/>
+			<mvc:mapping path="/room-list"/>
+			<mvc:mapping path="/room-save"/>
+			<mvc:mapping path="/room-update//*"/>
+			<mvc:mapping path="/save-role"/>
+			<mvc:mapping path="/update-role//*"/>
+			<mvc:mapping path="/save-account"/>
+			<mvc:mapping path="/update-account//*"/>
+			<mvc:mapping path="/customer-list"/>
+			<mvc:mapping path="/customer-save"/>
+			<mvc:mapping path="/customer-update//*"/>
+			<mvc:mapping path="/employee-list"/>
+			<mvc:mapping path="/employee-save"/>
+			<mvc:mapping path="/employee-update//*"/>
+			<mvc:mapping path="/roomstatus-list"/>
+			<mvc:mapping path="/roomstatus-save"/>
+			<mvc:mapping path="/roomstatus-update//*"/>
+			<mvc:mapping path="/roomtype-list"/>
+			<mvc:mapping path="/roomtype-save"/>
+			<mvc:mapping path="/roomtype-update//*"/>
+			<mvc:mapping path="/paymenttype-list"/>
+			<mvc:mapping path="/paymenttype-save"/>
+			<mvc:mapping path="/paymenttype-update//*"/>
+			<mvc:mapping path="/payment-list"/>
+			<mvc:mapping path="/payment-save"/>
+			<mvc:mapping path="/payment-update//*"/>
+			<mvc:mapping path="/reservation-list"/>
+			<mvc:mapping path="/reservation-save"/>
+			<mvc:mapping path="/reservation-update//*"/>
+			<mvc:mapping path="/reception-list"/>
+			<mvc:mapping path="/reception-save"/>
+			<mvc:mapping path="/reception-update//*"/>
+			<mvc:mapping path="/service-list"/>
+			<mvc:mapping path="/service-save"/>
+			<mvc:mapping path="/service-update//*"/>
+			<mvc:exclude-mapping path="/login"/>
+			<bean class="com.had.hotelmanagement.Interceptor.LoggerInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+
+
+
+
 	<mvc:resources mapping="/resources/**"
 		location="/resources/" />
-
 
 	<mvc:annotation-driven />
 	<context:annotation-config />
 	<mvc:resources mapping="/css/**" location="/css/" />
 	<mvc:resources mapping="/image/**"
 		location="src/main/webapp/resources/image/" />
+
+
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">

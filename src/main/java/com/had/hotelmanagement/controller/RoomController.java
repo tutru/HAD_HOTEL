@@ -2,7 +2,11 @@ package com.had.hotelmanagement.controller;
 
 import java.io.File;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -27,7 +31,7 @@ public class RoomController {
 
 	@RequestMapping(value = { "/room-list" }, method = RequestMethod.GET)
 	public String listrole(Model model) {
-		model.addAttribute("listRoom", roomService.findAll());
+		model.addAttribute("listRoom", roomService.findAll());	
 		return "room-list";
 	}
 
@@ -97,10 +101,21 @@ public class RoomController {
 
 	}
 
+	@SuppressWarnings("finally")
 	@RequestMapping("/roomDelete/{roomid}")
 	public String doDeleteRoom(@PathVariable int roomid, Model model) {
-		roomService.delete(roomid);
-		model.addAttribute("listRoom", roomService.findAll());
-		return "room-list";
+		
+		try {
+			roomService.delete(roomid);
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		finally {
+			model.addAttribute("listRoom", roomService.findAll());
+			return "room-list";
+		}
+		
+		
 	}
 }

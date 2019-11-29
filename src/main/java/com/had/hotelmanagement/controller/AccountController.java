@@ -78,25 +78,26 @@ public class AccountController {
 	@RequestMapping("/updateaccount")
 	public String doUpdaterole(Model model, @ModelAttribute("account") Account account) {
 		service.update(account);
-		model.addAttribute("list",service.findAll());
+		model.addAttribute("list", service.findAll());
 		return "list-account";
 
 	}
 
+	@SuppressWarnings("finally")
 	@RequestMapping("/accountDelete/{accountid}")
 	public ModelAndView doDeleterole(@PathVariable int accountid) {
-	ModelAndView nv =new ModelAndView();
-		service.delete(accountid);
-		nv.setViewName("list-account");			
-		nv.addObject("list", service.findAll());	
-		return nv;
-	}
+		ModelAndView nv = new ModelAndView();
 
-	/*
-	 * @RequestMapping(value = "/account-search") public String search(String
-	 * username, Model model) { List<Account> accounts =
-	 * service.searchaccount(username); model.addAttribute("search", accounts); //
-	 * model.addAttribute("search",service.findAll()); return "account-search"; }
-	 */
+		try {
+			service.delete(accountid);
+		} catch (Exception e) {
+			// TODO: handle exception
+		} finally {
+			nv.setViewName("list-account");
+			nv.addObject("list", service.findAll());
+			return nv;
+		}
+
+	}
 
 }
