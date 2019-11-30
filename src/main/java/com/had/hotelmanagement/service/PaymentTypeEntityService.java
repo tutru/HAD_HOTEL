@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.had.hotelmanagement.dao.PaymentDAO;
 import com.had.hotelmanagement.dao.PaymentTypeDAO;
 import com.had.hotelmanagement.dao.ServiceDAO;
 import com.had.hotelmanagement.entity.PaymentTypeEntity;
@@ -33,9 +34,17 @@ public class PaymentTypeEntityService {
 		paymentTypeDAO.update(paymentType);
 	}
 	
-	public void delete(int id){
+	public void delete(int paymenttypeid){
 		// validate business
-		paymentTypeDAO.delete(id);
+		paymentTypeDAO.delete(paymenttypeid);
+	}
+	public void deletepayment(int paymenttypeid){
+		// validate business
+		paymentTypeDAO.deletePayment(paymenttypeid);
+	}
+	public void deletepaymentt(int paymenttypeid){
+		// validate business
+		paymentTypeDAO.deletePayment(paymenttypeid);
 	}
 	public List<PaymentTypeEntity> searchEmployee(String name) {
 		return paymentTypeDAO.findPaymentType(name);
