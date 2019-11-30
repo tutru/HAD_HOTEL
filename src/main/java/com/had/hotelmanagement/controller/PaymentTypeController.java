@@ -11,11 +11,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.had.hotelmanagement.entity.PaymentTypeEntity;
 import com.had.hotelmanagement.entity.ServiceEntity;
 import com.had.hotelmanagement.service.PaymentTypeEntityService;
+import com.had.hotelmanagement.service.ReceptionService;
 import com.had.hotelmanagement.service.ServiceService;
 @Controller
 public class PaymentTypeController {
 	@Autowired
 	private PaymentTypeEntityService paymentTypeEntityService;
+	@Autowired
+	private ReceptionService receptionService;
 	
 	@RequestMapping(value={"/paymenttype-list"},method = RequestMethod.GET)
 	public String listpaymenttype(Model model) {
@@ -56,10 +59,23 @@ public class PaymentTypeController {
 		return "paymenttype-list";
 	}
 
-	@RequestMapping("/paymenttypeDelete/{paymenttypeid}")
-	public String doDeleteCustomer(@PathVariable int paymenttypeid, Model model) {
-		paymentTypeEntityService.delete(paymenttypeid);
-		model.addAttribute("listpaymenttype", paymentTypeEntityService.findAll());
-		return "paymenttype-list";
+//	@RequestMapping("/paymenttypeDelete/{paymenttypeid}")
+//	public String doDeleteCustomer(@PathVariable int paymenttypeid, Model model) {
+//		paymentTypeEntityService.delete(paymenttypeid);
+//		model.addAttribute("listpaymenttype", paymentTypeEntityService.findAll());
+//		return "paymenttype-list";
+//	}
+	@RequestMapping(value = "/paymenttypeDelete/{paymenttypeid}", method = RequestMethod.GET)
+	public String doDeletePaymentType(@PathVariable int paymenttypeid, Model model) {
+		try {
+			paymentTypeEntityService.delete(paymenttypeid);
+		} catch (Exception e) {
+			paymentTypeEntityService.deletepayment(paymenttypeid);
+			paymentTypeEntityService.delete(paymenttypeid);
+			paymentTypeEntityService.deletepaymentt(paymenttypeid);
+		} finally {
+			model.addAttribute("listpaymenttype", paymentTypeEntityService.findAll());
+			return "paymenttype-list";
+		}
 	}
 }
