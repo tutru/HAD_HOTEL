@@ -95,8 +95,7 @@
 			</a>
 				<div class="dropdown-menu dropdown-menu-right"
 					aria-labelledby="userDropdown">
-
-					<a class="dropdown-item">Tài Khoản: ${msg}</a>
+					<a class="dropdown-item">Account: ${name}</a>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#">Settings</a>
 					<div class="dropdown-divider"></div>
@@ -264,12 +263,13 @@
 							<output id="list">
 								<img
 									src="<%=request.getContextPath()%>/resources/image/${employee.image}"
-									width="120" />
+									width="120"
+									style="border: 2px solid #7bb8cc; border-radius: 6px" />
 							</output>
-
+							<form:input type="hidden" path="image" readonly="true"></form:input>
 							<span class="input-group-btn"> <span
 								class="btn btn-default btn-file"> <input type="file"
-									id="files" name="uploadImg" required="required">
+									id="files" name="uploadImg">
 							</span>
 							</span>
 							<script>
@@ -343,7 +343,7 @@
 				<div class="modal-footer">
 					<button class="btn btn-secondary" type="button"
 						data-dismiss="modal">Cancel</button>
-					<a class="btn btn-primary" href="login.html">Logout</a>
+					<a class="btn btn-primary" href="<c:url value="/logout"/>">Logout</a>
 				</div>
 			</div>
 		</div>

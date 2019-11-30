@@ -16,6 +16,8 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
+<link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+	rel="stylesheet">
 
 <title>HAD Hotel</title>
 
@@ -29,7 +31,14 @@
 
 <!-- Custom styles for this template-->
 <link href="resources/css/sb-admin.css" rel="stylesheet">
-
+<style type="text/css">
+#editbutton a{
+color: white
+}
+#editbutton a{
+text-decoration: none
+}
+</style>
 </head>
 <body id="page-top">
 	<script>
@@ -100,8 +109,7 @@
 			</a>
 				<div class="dropdown-menu dropdown-menu-right"
 					aria-labelledby="userDropdown">
-
-					<a class="dropdown-item">Tài Khoản: ${msg}</a>
+					<a class="dropdown-item">Account: ${name}</a>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#">Settings</a>
 					<div class="dropdown-divider"></div>
@@ -225,7 +233,7 @@
 								title="A credit card number" />
 							<br /> <label>Birthday:</label>
 							<form:input class="form-control" path="birthday" id="datepicker"
-								placeholder="Birthday" required="required" 
+								placeholder="Birthday" required="required"
 								title="Please enter birthday" />
 							<script>
 								$(function() {
@@ -269,7 +277,8 @@
 							</div>
 							<br /> <label>Image:</label>
 							<output id="list">
-								<img src="/HotelManagement/resources/image/441.jpg" width="120">
+								<img src="/HotelManagement/resources/image/441.jpg" width="120" heigh="100"
+									style="border: 2px solid #7bb8cc; border-radius: 6px">
 							</output>
 							<span class="input-group-btn"> <span
 								class="btn btn-default btn-file"> <input type="file"
@@ -301,10 +310,9 @@
 												handleFileSelect, false);
 							</script>
 							<br /> <br />
-							<form:button type="submit" class="btn btn-success"> Save</form:button>
-							<form:button type="submit" class="btn btn-danger">
-								<a href="<c:url value="/employee-list" />">Reset<i
-									class="fas fa-window-close"></i></a>
+							<form:button type="submit" class="btn btn-success"><i class="far fa-save"></i> Save</form:button>
+							<form:button id="editbutton" type="submit" class="btn btn-danger">
+								<a href="<c:url value="/employee-list" />">Return<i class="far fa-arrow-alt-circle-left"></i></i></a>
 							</form:button>
 						</div>
 					</div>
@@ -348,7 +356,7 @@
 				<div class="modal-footer">
 					<button class="btn btn-secondary" type="button"
 						data-dismiss="modal">Cancel</button>
-					<a class="btn btn-primary" href="login.html">Logout</a>
+					<a class="btn btn-primary" href="<c:url value="/logout"/>">Logout</a>
 				</div>
 			</div>
 		</div>

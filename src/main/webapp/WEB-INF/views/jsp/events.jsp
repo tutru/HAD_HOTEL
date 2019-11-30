@@ -46,12 +46,12 @@
                   <div class="row full-height align-items-center">
                     <div class="col-md-6 mx-auto">
                       <ul class="list-unstyled menu">
-                        <li><a href="index_user">Home</a></li>
-                        <li><a href="rooms_user">Rooms</a></li>
-                        <li><a href="about">About</a></li>
-                        <li class="active"><a href="events">Events</a></li>
-                        <li><a href="contact">Contact</a></li>
-                        <li><a href="reservation_user">Reservation</a></li>
+                        <li><a href="index_user"/>Home</a></li>      
+                        <li><a href="rooms_user"/>Rooms</a></li>
+                        <li><a href="about"/>About</a></li>
+                        <li class="active"><a href="events"/>Events</a></li>
+                        <li><a href="contact"/>Contact</a></li>
+                        <li><a href="reservation_user"/>Reservation</a></li>
                       </ul>
                     </div>
                   </div>

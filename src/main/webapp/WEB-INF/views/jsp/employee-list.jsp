@@ -23,7 +23,14 @@
 	href="<c:url value="/resources/css/sb-admin.css"></c:url>">
 <link rel="stylesheet"
 	href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
-
+<style type="text/css">
+#editbutton a{
+color: white
+}
+#editbutton a{
+text-decoration: none
+}
+</style>
 </head>
 
 <body id="page-top">
@@ -91,8 +98,9 @@
 			</a>
 				<div class="dropdown-menu dropdown-menu-right"
 					aria-labelledby="userDropdown">
-					<a class="dropdown-item" href="#">Settings</a> <a
-						class="dropdown-item" href="#">Activity Log</a>
+					<a class="dropdown-item">Account: ${name}</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Settings</a>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#" data-toggle="modal"
 						data-target="#logoutModal">Logout</a>
@@ -207,8 +215,8 @@
 				<div class="card mb-3">
 					<div class="card-header">
 						<i class="fas fa-table"></i> List Employee
-						<button type="submit" class="btn btn-dark float-right">
-							<a href="<c:url value="/employee-save" />"> New Employee</a>
+						<button id="editbutton" type="submit" class="btn btn-primary float-right">
+							<a href="<c:url value="/employee-save" />"><i class="far fa-plus-square"></i> New Employee</a>
 						</button>
 					</div>
 					<div class="card-body">
@@ -216,7 +224,7 @@
 							<table class="table table-bordered" id="dataTable" width="100%"
 								cellspacing="0">
 								<thead>
-									<tr>
+									<tr class="text-center">
 										<td>ID</td>
 										<td>Name</td>
 										<td>Birthday</td>
@@ -226,8 +234,8 @@
 										<td>Address</td>
 										<td>Image</td>
 										<td>Salary</td>
-										<td></td>
-										<td></td>
+										<td>Edit</td>
+										<td>Delete</td>
 									</tr>
 								</thead>
 
@@ -298,7 +306,7 @@
 				<div class="modal-footer">
 					<button class="btn btn-secondary" type="button"
 						data-dismiss="modal">Cancel</button>
-					<a class="btn btn-primary" href="login.html">Logout</a>
+					<a class="btn btn-primary" href="<c:url value="/logout"/>">Logout</a>
 				</div>
 			</div>
 		</div>

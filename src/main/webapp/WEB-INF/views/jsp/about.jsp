@@ -11,7 +11,7 @@
 <meta name="author" content="" />
 <!-- <link rel="stylesheet" type="text/css"
 	href="//fonts.googleapis.com/css?family=|Roboto+Sans:400,700|Playfair+Display:400,700"> -->
-	
+
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 <link rel="stylesheet" href="resources/css/animate.css">
 <link rel="stylesheet" href="resources/css/owl.carousel.min.css">
@@ -20,8 +20,10 @@
 <link rel="stylesheet" href="resources/css/fancybox.min.css">
 <link rel="stylesheet" href="resources/css/jquery.timepicker.css">
 
-<link rel="stylesheet" href="resources/fonts/ionicons/css/ionicons.min.css">
-<link rel="stylesheet" href="resources/fonts/fontawesome/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="resources/fonts/ionicons/css/ionicons.min.css">
+<link rel="stylesheet"
+	href="resources/fonts/fontawesome/css/font-awesome.min.css">
 
 <!-- Theme Style -->
 <link rel="stylesheet" href="resources/css/style.css">
@@ -48,12 +50,12 @@
 								<div class="row full-height align-items-center">
 									<div class="col-md-6 mx-auto">
 										<ul class="list-unstyled menu">
-											<li><a href="index_user">Home</a></li>
-											<li><a href="rooms_user">Rooms</a></li>
-											<li class="active"><a href="about">About</a></li>
-											<li><a href="events">Events</a></li>
-											<li><a href="contact">Contact</a></li>
-											<li><a href="reservation_user">Reservation</a></li>
+											<li><a href="index_user" />Home</a></li>
+											<li><a href="rooms_user" />Rooms</a></li>
+											<li class="active"><a href="about" />About</a></li>
+											<li><a href="events" />Events</a></li>
+											<li><a href="contact" />Contact</a></li>
+											<li><a href="reservation_user" />Reservation</a></li>
 										</ul>
 									</div>
 								</div>
@@ -101,7 +103,8 @@
 						<img src="resources/images/food-1.jpg"
 							alt="Free Website Template by Templateux" class="img-fluid">
 					</figure>
-					<img src="resources/images/img_1.jpg" alt="Image" class="img-fluid rounded">
+					<img src="resources/images/img_1.jpg" alt="Image"
+						class="img-fluid rounded">
 				</div>
 				<div class="col-md-12 col-lg-4 order-lg-1" data-aos="fade-up">
 					<h2 class="heading">Welcome!</h2>
@@ -441,7 +444,7 @@
 		</div>
 	</footer>
 
-	
+
 	<script src="resources/js/jquery-3.3.1.min.js"></script>
 	<script src="resources/js/jquery-migrate-3.0.1.min.js"></script>
 	<script src="resources/js/popper.min.js"></script>

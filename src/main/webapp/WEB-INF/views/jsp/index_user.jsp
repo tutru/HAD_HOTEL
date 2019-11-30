@@ -30,7 +30,7 @@
     <header class="site-header js-site-header">
       <div class="container-fluid">
         <div class="row align-items-center">
-          <div class="col-6 col-lg-4 site-logo" data-aos="fade"><a href="/index_user">HAD Hotel</a></div>
+          <div class="col-6 col-lg-4 site-logo" data-aos="fade"><a href="index_user">HAD Hotel</a></div>
           <div class="col-6 col-lg-8">
 
 
@@ -47,12 +47,12 @@
                   <div class="row full-height align-items-center">
                     <div class="col-md-6 mx-auto">
                       <ul class="list-unstyled menu">
-                        <li class="active"><a href="<c:url value="/index_user"/>">Home</a></li>      
-                        <li><a href="<c:url value="/room_user"/>">Rooms</a></li>
-                        <li><a href="<c:url value="/about"/>">About</a></li>
-                        <li><a href="<c:url value="/events"/>">Events</a></li>
-                        <li><a href="<c:url value="/contact"/>">Contact</a></li>
-                        <li><a href="<c:url value="/reservation_user"/>">Reservation</a></li>
+                        <li class="active"><a href="index_user"/>Home</a></li>      
+                        <li><a href="rooms_user"/>Rooms</a></li>
+                        <li><a href="about"/>About</a></li>
+                        <li><a href="events"/>Events</a></li>
+                        <li><a href="contact"/>Contact</a></li>
+                        <li><a href="reservation_user"/>Reservation</a></li>
                       </ul>
                     </div>
                   </div>
