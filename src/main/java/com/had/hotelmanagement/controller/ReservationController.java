@@ -41,6 +41,13 @@ public class ReservationController {
 		model.addAttribute("listRoomType", roomTypeService.findAll());
 		return "reservation-save";
 	}
+	@RequestMapping(value = "/reservation_user", method = RequestMethod.GET)
+	public String insertReservationUser(Model model) {
+		model.addAttribute("reservation", new Reservation());
+		model.addAttribute("listCustomer", customerService.findAll());
+		model.addAttribute("listRoomType", roomTypeService.findAll());
+		return "reservation_user";
+	}
 
 	@RequestMapping("/reservation-view/{reservationid}")
 	public String viewReservation(@PathVariable int reservationid, Model model) {
@@ -61,6 +68,13 @@ public class ReservationController {
 		reservationService.save(reservation);
 		model.addAttribute("listReservation", reservationService.findAll());
 		return "reservation-list";
+	}
+	
+	@RequestMapping("/saveReservationUser")
+	public String doSaveReservationUser(Reservation reservation, Model model) {
+		reservationService.save(reservation);
+		model.addAttribute("listReservation", reservationService.findAll());
+		return "reservation_user";
 	}
 
 	@RequestMapping("/updateReservation")
