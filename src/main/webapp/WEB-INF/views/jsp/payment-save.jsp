@@ -93,8 +93,7 @@
 			</a>
 				<div class="dropdown-menu dropdown-menu-right"
 					aria-labelledby="userDropdown">
-
-					<a class="dropdown-item">Tài Khoản: ${msg}</a>
+					<a class="dropdown-item">Account: ${name}</a>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#">Settings</a>
 					<div class="dropdown-divider"></div>
@@ -232,14 +231,13 @@
 					<br />
 					<label>Payment Amount</label>
 					<form:input class="form-control form-control-lg"
-						path="paymentamount" placeholder="Service Price " required="required"
-							pattern="[0-9]{4,9}"
-							 />
+						path="paymentamount" placeholder="Service Price "
+						required="required" pattern="[0-9]{4,9}" />
 					<br />
 					<label>Payment Date</label>
 					<form:input class="form-control form-control-lg" path="paymentdate"
 						id="datepicker" placeholder="Payment Date" required="required"
-							title="Do not enter number and enter at least 4 words"/>
+						title="Do not enter number and enter at least 4 words" />
 
 					<script>
 						$(function() {
@@ -298,7 +296,7 @@
 				<div class="modal-footer">
 					<button class="btn btn-secondary" type="button"
 						data-dismiss="modal">Cancel</button>
-					<a class="btn btn-primary" href="login.html">Logout</a>
+				<a class="btn btn-primary" href="<c:url value="/logout"/>">Logout</a>
 				</div>
 			</div>
 		</div>
