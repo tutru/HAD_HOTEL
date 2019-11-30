@@ -100,8 +100,7 @@
 			</a>
 				<div class="dropdown-menu dropdown-menu-right"
 					aria-labelledby="userDropdown">
-
-					<a class="dropdown-item">Tài Khoản: ${msg}</a>
+					<a class="dropdown-item">Account: ${name}</a>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#">Settings</a>
 					<div class="dropdown-divider"></div>
@@ -216,13 +215,17 @@
 				</ol>
 				<c:url value="/savePaymenttype" var="savePaymenttype" />
 				<form:form action="${savePaymenttype}" modelAttribute="payment"
-					method="GET">
+					method="GET" enctype="multipart/form-data">
 
 					<label>PaymentType Name</label>
-					<form:input class="form-control form-control-lg" path="paymenttypename" />
+					<form:input class="form-control form-control-lg"
+						path="paymenttypename" required="required" pattern="[a-z]\{4}"
+						title="Do not enter number and enter at least 4 words" />
 					<br />
 					<label>PaymentType Desc</label>
-					<form:input class="form-control form-control-lg" path="paymenttypedesc" />
+					<form:textarea class="form-control form-control-lg"
+						path="paymenttypedesc" required="required" pattern="[a-z]\{4}"
+						title="Do not enter number and enter at least 4 words" />
 					<br />
 					<button class="btn btn-danger" type="submit">Save</button>
 
@@ -266,7 +269,7 @@
 				<div class="modal-footer">
 					<button class="btn btn-secondary" type="button"
 						data-dismiss="modal">Cancel</button>
-					<a class="btn btn-primary" href="login.html">Logout</a>
+					<a class="btn btn-primary" href="<c:url value="/logout"/>">Logout</a>
 				</div>
 			</div>
 		</div>
