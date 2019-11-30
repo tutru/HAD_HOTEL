@@ -91,7 +91,7 @@
 			</a>
 				<div class="dropdown-menu dropdown-menu-right"
 					aria-labelledby="userDropdown">
-					<a class="dropdown-item">Tài Khoản: ${name}</a>
+					<a class="dropdown-item">Account: ${name}</a>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#">Settings</a>
 					<div class="dropdown-divider"></div>
