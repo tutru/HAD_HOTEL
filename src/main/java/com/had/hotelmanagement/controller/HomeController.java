@@ -21,7 +21,9 @@ public class HomeController {
 		return "admin";
 	}
 	@RequestMapping(value={"/index_user"})
-	public String index_user() {
+	public String index_user(Model model) {
+		model.addAttribute("listRoom", roomService.findAll());
+
 		return "index_user";
 	}
 	//

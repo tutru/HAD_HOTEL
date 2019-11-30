@@ -18,6 +18,11 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
+<link rel="stylesheet"
+	href="<c:url value="/resources/css/button.css"></c:url>">
+<link rel="stylesheet"
+	href="<c:url value="/resources/css/image.css"></c:url>">
+
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 <link rel="stylesheet" href="resources/css/animate.css">
 <link rel="stylesheet" href="resources/css/owl.carousel.min.css">
@@ -179,26 +184,26 @@
 
 			<div class="row">
 
-				<div class="col-md-12 thumbnail">
+				<div id="myImg" class="col-md-12 thumbnail" >
 
 					<c:if test="${not empty listRoom}">
 						<c:forEach var="room" items="${listRoom}">
-							<div class="col-md-4 col-lg-4 thumbnail" style="padding: 10px;">
+							<div id="myImg" class="col-md-4 col-lg-4 thumbnail" style="padding: 10px;">
 								<div>
-									<img
-										src="<%=request.getContextPath()%>/resources/image/${room.roomimage}"
-										style="height: 230px; width: 346px" />
+									<img src="<%=request.getContextPath()%>/resources/image/${room.roomimage}" style="height: 230px; width: 346px"/>
 								</div>
 								<br />
 								<div style="text-align: center; font-size: 120%; color: maroon;">
 									<p>${room.roomtypename}</p>
 								</div>
 								<div style="text-align: center">
-									<p>
+									<p style="color: Black;">
 										<fmt:formatNumber value="${room.roomprice}" />
 										VND
 									</p>
-
+									<button class="button">
+										<a href="reservation_user" /><span>reservation </span>
+									</button>
 								</div>
 							</div>
 						</c:forEach>
@@ -373,5 +378,31 @@
 
 
 	<script src="resources/js/main.js"></script>
+
+
+
+
+	<script>
+		// Get the modal
+		var modal = document.getElementById('myModal');
+
+		// Get the image and insert it inside the modal - use its "alt" text as a caption
+		var img = document.getElementById('myImg');
+		var modalImg = document.getElementById("img01");
+		var captionText = document.getElementById("caption");
+		img.onclick = function() {
+			modal.style.display = "block";
+			modalImg.src = this.src;
+			captionText.innerHTML = this.alt;
+		}
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() {
+			modal.style.display = "none";
+		}
+	</script>
 </body>
 </html>
