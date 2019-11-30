@@ -28,6 +28,11 @@ public class PaymentTypeDAO {
 		jdbcTemplate.update(sql);
 	}
 	
+	public void deletePayment(int paymenttypeid) {
+		String sql = "DELETE FROM payment WHERE paymenttypeid = " + paymenttypeid;
+		jdbcTemplate.update(sql);
+	}
+	
 	public void update(PaymentTypeEntity paymentType) {
 		String sql = "UPDATE paymenttype SET  paymenttypename = ?, paymenttypedesc=?  WHERE paymenttypeid = ? ";
 		jdbcTemplate.update(sql,   paymentType.getPaymenttypename(),paymentType.getPaymenttypedesc(), paymentType.getPaymenttypeid());
