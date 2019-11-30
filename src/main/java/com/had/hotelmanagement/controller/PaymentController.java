@@ -23,6 +23,7 @@ import com.had.hotelmanagement.service.ServiceService;
 public class PaymentController {
 	@Autowired
 	private PaymentService paymentService;
+
 	
 	@RequestMapping(value={"/payment-list"},method = RequestMethod.GET)
 	public String listpayment(Model model) {
