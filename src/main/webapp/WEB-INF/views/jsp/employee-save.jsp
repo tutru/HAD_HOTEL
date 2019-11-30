@@ -312,7 +312,7 @@ text-decoration: none
 							<br /> <br />
 							<form:button type="submit" class="btn btn-success"><i class="far fa-save"></i> Save</form:button>
 							<form:button id="editbutton" type="submit" class="btn btn-danger">
-								<a href="<c:url value="/employee-list" />">Return<i class="far fa-arrow-alt-circle-left"></i></i></a>
+								<a href="<c:url value="/employee-list" />">Return<i class="far fa-arrow-alt-circle-left"></i></a>
 							</form:button>
 						</div>
 					</div>

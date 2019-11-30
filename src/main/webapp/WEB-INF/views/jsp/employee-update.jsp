@@ -27,7 +27,14 @@
 	href="<c:url value="/resources/css/sb-admin.css"></c:url>">
 <link rel="stylesheet"
 	href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
-
+<style type="text/css">
+#editbutton a{
+color: white
+}
+#editbutton a{
+text-decoration: none
+}
+</style>
 </head>
 <body id="page-top">
 	<c:url value="/employee-save" var="urlSave" />
@@ -298,10 +305,9 @@
 							</script>
 							<br /> <br />
 
-							<form:button type="submit" class="btn btn-success"> Update</form:button>
-							<form:button type="submit" class="btn btn-danger">
-								<a href="<c:url value="/employee-list" />">Reset<i
-									class="fas fa-window-close"></i></a>
+							<form:button type="submit" class="btn btn-success"> <i class="far fa-edit"></i> Update</form:button>
+							<form:button  id="editbutton" type="submit" class="btn btn-danger">
+								<a href="<c:url value="/employee-list" />">Return<i class="far fa-arrow-alt-circle-left"></i></a>
 							</form:button>
 				</form:form>
 			</div>

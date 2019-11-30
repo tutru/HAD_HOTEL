@@ -24,6 +24,15 @@
 
 <!-- Custom styles for this template-->
 <link href="resources/css/sb-admin.css" rel="stylesheet">
+<style type="text/css">
+#editbutton a {
+	color: white
+}
+
+#editbutton a {
+	text-decoration: none
+}
+</style>
 </head>
 
 <body id="page-top">
@@ -210,7 +219,7 @@
 				<form:form id="roomTypeAdd" action="${saveRoomType}"
 					modelAttribute="roomtype" enctype="multipart/form-data">
 					<div class="form-row">
-						<div class="form-group col-md-6">
+						<div class="form-group col-md-5">
 							<label>Name type room:</label>
 							<form:input class="form-control" path="roomtypename"
 								placeholder="Name Type Room" required="required"
@@ -225,15 +234,16 @@
 							</div>
 						</div>
 						<br />
-						<div class="form-group col-md-6">
+						<div class="form-group col-md-5">
 							<label>Price:</label>
 							<form:input class="form-control" path="roomprice" placeholder="Price" required="required"
 								pattern="[0-9]{7,8}" title="Please enter price number" />
 							<br /> <br />
-							<form:button type="submit" class="btn btn-success"> Save</form:button>
-							<form:button type="submit" class="btn btn-danger">
-								<a href="<c:url value="/roomtype-list" />"><i
-									class="fas fa-window-close"></i></a>
+							<br/>
+							<form:button type="submit" class="btn btn-success"> <i class="far fa-save"></i> Save</form:button>
+							<form:button id="editbutton" type="submit" class="btn btn-danger">
+								<a href="<c:url value="/roomtype-list" />"> Return <i
+									class="far fa-arrow-alt-circle-left"> </i></a>
 							</form:button>
 						</div>
 					</div>

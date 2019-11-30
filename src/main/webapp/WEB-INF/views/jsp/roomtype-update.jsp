@@ -28,7 +28,15 @@
 	href="<c:url value="/resources/css/sb-admin.css"></c:url>">
 <link rel="stylesheet"
 	href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
+<style type="text/css">
+#editbutton a {
+	color: white
+}
 
+#editbutton a {
+	text-decoration: none
+}
+</style>
 </head>
 <body id="page-top">
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
@@ -154,8 +162,7 @@
 					<h6 class="dropdown-header">Room Status:</h6>
 					<a class="dropdown-item" href="<c:url value="/roomstatus-list"/>">List
 						Room Status</a> <a class="dropdown-item"
-						href="<c:url value="/roomstatus-save"/>">Create Room Status
-						</a>
+						href="<c:url value="/roomstatus-save"/>">Create Room Status </a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room:</h6>
 					<a class="dropdown-item" href="<c:url value="/room-list"/>">List
@@ -223,23 +230,24 @@
 							<label>ID type:</label>
 							<form:input class="form-control" path="roomtypeid"
 								readonly="true" />
-								<br/>
-								<br/>
+
 							<br /> <label>Name type room:</label>
 							<form:input class="form-control" path="roomtypename" />
 						</div>
-						<br />
+						<br /> <br />
 						<div class="form-group col-md-5">
-							<label>Room type desc</label>
-							<form:textarea path="roomtypedesc" id="roomtypedesc" rows="4"
-								cols="50" class="form-control" />
 							<label>Price:</label>
 							<form:input class="form-control" path="roomprice" />
+							<br /> <label>Room type desc</label>
+							<form:textarea path="roomtypedesc" id="roomtypedesc" rows="2"
+								cols="50" class="form-control" />
 							<br /> <br />
-							<button type="submit" class="btn btn-success">Update</button>
-							<button type="submit" class="btn btn-danger">
-								<a href="<c:url value="/roomtype-list" />">Reset<i
-									class="fas fa-window-close"></i></a>
+							<button type="submit" class="btn btn-success">
+								<i class="far fa-edit"></i> Update
+							</button>
+							<button id="editbutton" type="submit" class="btn btn-danger">
+								<a href="<c:url value="/roomtype-list" />">Return<i
+									class="far fa-arrow-alt-circle-left"></i></a>
 							</button>
 						</div>
 					</div>
