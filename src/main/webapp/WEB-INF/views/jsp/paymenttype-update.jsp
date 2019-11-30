@@ -92,8 +92,7 @@
 			</a>
 				<div class="dropdown-menu dropdown-menu-right"
 					aria-labelledby="userDropdown">
-
-					<a class="dropdown-item">Tài Khoản: ${msg}</a>
+					<a class="dropdown-item">Account: ${name}</a>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#">Settings</a>
 					<div class="dropdown-divider"></div>
@@ -156,8 +155,7 @@
 					<h6 class="dropdown-header">Room Status:</h6>
 					<a class="dropdown-item" href="<c:url value="/roomstatus-list"/>">List
 						Room Status</a> <a class="dropdown-item"
-						href="<c:url value="/roomstatus-save"/>">Create Room Status
-						</a>
+						href="<c:url value="/roomstatus-save"/>">Create Room Status </a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room:</h6>
 					<a class="dropdown-item" href="<c:url value="/room-list"/>">List
@@ -218,21 +216,25 @@
 				</ol>
 				<c:url value="/updatepaymenttype" var="updatepaymenttype" />
 				<form:form action="${updatepaymenttype}" modelAttribute="payment"
-					method="POST">
+					method="POST" enctype="multipart/form-data">
 
 					<label id="textfield" class="col-sm-12">Payment Type ID</label>
 					<form:input readonly="true" class="form-control form-control-lg"
 						path="paymenttypeid" />
 					</br>
 					<label id="textfield" class="col-sm-12">Payment Type Name</label>
-					<form:input class="form-control form-control-lg" path="paymenttypename"  />
+					<form:input class="form-control form-control-lg"
+						path="paymenttypename" pattern="[a-z]\{4}" required="required"
+						title="Do not enter number and enter at least 4 words" />
 					<br />
 					<label id="textfield" class="col-sm-12">Payment Type Desc</label>
-					<form:input class="form-control form-control-lg" path="paymenttypedesc" />
+					<form:textarea class="form-control form-control-lg"
+						path="paymenttypedesc" pattern="[a-z]\{4}" required="required"
+						title="Do not enter number and enter at least 4 words" />
 					<br />
 					<button id="chinhbuttonds" class="btn btn-danger" type="submit">
 						<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Update
-					</button>			
+					</button>
 				</form:form>
 			</div>
 		</div>
@@ -272,7 +274,7 @@
 				<div class="modal-footer">
 					<button class="btn btn-secondary" type="button"
 						data-dismiss="modal">Cancel</button>
-					<a class="btn btn-primary" href="login.html">Logout</a>
+				<a class="btn btn-primary" href="<c:url value="/logout"/>">Logout</a>
 				</div>
 			</div>
 		</div>
