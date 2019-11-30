@@ -92,8 +92,7 @@
 			</a>
 				<div class="dropdown-menu dropdown-menu-right"
 					aria-labelledby="userDropdown">
-
-					<a class="dropdown-item">Tài Khoản: ${msg}</a>
+					<a class="dropdown-item">Account: ${name}</a>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#">Settings</a>
 					<div class="dropdown-divider"></div>
@@ -156,8 +155,7 @@
 					<h6 class="dropdown-header">Room Status:</h6>
 					<a class="dropdown-item" href="<c:url value="/roomstatus-list"/>">List
 						Room Status</a> <a class="dropdown-item"
-						href="<c:url value="/roomstatus-save"/>">Create Room Status
-						</a>
+						href="<c:url value="/roomstatus-save"/>">Create Room Status </a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room:</h6>
 					<a class="dropdown-item" href="<c:url value="/room-list"/>">List
@@ -217,27 +215,29 @@
 					<li class="breadcrumb-item active">Update Payment</li>
 				</ol>
 				<c:url value="/updatePdayment" var="updatePdayment" />
-					<form:form action="${updatePdayment}" modelAttribute="payment"
-						method="POST">
-						<label id="textfield" class="col-sm-12">Payment ID</label>
-						<form:input class="form-control form-control-lg" readonly="true"
-							path="paymentid" />
-						</br>
-						<label id="textfield" class="col-sm-12">PaymentType ID</label>
-						<form:input path="paymenttypeid"
-							class="form-control form-control-lg" readonly="true" />
-						<br />
-						<label id="textfield" class="col-sm-12">Reception ID</label>
-						<form:input class="form-control form-control-lg" readonly="true"
-							path="receptionid" />
-						</br>
-						<label id="textfield" class="col-sm-12">Payment Amount</label>
-						<form:input path="paymentamount"
-							class="form-control form-control-lg" />
-						<br />
-						<label>Payment Date</label>
-					<form:input class="form-control form-control-lg" path="paymentdate" id="datepicker"
-						placeholder="Paymentdate" />
+				<form:form action="${updatePdayment}" modelAttribute="payment"
+					method="POST" enctype="multipart/form-data">
+					<label id="textfield" class="col-sm-12">Payment ID</label>
+					<form:input class="form-control form-control-lg" readonly="true"
+						path="paymentid" />
+					</br>
+					<label id="textfield" class="col-sm-12">PaymentType ID</label>
+					<form:input path="paymenttypeid"
+						class="form-control form-control-lg" readonly="true" />
+					<br />
+					<label id="textfield" class="col-sm-12">Reception ID</label>
+					<form:input class="form-control form-control-lg" readonly="true"
+						path="receptionid" />
+					</br>
+					<label id="textfield" class="col-sm-12">Payment Amount</label>
+					<form:input path="paymentamount"
+						class="form-control form-control-lg" required="required"
+						pattern="[0-9]{4,9}" />
+					<br />
+					<label>Payment Date</label>
+					<form:input class="form-control form-control-lg" path="paymentdate"
+						id="datepicker" placeholder="Paymentdate" required="required"
+						title="Do not enter number and enter at least 4 words" />
 
 					<script>
 						$(function() {
@@ -250,15 +250,15 @@
 							$("#datepicker").datepicker();
 						});
 					</script>
-						<br />
-						<div style="margin-bottom: 10px">
-							<button type="submit" class="btn btn-danger">Update</button>
-						</div>
-					</form:form>
+					<br />
+					<div style="margin-bottom: 10px">
+						<button type="submit" class="btn btn-danger">Update</button>
+					</div>
+				</form:form>
 			</div>
 		</div>
 	</div>
-	<br/>
+	<br />
 	<!-- Sticky Footer -->
 	<footer class="sticky-footer">
 		<div class="container my-auto">
@@ -294,7 +294,7 @@
 				<div class="modal-footer">
 					<button class="btn btn-secondary" type="button"
 						data-dismiss="modal">Cancel</button>
-					<a class="btn btn-primary" href="login.html">Logout</a>
+					<a class="btn btn-primary" href="<c:url value="/logout"/>">Logout</a>
 				</div>
 			</div>
 		</div>
