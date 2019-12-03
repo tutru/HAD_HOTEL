@@ -51,7 +51,7 @@ public class PaymentController {
 		model.addAttribute("payment", payment);
 		return "payment-update";
 	}
-	@RequestMapping("/updatePdayment")
+	@RequestMapping("/updatePayment")
 	public String doUpdateEmployee(@ModelAttribute("payment") PaymentEntity payment, Model model) {
 		paymentService.update(payment);
 		model.addAttribute("listpayment", paymentService.findAll());

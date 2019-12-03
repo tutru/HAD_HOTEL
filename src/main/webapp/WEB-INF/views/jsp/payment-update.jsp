@@ -214,8 +214,8 @@
 					<li class="breadcrumb-item"><a href="#">Persion</a></li>
 					<li class="breadcrumb-item active">Update Payment</li>
 				</ol>
-				<c:url value="/updatePdayment" var="updatePdayment" />
-				<form:form action="${updatePdayment}" modelAttribute="payment"
+				<c:url value="/updatePayment" var="updatePayment" />
+				<form:form action="${updatePayment}" modelAttribute="payment"
 					method="POST" enctype="multipart/form-data">
 					<label id="textfield" class="col-sm-12">Payment ID</label>
 					<form:input class="form-control form-control-lg" readonly="true"

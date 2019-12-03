@@ -241,8 +241,8 @@
 						<label id="textfield" class="col-sm-12">Service Price</label>
 						<form:input path="serviceprice"
 							class="form-control form-control-lg" placeholder="Service Price" required="required"
-							pattern="[0-9]"
-							title="Do not enter number and enter at least 4 words"/>
+							pattern="[0-9]{4,9}"
+							title="Do not enter at least 4 words"/>
 						<br />
 
 						<button type="submit" class="btn btn-danger">Update</button>

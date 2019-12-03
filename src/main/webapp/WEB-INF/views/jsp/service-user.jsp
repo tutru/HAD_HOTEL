@@ -102,170 +102,126 @@
 				<span class="mouse-wheel"></span>
 			</div>
 		</a>
+
 	</section>
 	<!-- END section -->
-
-	<section class="section pb-4">
+	<section class="section bg-light pb-0">
 		<div class="container">
 
 			<div class="row check-availabilty" id="next">
 				<div class="block-32" data-aos="fade-up" data-aos-offset="-200">
-
-					<form action="#">
-						<div class="row">
-							<div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
-								<label for="checkin_date" class="font-weight-bold text-black">Check
-									In</label>
-								<div class="field-icon-wrap">
-									<div class="icon">
-										<span class="icon-calendar"></span>
-									</div>
-									<input type="text" id="checkin_date" class="form-control">
-								</div>
-							</div>
-							<div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
-								<label for="checkout_date" class="font-weight-bold text-black">Check
-									Out</label>
-								<div class="field-icon-wrap">
-									<div class="icon">
-										<span class="icon-calendar"></span>
-									</div>
-									<input type="text" id="checkout_date" class="form-control">
-								</div>
-							</div>
-							<div class="col-md-6 mb-3 mb-md-0 col-lg-3">
-								<div class="row">
-									<div class="col-md-6 mb-3 mb-md-0">
-										<label for="adults" class="font-weight-bold text-black">Adults</label>
-										<div class="field-icon-wrap">
-											<div class="icon">
-												<span class="ion-ios-arrow-down"></span>
-											</div>
-											<select name="" id="adults" class="form-control">
-												<option value="">1</option>
-												<option value="">2</option>
-												<option value="">3</option>
-												<option value="">4+</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-6 mb-3 mb-md-0">
-										<label for="children" class="font-weight-bold text-black">Children</label>
-										<div class="field-icon-wrap">
-											<div class="icon">
-												<span class="ion-ios-arrow-down"></span>
-											</div>
-											<select name="" id="children" class="form-control">
-												<option value="">1</option>
-												<option value="">2</option>
-												<option value="">3</option>
-												<option value="">4+</option>
-											</select>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 col-lg-3 align-self-end">
-								<button class="btn btn-primary btn-block text-white">Check
-									Availabilty</button>
-							</div>
-						</div>
-					</form>
+					<h3
+						style="color: black; font-size: 64px; text-align: center; cursor: pointer;">
+						<a href="service-user">Service of Hotel</a>
+					</h3>
 				</div>
-
-
 			</div>
 		</div>
 	</section>
 
 
-	<section class="section">
+	<section class="section bg-light" style="padding-top: 1em">
 		<div class="container">
-
-
-			<div class="row">
-
-				<div id="myImg" class="col-md-12 thumbnail" >
-
-					<c:if test="${not empty listRoom}">
-						<c:forEach var="room" items="${listRoom}">
-							<div id="myImg" class="col-md-4 col-lg-4 thumbnail" style="padding: 10px;">
-								<div>
-									<img src="<%=request.getContextPath()%>/resources/image/${room.roomimage}" style="height: 230px; width: 346px"/>
-								</div>
-								<br />
-								<div style="text-align: center; font-size: 120%; color: maroon;">
-									<p>${room.roomtypename}</p>
-								</div>
-								<div style="text-align: center">
-									<p style="color: Black;">
-										<fmt:formatNumber value="${room.roomprice}" />
-										VND
-									</p>
-									<button class="button">
-										<a href="reservation_user" /><span>reservation </span>
-									</button>
-								</div>
-							</div>
-						</c:forEach>
-					</c:if>
-
-				</div>
-			</div>
-		</div>
-
-	</section>
-
-	<section class="section bg-light">
-
-		<div class="container">
-			<div class="row justify-content-center text-center mb-5">
-				<div class="col-md-7">
-					<h2 class="heading" data-aos="fade">Great Offers</h2>
-					<p data-aos="fade">Far far away, behind the word mountains, far
-						from the countries Vokalia and Consonantia, there live the blind
-						texts. Separated they live in Bookmarksgrove right at the coast of
-						the Semantics, a large language ocean.</p>
-				</div>
-			</div>
-
 			<div class="site-block-half d-block d-lg-flex bg-white"
 				data-aos="fade" data-aos-delay="100">
 				<a href="#" class="image d-block bg-image-2"
-					style="background-image: url('<%=request.getContextPath()%>/resources/images/img_1.jpg');"></a>
+					style="background-image: url('<%=request.getContextPath()%>/resources/image/image-food.jpg');"></a>
 				<div class="text">
 					<span class="d-block mb-4"><span
-						class="display-4 text-primary">$199</span> <span
-						class="text-uppercase letter-spacing-2">/ per night</span> </span>
-					<h2 class="mb-4">Family Room</h2>
-					<p>Far far away, behind the word mountains, far from the
-						countries Vokalia and Consonantia, there live the blind texts.
-						Separated they live in Bookmarksgrove right at the coast of the
-						Semantics, a large language ocean.</p>
+						class="display-4 text-primary"><c:if
+								test="${not empty listservice}">
+								<c:forEach var="service" items="${listservice}">
+									<tr style="text-align: center">
+										<td>${service.servicename}</td>
+									</tr>
+								</c:forEach>
+							</c:if></span> <span class="text-uppercase letter-spacing-2">/ per day</span> </span>
+
 					<p>
-						<a href="#" class="btn btn-primary text-white">Book Now</a>
+						<c:if test="${not empty listservice}">
+							<c:forEach var="service" items="${listservice}">
+								<tr style="text-align: center">
+									<td>${service.servicedesc}</td>
+								</tr>
+
+							</c:forEach>
+						</c:if>
 					</p>
 				</div>
 			</div>
 			<div class="site-block-half d-block d-lg-flex bg-white"
 				data-aos="fade" data-aos-delay="200">
 				<a href="#" class="image d-block bg-image-2 order-2"
-					style="background-image: url('<%=request.getContextPath()%>/resources/images/img_2.jpg');"></a>
+					style="background-image: url('<%=request.getContextPath()%>/resources/image/image-giatdo.jpg');"></a>
 				<div class="text order-1">
 					<span class="d-block mb-4"><span
-						class="display-4 text-primary">$299</span> <span
-						class="text-uppercase letter-spacing-2">/ per night</span> </span>
-					<h2 class="mb-4">Presidential Room</h2>
-					<p>Far far away, behind the word mountains, far from the
-						countries Vokalia and Consonantia, there live the blind texts.
-						Separated they live in Bookmarksgrove right at the coast of the
-						Semantics, a large language ocean.</p>
+						class="display-4 text-primary"><c:if
+								test="${not empty listservice}">
+								<c:forEach var="service" items="${listservice}">
+									<tr style="text-align: center">
+										<td>${service.servicename}</td>
+									</tr>
+								</c:forEach>
+							</c:if></span> <span class="text-uppercase letter-spacing-2"></span> </span>
+					<c:if test="${not empty listservice}">
+						<c:forEach var="service" items="${listservice}">
+							<tr style="text-align: center">
+								<td>${service.servicedesc}</td>
+							</tr>
+						</c:forEach>
+					</c:if>
+				</div>
+			</div>
+			<div class="site-block-half d-block d-lg-flex bg-white"
+				data-aos="fade" data-aos-delay="100">
+				<a href="#" class="image d-block bg-image-2"
+					style="background-image: url('<%=request.getContextPath()%>/resources/image/image-duadon.jpg');"></a>
+				<div class="text">
+					<span class="d-block mb-4"><span
+						class="display-4 text-primary"><c:if
+								test="${not empty listservice}">
+								<c:forEach var="service" items="${listservice}">
+									<tr style="text-align: center">
+										<td>${service.servicename}</td>
+									</tr>
+								</c:forEach>
+							</c:if></span> <span class="text-uppercase letter-spacing-2"></span> </span>
+
 					<p>
-						<a href="#" class="btn btn-primary text-white">Book Now</a>
+						<c:if test="${not empty listservice}">
+							<c:forEach var="service" items="${listservice}">
+								<tr style="text-align: center">
+									<td>${service.servicedesc}</td>
+								</tr>
+
+							</c:forEach>
+						</c:if>
 					</p>
 				</div>
 			</div>
-
+			<div class="site-block-half d-block d-lg-flex bg-white"
+				data-aos="fade" data-aos-delay="200">
+				<a href="#" class="image d-block bg-image-2 order-2"
+					style="background-image: url('<%=request.getContextPath()%>/resources/image/image-air.jpg');"></a>
+				<div class="text order-1">
+					<span class="d-block mb-4"><span
+						class="display-4 text-primary"><c:if
+								test="${not empty listservice}">
+								<c:forEach var="service" items="${listservice}">
+									<tr style="text-align: center">
+										<td>${service.servicename}</td>
+									</tr>
+								</c:forEach>
+							</c:if></span> <span class="text-uppercase letter-spacing-2"></span> </span>
+					<c:if test="${not empty listservice}">
+						<c:forEach var="service" items="${listservice}">
+							<tr style="text-align: center">
+								<td>${service.servicedesc}</td>
+							</tr>
+						</c:forEach>
+					</c:if>
+				</div>
+			</div>
 		</div>
 	</section>
 
@@ -383,27 +339,6 @@
 
 
 
-	<script>
-		// Get the modal
-		var modal = document.getElementById('myModal');
 
-		// Get the image and insert it inside the modal - use its "alt" text as a caption
-		var img = document.getElementById('myImg');
-		var modalImg = document.getElementById("img01");
-		var captionText = document.getElementById("caption");
-		img.onclick = function() {
-			modal.style.display = "block";
-			modalImg.src = this.src;
-			captionText.innerHTML = this.alt;
-		}
-
-		// Get the <span> element that closes the modal
-		var span = document.getElementsByClassName("close")[0];
-
-		// When the user clicks on <span> (x), close the modal
-		span.onclick = function() {
-			modal.style.display = "none";
-		}
-	</script>
 </body>
 </html>

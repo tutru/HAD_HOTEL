@@ -4,14 +4,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.had.hotelmanagement.service.RoomService;
+import com.had.hotelmanagement.service.ServiceService;
 
 @Controller
 public class HomeController {
 	@Autowired
 	private RoomService roomService;
-	
+	@Autowired
+	private ServiceService serviceService;
 	@RequestMapping(value={"/index"})
 	public String index() {
 		return "index";
@@ -49,4 +52,10 @@ public class HomeController {
 		model.addAttribute("listRoom", roomService.findAll());
 		return "rooms_user";
 	}
+	@RequestMapping(value = { "/service-user" })
+	public String listservice(Model model) {
+		model.addAttribute("listservice", serviceService.findAll());
+		return "service-user";
+	}
+
 }
