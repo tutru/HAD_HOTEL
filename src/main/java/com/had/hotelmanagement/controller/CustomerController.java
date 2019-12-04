@@ -41,6 +41,12 @@ public class CustomerController {
 		model.addAttribute("customer", new Customer());
 		return "customer-save";
 	}
+	
+	@RequestMapping(value = "/customer_user")
+	public String insertCustomerUser(Model model) {
+		model.addAttribute("customer", new Customer());
+		return "customer_user";
+	}
 
 	@RequestMapping("/customer-update/{customerid}")
 	public String updateCustomer(@PathVariable int customerid, Model model) {
@@ -68,6 +74,26 @@ public class CustomerController {
 		}
 		model.addAttribute("listCustomer", customerService.findAll());
 		return "customer-list";
+	}
+	
+	@RequestMapping(value = "/saveCustomerUser", method = RequestMethod.POST)
+	public String doSaveCustomerUser(ModelMap model, HttpServletRequest request,
+			@ModelAttribute("customer") Customer customer, @RequestParam("uploadImg") MultipartFile image) {
+
+		if (image.isEmpty()) {
+		} else {
+			try {
+				String path = "E:\\study-fpoly\\datn\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
+						+ image.getOriginalFilename();
+
+				image.transferTo(new File(path));
+				customer.setImage(image.getOriginalFilename());
+				customerService.save(customer);
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+		}
+		return "customer_user";
 	}
 
 	@RequestMapping("/updateCustomer")
