@@ -203,7 +203,7 @@
 										VND
 									</p>
 									<button class="button">
-										<a href="reservation_user" /><span>reservation </span>
+										<a href="customer_user" /><span>Booking </span>
 									</button>
 								</div>
 							</div>
