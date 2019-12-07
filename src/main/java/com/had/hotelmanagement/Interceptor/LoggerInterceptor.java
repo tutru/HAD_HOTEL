@@ -9,7 +9,7 @@ public class LoggerInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-
+ 
 		HttpSession session = request.getSession();
 
 		boolean isLogined = session.getAttribute("check") != null ? (Boolean) session.getAttribute("check") : false;
