@@ -15,43 +15,46 @@ public class HomeController {
 	private RoomService roomService;
 	@Autowired
 	private ServiceService serviceService;
-	@RequestMapping(value={"/index"})
+
+	@RequestMapping(value = { "/index" })
 	public String index() {
 		return "index";
 	}
-	@RequestMapping(value={"/admin"})
+
+	@RequestMapping(value = { "/admin" })
 	public String admin() {
 		return "admin";
 	}
-	@RequestMapping(value={"/index_user"})
+
+	@RequestMapping(value = { "/index_user" })
 	public String index_user(Model model) {
 		model.addAttribute("listRoom", roomService.findAll());
 
 		return "index_user";
 	}
+
 	//
-	@RequestMapping(value={"/about"})
+	@RequestMapping(value = { "/about" })
 	public String about() {
 		return "about";
 	}
-	@RequestMapping(value={"/events"})
+
+	@RequestMapping(value = { "/events" })
 	public String events() {
 		return "events";
 	}
-	@RequestMapping(value={"/contact"})
+
+	@RequestMapping(value = { "/contact" })
 	public String contact() {
 		return "contact";
 	}
-	@RequestMapping(value={"/reservation_user"})
-	public String reservation() {
-		return "reservation_user";
-	}
 
-	@RequestMapping(value={"/rooms_user"})
+	@RequestMapping(value = { "/rooms_user" })
 	public String room_users(Model model) {
 		model.addAttribute("listRoom", roomService.findAll());
 		return "rooms_user";
 	}
+
 	@RequestMapping(value = { "/service-user" })
 	public String listservice(Model model) {
 		model.addAttribute("listservice", serviceService.findAll());

@@ -62,7 +62,7 @@ public class CustomerController {
 		if (image.isEmpty()) {
 		} else {
 			try {
-				String path = "E:\\study-fpoly\\datn\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
+				String path = "E:\\QUANLYDOAN\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
 						+ image.getOriginalFilename();
 
 				image.transferTo(new File(path));
@@ -84,7 +84,7 @@ public class CustomerController {
 		if (image.isEmpty()) {
 		} else {
 			try {
-				String path = "E:\\study-fpoly\\datn\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
+				String path = "E:\\QUANLYDOAN\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
 						+ image.getOriginalFilename();
 
 				image.transferTo(new File(path));
@@ -94,7 +94,7 @@ public class CustomerController {
 				ex.printStackTrace();
 			}
 		}
-		return "reservation_user";
+		return "index_user";
 	}
 
 	@RequestMapping("/updateCustomer")
@@ -104,7 +104,7 @@ public class CustomerController {
 			customerService.update(customer);
 		} else {
 			try {
-				String path = "E:\\study-fpoly\\datn\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
+				String path = "E:\\QUANLYDOAN\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
 						+ image.getOriginalFilename();
 
 				image.transferTo(new File(path));

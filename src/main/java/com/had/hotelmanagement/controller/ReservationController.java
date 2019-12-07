@@ -13,12 +13,14 @@ import com.had.hotelmanagement.entity.Reservation;
 import com.had.hotelmanagement.service.CustomerService;
 import com.had.hotelmanagement.service.ReceptionService;
 import com.had.hotelmanagement.service.ReservationService;
+import com.had.hotelmanagement.service.RoomService;
 import com.had.hotelmanagement.service.RoomTypeService;
 
 @Controller
 @RequestMapping(value = "")
 public class ReservationController {
-
+	@Autowired
+	private RoomService roomService;
 	@Autowired
 	private ReservationService reservationService;
 	@Autowired
@@ -74,7 +76,8 @@ public class ReservationController {
 	public String doSaveReservationUser(Reservation reservation, Model model) {
 		reservationService.save(reservation);
 		model.addAttribute("listReservation", reservationService.findAll());
-		return "reservation_user";
+		model.addAttribute("listRoom", roomService.findAll());
+		return "index_user";
 	}
 
 	@RequestMapping("/updateReservation")
