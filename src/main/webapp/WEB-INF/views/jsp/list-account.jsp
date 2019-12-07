@@ -27,7 +27,7 @@
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-		 <a class="navbar-brand mr-1" href="<c:url value="/index"/>"><img
+		<a class="navbar-brand mr-1" href="<c:url value="/index"/>"><img
 			src="<%=request.getContextPath()%>/resources/image/logo.JPG"
 			width="120"></a>
 
@@ -100,8 +100,8 @@
 
 		<!-- Sidebar -->
 		<ul class="sidebar navbar-nav">
-			<li class="nav-item active"><a class="nav-link" href="<c:url value="/index"/>">
-					<i class="fas fa-home"></i> <span>Home</span>
+			<li class="nav-item active"><a class="nav-link"
+				href="<c:url value="/index"/>"> <i class="fas fa-home"></i> <span>Home</span>
 			</a></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -110,12 +110,14 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Customer:</h6>
-					<a class="dropdown-item" href="<c:url value="/customer-list"/>">List Customer</a> <a
-						class="dropdown-item" href="<c:url value="/customer-save"/>">Create Customer</a>
+					<a class="dropdown-item" href="<c:url value="/customer-list"/>">List
+						Customer</a> <a class="dropdown-item"
+						href="<c:url value="/customer-save"/>">Create Customer</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Employee:</h6>
-					<a class="dropdown-item" href="<c:url value="/employee-list"/>">List Employee</a> <a
-						class="dropdown-item" href="<c:url value="/employee-save"/>">Create Employee</a>
+					<a class="dropdown-item" href="<c:url value="/employee-list"/>">List
+						Employee</a> <a class="dropdown-item"
+						href="<c:url value="/employee-save"/>">Create Employee</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -124,11 +126,13 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Account:</h6>
-					<a class="dropdown-item" href="<c:url value="/list-account"/>">List Account</a> <a
-						class="dropdown-item" href="<c:url value="/save-account"/>">Create Account</a>
+					<a class="dropdown-item" href="<c:url value="/list-account"/>">List
+						Account</a> <a class="dropdown-item"
+						href="<c:url value="/save-account"/>">Create Account</a>
 					<h6 class="dropdown-header">Role:</h6>
-					<a class="dropdown-item" href="<c:url value="/list-role"/>">List Role</a> <a
-						class="dropdown-item" href="<c:url value="/save-role"/>">Create Role</a>
+					<a class="dropdown-item" href="<c:url value="/list-role"/>">List
+						Role</a> <a class="dropdown-item" href="<c:url value="/save-role"/>">Create
+						Role</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
@@ -137,17 +141,19 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Room Type:</h6>
-					<a class="dropdown-item" href="<c:url value="/roomtype-list"/>">List Room Type</a> <a
-						class="dropdown-item" href="<c:url value="/roomtype-save"/>">Create Room Type</a>
+					<a class="dropdown-item" href="<c:url value="/roomtype-list"/>">List
+						Room Type</a> <a class="dropdown-item"
+						href="<c:url value="/roomtype-save"/>">Create Room Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room Status:</h6>
-					<a class="dropdown-item" href="<c:url value="/roomstatus-list"/>">List Room
-						Status</a> <a class="dropdown-item" href="<c:url value="/roomstatus-save"/>">Create
-						Room Status</a>
+					<a class="dropdown-item" href="<c:url value="/roomstatus-list"/>">List
+						Room Status</a> <a class="dropdown-item"
+						href="<c:url value="/roomstatus-save"/>">Create Room Status</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room:</h6>
-					<a class="dropdown-item" href="<c:url value="/room-list"/>">List Room</a> <a
-						class="dropdown-item" href="<c:url value="/room-list"/>">Create Room</a>
+					<a class="dropdown-item" href="<c:url value="/room-list"/>">List
+						Room</a> <a class="dropdown-item" href="<c:url value="/room-list"/>">Create
+						Room</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
@@ -155,12 +161,14 @@
 					class="fas fa-money-check-alt"></i> <span>Payment</span> </a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Payment Type:</h6>
-					<a class="dropdown-item" href="<c:url value="/paymenttype-list"/>">List Payment Type</a> 
-					<a class="dropdown-item" href="<c:url value="/paymenttype-save"/>">Create Payment Type</a>
+					<a class="dropdown-item" href="<c:url value="/paymenttype-list"/>">List
+						Payment Type</a> <a class="dropdown-item"
+						href="<c:url value="/paymenttype-save"/>">Create Payment Type</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Payment:</h6>
-					<a class="dropdown-item" href="<c:url value="/payment-list"/>">List Payment</a> <a
-						class="dropdown-item" href="<c:url value="/payment-save"/>">Create Payment</a>
+					<a class="dropdown-item" href="<c:url value="/payment-list"/>">List
+						Payment</a> <a class="dropdown-item"
+						href="<c:url value="/payment-save"/>">Create Payment</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
@@ -170,12 +178,13 @@
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Reservation:</h6>
 					<a class="dropdown-item" href="<c:url value="/reservation-list"/>">List
-						Reservation</a> <a class="dropdown-item" href="<c:url value="/reservation-list"/>">Create
-						Resertvation</a>
+						Reservation</a> <a class="dropdown-item"
+						href="<c:url value="/reservation-list"/>">Create Resertvation</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Reception:</h6>
-					<a class="dropdown-item" href="<c:url value="/reception-list"/>">List Reception</a> <a
-						class="dropdown-item" href="<c:url value="/reception-save"/>">Create Reception</a>
+					<a class="dropdown-item" href="<c:url value="/reception-list"/>">List
+						Reception</a> <a class="dropdown-item"
+						href="<c:url value="/reception-save"/>">Create Reception</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
@@ -183,8 +192,9 @@
 					<i class="fas fa-list-ol"></i> <span>Service</span>
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
-					<a class="dropdown-item" href="<c:url value="/service-list"/>">List Service</a> <a
-						class="dropdown-item" href="<c:url value="/service-save"/>">Create Service</a>
+					<a class="dropdown-item" href="<c:url value="/service-list"/>">List
+						Service</a> <a class="dropdown-item"
+						href="<c:url value="/service-save"/>">Create Service</a>
 				</div></li>
 		</ul>
 
@@ -201,116 +211,118 @@
 				<div class="card mb-3">
 					<div class="card-header">
 						<i class="fas fa-table"></i> Account
-						<button type="submit" class="btn btn-dark float-right">
-							<a href="<c:url value="/save-account" />"> Account Save</a>
+						<button type="submit"
+						 class="btn btn-primary float-right">
+							<a style="text-decoration: none;color: white" href="<c:url value="/save-account"/>"><i
+								class="far fa-plus-square"></i> Account Save</a>
 						</button>
-					</div>
+					</div>				
+						<div class="card-body">
+							<div class="table-responsive">
 
-					<div class="card-body">
-						<div class="table-responsive">
-
-							<table class="table table-bordered" id="dataTable" width="100%"
-								cellspacing="0">
-								<thead>
-									<tr>
-										<td>Id</td>
-										<td>Employee Name</td>
-										<td>Role Name</td>
-										<td>User name</td>
-										<td>PassWord</td>
-										<td></td>
-										<td></td>
-									</tr>
-								</thead>
-								<c:if test="${not empty list}">
-									<c:forEach var="ac" items="${list}">
+								<table class="table table-bordered" id="dataTable" width="100%"
+									cellspacing="0">
+									<thead>
 										<tr>
-											<td>${ac.accountid}</td>
-											<td>${ac.name}</td>
-											<td>${ac.rolename}</td>
-											<td>${ac.username}</td>
-											<td>${ac.password}</td>
-											<td>
-												<button type="submit" class="btn btn-primary">
-													<a href="${urlUpdate}/${ac.accountid}"><i
-														class="fas fa-pen" style="color: black"></i></a>
-												</button>
-											</td>
-											<td>
-												<button type="submit" class="btn btn-danger">
-													<a href="${urlDelete}/${ac.accountid}"><i
-														class="fas fa-trash-alt" style="color: black"></i></a>
-												</button>
-											</td>
+											<td>Id</td>
+											<td>Employee Name</td>
+											<td>Role Name</td>
+											<td>User name</td>
+											<td>PassWord</td>
+											<td></td>
+											<td></td>
 										</tr>
-									</c:forEach>
-								</c:if>
-							</table>
+									</thead>
+									<c:if test="${not empty list}">
+										<c:forEach var="ac" items="${list}">
+											<tr>
+												<td>${ac.accountid}</td>
+												<td>${ac.name}</td>
+												<td>${ac.rolename}</td>
+												<td>${ac.username}</td>
+												<td>${ac.password}</td>
+												<td>
+													<button type="submit" class="btn btn-primary">
+														<a href="${urlUpdate}/${ac.accountid}"><i
+															class="fas fa-pen" style="color: black"></i></a>
+													</button>
+												</td>
+												<td>
+													<button type="submit" class="btn btn-danger">
+														<a href="${urlDelete}/${ac.accountid}"><i
+															class="fas fa-trash-alt" style="color: black"></i></a>
+													</button>
+												</td>
+											</tr>
+										</c:forEach>
+									</c:if>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 
-		<!-- Sticky Footer -->
-		<footer class="sticky-footer">
-			<div class="container my-auto">
-				<div class="copyright text-center my-auto">
-					<span>Copyright © HAD Hotel 2019</span>
+			<!-- Sticky Footer -->
+			<footer class="sticky-footer">
+				<div class="container my-auto">
+					<div class="copyright text-center my-auto">
+						<span>Copyright © HAD Hotel 2019</span>
+					</div>
+				</div>
+			</footer>
+
+		</div>
+		<!-- /.content-wrapper -->
+
+
+		<!-- /#wrapper -->
+
+		<!-- Scroll to Top Button-->
+		<a class="scroll-to-top rounded" href="#page-top"> <i
+			class="fas fa-angle-up"></i>
+		</a>
+
+		<!-- Logout Modal-->
+		<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Ready to
+							Leave?</h5>
+						<button class="close" type="button" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+					</div>
+					<div class="modal-body">Select "Logout" below if you are
+						ready to end your current session.</div>
+					<div class="modal-footer">
+						<button class="btn btn-secondary" type="button"
+							data-dismiss="modal">Cancel</button>
+						<a class="btn btn-primary" href="<c:url value="/logout"/>">Logout</a>
+					</div>
 				</div>
 			</div>
-		</footer>
-
-	</div>
-	<!-- /.content-wrapper -->
-
-
-	<!-- /#wrapper -->
-
-	<!-- Scroll to Top Button-->
-	<a class="scroll-to-top rounded" href="#page-top"> <i
-		class="fas fa-angle-up"></i>
-	</a>
-
-	<!-- Logout Modal-->
-	<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-					<button class="close" type="button" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">×</span>
-					</button>
-				</div>
-				<div class="modal-body">Select "Logout" below if you are ready
-					to end your current session.</div>
-				<div class="modal-footer">
-					<button class="btn btn-secondary" type="button"
-						data-dismiss="modal">Cancel</button>
-					<a class="btn btn-primary" href="<c:url value="/logout"/>">Logout</a>
-				</div>
-			</div>
 		</div>
-	</div>
 
 
-	<!-- Bootstrap core JavaScript-->
-	<script src="<c:url value="/resources/vendor/jquery/jquery.min.js"/>"></script>
-	<script
-		src="<c:url value="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
-	<!-- Core plugin JavaScript-->
-	<script
-		src="<c:url value="/resources/vendor/jquery-easing/jquery.easing.min.js"/>"></script>
-	<!-- Page level plugin JavaScript-->
-	<script
-		src="<c:url value="/resources/vendor/datatables/jquery.dataTables.js"/>"></script>
-	<script
-		src="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.js"/>"></script>
-	<!-- Custom scripts for all pages-->
-	<script src="<c:url value="/resources/js/sb-admin.min.js"/>"></script>
-	<!-- Demo scripts for this page-->
-	<script src="<c:url value="/resources/js/demo/datatables-demo.js"/>"></script>
+		<!-- Bootstrap core JavaScript-->
+		<script src="<c:url value="/resources/vendor/jquery/jquery.min.js"/>"></script>
+		<script
+			src="<c:url value="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
+		<!-- Core plugin JavaScript-->
+		<script
+			src="<c:url value="/resources/vendor/jquery-easing/jquery.easing.min.js"/>"></script>
+		<!-- Page level plugin JavaScript-->
+		<script
+			src="<c:url value="/resources/vendor/datatables/jquery.dataTables.js"/>"></script>
+		<script
+			src="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.js"/>"></script>
+		<!-- Custom scripts for all pages-->
+		<script src="<c:url value="/resources/js/sb-admin.min.js"/>"></script>
+		<!-- Demo scripts for this page-->
+		<script src="<c:url value="/resources/js/demo/datatables-demo.js"/>"></script>
 </body>
 </html>

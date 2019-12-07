@@ -211,8 +211,9 @@
 				<div class="card mb-3">
 					<div class="card-header">
 						<i class="fas fa-table"></i> Role
-						<button type="submit" class="btn btn-dark float-right">
-							<a href="<c:url value="/save-role" />"> Role Save</a>
+						<button type="submit" class="btn btn-primary float-right">
+							<a style="text-decoration: none;color: white" href="<c:url value="/save-role" />"> <i
+								class="far fa-plus-square"></i> Role Save</a>
 						</button>
 					</div>
 
