@@ -31,14 +31,13 @@ public class LoginController {
 		ac.setUsername(username);
 		ac.setPassword(password);
 		String name = dao.xacnhan(ac);
-		String user = dao.user(ac);
 		if (name != null) {
 			if (name.equals("admin")) {				
 				session.setAttribute("check", true);
-				session.setAttribute("name", user);
+				session.setAttribute("name", username);
 				mv.setViewName("redirect:index");
 			} else if (name.equals("user")) {
-				session.setAttribute("name", user);
+				session.setAttribute("name", username);
 				session.setAttribute("check", true);
 				mv.setViewName("redirect:admin");
 			} else {

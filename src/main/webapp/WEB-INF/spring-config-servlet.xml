@@ -57,6 +57,15 @@
 			<mvc:mapping path="/service-list"/>
 			<mvc:mapping path="/service-save"/>
 			<mvc:mapping path="/service-update//*"/>
+			<mvc:mapping path="/payment-list-user"/>
+			<mvc:mapping path="/payment-save-user"/>
+			<mvc:mapping path="/payment-update-user//*"/>
+			<mvc:mapping path="/reservation-list-user"/>
+			<mvc:mapping path="/reservation-save-user"/>
+			<mvc:mapping path="/reservation-update-user//*"/>
+			<mvc:mapping path="/reception-list-user"/>
+			<mvc:mapping path="/reception-save-user"/>
+			<mvc:mapping path="/reception-update-user//*"/>
 			<mvc:exclude-mapping path="/login"/>
 			<bean class="com.had.hotelmanagement.Interceptor.LoggerInterceptor" />
 		</mvc:interceptor>
