@@ -17,7 +17,7 @@ import com.had.hotelmanagement.service.RoomTypeService;
 @Controller
 @RequestMapping(value = "")
 public class ReservationControlleruser {
-
+ 
 	@Autowired
 	private ReservationService reservationService;
 	@Autowired

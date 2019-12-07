@@ -22,7 +22,7 @@ public class LoginController {
 	public String Login(Model model) {
 		return "login";
 	}
-	
+	 
 	@RequestMapping(value = "/xacnhan", method = RequestMethod.POST)
 	public ModelAndView loginProcess(@RequestParam("username") String username,
 			@RequestParam("password") String password , HttpSession session) {

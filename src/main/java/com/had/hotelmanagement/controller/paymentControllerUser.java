@@ -15,7 +15,7 @@ import com.had.hotelmanagement.service.PaymentService;
 public class paymentControllerUser {
 	@Autowired
 	private PaymentService paymentService;
-
+ 
 	@RequestMapping(value = { "/payment-list-user" }, method = RequestMethod.GET)
 	public String listpayment(Model model) {
 		model.addAttribute("listpayment", paymentService.findAll());
