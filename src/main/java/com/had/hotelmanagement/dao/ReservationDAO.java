@@ -30,6 +30,11 @@ public class ReservationDAO {
 		jdbcTemplate.update(sql);
 	}
 	
+	public void deleteRT(int roomtypeid) {
+		String sql = "DELETE FROM reservation WHERE roomtypeid = " + roomtypeid;
+		jdbcTemplate.update(sql);
+	}
+	
 	public void deleteRstByCtmId(int customerid) {
 		String sql = "DELETE FROM reservation WHERE customerid = " + customerid;
 		jdbcTemplate.update(sql);

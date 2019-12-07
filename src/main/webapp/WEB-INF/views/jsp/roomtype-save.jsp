@@ -242,8 +242,8 @@
 							<br/>
 							<form:button type="submit" class="btn btn-success"> <i class="far fa-save"></i> Save</form:button>
 							<form:button id="editbutton" type="submit" class="btn btn-danger">
-								<a href="<c:url value="/roomtype-list" />"> Return <i
-									class="far fa-arrow-alt-circle-left"> </i></a>
+								<a href="<c:url value="/roomtype-list" />"><i
+									class="far fa-arrow-alt-circle-left"></i> Return</a>
 							</form:button>
 						</div>
 					</div>

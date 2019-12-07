@@ -239,12 +239,13 @@
 							<span id="roomstatusdesc"></span> <br /> <br />
 						</div>
 					</div>
-				</form:form>
-				<button type="submit" class="btn btn-success"> <i class="far fa-save"></i> Save</button>
+					<button type="submit" class="btn btn-success"> <i class="far fa-save"></i> Save</button>
 							<button id="editbutton" type="submit" class="btn btn-danger">
-								<a href="<c:url value="/roomstatus-list" />">Return <i
-									class="far fa-arrow-alt-circle-left"></i></a>
+								<a href="<c:url value="/roomstatus-list" />">  <i
+									class="far fa-arrow-alt-circle-left"></i>Return</a>
 							</button>
+				</form:form>
+				
 			</div>
 		</div>
 	</div>

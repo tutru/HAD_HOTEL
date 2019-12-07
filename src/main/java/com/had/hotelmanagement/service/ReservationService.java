@@ -42,4 +42,9 @@ public class ReservationService {
 		// validate business
 		reservationDAO.deleteRstByCtmId(customerid);
 	}
+	
+	public void deleteRT(int roomtypeid){
+		// validate business
+		reservationDAO.deleteRT(roomtypeid);
+	}
 }
