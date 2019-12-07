@@ -69,7 +69,6 @@
 					aria-labelledby="alertsDropdown">
 					<a class="dropdown-item" href="#">Action</a> <a
 						class="dropdown-item" href="#">Another action</a>
-					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#">Something else here</a>
 				</div></li>
 			<li class="nav-item dropdown no-arrow mx-1"><a
@@ -123,7 +122,6 @@
 					<h6 class="dropdown-header">Employee:</h6>
 					<a class="dropdown-item" href="employee-list">List Employee</a> <a
 						class="dropdown-item" href="employee-save">Create Employee</a>
-					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Account:</h6>
 					<a class="dropdown-item" href="customer-list">List Account</a> <a
 						class="dropdown-item" href="register.html">Create Account</a>

@@ -22,6 +22,8 @@
 	href="<c:url value="/resources/css/sb-admin.css"></c:url>">
 <link rel="stylesheet"
 	href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
+<link rel="stylesheet"
+	href="<c:url value="/resources/css/custom.css"></c:url>">
 
 </head>
 <body id="page-top">
@@ -33,13 +35,14 @@
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-		<a class="navbar-brand mr-1" href="index.html" ><img src="/HotelManagement/resources/image/logo.JPG" width="120"></a>
+		<a class="navbar-brand mr-1" href="index.html"><img
+			src="/HotelManagement/resources/image/logo.JPG" width="120"></a>
 
 		<button class="btn btn-link btn-sm text-white order-1 order-sm-0"
 			id="sidebarToggle" href="#">
 			<i class="fas fa-bars"></i>
 		</button>
-		
+
 		<!-- Navbar Search -->
 		<form
 			class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
@@ -121,7 +124,6 @@
 					<a class="dropdown-item" href="<c:url value="/employee-list"/>">List
 						Employee</a> <a class="dropdown-item"
 						href="<c:url value="/employee-save"/>">Create Employee</a>
-					<div class="dropdown-divider"></div>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -152,8 +154,7 @@
 					<h6 class="dropdown-header">Room Status:</h6>
 					<a class="dropdown-item" href="<c:url value="/roomstatus-list"/>">List
 						Room Status</a> <a class="dropdown-item"
-						href="<c:url value="/roomstatus-save"/>">Create Room Status
-					</a>
+						href="<c:url value="/roomstatus-save"/>">Create Room Status </a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room:</h6>
 					<a class="dropdown-item" href="<c:url value="/room-list"/>">List
@@ -216,8 +217,10 @@
 				<div class="card mb-3">
 					<div class="card-header">
 						<i class="fas fa-table"></i> List Reception
-						<button type="submit" class="btn btn-dark float-right">
-							<a href="<c:url value="/reception-save" />"> New Reception</a>
+						<button id="editbutton" type="submit"
+							class="btn btn-primary float-right">
+							<a href="<c:url value="/reception-save" />"><i
+								class="far fa-plus-square"> </i>New Reception</a>
 						</button>
 					</div>
 					<div class="card-body">
@@ -242,24 +245,24 @@
 								<c:if test="${not empty listReception}">
 									<c:forEach var="reception" items="${listReception}">
 										<tr>
-												<td>${reception.receptionid}</td>
-												<td>${reception.customername}</td>
-												<td>${reception.reservationid}</td>
-												<td>${reception.roomnumber}</td>
-												<td>${reception.checkindate}</td>
-												<td>${reception.expectedcheckindate}</td>
-												<td>${reception.checkoutdate}</td>
-												<td>${reception.servicename}</td>
-												<td>${reception.receptionstatus}</td>
-												<td><button type="button" class="btn btn-primary">
-														<a href="${urlUpdate}/${reception.receptionid}"><i
-															class="fas fa-pen" style="color: black"></i></i></a>
-													</button></td>
-												<td><button type="button" class="btn btn-danger">
-														<a href="${urlDelete}/${reception.receptionid}"><i
-															class="fas fa-trash-alt" style="color: black"></i></a>
-													</button></td>
-											</tr>
+											<td>${reception.receptionid}</td>
+											<td>${reception.customername}</td>
+											<td>${reception.reservationid}</td>
+											<td>${reception.roomnumber}</td>
+											<td>${reception.checkindate}</td>
+											<td>${reception.expectedcheckindate}</td>
+											<td>${reception.checkoutdate}</td>
+											<td>${reception.servicename}</td>
+											<td>${reception.receptionstatus}</td>
+											<td><button type="button" class="btn btn-primary">
+													<a href="${urlUpdate}/${reception.receptionid}"><i
+														class="fas fa-pen" style="color: black"></i></i></a>
+												</button></td>
+											<td><button type="button" class="btn btn-danger">
+													<a href="${urlDelete}/${reception.receptionid}"><i
+														class="fas fa-trash-alt" style="color: black"></i></a>
+												</button></td>
+										</tr>
 									</c:forEach>
 								</c:if>
 							</table>

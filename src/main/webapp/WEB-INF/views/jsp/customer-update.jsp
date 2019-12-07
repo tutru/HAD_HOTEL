@@ -127,7 +127,6 @@
 					<a class="dropdown-item" href="<c:url value="/employee-list"/>">List
 						Employee</a> <a class="dropdown-item"
 						href="<c:url value="/employee-save"/>">Create Employee</a>
-					<div class="dropdown-divider"></div>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"

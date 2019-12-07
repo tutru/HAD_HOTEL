@@ -1,6 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <!DOCTYPE html>
 <html>
@@ -22,6 +23,8 @@
 	href="<c:url value="/resources/css/sb-admin.css"></c:url>">
 <link rel="stylesheet"
 	href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
+<link rel="stylesheet"
+	href="<c:url value="/resources/css/custom.css"></c:url>">
 </head>
 
 <body id="page-top">
@@ -122,7 +125,6 @@
 					<a class="dropdown-item" href="<c:url value="/employee-list"/>">List
 						Employee</a> <a class="dropdown-item"
 						href="<c:url value="/employee-save"/>">Create Employee</a>
-					<div class="dropdown-divider"></div>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -153,8 +155,7 @@
 					<h6 class="dropdown-header">Room Status:</h6>
 					<a class="dropdown-item" href="<c:url value="/roomstatus-list"/>">List
 						Room Status</a> <a class="dropdown-item"
-						href="<c:url value="/roomstatus-save"/>">Create Room Status
-					</a>
+						href="<c:url value="/roomstatus-save"/>">Create Room Status </a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room:</h6>
 					<a class="dropdown-item" href="<c:url value="/room-list"/>">List
@@ -216,8 +217,11 @@
 				<div class="card mb-3">
 					<div class="card-header">
 						<i class="fas fa-table"></i> List Customer
-						<button type="submit" class="btn btn-dark float-right">
-							<a href="<c:url value="/customer-save" />"> New Customer</a>
+						<button id="editbutton" type="submit"
+							class="btn btn-primary float-right">
+							<a href="<c:url value="/customer-save" />"> <i
+								class="far fa-plus-square"></i>New Customer
+							</a>
 						</button>
 					</div>
 					<div class="card-body">
