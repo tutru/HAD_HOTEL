@@ -105,8 +105,6 @@
 		<!-- Sidebar -->
 		<ul class="sidebar navbar-nav">
 
-
-
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
 				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
@@ -116,9 +114,9 @@
 				
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Payment:</h6>
-					<a class="dropdown-item" href="<c:url value="/payment-list"/>">List
+					<a class="dropdown-item" href="<c:url value="/payment-list-user"/>">List
 						Payment</a> <a class="dropdown-item"
-						href="<c:url value="/payment-save"/>">Create Payment</a>
+						href="<c:url value="/payment-save-user"/>">Create Payment</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
@@ -127,14 +125,14 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Reservation:</h6>
-					<a class="dropdown-item" href="<c:url value="/reservation-list"/>">List
+					<a class="dropdown-item" href="<c:url value="/reservation-list-user"/>">List
 						Reservation</a> <a class="dropdown-item"
-						href="<c:url value="/reservation-save"/>">Create Resertvation</a>
+						href="<c:url value="/reservation-save-user"/>">Create Resertvation</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Reception:</h6>
-					<a class="dropdown-item" href="<c:url value="/reception-list"/>">List
+					<a class="dropdown-item" href="<c:url value="/reception-list-user"/>">List
 						Reception</a> <a class="dropdown-item"
-						href="<c:url value="/reception-save"/>">Create Reception</a>
+						href="<c:url value="/reception-save-user"/>">Create Reception</a>
 				</div></li>
 
 		</ul>

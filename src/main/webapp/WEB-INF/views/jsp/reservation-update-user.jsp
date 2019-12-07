@@ -36,8 +36,9 @@
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-		<a class="navbar-brand mr-1" href="index.html"><img
-			src="/HotelManagement/resources/image/logo.JPG" width="120"></a>
+	<a class="navbar-brand mr-1" href="<c:url value="/admin"/>"><img
+			src="<%=request.getContextPath()%>/resources/image/logo.JPG"
+			width="120"></a>
 
 		<button class="btn btn-link btn-sm text-white order-1 order-sm-0"
 			id="sidebarToggle" href="#">
