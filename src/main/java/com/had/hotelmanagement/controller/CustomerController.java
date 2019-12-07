@@ -18,11 +18,13 @@ import com.had.hotelmanagement.entity.Customer;
 import com.had.hotelmanagement.service.CustomerService;
 import com.had.hotelmanagement.service.ReceptionService;
 import com.had.hotelmanagement.service.ReservationService;
+import com.had.hotelmanagement.service.RoomTypeService;
 
 @Controller
 @RequestMapping(value = "")
 public class CustomerController {
-
+	@Autowired
+	private RoomTypeService roomTypeService;
 	@Autowired
 	private CustomerService customerService;
 	@Autowired
@@ -62,7 +64,7 @@ public class CustomerController {
 		if (image.isEmpty()) {
 		} else {
 			try {
-				String path = "E:\\QUANLYDOAN\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
+				String path = "E:\\study-fpoly\\datn\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
 						+ image.getOriginalFilename();
 
 				image.transferTo(new File(path));
@@ -75,8 +77,7 @@ public class CustomerController {
 		model.addAttribute("listCustomer", customerService.findAll());
 		return "customer-list";
 	}
-	
-	
+
 	@RequestMapping(value = "/saveCustomerUser", method = RequestMethod.POST)
 	public String doSaveCustomerUser(ModelMap model, HttpServletRequest request,
 			@ModelAttribute("customer") Customer customer, @RequestParam("uploadImg") MultipartFile image) {
@@ -84,7 +85,7 @@ public class CustomerController {
 		if (image.isEmpty()) {
 		} else {
 			try {
-				String path = "E:\\QUANLYDOAN\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
+				String path = "E:\\study-fpoly\\datn\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
 						+ image.getOriginalFilename();
 
 				image.transferTo(new File(path));
@@ -94,7 +95,7 @@ public class CustomerController {
 				ex.printStackTrace();
 			}
 		}
-		return "index_user";
+		return "sussess_user";
 	}
 
 	@RequestMapping("/updateCustomer")
@@ -104,7 +105,7 @@ public class CustomerController {
 			customerService.update(customer);
 		} else {
 			try {
-				String path = "E:\\QUANLYDOAN\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
+				String path = "E:\\study-fpoly\\datn\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
 						+ image.getOriginalFilename();
 
 				image.transferTo(new File(path));
