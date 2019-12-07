@@ -10,9 +10,8 @@ public class LoggerInterceptor extends HandlerInterceptorAdapter {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 
-		System.out.println("đang vào");
-
 		HttpSession session = request.getSession();
+
 		boolean isLogined = session.getAttribute("check") != null ? (Boolean) session.getAttribute("check") : false;
 
 		if (!isLogined) {
