@@ -126,7 +126,9 @@
 								required="required" pattern="^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$"
 								title="Please type Email" />
 							<br /> <label>CC number:</label>
-							<form:input class="form-control" path="ccnumber" />
+							<form:input class="form-control" path="ccnumber" 
+							required="required" pattern="[0-9]{10,11}"
+								title="Please type CC Number"/>
 							<br /> <br /> <label>Image:</label>
 							<output id="list">
 								<img src="/HotelManagement/resources/image/441.jpg" width="120">

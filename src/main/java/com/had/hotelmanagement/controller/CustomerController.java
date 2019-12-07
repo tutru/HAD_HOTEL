@@ -93,7 +93,7 @@ public class CustomerController {
 				ex.printStackTrace();
 			}
 		}
-		return "customer_user";
+		return "reservation_user";
 	}
 
 	@RequestMapping("/updateCustomer")

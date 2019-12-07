@@ -1,9 +1,9 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ page isELIgnored="false"%>
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8" import="java.sql.*"%>
-<html lang="vn">
+
+<!DOCTYPE html>
+<html>
 
 <head>
 
