@@ -76,6 +76,7 @@ public class CustomerController {
 		return "customer-list";
 	}
 	
+	
 	@RequestMapping(value = "/saveCustomerUser", method = RequestMethod.POST)
 	public String doSaveCustomerUser(ModelMap model, HttpServletRequest request,
 			@ModelAttribute("customer") Customer customer, @RequestParam("uploadImg") MultipartFile image) {
