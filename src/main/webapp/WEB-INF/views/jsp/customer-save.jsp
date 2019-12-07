@@ -218,10 +218,11 @@
 					name="myForm" onsubmit="return validateForm()">
 					<div class="form-row">
 						<div class="form-group col-md-6">
-							<label>ID:</label>
+					<%-- 		<label>ID:</label>
 							<form:input class="form-control" path="customerid"
 								readonly="true" />
-							<br /> <label>Full Name:</label>
+							<br /> --%>
+							 <label>Full Name:</label>
 							<form:input class="form-control" path="name"
 								placeholder="Full name" required="required" pattern="[a-z]\{20}"
 								title="Please type Full Name" />
