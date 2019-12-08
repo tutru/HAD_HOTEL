@@ -29,7 +29,7 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body style="background-image: url('resources/image/backgroundLogin.jpg');">
 
 	<div class="container">
 
@@ -41,10 +41,10 @@
 				<div class="card o-hidden border-0 shadow-lg my-5">
 					<div class="card-body p-0">
 						<!-- Nested Row within Card Body -->
-						<div class="row">
+						<div class="row" style="background: gray;">
 							<div class="col-lg-6 d-none d-lg-block bg-login-image">
 								<img
-									src="<%=request.getContextPath()%>/resources/image/01_singapore.jpg"
+									src="<%=request.getContextPath()%>/resources/image/logoLogin.png"
 									width="500" height="500">
 
 							</div>
