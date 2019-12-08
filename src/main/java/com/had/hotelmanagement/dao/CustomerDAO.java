@@ -20,9 +20,9 @@ public class CustomerDAO {
 	
 
 	public void save(Customer customer) {
-		String sql = "INSERT INTO customer (name, governmentid, address, phone, email, image, ccnumber) VALUES (?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO customer (name, governmentid, address, phone, email, ccnumber, image) VALUES (?,?,?,?,?,?,?)";
 		jdbcTemplate.update(sql, customer.getName(), customer.getGovernmentid(),customer.getAddress(),
-				customer.getPhone(),customer.getEmail(),customer.getImage(),customer.getCcnumber());
+				customer.getPhone(),customer.getEmail(),customer.getCcnumber(),customer.getImage());
 	}
 
 	public void delete(int customerid) {
