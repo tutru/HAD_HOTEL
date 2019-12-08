@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.had.hotelmanagement.entity.Employee;
+import com.had.hotelmanagement.service.AccountService;
 import com.had.hotelmanagement.service.EmployeeService;
 
 @Controller
@@ -24,6 +25,8 @@ import com.had.hotelmanagement.service.EmployeeService;
 public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;
+	@Autowired
+	private AccountService accountService;
 
 	@RequestMapping(value = { "/employee-list" }, method = RequestMethod.GET)
 	public String listEmployee(Model model) {
@@ -70,6 +73,7 @@ public class EmployeeController {
 	public String doUpdateEmployee(@ModelAttribute("Employee") Employee employee, Model model, @RequestParam("uploadImg") MultipartFile image) {
 		
 		if (image.isEmpty()) {
+			employeeService.update(employee);
 		} else {
 			try {
 				String path = "E:\\QUANLYDOAN\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
@@ -86,11 +90,18 @@ public class EmployeeController {
 		return "employee-list";
 	}
 
-	@RequestMapping("/employeeDelete/{id}")
-	public String doDeleteCustomer(@PathVariable int id, Model model) {
-		employeeService.delete(id);
+	@RequestMapping("/employeeDelete/{employeeid}")
+	public String doDeleteCustomer(@PathVariable int employeeid, Model model) {
+		try {
+			employeeService.delete(employeeid);
+		}catch (Exception e){
+			accountService.deleteEmployee(employeeid);
+			employeeService.delete(employeeid);
+		}finally{
+		
 		model.addAttribute("listEmployee", employeeService.findAll());
 		return "employee-list";
+		}
 	}
 
 

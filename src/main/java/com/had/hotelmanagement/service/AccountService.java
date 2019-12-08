@@ -53,8 +53,10 @@ public class AccountService {
 		// validate business
 		dao.delete(id);
 	}
-	/*
-	 * public List<Account> searchaccount(String username) { return
-	 * dao.findaccount(username); }
-	 */
+	
+	public void deleteEmployee(int employeeid){
+		// validate business
+		dao.deleteEmployee(employeeid);
+	}
+	
 }

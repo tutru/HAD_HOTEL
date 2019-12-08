@@ -246,8 +246,8 @@
 					<i class="far fa-edit"></i> Update
 				</button>
 				<button id="editbutton" type="submit" class="btn btn-danger">
-					<a href="<c:url value="/roomstatus-list" />">Reset<i
-						class="far fa-arrow-alt-circle-left"></i></a>
+					<a href="<c:url value="/roomstatus-list" />"><i
+						class="far fa-arrow-alt-circle-left"></i>Return</a>
 				</button>
 			</div>
 		</div>

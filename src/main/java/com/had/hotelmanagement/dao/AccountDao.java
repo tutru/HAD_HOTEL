@@ -28,6 +28,11 @@ public class AccountDao {
 		String sql = "DELETE FROM account WHERE accountid = " + id;
 		jdbcTemplate.update(sql);
 	}
+	
+	public void deleteEmployee(int employeeid) {
+		String sql = "DELETE FROM account WHERE employeeid = " + employeeid;
+		jdbcTemplate.update(sql);
+	}
 
 	public void update(Account ac) {
 		String sql = "UPDATE account SET employeeid = ?, roleid = ?, username = ?, password = ? WHERE  accountid = ? ";
