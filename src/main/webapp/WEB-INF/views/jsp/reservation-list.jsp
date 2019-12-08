@@ -25,6 +25,8 @@
 <link rel="stylesheet"
 	href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
 </head>
+<link rel="stylesheet"
+	href="<c:url value="/resources/css/custom.css"></c:url>">
 
 <body id="page-top">
 	<c:url value="/reservation-save" var="urlSave" />
@@ -218,8 +220,9 @@
 				<div class="card mb-3">
 					<div class="card-header">
 						<i class="fas fa-table"></i> List Reservation
-						<button type="submit" class="btn btn-dark float-right">
-							<a href="<c:url value="/reservation-save" />"> New Reservation</a>
+						<button id="editbutton" type="submit" class="btn btn-primary float-right">
+							<a href="<c:url value="/reservation-save" />"><i
+								class="far fa-plus-square"> </i> New Reservation</a>
 						</button>
 					</div>
 					<div class="card-body">
