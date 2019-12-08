@@ -20,6 +20,7 @@ import com.had.hotelmanagement.service.CustomerService;
 import com.had.hotelmanagement.service.ReceptionService;
 import com.had.hotelmanagement.service.ReservationService;
 
+
 @Controller
 @RequestMapping(value = "")
 public class CustomerController {

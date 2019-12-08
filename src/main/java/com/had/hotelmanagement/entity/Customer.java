@@ -1,10 +1,5 @@
 package com.had.hotelmanagement.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
 public class Customer {
 
     private int customerid;

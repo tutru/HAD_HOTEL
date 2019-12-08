@@ -14,7 +14,6 @@ import com.had.hotelmanagement.entity.CustomerMapper;
 @Repository
 @Transactional
 public class CustomerDAO {
-	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
