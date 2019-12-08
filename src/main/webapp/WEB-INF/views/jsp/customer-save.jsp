@@ -4,15 +4,20 @@
 <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
-
+<link rel="stylesheet"
+	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<meta charset="ISO-8859-1">
 <head>
-
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
+<link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+	rel="stylesheet">
 
 <title>Create Customer</title>
 
@@ -26,7 +31,6 @@
 
 <!-- Custom styles for this template-->
 <link href="resources/css/sb-admin.css" rel="stylesheet">
-
 </head>
 
 <body id="page-top">
@@ -218,10 +222,10 @@
 					name="myForm" onsubmit="return validateForm()">
 					<div class="form-row">
 						<div class="form-group col-md-6">
-					<%-- 		<label>ID:</label>
+							<label>ID:</label>
 							<form:input class="form-control" path="customerid"
 								readonly="true" />
-							<br /> --%>
+							<br />
 							 <label>Full Name:</label>
 							<form:input class="form-control" path="name"
 								placeholder="Full name" required="required" pattern="[a-z]\{20}"
@@ -246,7 +250,7 @@
 								required="required" pattern="^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$"
 								title="Please type Email" />
 							<br /> <label>CC number:</label>
-							<form:input class="form-control" path="ccnumber" />
+							<form:input class="form-control" path="ccnumber"/>
 							<br /> <br /> <label>Image:</label>
 							<output id="list">
 								<img src="/HotelManagement/resources/image/441.jpg" width="120">
