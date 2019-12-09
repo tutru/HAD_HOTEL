@@ -1,27 +1,22 @@
-<!DOCTYPE HTML>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-  
-<html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page isELIgnored="false"%>
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Sogo Hotel by Colorlib.com</title>
+<title>HAD-Create Customer</title>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta name="author" content="" />
+<link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+	rel="stylesheet">
 <!--  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=|Roboto+Sans:400,700|Playfair+Display:400,700"> -->
-
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
-<link rel="stylesheet"
-	href="<c:url value="/resources/css/button.css"></c:url>">
-<link rel="stylesheet"
-	href="<c:url value="/resources/css/image.css"></c:url>">
 
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 <link rel="stylesheet" href="resources/css/animate.css">
@@ -38,6 +33,9 @@
 
 <!-- Theme Style -->
 <link rel="stylesheet" href="resources/css/style.css">
+<style type="text/css">
+
+</style>
 </head>
 <body>
 
@@ -62,11 +60,11 @@
 									<div class="col-md-6 mx-auto">
 										<ul class="list-unstyled menu">
 											<li><a href="index_user" />Home</a></li>
-											<li class="active"><a href="rooms_user" />Rooms</a></li>
+											<li><a href="rooms_user" />Rooms</a></li>
 											<li><a href="about" />About</a></li>
 											<li><a href="events" />Events</a></li>
 											<li><a href="contact" />Contact</a></li>
-											<li><a href="service-user" />Service</a></li>
+
 										</ul>
 									</div>
 								</div>
@@ -86,119 +84,154 @@
 			<div
 				class="row site-hero-inner justify-content-center align-items-center">
 				<div class="col-md-10 text-center" data-aos="fade">
-					<h1 class="heading mb-3">Rooms</h1>
+					<h1 class="heading mb-3">Booking Successful</h1>
 					<ul class="custom-breadcrumbs mb-4">
 						<li><a href="index_user">Home</a></li>
 						<li>&bullet;</li>
-						<li>Rooms</li>
+						<li><a href="index_user">Booking Successful</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
-
 		<a class="mouse smoothscroll" href="#next">
 			<div class="mouse-icon">
 				<span class="mouse-wheel"></span>
 			</div>
 		</a>
 	</section>
+
 	<!-- END section -->
 
-	
-
-
-	<section class="section">
+	<section class="section contact-section" id="next">
 		<div class="container">
-
-
-			<div class="row">
-
-				<div id="myImg" class="col-md-12 thumbnail" >
-
-					<c:if test="${not empty listRoom}">
-						<c:forEach var="room" items="${listRoom}">
-							<div id="myImg" class="col-md-4 col-lg-4 thumbnail" style="padding: 10px;">
-								<div>
-									<img src="<%=request.getContextPath()%>/resources/image/${room.roomimage}" style="height: 230px; width: 346px"/>
-								</div>
-								<br />
-								<div style="text-align: center; font-size: 120%; color: maroon;">
-									<p>${room.roomtypename}</p>
-								</div>
-								<div style="text-align: center">
-									<p style="color: Black;">
-										<fmt:formatNumber value="${room.roomprice}" />
-										VND
-									</p>
-									<button class="button">
-										<a href="customer_user" /><span>Booking </span>
-									</button>
-								</div>
-							</div>
-						</c:forEach>
-					</c:if>
-
-				</div>
-			</div>
+			<button class="button">
+				<a href="rooms_user"/><i class="fas fa-forward"></i><span>Next room</span>
+			</button>
 		</div>
-
 	</section>
-
-	<section class="section bg-light">
-
+	<section class="section testimonial-section bg-light">
 		<div class="container">
 			<div class="row justify-content-center text-center mb-5">
 				<div class="col-md-7">
-					<h2 class="heading" data-aos="fade">Great Offers</h2>
-					<p data-aos="fade">Far far away, behind the word mountains, far
-						from the countries Vokalia and Consonantia, there live the blind
-						texts. Separated they live in Bookmarksgrove right at the coast of
-						the Semantics, a large language ocean.</p>
+					<h2 class="heading" data-aos="fade-up">People Says</h2>
 				</div>
 			</div>
+			<div class="row">
+				<div class="js-carousel-2 owl-carousel mb-5" data-aos="fade-up"
+					data-aos-delay="200">
 
-			<div class="site-block-half d-block d-lg-flex bg-white"
-				data-aos="fade" data-aos-delay="100">
-				<a href="#" class="image d-block bg-image-2"
-					style="background-image: url('<%=request.getContextPath()%>/resources/images/img_1.jpg');"></a>
-				<div class="text">
-					<span class="d-block mb-4"><span
-						class="display-4 text-primary">$199</span> <span
-						class="text-uppercase letter-spacing-2">/ per night</span> </span>
-					<h2 class="mb-4">Family Room</h2>
-					<p>Far far away, behind the word mountains, far from the
-						countries Vokalia and Consonantia, there live the blind texts.
-						Separated they live in Bookmarksgrove right at the coast of the
-						Semantics, a large language ocean.</p>
-					<p>
-						<a href="#" class="btn btn-primary text-white">Book Now</a>
-					</p>
+					<div class="testimonial text-center slider-item">
+						<div class="author-image mb-3">
+							<img src="resources/images/person_1.jpg" alt="Image placeholder"
+								class="rounded-circle mx-auto">
+						</div>
+						<blockquote>
+
+							<p>&ldquo;A small river named Duden flows by their place and
+								supplies it with the necessary regelialia. It is a paradisematic
+								country, in which roasted parts of sentences fly into your
+								mouth.&rdquo;</p>
+						</blockquote>
+						<p>
+							<em>&mdash; Jean Smith</em>
+						</p>
+					</div>
+
+					<div class="testimonial text-center slider-item">
+						<div class="author-image mb-3">
+							<img src="resources/images/person_2.jpg" alt="Image placeholder"
+								class="rounded-circle mx-auto">
+						</div>
+						<blockquote>
+							<p>&ldquo;Even the all-powerful Pointing has no control about
+								the blind texts it is an almost unorthographic life One day
+								however a small line of blind text by the name of Lorem Ipsum
+								decided to leave for the far World of Grammar.&rdquo;</p>
+						</blockquote>
+						<p>
+							<em>&mdash; John Doe</em>
+						</p>
+					</div>
+
+					<div class="testimonial text-center slider-item">
+						<div class="author-image mb-3">
+							<img src="resources/images/person_3.jpg" alt="Image placeholder"
+								class="rounded-circle mx-auto">
+						</div>
+						<blockquote>
+
+							<p>&ldquo;When she reached the first hills of the Italic
+								Mountains, she had a last view back on the skyline of her
+								hometown Bookmarksgrove, the headline of Alphabet Village and
+								the subline of her own road, the Line Lane.&rdquo;</p>
+						</blockquote>
+						<p>
+							<em>&mdash; John Doe</em>
+						</p>
+					</div>
+
+
+					<div class="testimonial text-center slider-item">
+						<div class="author-image mb-3">
+							<img src="resources/images/person_1.jpg" alt="Image placeholder"
+								class="rounded-circle mx-auto">
+						</div>
+						<blockquote>
+
+							<p>&ldquo;A small river named Duden flows by their place and
+								supplies it with the necessary regelialia. It is a paradisematic
+								country, in which roasted parts of sentences fly into your
+								mouth.&rdquo;</p>
+						</blockquote>
+						<p>
+							<em>&mdash; Jean Smith</em>
+						</p>
+					</div>
+
+					<div class="testimonial text-center slider-item">
+						<div class="author-image mb-3">
+							<img src="resources/images/person_2.jpg" alt="Image placeholder"
+								class="rounded-circle mx-auto">
+						</div>
+						<blockquote>
+							<p>&ldquo;Even the all-powerful Pointing has no control about
+								the blind texts it is an almost unorthographic life One day
+								however a small line of blind text by the name of Lorem Ipsum
+								decided to leave for the far World of Grammar.&rdquo;</p>
+						</blockquote>
+						<p>
+							<em>&mdash; John Doe</em>
+						</p>
+					</div>
+
+					<div class="testimonial text-center slider-item">
+						<div class="author-image mb-3">
+							<img src="resources/images/person_3.jpg" alt="Image placeholder"
+								class="rounded-circle mx-auto">
+						</div>
+						<blockquote>
+
+							<p>&ldquo;When she reached the first hills of the Italic
+								Mountains, she had a last view back on the skyline of her
+								hometown Bookmarksgrove, the headline of Alphabet Village and
+								the subline of her own road, the Line Lane.&rdquo;</p>
+						</blockquote>
+						<p>
+							<em>&mdash; John Doe</em>
+						</p>
+					</div>
+
 				</div>
-			</div>
-			<div class="site-block-half d-block d-lg-flex bg-white"
-				data-aos="fade" data-aos-delay="200">
-				<a href="#" class="image d-block bg-image-2 order-2"
-					style="background-image: url('<%=request.getContextPath()%>/resources/images/img_2.jpg');"></a>
-				<div class="text order-1">
-					<span class="d-block mb-4"><span
-						class="display-4 text-primary">$299</span> <span
-						class="text-uppercase letter-spacing-2">/ per night</span> </span>
-					<h2 class="mb-4">Presidential Room</h2>
-					<p>Far far away, behind the word mountains, far from the
-						countries Vokalia and Consonantia, there live the blind texts.
-						Separated they live in Bookmarksgrove right at the coast of the
-						Semantics, a large language ocean.</p>
-					<p>
-						<a href="#" class="btn btn-primary text-white">Book Now</a>
-					</p>
-				</div>
+				<!-- END slider -->
 			</div>
 
 		</div>
 	</section>
 
+
+
 	<section class="section bg-image overlay"
-		style="background-image: url('images/hero_4.jpg');">
+		style="background-image: url('resources/images/hero_4.jpg');">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-12 col-md-6 text-center mb-4 mb-md-0 text-md-left"
@@ -208,7 +241,7 @@
 				</div>
 				<div class="col-12 col-md-6 text-center text-md-right"
 					data-aos="fade-up" data-aos-delay="200">
-					<a href="reservation.html"
+					<a href="rooms_user"
 						class="btn btn-outline-white-primary py-3 text-white px-5">Reserve
 						Now</a>
 				</div>
@@ -307,31 +340,5 @@
 
 
 	<script src="resources/js/main.js"></script>
-
-
-
-
-	<script>
-		// Get the modal
-		var modal = document.getElementById('myModal');
-
-		// Get the image and insert it inside the modal - use its "alt" text as a caption
-		var img = document.getElementById('myImg');
-		var modalImg = document.getElementById("img01");
-		var captionText = document.getElementById("caption");
-		img.onclick = function() {
-			modal.style.display = "block";
-			modalImg.src = this.src;
-			captionText.innerHTML = this.alt;
-		}
-
-		// Get the <span> element that closes the modal
-		var span = document.getElementsByClassName("close")[0];
-
-		// When the user clicks on <span> (x), close the modal
-		span.onclick = function() {
-			modal.style.display = "none";
-		}
-	</script>
 </body>
 </html>

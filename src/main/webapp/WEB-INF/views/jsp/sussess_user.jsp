@@ -13,6 +13,8 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta name="author" content="" />
+<link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+	rel="stylesheet">
 <!--  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=|Roboto+Sans:400,700|Playfair+Display:400,700"> -->
 
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
@@ -78,7 +80,7 @@
 			<div
 				class="row site-hero-inner justify-content-center align-items-center">
 				<div class="col-md-10 text-center" data-aos="fade">
-					<h1 class="heading mb-3">Create Customer</h1>
+					<h1 class="heading mb-3">Successful registration of customer information</h1>
 					<ul class="custom-breadcrumbs mb-4">
 						<li><a href="index_user">Home</a></li>
 						<li>&bullet;</li>
@@ -99,7 +101,7 @@
 	<section class="section contact-section" id="next">
 		<div class="container">
 			<button class="button">
-				<a href="reservation_user" /><span>Next</span>
+				<a href="reservation_user" /><i class="fas fa-forward"></i><span>Next reservation</span>
 			</button>
 		</div>
 	</section>

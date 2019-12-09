@@ -3,6 +3,7 @@ package com.had.hotelmanagement.controller;
 import java.io.File;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,7 +20,6 @@ import com.had.hotelmanagement.entity.Customer;
 import com.had.hotelmanagement.service.CustomerService;
 import com.had.hotelmanagement.service.ReceptionService;
 import com.had.hotelmanagement.service.ReservationService;
-
 
 @Controller
 @RequestMapping(value = "")
@@ -42,7 +42,7 @@ public class CustomerController {
 		model.addAttribute("customer", new Customer());
 		return "customer-save";
 	}
-	
+
 	@RequestMapping(value = "/customer_user")
 	public String insertCustomerUser(Model model) {
 		model.addAttribute("customer", new Customer());
@@ -63,7 +63,7 @@ public class CustomerController {
 		if (image.isEmpty()) {
 		} else {
 			try {
-				String path = "E:\\study-fpoly\\datn\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
+				String path = "E:\\DuAn2\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
 						+ image.getOriginalFilename();
 
 				image.transferTo(new File(path));
@@ -79,17 +79,18 @@ public class CustomerController {
 
 	@RequestMapping(value = "/saveCustomerUser", method = RequestMethod.POST)
 	public String doSaveCustomerUser(ModelMap model, HttpServletRequest request,
-			@ModelAttribute("customer") Customer customer, @RequestParam("uploadImg") MultipartFile image) {
-
+			@ModelAttribute("customer") Customer customer, @RequestParam("uploadImg") MultipartFile image,
+			@RequestParam("name") String name, HttpSession session) {
 		if (image.isEmpty()) {
 		} else {
 			try {
-				String path = "E:\\study-fpoly\\datn\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
+				String path = "E:\\DuAn2\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
 						+ image.getOriginalFilename();
 
 				image.transferTo(new File(path));
 				customer.setImage(image.getOriginalFilename());
 				customerService.save(customer);
+				session.setAttribute("name", name);
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
@@ -104,7 +105,7 @@ public class CustomerController {
 			customerService.update(customer);
 		} else {
 			try {
-				String path = "E:\\study-fpoly\\datn\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
+				String path = "E:\\DuAn2\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
 						+ image.getOriginalFilename();
 
 				image.transferTo(new File(path));

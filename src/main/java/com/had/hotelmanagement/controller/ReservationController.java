@@ -77,7 +77,7 @@ public class ReservationController {
 		reservationService.save(reservation);
 		model.addAttribute("listReservation", reservationService.findAll());
 		model.addAttribute("listRoom", roomService.findAll());
-		return "index_user";
+		return "reservationsuccess_user";
 	}
 
 	@RequestMapping("/updateReservation")

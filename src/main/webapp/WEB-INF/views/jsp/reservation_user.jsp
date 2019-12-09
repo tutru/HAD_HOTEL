@@ -65,7 +65,6 @@
 											<li><a href="about" />About</a></li>
 											<li><a href="events" />Events</a></li>
 											<li><a href="contact" />Contact</a></li>
-											<li class="active"><a href="reservation_user" />Reservation</a></li>
 											<li><a href="service-user" />Service</a></li>
 										</ul>
 									</div>
@@ -91,6 +90,8 @@
 						<li><a href="index_user">Home</a></li>
 						<li>&bullet;</li>
 						<li>Reservation</li>
+						</br>
+						<li>Welcome customer : ${name}</li>
 					</ul>
 				</div>
 			</div>
@@ -106,57 +107,59 @@
 
 	<section class="section contact-section" id="next">
 		<div class="container">
-		<c:url value="/saveReservationUser" var="saveReservationUser" />
-				<form:form action="${saveReservationUser}" method="POST"
-					modelAttribute="reservation">
-					<div class="form-row">
-						<div class="form-group col-md-6">
-							 <label>Customer</label> <select class="form-control"
-								name="customerid">
-								<c:if test="${not empty listCustomer}">
-									<c:forEach var="customer" items="${listCustomer}">
-										<option value=${customer.customerid}>${customer.name}</option>
-									</c:forEach>
-								</c:if>
-							</select> <br /> <label>Room Type</label> <select class="form-control"
-								name="roomtypeid">
-								<c:if test="${not empty listRoomType}">
-									<c:forEach var="roomType" items="${listRoomType}">
-										<option value=${roomType.roomtypeid}>${roomType.roomtypename}</option>
-									</c:forEach>
-								</c:if>
-							</select> <br /> <label>Expected Check Date</label>
-							<form:input class="form-control" path="expectedcheckdate"
-								id="datepicker" placeholder="Expected Check Date" required="required" pattern="[a-z]\{20}"
-								title="Please choose Date"/>
-							<script>
-								$(function() {
-									$.datepicker.setDefaults({
-										onClose : function(date, inst) {
-											$("#selectedDtaeVal").html(date);
-										}
-									});
-
-									$("#datepicker").datepicker({
-										dateFormat : 'yy-mm-dd'
-									});
+			<c:url value="/saveReservationUser" var="saveReservationUser" />
+			<form:form action="${saveReservationUser}" method="POST"
+				modelAttribute="reservation">
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label>Customer</label> <select class="form-control"
+							name="customerid" readonly="true">
+							<c:forEach var="customer" items="${listCustomer}">
+								<option value=${customer.customerid}>${name}</option>
+							</c:forEach>
+						</select> <br /> <label>Room Type</label> <select class="form-control"
+							name="roomtypeid">
+							<c:if test="${not empty listRoomType}">
+								<c:forEach var="roomType" items="${listRoomType}">
+									<option value=${roomType.roomtypeid}>${roomType.roomtypename}</option>
+								</c:forEach>
+							</c:if>
+						</select> <br /> <label>Expected Check Date</label>
+						<form:input class="form-control" path="expectedcheckdate"
+							id="datepicker" placeholder="Expected Check Date"
+							required="required" pattern="[a-z]\{20}"
+							title="Please choose Date" />
+						<script>
+							$(function() {
+								$.datepicker.setDefaults({
+									onClose : function(date, inst) {
+										$("#selectedDtaeVal").html(date);
+									}
 								});
-							</script>
-							<br />
-						</div>
-						<div class="form-group col-md-6">
-							<label>Expected Room:</label>
-							<form:input class="form-control" path="expectedroom" />
-							<br /> <label>Advance Deposit:</label>
-							<form:input class="form-control" path="isdeposit" required="required" pattern="[0-9]\{20}"
-								title="Please type Deposit"/>
-							<br /> <label>Status:</label>
-							<form:textarea rows="2" class="form-control" path="reservationstatus"
-								placeholder="Reservation Status" />
-							<br />
-						</div>
-				</form:form>
-				<button type="submit" class="btn btn-success"> <i class="far fa-save"></i> Save</button>
+
+								$("#datepicker").datepicker({
+									dateFormat : 'yy-mm-dd'
+								});
+							});
+						</script>
+						<br />
+					</div>
+					<div class="form-group col-md-6">
+						<label>Expected Room:</label>
+						<form:input class="form-control" path="expectedroom" />
+						<br /> <label>Advance Deposit:</label>
+						<form:input class="form-control" path="isdeposit"
+							required="required" pattern="[0-9]\{20}"
+							title="Please type Deposit" />
+						<br /> <label>Status:</label>
+						<form:textarea rows="2" class="form-control"
+							path="reservationstatus" placeholder="Reservation Status" />
+						<br />
+					</div>
+			</form:form>
+			<button type="submit" class="btn btn-success">
+				<i class="far fa-save"></i> Save
+			</button>
 		</div>
 	</section>
 
@@ -374,7 +377,7 @@
 		</div>
 	</footer>
 
-	
+
 	<script src="resources/js/popper.min.js"></script>
 	<script src="resources/js/bootstrap.min.js"></script>
 	<script src="resources/js/owl.carousel.min.js"></script>
