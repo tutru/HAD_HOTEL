@@ -149,8 +149,7 @@
 					<h6 class="dropdown-header">Room Status:</h6>
 					<a class="dropdown-item" href="<c:url value="/roomstatus-list"/>">List
 						Room Status</a> <a class="dropdown-item"
-						href="<c:url value="/roomstatus-save"/>">Create Room Status
-					</a>
+						href="<c:url value="/roomstatus-save"/>">Create Room Status </a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room:</h6>
 					<a class="dropdown-item" href="<c:url value="/room-list"/>">List
@@ -220,14 +219,14 @@
 					<c:url value="/updaterole" var="updaterole" />
 					<form:form name="myForm" action="${updaterole}"
 						modelAttribute="role" onsubmit="return validateForm()">
-						
+
 						<label>ID</label>
-						<form:input path="roleid" class="form-control"/>
+						<form:input path="roleid" class="form-control" />
 
 						<br />
 						<label>Role Name</label>
 						<form:input path="rolename" class="form-control"
-							placeholder="Please Enter Your Name" />
+							placeholder="Please Enter Your Name" readonly="true" />
 
 						<br />
 

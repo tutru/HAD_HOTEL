@@ -40,24 +40,24 @@ public class AccountController {
 		return "save-account";
 	}
 
-	@RequestMapping(value = "/saveaccount", method = RequestMethod.GET)
+	@RequestMapping(value = "/saveaccount", method = RequestMethod.POST)
 	public ModelAndView doSaveaccount(ModelMap model, @RequestParam("username") String username,
 			@ModelAttribute("account") Account account) {
 
 		ModelAndView mv = new ModelAndView();
 		account.setUsername(username);
 		String user = dao.ckeck(account);
+		
 		if (user.equals("0")) {
 			service.save(account);
 			model.addAttribute("list", service.findAll());
-			mv.addObject("msg", "thành công");
 			mv.setViewName("list-account");
 		}
 
 		else {
 
 			mv.setViewName("save-account");
-			mv.addObject("msg", "tài khoản có người đăng kí");
+			mv.addObject("msg", "The account has subscribers");
 			mv.addObject("listEmployee", service.listEmployee());
 			mv.addObject("listRole", service.listRole());
 		}

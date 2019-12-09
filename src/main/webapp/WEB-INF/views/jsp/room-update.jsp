@@ -253,7 +253,7 @@
 						<div class="form-group row">
 							<div class="col-md-6">
 								<label>Room Number: </label>
-								<form:input class="form-control" path="roomnumber" />
+								<form:input class="form-control" path="roomnumber" readonly="true" />
 
 							</div>
 							<br /> <br />

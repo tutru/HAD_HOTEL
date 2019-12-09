@@ -224,7 +224,7 @@
 				<c:url value="/saveRoom" var="saveRoom" />
 				<form:form id="roomsAdd" action="${saveRoom}" modelAttribute="room"
 					enctype="multipart/form-data" onsubmit="return validateForm()"
-					name="myForm">
+					name="myForm" method="POST">
 					<div class="form-group row">
 						<div class="col-md-6">
 							<label> Name Room Type:</label> <select name="roomtypeid"
@@ -255,14 +255,15 @@
 							<label>Room Number: </label>
 							<form:input class="form-control" path="roomnumber"
 								placeholder="Room number" required="required"
-								pattern="[0-9]{1,2}" title="Please enter room number" />
-
+								title="Please enter room number" type="number" />
+							<div style="color: red;">${msg}</div>
 						</div>
+
 						<br /> <br />
 						<div class="col-md-6">
 							<label>Price</label>
 							<form:input class="form-control" path="roomprice"
-								placeholder="Price" required="required" pattern="[0-9]{7,8}"
+								placeholder="Price" required="required" type="number"
 								title="Please enter price" />
 
 						</div>
@@ -311,7 +312,7 @@
 							<label>Room Desc</label>
 							<textarea name="roomdesc" rows="3" cols="50" class="form-control"
 								required="required" title="Please enter desc" placeholder="desc">
-</textarea>
+                       </textarea>
 						</div>
 					</div>
 					<br />

@@ -196,7 +196,7 @@
 					<c:url value="/saveaccount" var="saveaccount" />
 					<form:form name="myForm" action="${saveaccount}"
 						modelAttribute="account" onsubmit="return validateForm()"
-						method="GET">
+						method="POST">
 
 						<div class="form-group col-12">
 
