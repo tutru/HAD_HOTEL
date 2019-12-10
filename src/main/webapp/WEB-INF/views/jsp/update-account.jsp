@@ -262,22 +262,10 @@
 				</script>
 
 			</div>
-		</div>
-
-		<!-- Sticky Footer -->
-		<footer class="sticky-footer">
-			<div class="container my-auto">
-				<div class="copyright text-center my-auto">
-					<span>Copyright © HAD Hotel 2019</span>
-				</div>
-			</div>
-		</footer>
-
+		</div>	
+	<!-- Sticky Footer -->
+		
 	</div>
-	<!-- /.content-wrapper -->
-
-
-	<!-- /#wrapper -->
 
 	<!-- Scroll to Top Button-->
 	<a class="scroll-to-top rounded" href="#page-top"> <i
@@ -326,5 +314,7 @@
 
 	<!-- Demo scripts for this page-->
 	<script src="<c:url value="/resources/js/demo/datatables-demo.js"/>"></script>
+	<!-- Sticky Footer -->
+		
 </body>
 </html>

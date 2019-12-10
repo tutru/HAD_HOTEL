@@ -211,118 +211,117 @@
 				<div class="card mb-3">
 					<div class="card-header">
 						<i class="fas fa-table"></i> Account
-						<button type="submit"
-						 class="btn btn-primary float-right">
-							<a style="text-decoration: none;color: white" href="<c:url value="/save-account"/>"><i
+						<button type="submit" class="btn btn-primary float-right">
+							<a style="text-decoration: none; color: white"
+								href="<c:url value="/save-account"/>"><i
 								class="far fa-plus-square"></i> Account Save</a>
 						</button>
-					</div>				
-						<div class="card-body">
-							<div class="table-responsive">
+					</div>
+					<div class="card-body">
+						<div class="table-responsive">
 
-								<table class="table table-bordered" id="dataTable" width="100%"
-									cellspacing="0">
-									<thead>
+							<table class="table table-bordered" id="dataTable" width="100%"
+								cellspacing="0">
+								<thead>
+									<tr>
+										<td>Id</td>
+										<td>Employee Name</td>
+										<td>Role Name</td>
+										<td>User name</td>
+										<td>PassWord</td>
+										<td>Edit</td>
+										<td>Delete</td>
+									</tr>
+								</thead>
+								<c:if test="${not empty list}">
+									<c:forEach var="ac" items="${list}">
 										<tr>
-											<td>Id</td>
-											<td>Employee Name</td>
-											<td>Role Name</td>
-											<td>User name</td>
-											<td>PassWord</td>
-											<td></td>
-											<td></td>
+											<td>${ac.accountid}</td>
+											<td>${ac.name}</td>
+											<td>${ac.rolename}</td>
+											<td>${ac.username}</td>
+											<td>${ac.password}</td>
+											<td>
+												<button type="submit" class="btn btn-primary">
+													<a href="${urlUpdate}/${ac.accountid}"><i
+														class="fas fa-pen" style="color: black"></i></a>
+												</button>
+											</td>
+											<td>
+												<button type="submit" class="btn btn-danger">
+													<a href="${urlDelete}/${ac.accountid}"><i
+														class="fas fa-trash-alt" style="color: black"></i></a>
+												</button>
+											</td>
 										</tr>
-									</thead>
-									<c:if test="${not empty list}">
-										<c:forEach var="ac" items="${list}">
-											<tr>
-												<td>${ac.accountid}</td>
-												<td>${ac.name}</td>
-												<td>${ac.rolename}</td>
-												<td>${ac.username}</td>
-												<td>${ac.password}</td>
-												<td>
-													<button type="submit" class="btn btn-primary">
-														<a href="${urlUpdate}/${ac.accountid}"><i
-															class="fas fa-pen" style="color: black"></i></a>
-													</button>
-												</td>
-												<td>
-													<button type="submit" class="btn btn-danger">
-														<a href="${urlDelete}/${ac.accountid}"><i
-															class="fas fa-trash-alt" style="color: black"></i></a>
-													</button>
-												</td>
-											</tr>
-										</c:forEach>
-									</c:if>
-								</table>
-							</div>
+									</c:forEach>
+								</c:if>
+							</table>
 						</div>
 					</div>
 				</div>
 			</div>
-
-			<!-- Sticky Footer -->
-			<footer class="sticky-footer">
-				<div class="container my-auto">
-					<div class="copyright text-center my-auto">
-						<span>Copyright © HAD Hotel 2019</span>
-					</div>
-				</div>
-			</footer>
-
 		</div>
-		<!-- /.content-wrapper -->
+
+		<!-- Sticky Footer -->
+		<footer class="sticky-footer">
+			<div class="container my-auto">
+				<div class="copyright text-center my-auto">
+					<span>Copyright © HAD Hotel 2019</span>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+	<!-- /.content-wrapper -->
 
 
-		<!-- /#wrapper -->
+	<!-- /#wrapper -->
 
-		<!-- Scroll to Top Button-->
-		<a class="scroll-to-top rounded" href="#page-top"> <i
-			class="fas fa-angle-up"></i>
-		</a>
+	<!-- Scroll to Top Button-->
+	<a class="scroll-to-top rounded" href="#page-top"> <i
+		class="fas fa-angle-up"></i>
+	</a>
 
-		<!-- Logout Modal-->
-		<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
-			aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Ready to
-							Leave?</h5>
-						<button class="close" type="button" data-dismiss="modal"
-							aria-label="Close">
-							<span aria-hidden="true">×</span>
-						</button>
-					</div>
-					<div class="modal-body">Select "Logout" below if you are
-						ready to end your current session.</div>
-					<div class="modal-footer">
-						<button class="btn btn-secondary" type="button"
-							data-dismiss="modal">Cancel</button>
-						<a class="btn btn-primary" href="<c:url value="/logout"/>">Logout</a>
-					</div>
+	<!-- Logout Modal-->
+	<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+					<button class="close" type="button" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				<div class="modal-body">Select "Logout" below if you are ready
+					to end your current session.</div>
+				<div class="modal-footer">
+					<button class="btn btn-secondary" type="button"
+						data-dismiss="modal">Cancel</button>
+					<a class="btn btn-primary" href="<c:url value="/logout"/>">Logout</a>
 				</div>
 			</div>
 		</div>
+	</div>
 
 
-		<!-- Bootstrap core JavaScript-->
-		<script src="<c:url value="/resources/vendor/jquery/jquery.min.js"/>"></script>
-		<script
-			src="<c:url value="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
-		<!-- Core plugin JavaScript-->
-		<script
-			src="<c:url value="/resources/vendor/jquery-easing/jquery.easing.min.js"/>"></script>
-		<!-- Page level plugin JavaScript-->
-		<script
-			src="<c:url value="/resources/vendor/datatables/jquery.dataTables.js"/>"></script>
-		<script
-			src="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.js"/>"></script>
-		<!-- Custom scripts for all pages-->
-		<script src="<c:url value="/resources/js/sb-admin.min.js"/>"></script>
-		<!-- Demo scripts for this page-->
-		<script src="<c:url value="/resources/js/demo/datatables-demo.js"/>"></script>
+	<!-- Bootstrap core JavaScript-->
+	<script src="<c:url value="/resources/vendor/jquery/jquery.min.js"/>"></script>
+	<script
+		src="<c:url value="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
+	<!-- Core plugin JavaScript-->
+	<script
+		src="<c:url value="/resources/vendor/jquery-easing/jquery.easing.min.js"/>"></script>
+	<!-- Page level plugin JavaScript-->
+	<script
+		src="<c:url value="/resources/vendor/datatables/jquery.dataTables.js"/>"></script>
+	<script
+		src="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.js"/>"></script>
+	<!-- Custom scripts for all pages-->
+	<script src="<c:url value="/resources/js/sb-admin.min.js"/>"></script>
+	<!-- Demo scripts for this page-->
+	<script src="<c:url value="/resources/js/demo/datatables-demo.js"/>"></script>
 </body>
 </html>

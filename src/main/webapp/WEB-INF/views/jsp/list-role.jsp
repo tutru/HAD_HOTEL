@@ -227,8 +227,8 @@
 										<td>Id</td>
 										<td>Employee</td>
 										<td>Role</td>
-										<td></td>
-										<td></td>
+										<td>Edit</td>
+										<td>Delete</td>
 									</tr>
 								</thead>
 								<c:if test="${not empty list}">
