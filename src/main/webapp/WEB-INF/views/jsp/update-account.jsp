@@ -4,7 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8" import="java.sql.*"%>
 <html lang="vn">
-<head>
+<head>  
 <title>HAD Hotel</title>
 
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
