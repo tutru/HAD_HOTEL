@@ -240,8 +240,8 @@
 				</div>
 				<div class="col-12 col-md-6 text-center text-md-right"
 					data-aos="fade-up" data-aos-delay="200">
-					<a href="reservation.html"
-						class="btn btn-outline-white-primary py-3 text-white px-5">Reserve
+					<a href="sussess_user" "
+						class="btn btn-outline-white-primary py-3 text-white px-5">Success
 						Now</a>
 				</div>
 			</div>

@@ -343,8 +343,7 @@
 					<p>
 						<span class="d-block"><span
 							class="ion-ios-location h5 mr-3 text-primary"></span>Address:</span> <span>
-							198 West 21th Street, <br> Suite 721 New York NY 10016
-						</span>
+							132 Ly Tu Trong Street, Quận 1, TP. Hồ Chí Minh, Việt Nam </span>
 					</p>
 					<p>
 						<span class="d-block"><span
@@ -354,7 +353,7 @@
 					<p>
 						<span class="d-block"><span
 							class="ion-ios-email h5 mr-3 text-primary"></span>Email:</span> <span>
-							info@domain.com</span>
+							had@gmail.com</span>
 					</p>
 				</div>
 				<div class="col-md-3 mb-5">
