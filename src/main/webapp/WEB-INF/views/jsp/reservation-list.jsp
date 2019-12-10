@@ -125,7 +125,6 @@
 					<a class="dropdown-item" href="<c:url value="/employee-list"/>">List
 						Employee</a> <a class="dropdown-item"
 						href="<c:url value="/employee-save"/>">Create Employee</a>
-					<div class="dropdown-divider"></div>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
@@ -156,8 +155,7 @@
 					<h6 class="dropdown-header">Room Status:</h6>
 					<a class="dropdown-item" href="<c:url value="/roomstatus-list"/>">List
 						Room Status</a> <a class="dropdown-item"
-						href="<c:url value="/roomstatus-save"/>">Create Room Status
-					</a>
+						href="<c:url value="/roomstatus-save"/>">Create Room Status</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room:</h6>
 					<a class="dropdown-item" href="<c:url value="/room-list"/>">List
@@ -188,7 +186,7 @@
 					<h6 class="dropdown-header">Reservation:</h6>
 					<a class="dropdown-item" href="<c:url value="/reservation-list"/>">List
 						Reservation</a> <a class="dropdown-item"
-						href="<c:url value="/reservation-save"/>">Create Resertvation</a>
+						href="<c:url value="/reservation-save"/>">Create Reservation</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Reception:</h6>
 					<a class="dropdown-item" href="<c:url value="/reception-list"/>">List

@@ -114,7 +114,7 @@ text-decoration: none
 	</nav>
 	<div id="wrapper">
 
-		<!-- Sidebar -->
+	<!-- Sidebar -->
 		<ul class="sidebar navbar-nav">
 			<li class="nav-item active"><a class="nav-link"
 				href="<c:url value="/index"/>"> <i class="fas fa-home"></i> <span>Home</span>
@@ -164,8 +164,7 @@ text-decoration: none
 					<h6 class="dropdown-header">Room Status:</h6>
 					<a class="dropdown-item" href="<c:url value="/roomstatus-list"/>">List
 						Room Status</a> <a class="dropdown-item"
-						href="<c:url value="/roomstatus-save"/>">Create Room Status
-						</a>
+						href="<c:url value="/roomstatus-save"/>">Create Room Status</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Room:</h6>
 					<a class="dropdown-item" href="<c:url value="/room-list"/>">List

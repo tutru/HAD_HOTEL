@@ -113,7 +113,7 @@ text-decoration: none
 	</nav>
 	<div id="wrapper">
 
-		<!-- Sidebar -->
+	<!-- Sidebar -->
 		<ul class="sidebar navbar-nav">
 			<li class="nav-item active"><a class="nav-link"
 				href="<c:url value="/index"/>"> <i class="fas fa-home"></i> <span>Home</span>
