@@ -227,8 +227,13 @@
 						path="paymenttypedesc" required="required" pattern="[a-z]\{4}"
 						title="Do not enter number and enter at least 4 words" />
 					<br />
-					<button class="btn btn-danger" type="submit">Save</button>
-
+					<button class="btn btn-danger" type="submit">
+						<i style="margin-right: 4px" class="far fa-save"></i>Save
+					</button>
+					<form:button id="editbutton" type="submit" class="btn btn-danger">
+						<a style="color: white" href="<c:url value="/paymenttype-list" />"><i
+							style="margin-right: 4px" class="far fa-arrow-alt-circle-left"></i>Return</a>
+					</form:button>	
 				</form:form>
 			</div>
 		</div>
