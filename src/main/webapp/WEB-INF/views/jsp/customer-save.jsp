@@ -31,6 +31,14 @@
 
 <!-- Custom styles for this template-->
 <link href="resources/css/sb-admin.css" rel="stylesheet">
+<style type="text/css">
+#editbutton a{
+color: white
+}
+#editbutton a{
+text-decoration: none
+}
+</style>
 </head>
 
 <body id="page-top">
@@ -285,11 +293,11 @@
 												handleFileSelect, false);
 							</script>
 							<br />
-							<button type="submit" class="btn btn-success">Save</button>
-							<button type="submit" class="btn btn-danger">
-								<a href="<c:url value="/customer-list" />"><i
-									class="fas fa-window-close"></i></a>
-							</button>
+							<br/>
+							<button type="submit" class="btn btn-success"> <i class="far fa-save"></i>Save</button>
+							<form:button id="editbutton" type="submit" class="btn btn-danger">
+								<a href="<c:url value="/customer-list" />"><i class="far fa-arrow-alt-circle-left"></i>Return</a>
+							</form:button>
 						</div>
 				</form:form>
 			</div>

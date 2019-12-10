@@ -24,7 +24,14 @@
 	href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/custom.css"></c:url>">
-
+<style type="text/css">
+#editbutton a{
+color: white
+}
+#editbutton a{
+text-decoration: none
+}
+</style>
 </head>
 <body id="page-top">
 	<c:url value="/reception-save" var="urlSave" />

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sogo Hotel by Colorlib.com</title>
+    <title>HAD Events</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -208,11 +208,24 @@
             </ul>
           </div>
           <div class="col-md-3 mb-5 pr-md-5 contact-info">
-            <!-- <li>198 West 21th Street, <br> Suite 721 New York NY 10016</li> -->
-            <p><span class="d-block"><span class="ion-ios-location h5 mr-3 text-primary"></span>Address:</span> <span> 198 West 21th Street, <br> Suite 721 New York NY 10016</span></p>
-            <p><span class="d-block"><span class="ion-ios-telephone h5 mr-3 text-primary"></span>Phone:</span> <span> (+1) 435 3533</span></p>
-            <p><span class="d-block"><span class="ion-ios-email h5 mr-3 text-primary"></span>Email:</span> <span> info@domain.com</span></p>
-          </div>
+					<!-- <li>198 West 21th Street, <br> Suite 721 New York NY 10016</li> -->
+					<p>
+						<span class="d-block"><span
+							class="ion-ios-location h5 mr-3 text-primary"></span>Address:</span> <span>
+							132 Ly Tu Trong Street, Quận 1, TP. Hồ Chí Minh, Việt Nam
+						</span>
+					</p>
+					<p>
+						<span class="d-block"><span
+							class="ion-ios-telephone h5 mr-3 text-primary"></span>Phone:</span> <span>
+							(+1) 435 3533</span>
+					</p>
+					<p>
+						<span class="d-block"><span
+							class="ion-ios-email h5 mr-3 text-primary"></span>Email:</span> <span>
+							had@gmail.com</span>
+					</p>
+				</div>
           <div class="col-md-3 mb-5">
             <p>Sign up for our newsletter</p>
             <form action="#" class="footer-newsletter">

@@ -3,7 +3,7 @@
 <%@ page isELIgnored="false"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8" import="java.sql.*"%>
-<html lang="vn"> 
+<html lang="vn">
 <link rel="stylesheet"
 	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -28,7 +28,15 @@
 	href="<c:url value="/resources/css/sb-admin.css"></c:url>">
 <link rel="stylesheet"
 	href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
+<style type="text/css">
+#editbutton a {
+	color: white
+}
 
+#editbutton a {
+	text-decoration: none
+}
+</style>
 
 </head>
 
@@ -36,7 +44,7 @@
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-	<a class="navbar-brand mr-1" href="<c:url value="/admin"/>"><img
+		<a class="navbar-brand mr-1" href="<c:url value="/admin"/>"><img
 			src="<%=request.getContextPath()%>/resources/image/logo.JPG"
 			width="120"></a>
 
@@ -113,8 +121,8 @@
 				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
 					class="fas fa-money-check-alt"></i> <span>Payment</span> </a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
-				
-				
+
+
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Payment:</h6>
 					<a class="dropdown-item" href="<c:url value="/payment-list-user"/>">List
@@ -128,18 +136,21 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Reservation:</h6>
-					<a class="dropdown-item" href="<c:url value="/reservation-list-user"/>">List
+					<a class="dropdown-item"
+						href="<c:url value="/reservation-list-user"/>">List
 						Reservation</a> <a class="dropdown-item"
-						href="<c:url value="/reservation-save-user"/>">Create Resertvation</a>
+						href="<c:url value="/reservation-save-user"/>">Create
+						Resertvation</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Reception:</h6>
-					<a class="dropdown-item" href="<c:url value="/reception-list-user"/>">List
-						Reception</a> <a class="dropdown-item"
-						href="<c:url value="/reception-save-user"/>">Create Reception</a>
+					<a class="dropdown-item"
+						href="<c:url value="/reception-list-user"/>">List Reception</a> <a
+						class="dropdown-item" href="<c:url value="/reception-save-user"/>">Create
+						Reception</a>
 				</div></li>
 
 		</ul>
-		
+
 		<div id="content-wrapper">
 
 			<div class="container-fluid">
@@ -189,13 +200,13 @@
 							<form:input class="form-control" path="isdeposit" />
 							<br /> <label>Reservation Status:</label>
 							<form:input class="form-control" path="reservationstatus" />
-							<br /> <br />
-
-							<button type="submit" class="btn btn-success">Update</button>
-							<button type="submit">
-								<a href="<c:url value="/reservation-list-user" />">List
-									Reservation</a>
-							</button>
+							<br /> <br /> <br />
+							<form:button type="submit" class="btn btn-success">
+								<i class="far fa-edit"></i> Update</form:button>
+							<form:button id="editbutton" type="submit" class="btn btn-danger">
+								<a href="<c:url value="/reservation-list-user" />"><i
+									class="far fa-arrow-alt-circle-left"></i>Return</a>
+							</form:button>
 				</form:form>
 			</div>
 		</div>

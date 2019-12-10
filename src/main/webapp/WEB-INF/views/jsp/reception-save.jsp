@@ -33,7 +33,14 @@
 <!-- Custom styles for this template-->
 <link href="resources/css/sb-admin.css" rel="stylesheet">
 
-
+<style type="text/css">
+#editbutton a{
+color: white
+}
+#editbutton a{
+text-decoration: none
+}
+</style>
 </head>
 
 <body id="page-top">
@@ -301,10 +308,12 @@
 							<br /> <label>Reception Status:</label>
 							<form:textarea rows="5" class="form-control" path="receptionstatus" />
 							<br />
-							<form:button type="submit" class="btn btn-success"> Save</form:button>
-							<button type="submit">
-								<a href="<c:url value="/reception-list"/>">List Reception</a>
-							</button>
+							<br />
+							<br/>
+							<button type="submit" class="btn btn-success"> <i class="far fa-save"></i>Save</button>
+							<form:button id="editbutton" type="submit" class="btn btn-danger">
+								<a href="<c:url value="/reception-list" />"><i class="far fa-arrow-alt-circle-left"></i>Return</a>
+							</form:button>
 						</div>
 				</form:form>
 			</div>

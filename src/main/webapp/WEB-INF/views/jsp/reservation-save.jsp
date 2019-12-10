@@ -28,7 +28,14 @@
 	href="<c:url value="/resources/css/sb-admin.css"></c:url>">
 <link rel="stylesheet"
 	href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
-
+<style type="text/css">
+#editbutton a{
+color: white
+}
+#editbutton a{
+text-decoration: none
+}
+</style>
 </head>
 
 <body id="page-top">
@@ -255,11 +262,11 @@
 							<form:textarea rows="5" class="form-control" path="reservationstatus"
 								placeholder="Reservation Status" />
 							<br />
-							<form:button type="submit" class="btn btn-success">Save</form:button>
-							<button type="submit">
-								<a href="<c:url value="/reservation-list"/>">List
-									Reservation</a>
-							</button>
+							<br/>
+							<button type="submit" class="btn btn-success"> <i class="far fa-save"></i>Save</button>
+							<form:button id="editbutton" type="submit" class="btn btn-danger">
+								<a href="<c:url value="/reservation-list" />"><i class="far fa-arrow-alt-circle-left"></i>Return</a>
+							</form:button>
 						</div>
 				</form:form>
 			</div>

@@ -28,7 +28,14 @@
 	href="<c:url value="/resources/css/sb-admin.css"></c:url>">
 <link rel="stylesheet"
 	href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
-
+<style type="text/css">
+#editbutton a{
+color: white
+}
+#editbutton a{
+text-decoration: none
+}
+</style>
 </head>
 
 <body id="page-top">
@@ -233,10 +240,11 @@
 							</select> <br />Status:
 							<form:input class="form-control" path="receptionstatus" />
 							<br /> <br />
-							<button type="submit" class="btn btn-success">Update</button>
-							<button type="submit">
-								<a href="<c:url value="/reservation-list-user" />">List Reception</a>
-							</button>
+							<form:button type="submit" class="btn btn-success"><i class="far fa-edit"></i> Update</form:button>
+							<form:button  id="editbutton" type="submit" class="btn btn-danger">
+								<a href="<c:url value="/reception-list-user" />"><i class="far fa-arrow-alt-circle-left"></i>Return</a>
+							</form:button>
+							</div>
 				</form:form>
 			</div>
 		</div>

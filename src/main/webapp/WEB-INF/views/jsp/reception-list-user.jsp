@@ -22,7 +22,14 @@
 	href="<c:url value="/resources/css/sb-admin.css"></c:url>">
 <link rel="stylesheet"
 	href="<c:url value="/resources/vendor/datatables/dataTables.bootstrap4.css"></c:url>">
-
+<style type="text/css">
+#editbutton a{
+color: white
+}
+#editbutton a{
+text-decoration: none
+}
+</style>
 </head>
 <body id="page-top">
 
@@ -155,9 +162,10 @@
 				<div class="card mb-3">
 					<div class="card-header">
 						<i class="fas fa-table"></i> List Reception
-						<button type="submit" class="btn btn-dark float-right">
-							<a href="<c:url value="/reception-save-user" />"> New
-								Reception</a>
+						<button id="editbutton" type="submit"
+							class="btn btn-primary float-right">
+							<a href="<c:url value="/reception-save-user" />"><i
+								class="far fa-plus-square"> </i>New Reception</a>
 						</button>
 					</div>
 					<div class="card-body">
