@@ -260,7 +260,8 @@ text-decoration: none
 							<form:input class="form-control" path="ccnumber"/>
 							<br /> <br /> <label>Image:</label>
 							<output id="list">
-								<img src="/HotelManagement/resources/image/441.jpg" width="120">
+								<img src="/HotelManagement/resources/image/441.jpg" width="120" heigh="100"
+									style="border: 2px solid #7bb8cc; border-radius: 6px">
 							</output>
 
 							<span class="input-group-btn"> <span
