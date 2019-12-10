@@ -227,7 +227,7 @@
 					</div>
 					<div class="card-body">
 						<div class="table-responsive">
-							<table class="table table-bordered" id="dataTable" width="100%"
+							<table id="example"  class="table table-bordered" id="dataTable" width="100%"
 								cellspacing="0">
 								<thead>
 									<tr>
@@ -333,6 +333,27 @@
 	<script src="<c:url value="/resources/js/sb-admin.min.js"/>"></script>
 	<!-- Demo scripts for this page-->
 	<script src="<c:url value="/resources/js/demo/datatables-demo.js"/>"></script>
+	
+	
+	<script src="<c:url value="https://code.jquery.com/jquery-3.3.1.js"/>"></script>
+	<script
+		src="<c:url value="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"/>"></script>
+	<script
+		src="<c:url value="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"/>"></script>
+	<script
+		src="<c:url value="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"/>"></script>
+	<script
+		src="<c:url value="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"/>"></script>
+	<script
+		src="<c:url value="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css"/>"></script>
+	<script>
+		$(document).ready(function() {
+			$('#example').DataTable({
+				dom : 'Bfrtip',
+				buttons : [ 'print' ]
+			});
+		});
+	</script>
 </body>
 </body>
 </html>
