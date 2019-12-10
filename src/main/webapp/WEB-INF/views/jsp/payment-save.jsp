@@ -237,8 +237,8 @@
 					<label>Payment Date</label>
 					<form:input class="form-control form-control-lg" path="paymentdate"
 						id="datepicker" placeholder="Payment Date" required="required"
+						pattern="[a-z]\{20}"
 						title="Do not enter number and enter at least 4 words" />
-
 					<script>
 						$(function() {
 							$.datepicker.setDefaults({
@@ -253,8 +253,16 @@
 					<br />
 					<div>
 						<button style="margin-bottom: 10px;" class="btn btn-danger"
-							type="submit">Save</button>
+							type="submit">
+							<i class="far fa-save" style="margin-right: 4px"></i>Save
+						</button>
+						<form:button  style="margin-bottom: 10px;" id="editbutton" type="submit" class="btn btn-danger">
+							<a style="color: white"
+								href="<c:url value="/payment-list" />"><i
+								style="margin-right: 4px" class="far fa-arrow-alt-circle-left"></i>Return</a>
+						</form:button>
 					</div>
+
 				</form:form>
 			</div>
 		</div>
@@ -296,7 +304,7 @@
 				<div class="modal-footer">
 					<button class="btn btn-secondary" type="button"
 						data-dismiss="modal">Cancel</button>
-				<a class="btn btn-primary" href="<c:url value="/logout"/>">Logout</a>
+					<a class="btn btn-primary" href="<c:url value="/logout"/>">Logout</a>
 				</div>
 			</div>
 		</div>

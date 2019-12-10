@@ -207,7 +207,7 @@
 						<i class="fas fa-table"></i> List Payment Type
 						<div style="float: right;color: white;text-decoration: none;	">
 						<button type="submit" class="btn btn-warning ">
-							<a href="<c:url value="/paymenttype-save" />"> New Payment Type</a>
+							<a href="<c:url value="/paymenttype-save" /> "class="far fa-plus-square" style="text-decoration: none; list-style: none;"> New Payment Type</a>
 						</button>
 						</div>
 					</div>

@@ -233,8 +233,10 @@
 							pattern="[0-9]"
 							title="Do not enter number and enter at least 4 words"/>
 						<br/>
-						<button type="submit" class="btn btn-danger">Save</button>
-
+						<button type="submit" class="btn btn-danger" > <i style="margin-right: 4px"  class="far fa-save"></i>Save</button>
+						<form:button id="editbutton" type="submit" class="btn btn-danger">
+						<a style="color: white" href="<c:url value="/service-list" />"><i style="margin-right: 4px" class="far fa-arrow-alt-circle-left"></i>Return</a>
+						</form:button>
 					</form:form>
 			</div>
 		</div>

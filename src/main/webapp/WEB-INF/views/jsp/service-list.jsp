@@ -206,8 +206,8 @@
 					<div class="card-header">
 						<i class="fas fa-table"></i> List Service
 						<div style="float: right;color: white;text-decoration: none;	">
-						<button type="submit" class="btn btn-warning ">
-							<a href="<c:url value="/service-save" />"> New Service</a>
+						<button  type="submit" class="btn btn-warning " >
+							<a href="<c:url value="/service-save" />" class="far fa-plus-square" style="text-decoration: none; list-style: none;"> New Service</a>
 						</button>
 						</div>
 					</div>
@@ -234,7 +234,7 @@
 											<td>${service.servicedesc}</td>
 											<td>${service.serviceprice}</td>
 											<td><button type="submit" class="btn btn-primary">
-													<a href="${urlUpdate}/${service.serviceid}"><i class="fas fa-pen" style="color: black"></i></a>
+													<a href="${urlUpdate}/${service.serviceid}"><i class="fas fa-pen"  style="color: black"></i></a>
 												</button></td>
 											<td><button type="submit" class="btn btn-danger">
 													<a href="${urlDelete}/${service.serviceid}"><i class="fas fa-trash-alt" style="color: black"></i></a>

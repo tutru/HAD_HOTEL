@@ -232,8 +232,12 @@
 						title="Do not enter number and enter at least 4 words" />
 					<br />
 					<button id="chinhbuttonds" class="btn btn-danger" type="submit">
-						<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Update
+						<i class="far fa-edit"></i> Update
 					</button>
+					<form:button   id="editbutton" type="submit" class="btn btn-danger">
+								<a  href="<c:url value="/service-list" />" style="color: white;" ><i style="margin-right: 4px"" class="far fa-arrow-alt-circle-left"></i>Return</a>
+							</form:button>
+					
 				</form:form>
 			</div>
 		</div>
