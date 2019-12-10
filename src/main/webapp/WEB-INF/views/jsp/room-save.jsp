@@ -317,8 +317,13 @@
 					</div>
 					<br />
 					<br />
-					<button class="btn btn-warning" type="submit">Room Save</button>
 
+					<form:button type="submit" class="btn btn-success">
+						<i class="far fa-save"></i> Room Save</form:button>
+					<form:button id="editbutton" type="submit" class="btn btn-danger">
+						<a  style="text-decoration: none;color: white" href="<c:url value="/room-list" />"><i
+							class="far fa-arrow-alt-circle-left"></i> Return</a>
+					</form:button>
 				</form:form>
 
 

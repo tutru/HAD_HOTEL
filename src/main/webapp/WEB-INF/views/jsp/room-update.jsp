@@ -318,9 +318,14 @@
 							</div>
 						</div>
 						<br />
-						<br />
-						<form:button class="btn btn-warning" type="submit"> Room Update</form:button>
-
+						<br />						
+                         <button type="submit" class="btn btn-success">
+								<i class="far fa-edit"></i> Room Update
+							</button>
+							<button id="editbutton" type="submit" class="btn btn-danger">
+								<a style="text-decoration: none; color: white" href="<c:url value="/room-list" />"><i
+									class="far fa-arrow-alt-circle-left"></i>Return</a>
+							</button>
 					</form:form>
 </div>
 			</div>

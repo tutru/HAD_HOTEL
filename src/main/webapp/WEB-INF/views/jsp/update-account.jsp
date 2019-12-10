@@ -236,9 +236,14 @@
 								placeholder="Please enter your Password" class="form-control"
 								pattern=".{6,}" title="Mật Khẩu Phải trên 6 chữ hoặc số" />
 							<br />
-							<button type="submit" class="btn btn-warning float-left">Account
-								Update</button>
 
+							<button type="submit" class="btn btn-success">
+								<i class="far fa-edit"></i> Account Update
+							</button>
+							<button id="editbutton" type="submit" class="btn btn-danger">
+								<a style="text-decoration: none; color: white" href="<c:url value="/list-account" />"><i
+									class="far fa-arrow-alt-circle-left"></i>Return</a>
+							</button>
 						</div>
 					</form:form>
 

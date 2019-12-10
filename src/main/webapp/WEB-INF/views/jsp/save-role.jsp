@@ -222,7 +222,13 @@
 							</textarea>
 							<br />
 							<br />
-							<button type="submit" class="btn btn-dark">Role Save</button>
+							<form:button type="submit" class="btn btn-success">
+								<i class="far fa-save"></i> Save Role</form:button>
+							<form:button id="editbutton" type="submit" class="btn btn-danger">
+								<a style="text-decoration: none; color: white"
+									href="<c:url value="/list-role" />"><i
+									class="far fa-arrow-alt-circle-left"></i> Return</a>
+							</form:button>
 
 						</form:form>
 

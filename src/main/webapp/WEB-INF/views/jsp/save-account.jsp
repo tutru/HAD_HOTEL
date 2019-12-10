@@ -224,8 +224,13 @@
 								placeholder="Please Enter Your Password" class="form-control"
 								pattern=".{6,}" title="Mật Khẩu Phải trên 6 chữ hoặc số" />
 							<br /> <br /> <br /> <br />
-							<button type="submit" class="btn btn-warning float-left">Account
-								Save</button>
+							<form:button type="submit" class="btn btn-success">
+								<i class="far fa-save"></i>Save Account</form:button>
+							<form:button id="editbutton" type="submit" class="btn btn-danger">
+								<a style="text-decoration: none; color: white"
+									href="<c:url value="/list-account" />"><i
+									class="far fa-arrow-alt-circle-left"></i> Return</a>
+							</form:button>
 
 						</div>
 					</form:form>

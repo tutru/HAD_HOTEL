@@ -234,9 +234,14 @@
 						<form:textarea path="roledesc" rows="4" cols="50"
 							class="form-control" />
 						<br />
-						<br />
-						<button type="submit" class="btn btn-dark">Role Update</button>
-
+						<br />				
+                          <button type="submit" class="btn btn-success">
+								<i class="far fa-edit"></i> Role Update
+							</button>
+							<button id="editbutton" type="submit" class="btn btn-danger">
+								<a style="text-decoration: none; color: white" href="<c:url value="/list-role" />"><i
+									class="far fa-arrow-alt-circle-left"></i>Return</a>
+							</button>
 					</form:form>
 
 
