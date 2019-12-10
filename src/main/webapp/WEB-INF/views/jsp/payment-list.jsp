@@ -237,7 +237,7 @@
 										<th>Roomprice</th>
 										<th>Extra Money</th>
 										<th></th>
-										<th></th>
+			<!-- 							<th></th> -->
 
 									</tr>
 								</thead>
@@ -251,12 +251,12 @@
 												VND</td>
 											<td>${payment.paymentdate}</td>
 											<td>${payment.roomnumber}</td>
-											<td><fmt:formatNumber value="${payment.roomprice}" /></td>
-											<td><fmt:formatNumber value="${payment.tienthua}" /></td>
-											<td><button type="submit" class="btn btn-primary">
+											<td><fmt:formatNumber value="${payment.roomprice}" />VND</td>
+											<td><fmt:formatNumber value="${payment.tienthua}" />VND</td>
+											<%-- <td><button type="submit" class="btn btn-primary">
 													<a href="${urlUpdate}/${payment.paymentid} "><i
 														class="fas fa-pen" style="color: black"></i></a>
-												</button></td>
+												</button></td> --%>
 											<td><button type="submit" class="btn btn-danger">
 													<a href="${urlDelete}/${payment.paymentid}""><i
 														class="fas fa-trash-alt" style="color: black"></i></a>
