@@ -115,7 +115,7 @@
 						<label>Customer</label> <select class="form-control"
 							name="customerid" readonly="true">
 							<c:forEach var="customer" items="${listCustomer}">
-								<option value=${customer.customerid}>${customerid}</option>
+								<option value=${customer.customerid}>${name}</option>
 							</c:forEach>
 						</select> <br /> <label>Room Type</label> <select class="form-control"
 							name="roomtypeid">
