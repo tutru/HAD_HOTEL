@@ -230,7 +230,7 @@
 						<br />
 						<label>Service Price</label>
 						<form:input  class="form-control form-control-lg" path="serviceprice" placeholder="Service Price " required="required"
-							pattern="[0-9]"
+							pattern="[0-9]{0,9}"
 							title="Do not enter number and enter at least 4 words"/>
 						<br/>
 						<button type="submit" class="btn btn-danger" > <i style="margin-right: 4px"  class="far fa-save"></i>Save</button>
