@@ -17,8 +17,29 @@ public class PaymentEntity {
 	private int receptionid;
 	private Double paymentamount;
 	private Date paymentdate;
+	private Double roomprice;
+	private String roomnumber;
+	private Double tienthua;
+	public Double getTienthua() {
+		return tienthua;
+	}
+	public void setTienthua(Double tienthua) {
+		this.tienthua = tienthua;
+	}
+	public String getRoomnumber() {
+		return roomnumber;
+	}
+	public void setRoomnumber(String roomnumber) {
+		this.roomnumber = roomnumber;
+	}
 	public PaymentEntity() {
 		
+	}
+	public Double getRoomprice() {
+		return roomprice;
+	}
+	public void setRoomprice(Double roomprice) {
+		this.roomprice = roomprice;
 	}
 	public int getPaymentid() {
 		return paymentid;

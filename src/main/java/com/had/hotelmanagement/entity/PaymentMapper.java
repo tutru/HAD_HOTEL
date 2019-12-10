@@ -13,6 +13,9 @@ public class PaymentMapper implements  RowMapper<PaymentEntity> {
 		payment.setReceptionid(rs.getInt("receptionid"));
 		payment.setPaymentamount(rs.getDouble("paymentamount"));
 		payment.setPaymentdate(rs.getDate("paymentdate"));
+		payment.setRoomprice(rs.getDouble("roomprice"));
+		payment.setRoomnumber(rs.getString("roomnumber"));
+		payment.setTienthua(rs.getDouble("tienthua"));
 		return payment;
 	}	
 }

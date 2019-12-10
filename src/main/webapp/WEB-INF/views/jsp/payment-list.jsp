@@ -221,6 +221,9 @@
 										<th>Reception ID</th>
 										<th>PaymentAmount</th>
 										<th>PaymentDate</th>
+										<th>Roomnumber</th>
+										<th>Roomprice</th>
+										<th>Extra Money</th>
 										<th></th>
 										<th></th>
 
@@ -234,6 +237,9 @@
 											<td>${payment.receptionid}</td>
 											<td><fmt:formatNumber value = "${payment.paymentamount}"/> VND</td>
 											<td>${payment.paymentdate}</td>
+											<td>${payment.roomnumber}</td>
+											<td><fmt:formatNumber value = "${payment.roomprice}"/></td>
+											<td><fmt:formatNumber value = "${payment.tienthua}"/></td>
 											<td><button type="submit" class="btn btn-primary">
 													<a href="${urlUpdate}/${payment.paymentid} "><i class="fas fa-pen" style="color: black"></i></a>
 												</button></td>
