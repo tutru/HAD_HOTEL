@@ -3,14 +3,11 @@
 <%@ page isELIgnored="false"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8" import="java.sql.*"%>
+	
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<link rel="stylesheet"
-	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<meta charset="ISO-8859-1">
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,6 +15,13 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
+
+<link rel="stylesheet"
+	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<meta charset="ISO-8859-1">
+
 
 <title>Create Reservation</title>
 
@@ -235,14 +239,18 @@ text-decoration: none
 										<option value=${customer.customerid}>${customer.name}</option>
 									</c:forEach>
 								</c:if>
-							</select> <br /> <label>Room Type</label> <select class="form-control"
+							</select> 
+							<br />
+							 <label>Room Type</label> 
+							 <select class="form-control"
 								name="roomtypeid">
 								<c:if test="${not empty listRoomType}">
 									<c:forEach var="roomType" items="${listRoomType}">
 										<option value=${roomType.roomtypeid}>${roomType.roomtypename}</option>
 									</c:forEach>
 								</c:if>
-							</select> <br /> <label>Expected Check Date</label>
+							</select> 
+							<br /> <label>Expected Check Date</label>
 							<form:input class="form-control" path="expectedcheckdate"
 								id="datepicker" placeholder="Expected Check Date" required="required" pattern="[a-z]\{20}"
 								title="Please choose Date"/>
@@ -263,7 +271,15 @@ text-decoration: none
 						</div>
 						<div class="form-group col-md-6">
 							<label>Expected Room:</label>
-							<form:input class="form-control" path="expectedroom" />
+							<%-- <form:input class="form-control" path="expectedroom" /> --%>
+							<select
+								class="form-control" name="expectedroom">
+								<c:if test="${not empty listRoom}">
+									<c:forEach var="room" items="${listRoom}">
+										<option value=${room.roomnumber}>${room.roomnumber}</option>
+									</c:forEach>
+								</c:if>
+							</select>
 							<br /> <label>Advance Deposit:</label>
 							<form:input class="form-control" path="isdeposit" required="required" pattern="[0-9]\{20}"
 								title="Please type Deposit"/>
