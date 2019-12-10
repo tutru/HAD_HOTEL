@@ -238,8 +238,16 @@ text-decoration: none
 									</c:forEach>
 								</c:if>
 							</select>
-							<br /> <label>Reservation ID:</label>
-							<form:input class="form-control" path="reservationid" />
+							<br /> <label>Reservation Code:</label>
+							<%-- <form:input class="form-control" path="reservationid" /> --%>
+							<select
+								class="form-control" name="reservationid">
+								<c:if test="${not empty listRoom}">
+									<c:forEach var="reservation" items="${listReservation}">
+										<option value=${reservation.reservationid}>${reservation.reservationid}</option>
+									</c:forEach>
+								</c:if>
+							</select>
 							<br /> <label>Room Number</label>
 							<select
 								class="form-control" name="roomid">

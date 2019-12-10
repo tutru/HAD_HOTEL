@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.had.hotelmanagement.entity.Reception;
 import com.had.hotelmanagement.service.CustomerService;
 import com.had.hotelmanagement.service.ReceptionService;
+import com.had.hotelmanagement.service.ReservationService;
 import com.had.hotelmanagement.service.RoomService;
 import com.had.hotelmanagement.service.ServiceService;
 
@@ -27,6 +28,8 @@ public class ReceptionController {
 	private CustomerService customerService;
 	@Autowired
 	private ServiceService serviceService;
+	@Autowired
+	private ReservationService reservationService;
 
 	@RequestMapping(value = { "/reception-list" }, method = RequestMethod.GET)
 	public String listReception(Model model) {
@@ -40,6 +43,7 @@ public class ReceptionController {
 		model.addAttribute("listCustomer", customerService.findAll());
 		model.addAttribute("listRoom", roomService.findAll());
 		model.addAttribute("listService", serviceService.findAll());
+		model.addAttribute("listReservation", reservationService.findAll());
 		return "reception-save";
 	}
 

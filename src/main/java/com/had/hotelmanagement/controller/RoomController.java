@@ -70,7 +70,7 @@ public class RoomController {
 				
 			} else {
 				try {
-					String path = "D:\\DU_AN\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
+					String path = "E:\\study-fpoly\\datn\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
 							+ image.getOriginalFilename();
 					image.transferTo(new File(path));
 					room.setRoomimage(image.getOriginalFilename());
@@ -104,7 +104,7 @@ public class RoomController {
 			roomService.update(room);
 		} else {
 			try {
-				String path = "D:\\DU_AN\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
+				String path = "E:\\study-fpoly\\datn\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
 						+ image.getOriginalFilename();
 				image.transferTo(new File(path));
 				room.setRoomimage(image.getOriginalFilename());

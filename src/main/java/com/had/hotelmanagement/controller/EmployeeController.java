@@ -54,7 +54,7 @@ public class EmployeeController {
 			if (image.isEmpty()) {
 			} else {
 				try {
-					String path = "E:\\QUANLYDOAN\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
+					String path = "E:\\study-fpoly\\datn\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
 							+ image.getOriginalFilename();
 
 					image.transferTo(new File(path));
