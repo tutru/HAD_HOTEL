@@ -189,7 +189,7 @@ text-decoration: none
 					<h6 class="dropdown-header">Reservation:</h6>
 					<a class="dropdown-item" href="/HotelManagement/reservation-list">List
 						Reservation</a> <a class="dropdown-item"
-						href="/HotelManagement/reservation-save">Create Resertvation</a>
+						href="<c:url value="/reservation-save"/>">Create Reservation</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Reception:</h6>
 					<a class="dropdown-item" href="/HotelManagement/reception-list">List

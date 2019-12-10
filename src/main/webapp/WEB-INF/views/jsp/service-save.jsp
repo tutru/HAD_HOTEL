@@ -186,7 +186,7 @@
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Reservation:</h6>
 					<a class="dropdown-item" href="reservation-list">List
-						Reservation</a> <a class="dropdown-item" href="reservation-save">Create
+						Reservation</a> <a class="dropdown-item" href="<c:url value="/reservation-list"/>">Create
 						Resertvation</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Reception:</h6>

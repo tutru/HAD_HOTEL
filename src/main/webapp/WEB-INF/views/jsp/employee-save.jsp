@@ -32,11 +32,12 @@
 <!-- Custom styles for this template-->
 <link href="resources/css/sb-admin.css" rel="stylesheet">
 <style type="text/css">
-#editbutton a{
-color: white
+#editbutton a {
+	color: white
 }
-#editbutton a{
-text-decoration: none
+
+#editbutton a {
+	text-decoration: none
 }
 </style>
 </head>
@@ -195,8 +196,7 @@ text-decoration: none
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Reservation:</h6>
 					<a class="dropdown-item" href="reservation-list">List
-						Reservation</a> <a class="dropdown-item" href="reservation-save">Create
-						Resertvation</a>
+						href="<c:url value="/reservation-save"/>">Create Reservation</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Reception:</h6>
 					<a class="dropdown-item" href="reception-list">List Reception</a> <a
@@ -277,7 +277,8 @@ text-decoration: none
 							</div>
 							<br /> <label>Image:</label>
 							<output id="list">
-								<img src="/HotelManagement/resources/image/441.jpg" width="120" heigh="100"
+								<img src="/HotelManagement/resources/image/441.jpg" width="120"
+									heigh="100"
 									style="border: 2px solid #7bb8cc; border-radius: 6px">
 							</output>
 							<span class="input-group-btn"> <span
@@ -310,9 +311,11 @@ text-decoration: none
 												handleFileSelect, false);
 							</script>
 							<br /> <br />
-							<form:button type="submit" class="btn btn-success"><i class="far fa-save"></i> Save</form:button>
+							<form:button type="submit" class="btn btn-success">
+								<i class="far fa-save"></i> Save</form:button>
 							<form:button id="editbutton" type="submit" class="btn btn-danger">
-								<a href="<c:url value="/employee-list" />"><i class="far fa-arrow-alt-circle-left"></i>Return</a>
+								<a href="<c:url value="/employee-list" />"><i
+									class="far fa-arrow-alt-circle-left"></i>Return</a>
 							</form:button>
 						</div>
 					</div>
