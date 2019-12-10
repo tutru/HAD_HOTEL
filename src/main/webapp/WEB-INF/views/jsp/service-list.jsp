@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 
@@ -232,7 +232,7 @@
 											<td>${service.serviceid}</td>
 											<td>${service.servicename}</td>
 											<td>${service.servicedesc}</td>
-											<td>${service.serviceprice}</td>
+											<td><fmt:formatNumber value="${service.serviceprice}" /> VND</td>
 											<td><button type="submit" class="btn btn-primary">
 													<a href="${urlUpdate}/${service.serviceid}"><i class="fas fa-pen"  style="color: black"></i></a>
 												</button></td>
