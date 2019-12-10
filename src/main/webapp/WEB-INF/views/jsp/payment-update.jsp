@@ -231,7 +231,7 @@
 					<label id="textfield" class="col-sm-12">Payment Amount</label>
 					<form:input path="paymentamount"
 						class="form-control form-control-lg" required="required"
-						pattern="[0-9]{4,9}" />
+						pattern="[0-9]{0,9}" />
 					<br />
 					<label>Payment Date</label>
 					<form:input class="form-control form-control-lg" path="paymentdate"
@@ -239,16 +239,18 @@
 						title="Do not enter number and enter at least 4 words" />
 
 					<script>
-						$(function() {
-							$.datepicker.setDefaults({
-								onClose : function(date, inst) {
-									$("#selectedDtaeVal").html(date);
-								}
-							});
+								$(function() {
+									$.datepicker.setDefaults({
+										onClose : function(date, inst) {
+											$("#selectedDtaeVal").html(date);
+										}
+									});
 
-							$("#datepicker").datepicker();
-						});
-					</script>
+									$("#datepicker").datepicker({
+										dateFormat : 'yy-mm-dd'
+									});
+								});
+							</script>
 					<br />
 						<button style="margin-bottom: 10px" type="submit" class="btn btn-danger">
 							<i class="far fa-edit"></i>Update
