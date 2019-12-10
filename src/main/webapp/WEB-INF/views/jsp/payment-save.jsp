@@ -232,7 +232,7 @@
 					<label>Payment Amount</label>
 					<form:input class="form-control form-control-lg"
 						path="paymentamount" placeholder="Service Price "
-						required="required" pattern="[0-9]{4,9}" />
+						required="required" pattern="[0-9]{0,9}" />
 					<br />
 					<label>Payment Date</label>
 					<form:input class="form-control form-control-lg" path="paymentdate"
@@ -240,16 +240,18 @@
 						pattern="[a-z]\{20}"
 						title="Do not enter number and enter at least 4 words" />
 					<script>
-						$(function() {
-							$.datepicker.setDefaults({
-								onClose : function(date, inst) {
-									$("#selectedDtaeVal").html(date);
-								}
-							});
+								$(function() {
+									$.datepicker.setDefaults({
+										onClose : function(date, inst) {
+											$("#selectedDtaeVal").html(date);
+										}
+									});
 
-							$("#datepicker").datepicker();
-						});
-					</script>
+									$("#datepicker").datepicker({
+										dateFormat : 'yy-mm-dd'
+									});
+								});
+							</script>
 					<br />
 					<div>
 						<button style="margin-bottom: 10px;" class="btn btn-danger"
