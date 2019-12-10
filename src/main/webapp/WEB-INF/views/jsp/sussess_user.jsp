@@ -7,7 +7,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>HAD  Customer Success</title>
+<title>HAD Customer Success</title>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="" />
@@ -80,7 +80,8 @@
 			<div
 				class="row site-hero-inner justify-content-center align-items-center">
 				<div class="col-md-10 text-center" data-aos="fade">
-					<h1 class="heading mb-3">Successful registration of customer information</h1>
+					<h1 class="heading mb-3">Successful registration of customer
+						information</h1>
 					<ul class="custom-breadcrumbs mb-4">
 						<li><a href="index_user">Home</a></li>
 						<li>&bullet;</li>
@@ -100,9 +101,11 @@
 
 	<section class="section contact-section" id="next">
 		<div class="container">
-			<button class="button">
-				<a href="reservation_user" /><i class="fas fa-forward"></i><span>Next reservation</span>
+			<button style=background-color:#0d3744;border-color:#0d3744  class="btn btn-primary">
+				<a href="reservation_user" /><i class="fas fa-forward"></i>Next
+				Reservation
 			</button>
+
 		</div>
 	</section>
 	<section class="section testimonial-section bg-light">
@@ -269,8 +272,7 @@
 					<p>
 						<span class="d-block"><span
 							class="ion-ios-location h5 mr-3 text-primary"></span>Address:</span> <span>
-							132 Ly Tu Trong Street, Quận 1, TP. Hồ Chí Minh, Việt Nam
-						</span>
+							132 Ly Tu Trong Street, Quận 1, TP. Hồ Chí Minh, Việt Nam </span>
 					</p>
 					<p>
 						<span class="d-block"><span

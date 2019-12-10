@@ -104,8 +104,9 @@
 
 	<section class="section contact-section" id="next">
 		<div class="container">
-			<button class="button">
-				<a href="rooms_user"/><i class="fas fa-forward"></i><span>Next room</span>
+			<button style=background-color:#0d3744;border-color:#0d3744  class="btn btn-primary">
+				<a href="rooms_user" /><i class="fas fa-forward"></i>Next Room
+				
 			</button>
 		</div>
 	</section>
