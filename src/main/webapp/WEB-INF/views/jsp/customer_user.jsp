@@ -13,6 +13,8 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta name="author" content="" />
+<link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+	rel="stylesheet">
 <!--  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=|Roboto+Sans:400,700|Playfair+Display:400,700"> -->
 
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
@@ -172,7 +174,7 @@
 					</div>
 				</div>
 				<button type="submit" class="btn btn-success">
-				<i class="far fa-save"></i>Save
+				<i class="far fa-save"></i> Save
 			</button>
 			</form:form>
 			
