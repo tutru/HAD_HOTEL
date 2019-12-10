@@ -49,6 +49,7 @@ public class ReservationController {
 		model.addAttribute("reservation", new Reservation());
 		model.addAttribute("listCustomer", customerService.findAll());
 		model.addAttribute("listRoomType", roomTypeService.findAll());
+		model.addAttribute("listRoom", roomService.findAll());
 		return "reservation_user";
 	}
 

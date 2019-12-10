@@ -145,9 +145,14 @@
 						<br />
 					</div>
 					<div class="form-group col-md-6">
-						<label>Expected Room:</label>
-						<form:input class="form-control" path="expectedroom" />
-						<br /> <label>Advance Deposit:</label>
+						<label>Expected Room:</label> <select class="form-control"
+							name="expectedroom">
+							<c:if test="${not empty listRoom}">
+								<c:forEach var="room" items="${listRoom}">
+									<option value=${room.roomnumber}>${room.roomnumber}</option>
+								</c:forEach>
+							</c:if>
+						</select> <br /> <label>Advance Deposit:</label>
 						<form:input class="form-control" path="isdeposit"
 							required="required" pattern="[0-9]\{20}"
 							title="Please type Deposit" />
