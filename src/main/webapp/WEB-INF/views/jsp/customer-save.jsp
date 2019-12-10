@@ -257,7 +257,9 @@ text-decoration: none
 								required="required" pattern="^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$"
 								title="Please type Email" />
 							<br /> <label>CC number:</label>
-							<form:input class="form-control" path="ccnumber"/>
+							<form:input class="form-control" path="ccnumber" placeholder="CC Number"
+								required="required" pattern="[0-9]{8,15}"
+								title="Please type CC Number" />
 							<br /> <br /> <label>Image:</label>
 							<output id="list">
 								<img src="/HotelManagement/resources/image/441.jpg" width="120" heigh="100"
@@ -295,7 +297,7 @@ text-decoration: none
 							</script>
 							<br />
 							<br/>
-							<button type="submit" class="btn btn-success"> <i class="far fa-save"></i>Save</button>
+							<form:button type="submit" class="btn btn-success"> <i class="far fa-save"></i>Save</form:button>
 							<form:button id="editbutton" type="submit" class="btn btn-danger">
 								<a href="<c:url value="/customer-list" />"><i class="far fa-arrow-alt-circle-left"></i>Return</a>
 							</form:button>

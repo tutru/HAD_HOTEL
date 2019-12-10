@@ -236,8 +236,8 @@
 										<td>Expected Room</th>
 										<td>Is Deposit</th>
 										<td>Status</td>
-										<td></td>
-										<td></td>
+										<td>Edit</td>
+										<td>Delete</td>
 									</tr>
 								</thead>
 								<c:if test="${not empty listReservation}">

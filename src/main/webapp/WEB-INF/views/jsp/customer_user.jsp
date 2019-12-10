@@ -133,7 +133,9 @@
 							pattern="^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$"
 							title="Please type Email" />
 						<br /> <label>CC number:</label>
-						<form:input class="form-control" path="ccnumber"/>
+						<form:input class="form-control" path="ccnumber"
+							placeholder="CC Number" required="required" pattern="[0-9]{8,15}"
+							title="Please type CC Number" />
 						<br /> <br /> <label>Image:</label>
 						<output id="list">
 							<img src="/HotelManagement/resources/image/441.jpg" width="120">
@@ -170,12 +172,11 @@
 					</div>
 				</div>
 				<button type="submit" class="btn btn-success">
-					<i class="fas fa-window-close"></i>Save
-				</button>
+				<i class="far fa-save"></i>Save
+			</button>
 			</form:form>
-
+			
 		</div>
-
 	</section>
 
 	<section class="section testimonial-section bg-light">

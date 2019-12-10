@@ -246,8 +246,8 @@ text-decoration: none
 										<th>Checkout</th>
 										<th>Service</th>
 										<th>Status</th>
-										<th></th>
-										<th></th>
+										<th>Edit</th>
+										<th>Delete</th>
 									</tr>
 								</thead>
 								<c:if test="${not empty listReception}">

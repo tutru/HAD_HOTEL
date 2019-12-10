@@ -239,8 +239,8 @@
 										<td>Email</td>
 										<td>Image</td>
 										<td>CC Number</td>
-										<td></td>
-										<td></td>
+										<td>Edit</td>
+										<td>Delete</td>
 									</tr>
 								</thead>
 								<c:if test="${not empty listCustomer}">

@@ -63,7 +63,7 @@ public class CustomerController {
 		if (image.isEmpty()) {
 		} else {
 			try {
-				String path = "E:\\DuAn2\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
+				String path = "E:\\study-fpoly\\datn\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
 						+ image.getOriginalFilename();
 
 				image.transferTo(new File(path));
@@ -84,7 +84,7 @@ public class CustomerController {
 		if (image.isEmpty()) {
 		} else {
 			try {
-				String path = "E:\\DuAn2\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
+				String path = "E:\\study-fpoly\\datn\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
 						+ image.getOriginalFilename();
 
 				image.transferTo(new File(path));
@@ -105,7 +105,7 @@ public class CustomerController {
 			customerService.update(customer);
 		} else {
 			try {
-				String path = "E:\\DuAn2\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
+				String path = "E:\\study-fpoly\\datn\\HAD_HOTEL\\src\\main\\webapp\\resources\\image\\"
 						+ image.getOriginalFilename();
 
 				image.transferTo(new File(path));
