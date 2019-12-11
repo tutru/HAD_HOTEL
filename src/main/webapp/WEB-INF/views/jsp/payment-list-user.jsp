@@ -151,7 +151,7 @@
 					<div class="card-header">
 						<i class="fas fa-table"></i> List Payment
 						<button type="submit" class="btn btn-warning float-right">
-							<a href="<c:url value="/payment-save-user" />"> New Payment</a>
+							<a href="<c:url value="/payment-save-user" />"class="far fa-plus-square" style="text-decoration: none; list-style: none;"> New Payment</a>
 						</button>
 					</div>
 					<div class="card-body">
@@ -165,7 +165,10 @@
 										<th>Reception ID</th>
 										<th>PaymentAmount</th>
 										<th>PaymentDate</th>
-										<th></th>
+										<th>Roomnumber</th>
+										<th>Roomprice</th>
+										<th>Extra Money</th>
+<!-- 										<th></th> -->
 										<th></th>
 
 									</tr>
@@ -178,9 +181,12 @@
 											<td>${payment.receptionid}</td>
 											<td><fmt:formatNumber value = "${payment.paymentamount}"/> VND</td>
 											<td>${payment.paymentdate}</td>
-											<td><button type="submit" class="btn btn-primary">
+											<td>${payment.roomnumber}</td>
+											<td><fmt:formatNumber value="${payment.roomprice}" />VND</td>
+											<td><fmt:formatNumber value="${payment.tienthua}" />VND</td>
+											<%-- <td><button type="submit" class="btn btn-primary">
 													<a href="${urlUpdate}/${payment.paymentid} "><i class="fas fa-pen" style="color: black"></i></a>
-												</button></td>
+												</button></td> --%>
 											<td><button type="submit" class="btn btn-danger">
 													<a href="${urlDelete}/${payment.paymentid}""><i class="fas fa-trash-alt" style="color: black"></i></a>
 												</button></td>

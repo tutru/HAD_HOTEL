@@ -255,9 +255,11 @@
 						<button style="margin-bottom: 10px" type="submit" class="btn btn-danger">
 							<i class="far fa-edit"></i>Update
 						</button>
-					<form:button  style="margin-bottom: 10px"  id="editbutton" type="submit" class="btn btn-danger">
-								<a  href="<c:url value="/service-list" />" style="color: white;" ><i class="far fa-arrow-alt-circle-left"></i>Return</a>
-							</form:button>
+					<form:button style="margin-bottom: 10px" id="editbutton"
+						type="submit" class="btn btn-danger">
+						<a href="<c:url value="/service-list" />" style="color: white;"><i
+							class="far fa-arrow-alt-circle-left"></i>Return</a>
+					</form:button>
 				</form:form>
 			</div>
 		</div>

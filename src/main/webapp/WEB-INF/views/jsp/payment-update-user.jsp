@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 <link rel="stylesheet"
 	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -34,7 +34,7 @@
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-	<a class="navbar-brand mr-1" href="<c:url value="/admin"/>"><img
+		<a class="navbar-brand mr-1" href="<c:url value="/admin"/>"><img
 			src="<%=request.getContextPath()%>/resources/image/logo.JPG"
 			width="120"></a>
 
@@ -105,15 +105,15 @@
 	<div id="wrapper">
 
 		<!-- Sidebar -->
-				<ul class="sidebar navbar-nav">
+		<ul class="sidebar navbar-nav">
 
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" id="pagesDropdown" role="button"
 				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
 					class="fas fa-money-check-alt"></i> <span>Payment</span> </a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
-				
-				
+
+
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Payment:</h6>
 					<a class="dropdown-item" href="<c:url value="/payment-list-user"/>">List
@@ -127,14 +127,16 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Reservation:</h6>
-					<a class="dropdown-item" href="<c:url value="/reservation-list-user"/>">List
+					<a class="dropdown-item"
+						href="<c:url value="/reservation-list-user"/>">List
 						Reservation</a> <a class="dropdown-item"
 						href="<c:url value="/reservation-save"/>">Create Reservation</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Reception:</h6>
-					<a class="dropdown-item" href="<c:url value="/reception-list-user"/>">List
-						Reception</a> <a class="dropdown-item"
-						href="<c:url value="/reception-save-user"/>">Create Reception</a>
+					<a class="dropdown-item"
+						href="<c:url value="/reception-list-user"/>">List Reception</a> <a
+						class="dropdown-item" href="<c:url value="/reception-save-user"/>">Create
+						Reception</a>
 				</div></li>
 
 		</ul>
@@ -181,12 +183,21 @@
 								}
 							});
 
-							$("#datepicker").datepicker();
+							$("#datepicker").datepicker({
+								dateFormat : 'yy-mm-dd'
+							});
 						});
 					</script>
 					<br />
 					<div style="margin-bottom: 10px">
-						<button type="submit" class="btn btn-danger">Update</button>
+						<button type="submit" class="btn btn-danger">
+							<i class="far fa-edit"></i>Update
+						</button>
+						<form:button style="margin-bottom: 10px" id="editbutton"
+							type="submit" class="btn btn-danger">
+							<a href="<c:url value="/service-list" />" style="color: white;"><i
+								class="far fa-arrow-alt-circle-left"></i>Return</a>
+						</form:button>
 					</div>
 				</form:form>
 			</div>

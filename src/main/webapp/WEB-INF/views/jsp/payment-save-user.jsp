@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
- 
+
 <html lang="en">
 <link rel="stylesheet"
 	href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -106,7 +106,7 @@
 	</nav>
 	<div id="wrapper">
 
-		
+
 		<!-- Sidebar -->
 		<ul class="sidebar navbar-nav">
 
@@ -115,8 +115,8 @@
 				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
 					class="fas fa-money-check-alt"></i> <span>Payment</span> </a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
-				
-				
+
+
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Payment:</h6>
 					<a class="dropdown-item" href="<c:url value="/payment-list-user"/>">List
@@ -130,18 +130,20 @@
 			</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Reservation:</h6>
-					<a class="dropdown-item" href="<c:url value="/reservation-list-user"/>">List
+					<a class="dropdown-item"
+						href="<c:url value="/reservation-list-user"/>">List
 						Reservation</a> <a class="dropdown-item"
 						href="<c:url value="/reservation-save"/>">Create Reservation</a>
 					<div class="dropdown-divider"></div>
 					<h6 class="dropdown-header">Reception:</h6>
-					<a class="dropdown-item" href="<c:url value="/reception-list-user"/>">List
-						Reception</a> <a class="dropdown-item"
-						href="<c:url value="/reception-save-user"/>">Create Reception</a>
+					<a class="dropdown-item"
+						href="<c:url value="/reception-list-user"/>">List Reception</a> <a
+						class="dropdown-item" href="<c:url value="/reception-save-user"/>">Create
+						Reception</a>
 				</div></li>
 
 		</ul>
-		
+
 
 		<div id="content-wrapper">
 
@@ -184,7 +186,6 @@
 					<form:input class="form-control form-control-lg" path="paymentdate"
 						id="datepicker" placeholder="Payment Date" required="required"
 						title="Do not enter number and enter at least 4 words" />
-
 					<script>
 						$(function() {
 							$.datepicker.setDefaults({
@@ -193,13 +194,22 @@
 								}
 							});
 
-							$("#datepicker").datepicker();
+							$("#datepicker").datepicker({
+								dateFormat : 'yy-mm-dd'
+							});
 						});
 					</script>
 					<br />
 					<div>
 						<button style="margin-bottom: 10px;" class="btn btn-danger"
-							type="submit">Save</button>
+							type="submit">
+							<i class="far fa-save" style="margin-right: 4px"></i>Save
+						</button>
+						<form:button style="margin-bottom: 10px;" id="editbutton"
+							type="submit" class="btn btn-danger">
+							<a style="color: white" href="<c:url value="/payment-list" />"><i
+								style="margin-right: 4px" class="far fa-arrow-alt-circle-left"></i>Return</a>
+						</form:button>
 					</div>
 				</form:form>
 			</div>
@@ -242,7 +252,7 @@
 				<div class="modal-footer">
 					<button class="btn btn-secondary" type="button"
 						data-dismiss="modal">Cancel</button>
-				<a class="btn btn-primary" href="<c:url value="/logout"/>">Logout</a>
+					<a class="btn btn-primary" href="<c:url value="/logout"/>">Logout</a>
 				</div>
 			</div>
 		</div>
