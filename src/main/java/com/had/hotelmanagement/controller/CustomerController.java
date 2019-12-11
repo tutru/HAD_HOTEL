@@ -30,6 +30,8 @@ public class CustomerController {
 	private ReservationService reservationService;
 	@Autowired
 	private ReceptionService receptionService;
+	@Autowired
+	private VCard vCard;
 
 	@RequestMapping(value = { "/customer-list" }, method = RequestMethod.GET)
 	public String listCustomer(Model model) {
@@ -90,6 +92,7 @@ public class CustomerController {
 				image.transferTo(new File(path));
 				customer.setImage(image.getOriginalFilename());
 				customerService.save(customer);
+				vCard.card(customer);
 				session.setAttribute("name", name);
 			} catch (Exception ex) {
 				ex.printStackTrace();
@@ -139,5 +142,5 @@ public class CustomerController {
 		model.addAttribute("findById", customerService.findById(customerid));
 		return "customer-list";
 	}
-
+	
 }

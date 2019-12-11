@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
@@ -252,8 +253,9 @@
 											<td>${roomtype.roomtypeid}</td>
 											<td>${roomtype.roomtypename}</td>
 											<td>${roomtype.roomtypedesc}</td>
-											<td>${roomtype.roomprice }</td>
-											<td><button type="button" class="btn btn-primary">
+										<%-- 	<td>${roomtype.roomprice }</td> --%>
+											<td><fmt:formatNumber value="${roomtype.roomprice}" />
+												VND</td>											<td><button type="button" class="btn btn-primary">
 													<a href="${urlUpdate}/${roomtype.roomtypeid}"><i
 														class="fas fa-pen" style="color: black"></i></a>
 												</button></td>
